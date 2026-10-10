@@ -57,7 +57,7 @@ button,input,select{font:inherit;color:inherit}
 .champ{scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;text-decoration:none;background:var(--cobalt);color:#fff;border-radius:22px;padding:16px;min-height:200px;position:relative;overflow:hidden}
 .champ:nth-child(3n+2){background:var(--magenta)}
 .champ:nth-child(3n+3){background:#14A06F}
-.champ .em{font-size:38px;line-height:1}
+.champ .em{font-family:Unbounded,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.04em;line-height:1.05;position:relative}
 .champ .c{font-size:13px;font-weight:800;opacity:.85}
 .champ .t{font-weight:700;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .champ .p{margin-top:auto;font-family:Unbounded,sans-serif;font-weight:700;font-size:20px}
@@ -78,7 +78,8 @@ button,input,select{font:inherit;color:inherit}
 /* grid */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:8px}
 .card{background:var(--surface);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
-.tile{height:128px;display:flex;align-items:center;justify-content:center;position:relative;font-size:52px}
+.tile{height:128px;display:flex;align-items:flex-end;padding:0 14px 12px;position:relative}
+.brand{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(18px,2.2vw,24px);letter-spacing:-.04em;line-height:1;color:var(--ink);opacity:.85;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:100%}
 .rank{position:absolute;left:12px;top:8px;font-family:Unbounded,sans-serif;font-weight:800;font-size:30px;letter-spacing:-.04em;color:var(--ink);opacity:.9}
 .rank small{font-size:14px;font-weight:700;vertical-align:top;margin-right:1px}
 .hot{position:absolute;right:10px;top:10px;background:var(--magenta);color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:3px 9px}
@@ -106,7 +107,7 @@ footer .wrap{max-width:900px}
   .logo{font-size:15px;gap:7px}.logo svg{width:28px;height:28px}.search input{padding-left:38px;height:40px}.search svg{left:13px}.theme{width:40px;height:40px}
   .hero{padding-top:34px;padding-bottom:20px}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .tile{height:96px;font-size:40px}.rank{font-size:24px}
+  .tile{height:92px;padding:0 10px 10px}.brand{font-size:17px}.rank{font-size:24px}
   .body{padding:10px 10px 12px}.card h3{font-size:14px}.price{font-size:18px}
   .go{height:40px;font-size:14px}
   .join{grid-template-columns:1fr}
@@ -1399,6 +1400,8 @@ const DEALS = DATA.trim().split("\n").map((l,i)=>{const p=l.split("|");return {i
 const CATS=[...new Set(DEALS.map(d=>d.cat))];
 const HUE=Object.fromEntries(CATS.map((c,i)=>[c,Math.round(i*360/CATS.length+230)%360]));
 const $=s=>document.querySelector(s);
+const SKIP=/^(by|amazon|pack|set|kit|juego|mini|nueva?|nuevo|el|la|los|las|un|una|2|3|4|5|10|50|100x?|\d+)$/i;
+const brand=t=>{const w=t.replace(/[®™,:]/g,"").split(/[\s\-–]+/).filter(Boolean);let b=w.find(x=>!SKIP.test(x))||w[0]||"";if(/^amazon$/i.test(w[0])&&/^basics$/i.test(w[1]))b="Amazon Basics";else if(/^by$/i.test(w[0])&&/^amazon$/i.test(w[1]))b="by Amazon";return b.length>14?b.slice(0,13)+"…":b};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const eur=n=>n.toLocaleString("es-ES",{style:"currency",currency:"EUR"});
 const PAGE=24; let cat="Todas", sort="rank", query="", shown=PAGE;
@@ -1406,16 +1409,16 @@ const PAGE=24; let cat="Todas", sort="rank", query="", shown=PAGE;
 $("#nprod").textContent=DEALS.length.toLocaleString("es-ES");$("#ncat").textContent=CATS.length;$("#pdate").textContent=PRICE_DATE;
 
 const best={};DEALS.forEach(d=>{if(!best[d.cat]||d.rank<best[d.cat].rank)best[d.cat]=d});
-$("#rail").innerHTML=Object.values(best).map(d=>`<a class="champ" href="${d.link}" target="_blank" rel="sponsored noopener"><span class="one" aria-hidden="true">1</span><span class="em" aria-hidden="true">${d.icon}</span><span class="c">${esc(d.cat)}</span><span class="t">${esc(d.title)}</span><span class="p">${eur(d.price)}</span></a>`).join("");
+$("#rail").innerHTML=Object.values(best).map(d=>`<a class="champ" href="${d.link}" target="_blank" rel="sponsored noopener"><span class="one" aria-hidden="true">1</span><span class="em" aria-hidden="true">${esc(brand(d.title))}</span><span class="c">${esc(d.cat)}</span><span class="t">${esc(d.title)}</span><span class="p">${eur(d.price)}</span></a>`).join("");
 
 function chips(){
-  $("#chips").innerHTML=["Todas",...CATS].map(c=>`<button class="chip" data-c="${esc(c)}" aria-pressed="${c===cat}">${c==="Todas"?"✨":ICONS[c]} ${esc(c)}</button>`).join("");
+  $("#chips").innerHTML=["Todas",...CATS].map(c=>`<button class="chip" data-c="${esc(c)}" aria-pressed="${c===cat}">${esc(c)}</button>`).join("");
 }
 $("#chips").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.dataset.c;shown=PAGE;chips();render()};
 document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{sort=b.dataset.s;shown=PAGE;document.querySelectorAll("[data-s]").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
 
 function card(d){
-  return `<article class="card"><div class="tile" style="background:hsl(${HUE[d.cat]} var(--tile-s) var(--tile-l))"><span class="rank"><small>#</small>${d.rank}</span>${d.rank<=3?'<span class="hot">Top 3</span>':""}<span aria-hidden="true">${d.icon}</span></div>
+  return `<article class="card"><div class="tile" style="background:hsl(${HUE[d.cat]} var(--tile-s) var(--tile-l))"><span class="rank"><small>#</small>${d.rank}</span>${d.rank<=3?'<span class="hot">Top 3</span>':""}<span class="brand" aria-hidden="true">${esc(brand(d.title))}</span></div>
   <div class="body"><span class="cat">${esc(d.cat)}</span><h3>${esc(d.title)}</h3><span class="price">${eur(d.price)}</span>
   <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ver en Amazon</a></div></article>`;
 }
