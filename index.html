@@ -7,6 +7,11 @@
 <meta name="description" content="Los productos más vendidos de Amazon.es en 21 categorías, actualizados: tecnología, hogar, belleza, deporte, juguetes, mascotas y más.">
 <meta property="og:title" content="TrendPulseShop · Lo más vendido en Amazon.es">
 <meta property="og:description" content="Más de 1.200 productos que más se compran en España, por categorías.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pantoas13.github.io/trendpulseshop/">
+<meta property="og:image" content="https://pantoas13.github.io/trendpulseshop/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2B32E8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232B32E8'/%3E%3Cpath d='M4 17h6l3-8 5 15 3-7h7' fill='none' stroke='%23FFC530' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,9 +59,10 @@ button,input,select{font:inherit;color:inherit}
 .sec-h h2{font-family:Unbounded,sans-serif;font-weight:700;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.03em}
 .sec-h span{color:var(--muted);font-size:14px}
 .rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:14px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x mandatory;scrollbar-width:thin}
-.champ{scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;text-decoration:none;background:var(--cobalt);color:#fff;border-radius:22px;padding:16px;min-height:200px;position:relative;overflow:hidden}
-.champ:nth-child(3n+2){background:var(--magenta)}
-.champ:nth-child(3n+3){background:#14A06F}
+.champ{scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;text-decoration:none;background:#1a1f5c center/cover;color:#fff;border-radius:22px;padding:16px;min-height:240px;position:relative;overflow:hidden;isolation:isolate}
+.champ::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(43,50,232,.55),rgba(13,16,51,.92))}
+.champ:nth-child(3n+2)::before{background:linear-gradient(180deg,rgba(229,0,126,.5),rgba(40,6,40,.92))}
+.champ:nth-child(3n+3)::before{background:linear-gradient(180deg,rgba(20,160,111,.5),rgba(6,36,30,.92))}
 .champ .em{font-family:Unbounded,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.04em;line-height:1.05;position:relative}
 .champ .c{font-size:13px;font-weight:800;opacity:.85}
 .champ .t{font-weight:700;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -78,11 +84,15 @@ button,input,select{font:inherit;color:inherit}
 /* grid */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:8px}
 .card{background:var(--surface);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
-.tile{height:128px;display:flex;align-items:flex-end;padding:0 14px 12px;position:relative}
-.brand{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(18px,2.2vw,24px);letter-spacing:-.04em;line-height:1;color:var(--ink);opacity:.85;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:100%}
-.rank{position:absolute;left:12px;top:8px;font-family:Unbounded,sans-serif;font-weight:800;font-size:30px;letter-spacing:-.04em;color:var(--ink);opacity:.9}
+.tile{height:150px;display:flex;align-items:flex-end;padding:0 14px 12px;position:relative;overflow:hidden;background-size:cover;background-position:center}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .tile img{transform:scale(1.05)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,40,.35) 0%,rgba(10,12,40,0) 35%,rgba(10,12,40,.75) 100%)}
+.tile>span{position:relative;z-index:1}
+.brand{font-family:Unbounded,sans-serif;font-weight:800;font-size:clamp(18px,2.2vw,24px);letter-spacing:-.04em;line-height:1;color:#fff;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:100%;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.tile>.rank{position:absolute;left:12px;top:8px;z-index:1;font-family:Unbounded,sans-serif;font-weight:800;font-size:30px;letter-spacing:-.04em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.45)}
 .rank small{font-size:14px;font-weight:700;vertical-align:top;margin-right:1px}
-.hot{position:absolute;right:10px;top:10px;background:var(--magenta);color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:3px 9px}
+.tile>.hot{position:absolute;z-index:1;right:10px;top:10px;background:var(--magenta);color:#fff;font-size:12px;font-weight:800;border-radius:999px;padding:3px 9px}
 .body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
 .cat{font-size:13px;font-weight:700;color:var(--muted)}
 .card h3{font-size:15px;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -107,7 +117,7 @@ footer .wrap{max-width:900px}
   .logo{font-size:15px;gap:7px}.logo svg{width:28px;height:28px}.search input{padding-left:38px;height:40px}.search svg{left:13px}.theme{width:40px;height:40px}
   .hero{padding-top:34px;padding-bottom:20px}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .tile{height:92px;padding:0 10px 10px}.brand{font-size:17px}.rank{font-size:24px}
+  .tile{height:118px;padding:0 10px 10px}.brand{font-size:17px}.tile>.rank{font-size:24px}.rank{font-size:24px}
   .body{padding:10px 10px 12px}.card h3{font-size:14px}.price{font-size:18px}
   .go{height:40px;font-size:14px}
   .join{grid-template-columns:1fr}
@@ -160,6 +170,7 @@ footer .wrap{max-width:900px}
 
 <footer><div class="wrap">
   <p>TrendPulseShop participa en el Programa de Afiliados de Amazon EU, un programa de publicidad para afiliados diseñado para ofrecer a sitios web un modo de obtener comisiones por publicidad, publicitando e incluyendo enlaces a Amazon.es. Como Afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.</p>
+  <p style="margin-top:10px">Las fotos son ilustrativas de cada categoría (Unsplash); la foto exacta de cada producto la verás en Amazon.</p>
   <p style="margin-top:10px">Los rankings y precios se tomaron de «Los más vendidos» de Amazon.es en la fecha indicada y pueden haber cambiado. El precio y la disponibilidad válidos son los que muestra Amazon en el momento de la compra.</p>
 </div></footer>
 
@@ -1395,6 +1406,10 @@ Libros|8418609230|77|El ladrón de hojas (Miau)|16.1
 Libros|B091DG4LF2|78|Sonetos del amor oscuro: Federico García Lorca|5.75
 Libros|0349450617|79|Threshing Day (Limited Deluxe Edition)|27.22
 Libros|8466373004|80|Padre Rico, padre Pobre (edición actualizada)|11.35`;
+/* Fotos de ambiente por categoría (Unsplash, licencia libre) */
+const PHOTOS = {"Alimentación":["photo-1504630083234-14187a9df0f5","photo-1655979283362-535e6a167a53","photo-1612880202987-b1ec29fb0839","photo-1530268430791-f7d3be9b5f52"],"Bebé":["photo-1613685301918-59b1039422cc","photo-1505043203398-7e4c111acbfa","photo-1586102728466-46b99b3bc411","photo-1770831208117-c0dd9469e95d"],"Belleza":["photo-1608068811588-3a67006b7489","photo-1583209814683-c023dd293cc6","photo-1670201203208-055d6d79db4a","photo-1612817288484-6f916006741a"],"Bricolaje":["photo-1426927308491-6380b6a9936f","photo-1671040690726-b78261eff126","photo-1522832712787-3fbd36c9fe2d","photo-1731694411560-050e5b91e943"],"Coche y moto":["photo-1533630217389-3a5e4dff5683","photo-1625690180114-5530b1304127","photo-1610647752706-3bb12232b3ab","photo-1583573278124-e8d4fd3edf3c"],"Deporte":["photo-1583454110551-21f2fa2afe61","photo-1584735935682-2f2b69dff9d2","photo-1544033527-b192daee1f5b","photo-1638536532686-d610adfc8e5c"],"Dispositivos Amazon":["photo-1760087616415-62270db23966","photo-1593784991095-a205069470b6","photo-1562851529-482d8189f5a5","photo-1604914417296-7a813352ae9d"],"Electrodomésticos":["photo-1484154218962-a197022b5858","photo-1586208958839-06c17cacdf08","photo-1602028915047-37269d1a73f7","photo-1588854337115-1c67d9247e4d"],"Electrónica":["photo-1579586337278-3befd40fd17a","photo-1434493789847-2f02dc6ca35d","photo-1461141346587-763ab02bced9","photo-1434494878577-86c23bcb06b9"],"Hogar y cocina":["photo-1541004995602-b3e898709909","photo-1612152605347-f93296cb657d","photo-1622429420441-60dd67f737a6","photo-1703783010857-9bd7a7b97c50"],"Iluminación":["photo-1679205700241-bd122d6beaa3","photo-1542681575-352258e0c854","photo-1701281941392-fd6c2d8d652b","photo-1731019801529-ae2632811136"],"Informática":["photo-1499951360447-b19be8fe80f5","photo-1510519138101-570d1dca3d66","photo-1616440347437-b1c73416efc2","photo-1626968361222-291e74711449"],"Instrumentos musicales":["photo-1564186763535-ebb21ef5277f","photo-1510915361894-db8b60106cb1","photo-1511379938547-c1f69419868d","photo-1516924962500-2b4b3b99ea02"],"Jardín":["photo-1444392061186-9fc38f84f726","photo-1727358572955-3d66cd0d5876","photo-1737740439064-bd1e9b041677","photo-1693479291707-21b5f8eb88fd"],"Juguetes":["photo-1596461404969-9ae70f2830c1","photo-1599623560574-39d485900c95","photo-1515488042361-ee00e0ddd4e4","photo-1545558014-8692077e9b5c"],"Libros":["photo-1610116306796-6fea9f4fae38","photo-1506880018603-83d5b814b5a6","photo-1513185041617-8ab03f83d6c5","photo-1495446815901-a7297e633e8d"],"Mascotas":["photo-1561037404-61cd46aa615b","photo-1623387641168-d9803ddd3f35","photo-1450778869180-41d0601e046e","photo-1573435567032-ff5982925350"],"Moda":["photo-1542291026-7eec264c27ff","photo-1608231387042-66d1773070a5","photo-1600185365483-26d7a4cc7519","photo-1549298916-b41d501d3772"],"Oficina":["photo-1566699270403-3f7e3f340664","photo-1500067803284-4304564c8655","photo-1725465119917-e20a0f5a54f2","photo-1700451761309-656bd9439443"],"Salud":["photo-1707129785947-ddc627a8bab9","photo-1664956618021-73c47736845e","photo-1732900293895-233f769299b3","photo-1565071783280-719b01b29912"],"Videojuegos":["photo-1612287230202-1ff1d85d1bdf","photo-1493711662062-fa541adb3fc8","photo-1552820728-8b83bb6b773f","photo-1600861194942-f883de0dfe96"]};
+const META_PIXEL_ID = ""; /* pega aquí el ID de tu Píxel de Meta cuando lo tengas */
+const img=(d,w=480,h=300)=>{const a=PHOTOS[d.cat];return a?`https://images.unsplash.com/${a[d.id%a.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=70`:""};
 
 const DEALS = DATA.trim().split("\n").map((l,i)=>{const p=l.split("|");return {id:i,cat:p[0],icon:ICONS[p[0]]||"🛒",asin:p[1],rank:+p[2],title:p.slice(3,-1).join(" "),price:+p[p.length-1],link:`https://www.amazon.es/dp/${p[1]}?tag=${AFFILIATE_TAG}`}});
 const CATS=[...new Set(DEALS.map(d=>d.cat))];
@@ -1409,7 +1424,7 @@ const PAGE=24; let cat="Todas", sort="rank", query="", shown=PAGE;
 $("#nprod").textContent=DEALS.length.toLocaleString("es-ES");$("#ncat").textContent=CATS.length;$("#pdate").textContent=PRICE_DATE;
 
 const best={};DEALS.forEach(d=>{if(!best[d.cat]||d.rank<best[d.cat].rank)best[d.cat]=d});
-$("#rail").innerHTML=Object.values(best).map(d=>`<a class="champ" href="${d.link}" target="_blank" rel="sponsored noopener"><span class="one" aria-hidden="true">1</span><span class="em" aria-hidden="true">${esc(brand(d.title))}</span><span class="c">${esc(d.cat)}</span><span class="t">${esc(d.title)}</span><span class="p">${eur(d.price)}</span></a>`).join("");
+$("#rail").innerHTML=Object.values(best).map(d=>`<a class="champ" style="background-image:url(${img(d,520,520)})" href="${d.link}" target="_blank" rel="sponsored noopener"><span class="one" aria-hidden="true">1</span><span class="em" aria-hidden="true">${esc(brand(d.title))}</span><span class="c">${esc(d.cat)}</span><span class="t">${esc(d.title)}</span><span class="p">${eur(d.price)}</span></a>`).join("");
 
 function chips(){
   $("#chips").innerHTML=["Todas",...CATS].map(c=>`<button class="chip" data-c="${esc(c)}" aria-pressed="${c===cat}">${esc(c)}</button>`).join("");
@@ -1418,7 +1433,7 @@ $("#chips").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.
 document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{sort=b.dataset.s;shown=PAGE;document.querySelectorAll("[data-s]").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
 
 function card(d){
-  return `<article class="card"><div class="tile" style="background:hsl(${HUE[d.cat]} var(--tile-s) var(--tile-l))"><span class="rank"><small>#</small>${d.rank}</span>${d.rank<=3?'<span class="hot">Top 3</span>':""}<span class="brand" aria-hidden="true">${esc(brand(d.title))}</span></div>
+  return `<article class="card"><div class="tile" style="background-color:hsl(${HUE[d.cat]} var(--tile-s) var(--tile-l))"><img src="${img(d)}" alt="" loading="lazy" decoding="async" onerror="this.remove()"><span class="rank"><small>#</small>${d.rank}</span>${d.rank<=3?'<span class="hot">Top 3</span>':""}<span class="brand" aria-hidden="true">${esc(brand(d.title))}</span></div>
   <div class="body"><span class="cat">${esc(d.cat)}</span><h3>${esc(d.title)}</h3><span class="price">${eur(d.price)}</span>
   <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ver en Amazon</a></div></article>`;
 }
@@ -1437,6 +1452,9 @@ $("#nl").onsubmit=e=>{e.preventDefault();e.target.innerHTML='<p style="font-weig
 $("#theme").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("tps-theme",r.dataset.theme)}catch(e){}};
 try{const s=localStorage.getItem("tps-theme");if(s)document.documentElement.dataset.theme=s}catch(e){}
 chips();render();
+/* Píxel de Meta (solo si pones tu ID arriba) */
+if(META_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',META_PIXEL_ID);fbq('track','PageView');
+document.addEventListener('click',e=>{const a=e.target.closest('a[rel~="sponsored"]');if(a)fbq('track','ViewContent',{content_name:a.closest('.card,.champ')?.querySelector('h3,.t')?.textContent||''})});}
 </script>
 </body>
 </html>
