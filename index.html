@@ -97,8 +97,14 @@ button,input,select{font:inherit;color:inherit}
 .cat{font-size:13px;font-weight:700;color:var(--muted)}
 .card h3{font-size:15px;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .price{margin-top:auto;font-family:Unbounded,sans-serif;font-weight:700;font-size:22px;letter-spacing:-.03em}
-.go{display:flex;align-items:center;justify-content:center;gap:6px;height:44px;border-radius:12px;background:#F2591C;color:#fff;font-weight:800;text-decoration:none;font-size:15px}
-.go:hover{filter:brightness(.95)}
+.go{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:7px;height:46px;border-radius:12px;background:linear-gradient(100deg,#FF7A1A 0%,#F2361C 55%,#E5007E 100%);color:#fff;font-weight:800;text-decoration:none;font-size:15px;box-shadow:0 6px 18px rgba(242,54,28,.35);transition:transform .15s ease,box-shadow .15s ease}
+.go::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.8s ease-in-out infinite}
+.card:nth-child(3n+2) .go::after{animation-delay:1.2s}.card:nth-child(3n+3) .go::after{animation-delay:2.4s}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+.go .eye{display:inline-block;transition:transform .2s}
+.go:hover .eye{transform:scale(1.25) rotate(-8deg)}
+.go:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(242,54,28,.45)}
+.go:active{transform:translateY(0)}
 .more{display:flex;justify-content:center;margin:26px 0 10px}
 .more button{height:50px;padding:0 28px;border-radius:999px;border:0;background:var(--cobalt);color:var(--cobalt-ink);font-weight:800;font-size:16px;cursor:pointer}
 .empty{grid-column:1/-1;text-align:center;padding:50px 16px;color:var(--muted)}
@@ -123,7 +129,7 @@ footer .wrap{max-width:900px}
   .join{grid-template-columns:1fr}
 }
 @media (max-width:420px){.search input::placeholder{color:transparent}}
-@media (prefers-reduced-motion:reduce){.pulse path{animation:none;stroke-dashoffset:0}.pulse circle{animation:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.go::after{animation:none;display:none}.go:hover{transform:none}.pulse path{animation:none;stroke-dashoffset:0}.pulse circle{animation:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -1435,7 +1441,7 @@ document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{sort=b.dataset.s
 function card(d){
   return `<article class="card"><div class="tile" style="background-color:hsl(${HUE[d.cat]} var(--tile-s) var(--tile-l))"><img src="${img(d)}" alt="" loading="lazy" decoding="async" onerror="this.remove()"><span class="rank"><small>#</small>${d.rank}</span>${d.rank<=3?'<span class="hot">Top 3</span>':""}<span class="brand" aria-hidden="true">${esc(brand(d.title))}</span></div>
   <div class="body"><span class="cat">${esc(d.cat)}</span><h3>${esc(d.title)}</h3><span class="price">${eur(d.price)}</span>
-  <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ir al chollo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div></article>`;
+  <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ver precio de hoy <span class="eye" aria-hidden="true">👀</span></a></div></article>`;
 }
 function render(){
   const words=query.split(/\s+/).filter(Boolean);
@@ -1502,7 +1508,7 @@ const showQuick=(arr=QUICK)=>{quick.innerHTML=arr.map(q=>`<button type="button">
 const FAQ=[
  {k:/hola|buenas|hey|saludos/,a:()=>"¡Hola! 👋 Puedo contarte cómo funciona la web o buscarte productos. Escribe, por ejemplo, <b>freidora</b>, <b>regalo para niño</b> o <b>auriculares menos de 30 €</b>."},
  {k:/gracias|genial|perfecto|vale/,a:()=>"¡De nada! Si necesitas algo más, aquí estoy. 🙌"},
- {k:/como compr|comprar|pedido|pedir|carrito|donde compr/,a:()=>"Es muy fácil:<br>1. Busca el producto aquí.<br>2. Pulsa <b>Ir al chollo</b>.<br>3. Se abre la ficha en Amazon.es y lo compras allí con tu cuenta, como siempre.<br>Nosotros no vendemos ni cobramos nada: solo te mostramos lo más vendido."},
+ {k:/como compr|comprar|pedido|pedir|carrito|donde compr/,a:()=>"Es muy fácil:<br>1. Busca el producto aquí.<br>2. Pulsa <b>Ver precio de hoy</b>.<br>3. Se abre la ficha en Amazon.es y lo compras allí con tu cuenta, como siempre.<br>Nosotros no vendemos ni cobramos nada: solo te mostramos lo más vendido."},
  {k:/precio|caro|cuesta|vale |oferta|descuento|cambi/,a:()=>`Los precios se tomaron de Amazon.es el <b>${PRICE_DATE}</b>. En Amazon cambian a menudo, así que el precio que vale es el que ves en la ficha al comprar. A veces está incluso más barato. 😉`},
  {k:/envio|envia|llega|entrega|prime|tarda|gastos/,a:()=>"El envío lo hace <b>Amazon</b> (o el vendedor de la ficha). El plazo y los gastos aparecen en la ficha antes de pagar. Con <b>Prime</b>, muchos productos llegan en 1 día y con envío gratis."},
  {k:/devol|devuelv|garant|roto|defect|reembols/,a:()=>"Las devoluciones y la garantía las gestiona <b>Amazon</b> desde tu cuenta (Mis pedidos → Devolver o reemplazar). En muchos productos tienes 30 días para devolver; mira las condiciones en la ficha de cada producto."},
@@ -1510,7 +1516,7 @@ const FAQ=[
  {k:/quien|que es|que sois|afiliad|comision|ganais|gratis/,a:()=>"TrendPulseShop es una guía de los productos más vendidos de Amazon.es, ordenados por categoría. Participamos en el Programa de Afiliados de Amazon: si compras desde nuestros enlaces, Amazon nos paga una pequeña comisión <b>sin que tú pagues nada extra</b>."},
  {k:/actualiz|cada cuanto|nuevo|ranking/,a:()=>`El ranking sale de «Los más vendidos» de Amazon.es. La última actualización fue el <b>${PRICE_DATE}</b> y lo renovamos con frecuencia.`},
  {k:/contact|hablar|correo|email|telefono|whatsapp|persona/,a:()=>"Puedes escribirnos por mensaje privado en nuestra página de Facebook <b>TrendPulseShop</b>. Para dudas sobre un pedido, lo más rápido es el servicio de atención de Amazon desde <b>Mis pedidos</b>."},
- {k:/foto|imagen/,a:()=>"Las fotos de las tarjetas son ilustrativas de cada categoría. La foto exacta del producto la verás en su ficha de Amazon al pulsar <b>Ir al chollo</b>."},
+ {k:/foto|imagen/,a:()=>"Las fotos de las tarjetas son ilustrativas de cada categoría. La foto exacta del producto la verás en su ficha de Amazon al pulsar <b>Ver precio de hoy</b>."},
 ];
 const GIFT={nino:["Juguetes"],nina:["Juguetes"],bebe:["Bebé"],mama:["Belleza","Hogar y cocina"],madre:["Belleza","Hogar y cocina"],papa:["Bricolaje","Electrónica","Coche y moto"],padre:["Bricolaje","Electrónica","Coche y moto"],gamer:["Videojuegos"],deport:["Deporte"],mascota:["Mascotas"],perro:["Mascotas"],gato:["Mascotas"],lector:["Libros"],musica:["Instrumentos musicales"]};
 const STOP=new Set("quiero busco buscar necesito un una unos unas el la los las de del para por con sin me algo que hay tienes teneis ver mas menos euros euro eur barato barata baratos baratas bueno buena mejor mejores regalo regalar ideas idea".split(" "));
