@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TrendPulseShop · Lo más vendido en Amazon.es hoy</title>
-<meta name="description" content="Los productos más vendidos de Amazon.es en 21 categorías, actualizados: tecnología, hogar, belleza, deporte, juguetes, mascotas y más.">
+<meta name="description" content="Los productos más vendidos de Amazon.es en 45 categorías: móviles, portátiles, tablets, TV, audio, informática, hogar, belleza, deporte, juguetes, mascotas y más.">
 <meta property="og:title" content="TrendPulseShop · Lo más vendido en Amazon.es">
 <meta property="og:description" content="Más de 1.200 productos que más se compran en España, por categorías.">
 <meta property="og:type" content="website">
@@ -131,6 +131,7 @@ footer .wrap{max-width:900px}
 @media (max-width:420px){.search input::placeholder{color:transparent}}
 @media (prefers-reduced-motion:reduce){.go::after{animation:none;display:none}.go:hover{transform:none}.pulse path{animation:none;stroke-dashoffset:0}.pulse circle{animation:none;opacity:1}}
 .guias{flex:none;text-decoration:none;font-weight:800;font-size:14px;padding:9px 14px;border-radius:999px;background:var(--sun);color:#2a1f00;white-space:nowrap}
+.dealbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.dealbar a{display:block;padding:16px 18px;border-radius:14px;background:linear-gradient(135deg,#ff6a00,#ee0979);color:#fff;text-decoration:none;box-shadow:0 8px 20px rgba(238,9,121,.18);transition:transform .15s}.dealbar a:hover{transform:translateY(-2px)}.dealbar b{display:block;font-size:1.02rem}.dealbar span{font-size:.85rem;opacity:.9}
 </style>
 </head>
 <body>
@@ -147,6 +148,17 @@ footer .wrap{max-width:900px}
   <p>Los productos más vendidos de Amazon.es, categoría por categoría. Encuentra lo que todo el mundo está comprando y ve directo a su ficha.</p>
   <svg class="pulse" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 H380 L410 60 L432 18 L458 84 L486 8 L512 72 L530 60 H760 L782 60 L800 40 L818 60 H1186"/><circle cx="1186" cy="60" r="9"/></svg>
   <div class="facts"><span class="fact"><strong id="nprod"></strong> productos</span><span class="fact"><strong id="ncat"></strong> categorías</span><span class="fact">Precios vistos el <strong id="pdate"></strong></span></div>
+</section>
+
+<section class="wrap" aria-labelledby="h-deals">
+  <div class="sec-h"><h2 id="h-deals">🔥 Ofertas de hoy en Amazon</h2><span>Se actualizan solas en Amazon</span></div>
+  <div class="dealbar">
+    <a href="https://www.amazon.es/deals?tag=trendpulsesho-21" target="_blank" rel="sponsored noopener"><b>Todas las ofertas del día</b><span>Descuentos y ofertas flash</span></a>
+    <a href="https://www.amazon.es/deals?tag=trendpulsesho-21&bubble-id=deals-collection-electronics" target="_blank" rel="sponsored noopener"><b>📱 Ofertas en tecnología</b><span>Móviles, audio, TV y más</span></a>
+    <a href="https://www.amazon.es/deals?tag=trendpulsesho-21&bubble-id=deals-collection-computers" target="_blank" rel="sponsored noopener"><b>💻 Ofertas en informática</b><span>Portátiles, monitores, SSD</span></a>
+    <a href="https://www.amazon.es/gp/movers-and-shakers?tag=trendpulsesho-21" target="_blank" rel="sponsored noopener"><b>📈 Productos en tendencia</b><span>Los que más suben hoy</span></a>
+    <a href="https://www.amazon.es/outlet?tag=trendpulsesho-21" target="_blank" rel="sponsored noopener"><b>🏷️ Outlet</b><span>Precios rebajados</span></a>
+  </div>
 </section>
 
 <section class="wrap" aria-labelledby="h-top">
@@ -185,8 +197,8 @@ footer .wrap{max-width:900px}
 <script>
 /* ===== CONFIGURACIÓN ===== */
 const AFFILIATE_TAG = "trendpulsesho-21";
-const PRICE_DATE = "11/10/2026";
-const ICONS = {"Alimentación": "☕", "Bebé": "🍼", "Belleza": "💄", "Bricolaje": "🔧", "Coche y moto": "🚗", "Deporte": "🏋️", "Dispositivos Amazon": "📺", "Electrónica": "🔋", "Electrodomésticos": "🧺", "Hogar y cocina": "🏠", "Iluminación": "💡", "Informática": "💻", "Instrumentos musicales": "🎸", "Jardín": "🌿", "Juguetes": "🧸", "Moda": "👟", "Oficina": "✏️", "Mascotas": "🐾", "Salud": "💪", "Videojuegos": "🎮", "Libros": "📚"};
+const PRICE_DATE = "13/10/2026";
+const ICONS = {"Alimentación": "☕", "Bebé": "🍼", "Belleza": "💄", "Bricolaje": "🔧", "Coche y moto": "🚗", "Deporte": "🏋️", "Dispositivos Amazon": "📺", "Electrónica": "🔋", "Electrodomésticos": "🧺", "Hogar y cocina": "🏠", "Iluminación": "💡", "Informática": "💻", "Instrumentos musicales": "🎸", "Jardín": "🌿", "Juguetes": "🧸", "Moda": "👟", "Oficina": "✏️", "Mascotas": "🐾", "Salud": "💪", "Videojuegos": "🎮", "Libros": "📚", "Móviles y accesorios": "📱", "Auriculares y audio portátil": "🎧", "Audio y Hi-Fi": "🔊", "TV y home cinema": "📺", "Fotografía y vídeo": "📷", "Electrónica para coche": "🚘", "Pilas y cargadores": "🔌", "Portátiles": "💻", "Tablets": "📲", "Monitores": "🖥️", "Componentes de PC": "🧩", "Almacenamiento": "💾", "Redes y wifi": "📶", "Impresoras": "🖨️", "Accesorios de informática": "⌨️", "Ordenadores de sobremesa": "🖥️", "Reacondicionados": "♻️", "Software": "💿", "Grandes electrodomésticos": "🧊", "Industria y ciencia": "🔬", "Películas y series": "🎬", "CD y vinilos": "💽", "Handmade": "🧶", "eBooks Kindle": "📖"};
 /* categoría|ASIN|puesto|título|precio */
 const DATA = `Alimentación|B01DUW8BPA|1|Leche Pascual - Leche Entera - Bienestar Animal - Pack 6 x 1L - Ideal|7.38
 Alimentación|B00A49XRHU|2|Gourmet Latino - Pack de 36 Bocadillos de Guayaba - 950 g - Sabor|6.09
@@ -1421,11 +1433,1164 @@ Libros|0194065642|76|Synchronize 4 Workbook|30
 Libros|842337050X|77|Todas las noches, todas las ciudades: Los Valles Tranquilos|23.65
 Libros|8410138409|78|La Biblioteca de la Medianoche (bolsillo) (AdN Editorial|11.87
 Libros|B0H4R7FVTL|79|Un regalo de los dioses: Neurociencia de la lectura: 96|17.05
-Libros|8468334596|80|Desconocidos: 57 (PERISCOPIO)|12.82`;
+Libros|8468334596|80|Desconocidos: 57 (PERISCOPIO)|12.82
+Móviles y accesorios|B0F8VZ7QVX|1|NEW'C Protector Pantalla para iPhone 17, 17 Pro/16 Pro, Cristal Templado|7.99
+Móviles y accesorios|B0FDKXNZCQ|2|TOCOL Funda para iPhone 17 (6,3"), Compatible con MagSafe, Titanio Negro Imanes Integrados|9.02
+Móviles y accesorios|B0FJL2V7XR|3|JETech Protector Pantalla para iPhone 18 Pro/17 Pro, 3 Unidades 9H Cristal Vidrio Templado|9.99
+Móviles y accesorios|B08N5ZV798|4|Xiaomi REDMI Buds 8 Active, Auriculares semiintraurales, 37 h, Blanco Driver de Titanio 14|15.99
+Móviles y accesorios|B0B7NTY2S6|5|SanDisk 128GB Ultra, Tarjeta de memoria microSDXC, hasta 140 MB/s + adaptador SD, con Clas|26.49
+Móviles y accesorios|B0DCNWN8NZ|6|Apple EarPods (USB-C)|18.98
+Móviles y accesorios|B0HBC86SN3|7|Qasyfanc Funda para iPhone 18 Pro con Protector Pantalla, Transparente Compatible con MagS|8.99
+Móviles y accesorios|B08J7PQGD7|8|INIU Cable USB C, 3-Pack [2m+2m+0,5m] QC 3,1A Carga Rapida USB C Cargador Nylon Cargador|9.99
+Móviles y accesorios|B0H5P1CSF1|9|TOCOL Protector Pantalla para iPhone 18 Pro, Sin Burbujas Instalación Fácil, Cristal Templ|10.82
+Móviles y accesorios|B0GJTFY58R|10|Apple AirTag (2.ª generación): Permite localizar Llaves, Carteras y más; función de locali|26.99
+Móviles y accesorios|B0D8SDJVSN|11|Cargador USB C 40W, Cargador iPhone Carga Rapida Múltiple USBC Enchufe PD+QC Rápido Pared|10.99
+Móviles y accesorios|B0HBVLSLVQ|12|JETech Protector Pantalla de Privacidad para iPhone 18 Pro, 2 Unidades Antiespía, 9H+ Cris|11.99
+Móviles y accesorios|B0DCYR5VNR|14|INIU Power Bank, Pequeño 20000mAh 45W Carga Rapida Travel Batería Externa Cable USB C inte|29.99
+Móviles y accesorios|B0DCW7MST8|15|SanDisk 128GB Extreme Go Tarjeta Micro SD + adaptador SD (Para smartphones y tabletas Andr|27.99
+Móviles y accesorios|B0HLCXYKYG|16|Auriculares Inalámbricos Bluetooth 5.4, Cascos Inalambricos Sonido HiFi Estéreo, Cancelaci|23.99
+Móviles y accesorios|B0BVZFVH7Y|17|LISEN Cargador Coche Carga Rápida Mechero USB C 69W+60W Cable, Accesorios Coche Camper Ele|7.7
+Móviles y accesorios|B0DXF4CDWQ|18|RISEOFLE 180cm Tripode para Movil & Palo Selfie - Tripode Movil Extensible Portátil con Ma|16.99
+Móviles y accesorios|B0H6JMQJVW|19|Cargador USB C 45W Cargador Carga Rapida para Samsung Galaxy S26 S25 Ultra S24 S23 S22 S21|10.82
+Móviles y accesorios|B0H9KXTM5S|20|FLLAO 4 en 1 Funda para iPhone 18 Pro 6.3", Transparente 2 Protector Pantalla y 1 Protecto|8.99
+Móviles y accesorios|B0C3HCD34R|21|Soundcore Q20i de Anker Cascos Bluetooth con ANC Híbrida, Hi-Res, 40H Personalización vía|37.99
+Móviles y accesorios|B09ZTXVNVD|22|Metapen A8 Lápiz para iPad 2018-2026,Atracción Magnética,Rechazo Palma Alta Precisión,Idea|18.99
+Móviles y accesorios|B0G5L9LQQC|23|NEW'C Protector Pantalla para iPhone 17 Pro + Protector de Camara|8.99
+Móviles y accesorios|B0CKMS545P|24|FLLAO Funda para iPhone 15, Compatible MagSafe, con 2 Piezas Protector de Pantalla Cristal|8.99
+Móviles y accesorios|B0CRTYZG5C|25|Soundcore P30i de Anker Auriculares con Cancelación de Ruido, 45h Graves potentes, Estuche|46.44
+Móviles y accesorios|B09LPXJ3RX|26|Anker 333 Nylon Cable USB C Carga Rapida 100W, PD 3.0 [1,8m] Negro,1 Pack Nylon, 12.000 fl|6.99
+Móviles y accesorios|B0BTJ8ZXG5|27|Sony WH-CH520 Auriculares de diadema inalámbricos Bluetooth, diseño ligero, 50 h de baterí|26.9
+Móviles y accesorios|B0HDQK4LM6|28|Power Bank 20000 mAh 22,5 W PD3.0 QC4.0, batería Externa para móvil con Carga rápida PD20W|13.99
+Móviles y accesorios|B08N5WP9NP|29|Xiaomi REDMI Buds 8 Active, Auriculares semiintraurales, 37 h, Negro Driver de Titanio 14|16.7
+Móviles y accesorios|B0CSSQMPWC|30|NEW'C Protector Pantalla para Xiaomi Redmi Note 13 Pro 5G/4G 3 piezas, Transparente, No Co|6.89
+Móviles y accesorios|B0FR4SMRXY|51|Auriculares Inalámbricos Bluetooth 5.4 HiFi Estéreo, Reducción de Ruido ENC 56H Cascos Ina|20.57
+Móviles y accesorios|B0D9QB8N1X|52|NEW'C 3 Piezas, Protector Pantalla para Samsung Galaxy S24 Ultra[no para S24/S24 Plus],Cri|6.99
+Móviles y accesorios|B0DHK6KBGH|53|miracase Soporte Movil Coche [Doble Gancho Metálico Resistente] Suporte Telemovel Carro de|13.29
+Móviles y accesorios|B0FBFHFN1G|54|ivoler Anti-Amarillo Clara Funda para Samsung Galaxy A18 / A17 4G / 5G con 2 Piezas Crista|8.95
+Móviles y accesorios|B0FLJYNTH8|55|Oududianzi-Funda para iPhone 18 Pro / 17 Pro Magsafe Case,Burdeos Funda Trasera Translúcid|12.99
+Móviles y accesorios|B0FHVN3JMJ|56|JETech Funda para iPhone 17 Pro, Anti-Amarillamiento, Transparente Carcasa Protección Anti|10.99
+Móviles y accesorios|B0FNMC82Z1|57|Cargador Carga Rápida para iPhone 14/13/12/11/Pro MAX Plus Mini SE XR X XS, Certificado Ap|10.82
+Móviles y accesorios|B0D84YX465|58|Spigen EZ Fit Protector Pantalla [2 Pack] para iPhone 18 Pro/17 Pro iPhone 17/16 Pro, Cris|20.99
+Móviles y accesorios|B0DMZWD4JP|59|UGREEN HiTune S3 Auriculares Inalámbricos Audifonos Deportivos Clip ENC 30H Auriculares Ab|16.89
+Móviles y accesorios|B0F84D5PRT|60|Power Bank 22.5W 20000mAh Bateria Externa Carga Rapida, Bateria Portatil PD3.0 QC4.0, Powe|14.99
+Móviles y accesorios|B0DBLN4C47|61|Sony WF-C510 Truly Wireless Earbuds|35.5
+Móviles y accesorios|B0BCKHQGJN|62|Auriculares Inalámbricos Bluetooth, Auriculares Bluetooth 5.3, HiFi Estéreo Reducción de R|25.99
+Móviles y accesorios|B0FFTSCSVD|63|Coolpow Soporte Movil Coche para Magsafe [Ventosa Potente & Super Imanes] 360°Ajustable Ma|16.48
+Móviles y accesorios|B0BR3L78XN|64|INIU 240W Cable USB C Carga Rapida, [2m+2m] PD3.0 Cable USB C a Tipo C Nylon Cargador, USB|12.99
+Móviles y accesorios|B0HLKF2Q67|65|Auriculares Inalambricos Deportivos, Auriculares Bluetooth 5.4 HiFi Estéreo con 4 HD Mic|26.99
+Móviles y accesorios|B0DQD457KX|66|INIU 10000mAh Power Bank, Ultra Mini 45W Carga Rápida Bateria Externa Cable USB C Desmonta|33.99
+Móviles y accesorios|B0G8GQG5S6|68|BonYonka Funda de Silicona para OPPO A6/A6X/A6K/4G/5G, Violeta Diseño Ondulado Antigolpes|10.99
+Móviles y accesorios|B0CCDNJS75|69|Auriculares Inalámbricos Bluetooth, Auriculares Bluetooth 5.3, 4 Mic con Reducción de Ruid|25.99
+Móviles y accesorios|B0DKJN5N2J|71|45W Cargador Carga Rapida, 2Pack USB C Cargador Rapido con 2M Cable para Samsung Galaxy S2|19.99
+Móviles y accesorios|B0HL78JYTN|72|Auriculares de Conducción Ósea Auriculares Oreja Abierta Inalámbricos Open-Ear Bluetooth 6|36.99
+Móviles y accesorios|B07PNL5STG|73|INIU Power Bank, Slimmest Alta Velocidad 10000mAh Bateria Externa Apto para Avión, Esencia|19.99
+Móviles y accesorios|B0GRGHSSHK|74|owlhold Funda para Samsung Galaxy S26 Ultra,Funda Avanzado PU Piel [Bloqueo RFID][Tarjetas|10.99
+Móviles y accesorios|B08QVJ2BDF|75|RAVIAD Cable USB C a Lightning 1M [MFi Certificado] Cable Cargador iPhone Carga Rápida Nyl|4.99
+Móviles y accesorios|B0GFVMQWW4|76|JETech Protector Pantalla para Samsung Galaxy S26 Ultra, 3 Unidades 9H Cristal Vidrio Temp|8.99
+Móviles y accesorios|B0HJ9QGRXQ|77|Apple AirPods 5 con Estuche de Carga inalámbrica  y cancelación activa de ruido, aud|158.99
+Móviles y accesorios|B0FXX9ZNTC|78|BSTOEM Cable USB C a Lightning, 1M+2M Cable Cargador iPhone Carga Rápida Cable Tipo C a Li|9.99
+Móviles y accesorios|B0FX4FCP49|79|BSTOEM Cable USB C Carga Rápida,1M+2M Cable USB C a USB C, Tipo C Cable 60W Cable USB C Ca|9.99
+Móviles y accesorios|B0D6BKYVS4|80|Aioneus Cargador USB C, 40W 4-Puertos USBC Enchufe Cargador iPhone Carga Rapida, Múltiple|9.99
+Auriculares y audio portátil|B00NBR70DO|13|Sony MDR-ZX110 - Auriculares cerrados, negro|9.2
+Auriculares y audio portátil|B09LLRNGSD|14|Anker Nano II Cargador Carga Rapida USB C 65W con 3 Puertos PPS Para MacBook Pro, iPad Pro|34.28
+Auriculares y audio portátil|B0FNWCYLZN|15|Soundcore P31i de Anker Auriculares Bluetooth con Cancelación de Ruido Auriculare con Trad|49.79
+Auriculares y audio portátil|B091BRJSRN|16|UGREEN Nexode 65W Cargador USB C Carga Rápida Múltiple Puertos (Gris) 3 Puertos PD 3.0 PPS|21.84
+Auriculares y audio portátil|B08VJ2VH2J|17|INIU Cargador Coche 60W, Carga RÁPIDA Cargador de Automóviles, Accesorios Adaptador de Met|6.99
+Auriculares y audio portátil|B0HDJ8TNY1|18|Auriculares Inalámbricos Bluetooth 5.3 HiFi Estéreo, Reducción de Ruido ENC 48H Cascos Ina|10.99
+Auriculares y audio portátil|B0DZ745RCW|19|Apple Adaptador de Corriente USB-C de 20 W (2025)|19
+Auriculares y audio portátil|B0D9VFRMV6|20|Cargador Carga Rapida para iPhone 17 16 15 Pro MAX Air Plus, iPad Pro/iPad Air, 27W USB C|11.99
+Auriculares y audio portátil|B0FGJPWCW5|21|25W Cargador Carga Rapida, USB C Cargador Carga Rapida para iPhone con 2M C-Lightning Cabl|10.99
+Auriculares y audio portátil|B0HJYTBH4L|51|Inalámbrico Power Bank, Magnético Batería Externa 10000mAh, Cargador Inalámbrico 20W Carga|16.99
+Auriculares y audio portátil|B0GLNSFSTX|52|Auriculares inalámbricos Bluetooth Deportivos, Auriculares Bluetooth 5.4 HiFi Estéreo con|20.99
+Auriculares y audio portátil|B0FLPCM6CB|53|INIU 45W Power Bank, Fino 10000mAh Inalámbrico Magnético Batería Externa Carga Rápida por|25.64
+Auriculares y audio portátil|B0B2VQ462Z|55|Anker 511 Nano 3 Cargador USB-C GAN 30W Carga Rapida PIQ 3.0 PPS, para iPhone 18 17 17 Pro|23.76
+Auriculares y audio portátil|B0DJR2F3BK|56|Cargador para iPhone Carga Rapida de 20W con Cable para iPhone de 1m, Cargador para iPhone|11.99
+Auriculares y audio portátil|B07PPS1RN9|57|INIU 15W Cargador Inalámbrico, Base de Carga Inalámbrica Rápida con LED Luz Adaptativa par|16.14
+Auriculares y audio portátil|B0G3H6P18N|58|Auriculares Inalámbricos Bluetooth 5.3, 72 Horas de Reproducción Auriculares Deportivos co|15.33
+Auriculares y audio portátil|B0D564BWNR|59|2Pcs Cargador USB C, Enchufe 20W Replacement for iPhone 16 15 14 13 12 11 Pro MAX SE XS XR|13.99
+Auriculares y audio portátil|B0DSPVDYQ9|60|UGREEN Nexode 45W Power Bank 20000mAh Batería Externa Portátil Carga Rápida Apto para Avió|27.99
+Auriculares y audio portátil|B0DCZMTJ34|61|Miracase Soporte Movil Coche [Ventosa Potente] Suporte Telemovel Carro Succión Ultra Fuert|15.49
+Auriculares y audio portátil|B0DBHRWRKC|62|XIAOMI Redmi Buds 6 Play - Auriculares inalámbricos, cancelación de Ruido, Ligeros, hasta|15.67
+Auriculares y audio portátil|B0H8VR6KMG|63|BSTOEM Cargador Carga Rapida USB C 40W 2Pack Multiple Enchufe Tipo C Móvil Cabeza Telemove|16.99
+Auriculares y audio portátil|B01MTB55WH|64|Anker Altavoz Bluetooth Potente SoundCore 2, batería de 24 Horas, protección contra el Agu|31.99
+Auriculares y audio portátil|B0F23Q9TD3|65|TNSNK for AirPods 5 / AirPods 4 Case, BA1-Black Soft Silicone, Non-slip, Scratch-resistant|4.98
+Auriculares y audio portátil|B0FRSN8MK5|66|Xiaomi REDMI Buds 8 Lite, Auriculares inalámbricos, ANC, Blanco ANC 42 dB, Driver 12,4 mm|22.99
+Auriculares y audio portátil|B0G5N98LBK|67|Xiaomi REDMI Buds 8 Pro, Auriculares inalámbricos, ANC, Negro ANC 55 dB, Triple Driver, Hi|57.9
+Auriculares y audio portátil|B0GQLKGD1F|68|Anker Nano Cargador iPhone Carga Rapida USB C 45W Inteligente Reconocimiento inteligente|38.99
+Auriculares y audio portátil|B0GXZ35B4F|69|BSTOEM Cargador Carga Rapida USB C 65W 6 Puertos rapido, Múltiple 25W (MAX) Rápido Enchufe|14.39
+Auriculares y audio portátil|B0CR3P1SVL|70|Coolpow Soporte Movil Coche Magsafe [Super imanes] Suporte Telemovel Carro 【360°Rotación】S|11.39
+Auriculares y audio portátil|B07VFT4D6B|71|LENCENT Transmisor FM Bluetooth para Coche, Manos Libres Inalámbrico Reproductor MP3 Coche|16.99
+Auriculares y audio portátil|B0CTH7L29Z|72|JUOVI Power Bank 45W 20000mAh Cargador Portátil Carga Rápida PD QC con 4 Puertos USB (2C 2|29.99
+Auriculares y audio portátil|B0D63H6KKV|73|NOBIS 20000mAh 45W Power Bank con carga rápida PD3.0/QC4.0, pantalla LED, batería portátil|28.49
+Auriculares y audio portátil|B0F2FWKY7P|74|Podoru Power Bank para MagSafe, 10000mAh Magnetico Bateria Portatil iPhone Integrada con 2|27.99
+Auriculares y audio portátil|B08312C92W|75|HAISSKY Brazalete Movil Running con Bolsa de Auriculares, hasta 6,9" Brazalete Deportivo A|13.99
+Auriculares y audio portátil|B0DB1753RZ|76|Soundcore Select 4 Go de Anker Altavoz Bluetooth Portátil Mini, 20 H Altavoz para ducha fl|24.99
+Auriculares y audio portátil|B0HFZYWLCP|77|Auriculares Inalambricos Bluetooth, Cascos lnalámbricos Bluetooth 5.3, 50H HiFi Estéreo co|10.99
+Auriculares y audio portátil|B0FX9HMGWS|78|INIU Power Bank, Pequeño 20000mAh 22,5W Batería Externa Carga Rápida Bateria Portatil con|29.99
+Auriculares y audio portátil|B0GT66C9CL|79|Xiaomi 100W Charging Combo (Tipo-A) EU|24.99
+Auriculares y audio portátil|B0GQLWNHY9|80|XIAOMI Redmi Headphones Neo, Auriculares Inalámbricos, ANC, Negro Driver 70 mm, Hi-Res, re|44.9
+Audio y Hi-Fi|B09B94956P|2|Echo Dot (Última generación) Altavoz inteligente wifi y Bluetooth, con sonido más potente|82.99
+Audio y Hi-Fi|B0D59ZCYFF|5|para Mando Samsung Smart TV, Universal para Original Samsung Televisión Mando a Distancia|11.98
+Audio y Hi-Fi|B09MYWMSGZ|7|Sniokco 10K 8K 4K Cable HDMI 2.1 48Gbps 1 Metros Certificado Alta Velocidad Compatible 0.0|9.49
+Audio y Hi-Fi|B0CFFFSFFN|12|UGREEN 8K Cable HDMI 2.1 Certificado 8K 60Hz 4K 240Hz 48Gbps (2M) Ultra Alta Velocidad Alu|9.99
+Audio y Hi-Fi|B0D1XP8JBT|13|Universal-para-Samsung-Smart-TV-Mando, Mando a Distancia para Samsung TV Recambio para Sam|11.99
+Audio y Hi-Fi|B0GPPRPRM5|14|JBL GO 5 Altavoz Bluetooth ultraportátil con Sonido Big JBL Pro y Graves Fuertes, empareja|44.9
+Audio y Hi-Fi|B07T4N7NTX|15|Universal para Mando LG Smart TV, Mando a Distancia para Televisión LG Pilas Incluidas, Ma|11.98
+Audio y Hi-Fi|B0B826QSH1|16|Mando Universal de Reemplazo para LG Smart TV, Control Remoto Infrarrojo Mejorado con Boto|11.99
+Audio y Hi-Fi|B004BEMD5Q|18|KabelDirekt – Cable HDMI 8K & 4K – 2m – Tecnología Flexcore alemana 10K, 8K@60Hz & 4K@120H|7.49
+Audio y Hi-Fi|B0CCVTXB59|21|TEFLOTY Cable HDMI 2.1, Cable HDMI 8K de Alta Velocidad Ultra HD 48Gbps 8K@60Hz 4K@120Hz 7|6.99
+Audio y Hi-Fi|B014I8SSD0|22|Amazon Basics Cable HDMI 4K de 1.8 m, Alta Velocidad de 18 Gbps con Ethernet, 4K@60 Hz, 21|7.81
+Audio y Hi-Fi|B0B5LRB1Z2|23|Mando Universal para Samsung Smart TV LCD LED QLED 4K HDR TV - No se Necesita configuració|9.99
+Audio y Hi-Fi|B0HLZFTTDR|26|Mando a Distancia de Voz de Repuesto para AMZ F-ire TV S-Tick (2 y 3 Gen), TV S-Tick (4K|15.99
+Audio y Hi-Fi|B08TM8TW1R|27|UGREEN Cable HDMI 2.1 Certificado 10K 8K 60Hz 4K 120Hz 48Gbps (2M) UHD eARC HDR Dinámico D|7.71
+Audio y Hi-Fi|B07JK81Q24|29|Garza - Cable alargador de corriente doméstico de 2 metros, blanco, con toma de tierra has|6.3
+Audio y Hi-Fi|B004YEEPNQ|30|KabelDirekt – Cable de audio óptico TOSLINK – 1m – barra de sonido Stereo Dolby Digital no|7.99
+Audio y Hi-Fi|B0D321D3WL|51|Reemplazo Mando para LG Universal Smart TV Mando a Distancia LED LCD Smart TV con Netflix|6.99
+Audio y Hi-Fi|B07CTK4TH4|53|BENFEI Cable HDMI a VGA, Chapado en Oro Macho a Macho para Ordenador, portátil, PC, Monito|8.01
+Audio y Hi-Fi|B00FQK311O|54|KabelDirekt – Cable RCA – 1m – 2×2 Coaxial, subwoofer/amplificador y cine en casa, analógi|9.49
+Audio y Hi-Fi|B0DBM2QF8F|55|Google TV Streamer 4K - Streaming rápido de Entretenimiento en 4K con HDR - Porcelana|119
+Audio y Hi-Fi|B09GFW6SK2|56|GXTrust Axon Barra de Sonido con Iluminación RGB 12W, Negro 3.5mm Jack, Alimentación USB|17.99
+Audio y Hi-Fi|B0G6BT1C8Q|57|ULTIMEA Barra de Sonido 2.1ch para TV, subwoofer Integrado,132W, Control por App, Barras d|69.99
+Audio y Hi-Fi|B0F8BBZZJH|58|Android 14 TV Box, 2GB RAM 16GB ROM Box TV 4K HDR10 RK3518 Quad-Core Android Box Supports|36.99
+Audio y Hi-Fi|B09GK4W136|59|D-Line Canaleta para Cables 20x10mm Multipack 4m, Perfil Semicircular, Cubrecables Autoadh|15.99
+Audio y Hi-Fi|B0GSD9RH4P|61|GRIFEMA Bridas para Cables Plastico,100/150/200/300 mm,200 Piezas,Negro Nylon PA66 Resiste|6.69
+Audio y Hi-Fi|B0GFPVV38J|62|Mando Universal TV Samsung BN59-01175N - Reemplazo Mando Samsung Smart TV con identicas Fu|6.99
+Audio y Hi-Fi|B0DCNY4K5V|63|Apple Cable de carga USB-C de 60 W (1 metro)|19
+Audio y Hi-Fi|B0CM8Q4HQV|64|Zazalon Cable HDMI 4K 10M (4K/60HZ,18 Gbps) FullHD1080p,3D,Compatible con PS5/PS3, PC, Pro|10.99
+Audio y Hi-Fi|B08LK6CM2R|66|JSAUX Cable USB C a HDMI 2 Metros, Tipo C a HDMI 4K@60Hz compatible con 4K@30Hz para Thund|13.49
+Audio y Hi-Fi|B0CZXX465Z|67|Kobo Libra Colour eReader Pantalla E Ink Kaleido™ 3 de 7" Temperatura del Color y Brillo A|269
+Audio y Hi-Fi|B087JNJBRM|68|para Mando TV Samsung AA59-00741A, Mando a Distancia para Samsung para Mando Universal TV|7.39
+Audio y Hi-Fi|B0B88R1MYS|69|Reemplazo Mando TV Philips para Mando Philips TV Compatible con LED HD T V|7.48
+Audio y Hi-Fi|B0G4D65ZQW|70|Garza - Enrollacables 10 m, 4 tomas con toma de tierra, doméstico interior, protección inf|21.99
+Audio y Hi-Fi|B0CMTLN7F9|71|UOHHBOE Altavoz Bluetooth Portátil 30W, Graves Potentes y Sonido Estéreo IPX5 Resistente a|19.99
+Audio y Hi-Fi|B0DXDVLV4W|72|UGREEN 6 Piezas Clip de Cable de Resorte con Rotación de 91° Magnético Organizador Cable A|7.69
+Audio y Hi-Fi|B0H9K24M5Z|73|oraolo Altavoz Bluetooth Pequeño, Altavoz Portatil Bluetooth 5.4 Mini Altavoces Ducha, 30H|19.99
+Audio y Hi-Fi|B08XBZ6DQ6|74|Reemplazo Mando LG Smart TV para Mando TV LG 32LJ610V 43UJ634V 49UJ634V 55UJ634V|7.3
+Audio y Hi-Fi|B09BZWZS6S|75|Amazon Fire TV Cube (Última generación) Reproductor multimedia en streaming con control po|229.99
+Audio y Hi-Fi|B01ET1TMWC|76|Garza - Cable alargador de corriente doméstico de 3 metros, blanco, con toma de tierra has|7.75
+Audio y Hi-Fi|B0D22SVP73|77|Hisense HS3100 - Barra de Sonido 3.1, 480W, Dolby Audio, EZ Play DTS Virtual X, Bluetooth|119
+Audio y Hi-Fi|B085PX337V|78|URAQT Grapas de Pared para Cables Eléctricos con Adhesivo, 40PCS Gestión de Cable Eléctric|5.99
+Audio y Hi-Fi|B07TFGZ33M|79|Energy Sistem Urban Box 2 (10 W, TWS, Bluetooth 5.0, USB/microSD MP3 Player, FM Radio)|17.9
+Audio y Hi-Fi|B00LM2Y2U4|80|UGREEN Cable Jack 3.5mm a 2 RCA con HiFi Sonido de 2RCA (2M) Minijack a Macho Audio Estére|8.49
+TV y home cinema|B08H5JP1Q4|8|BONTEC Soporte TV Pared para Pantallas Planos y Curvos de 23-70 Pulgadas, Soporte Pared TV|26.99
+TV y home cinema|B098B7MV31|9|GRIFEMA GB1004-2 Soporte TV de Pared Articulado Inclinable, Soporte de Pared TV para Panta|12.99
+TV y home cinema|B07KF9TC3J|11|PERLESMITH Soporte TV Pared Articulado Inclinable Y Giratorio – Soporte TV para 26-70 Pulg|25.79
+TV y home cinema|B07PLSDPYN|12|UGREEN Cable USB C 60W PD 3.0 Carga Rápida Trenzado Nylon (1M) Tipo C, Compatible con iPho|6.53
+TV y home cinema|B0C9TR51VK|15|GRIFEMA GB1008-2 Soporte TV Pared 13-43 Pulgadas, Giratorio Universal Soporte Television P|14.49
+TV y home cinema|B01GGKYO1I|16|Amazon Basics Cable de carga rápida USB-A a USB-C USB 2.0, 480Mbps, certificado USB-IF, pa|4.63
+TV y home cinema|B09JWN5F8W|20|Amazon Basics Soporte de Pared para TV, Movimiento Completo, Giratorio e Inclinable para T|15.99
+TV y home cinema|B07Z7FQCJ9|21|PERLESMITH Soporte TV Pared 13-43 Pulgadas hasta 20 kg, Máx VESA 200x200mm Inclinable y Ex|14.99
+TV y home cinema|B0F8NL2BCS|24|UGREEN 2Pack Cable USB C 240W 5A 48V Carga Rápida Trenzado Nylon (2M) Tipo C PD 3.1 Carcas|12.74
+TV y home cinema|B07PPY9N62|25|UGREEN Cable USB C Carga Rápida QC3.0 3A 480Mbps Trenzado Nylon(0.5M,1Pack) USB A, Tipo C|7.99
+TV y home cinema|B0CNW228RC|26|Cable USB C carga Rapida, Cable USB C a USB C 2 metros 2Pack 60W para Apple iPhone 17 16 1|11.99
+TV y home cinema|B0D1VKFG99|28|UGREEN Cable USB C 100W 20V 5A Carga Rápida PD Trenzado Nylon (1M) Tipo C con Carcasa de A|6.79
+TV y home cinema|B0CK8MQLV4|30|AISENS - A108-0678 - Mini Adaptador USB 3.2 Gen2 / USB 2.03A, Tipo USB-C/H-A/M, Negro|1.39
+TV y home cinema|B00SWYTYY4|51|KabelDirekt – Cable Antena TV 4K – 1,5m, 90° Enchufe acodado/Toma acodada, para DVB-C/DVB|10.99
+TV y home cinema|B09MQ4KZ27|52|INIU Cable USB C a USB C 100W, 2m Cable USB C PD QC Carga Rapida Cargador Nylon Cargador|7.59
+TV y home cinema|B0C5VKMDXH|54|SIZUKA Cable USB C Carga Rapida [3Pack 2M] 3.1A Cable Carga Rapida Tipo C Carga Rápida y S|8.99
+TV y home cinema|B00NH11KIK|56|Amazon Basics Cable USB-A 2.0 Macho a USB-B Macho con Conectores Dorados para Impresora (1|6.56
+TV y home cinema|B07H7JCCKM|57|UGREEN Switch HDMI 2.0 4K 60Hz 2 Entradas 1 Salida Comutador Bidireccional 2K 1080P 120Hz|8.54
+TV y home cinema|B089GD78ZW|58|RAVIAD Cable USB C a USB 3.0 Carga Rápida 1M, Trenzado Nylon Cable Tipo C Cable Cargador U|4.99
+TV y home cinema|B07SSY2W27|59|G-PLUG 3m Cable Antena TV Macho-Macho, Cable Coaxial para TV Blanco, en ángulo recto, con|10.99
+TV y home cinema|B00DPT538W|60|PremiumCord TV M/F 90, 75 Ohm, 2m - Cable coaxial (75 Ohm, 2m, IEC, IEC, 2 m, Macho/Hembra|3.99
+TV y home cinema|B0CXWXRQZ8|61|BONTEC Soporte TV Pared Inclinable y Giratorio de 13-42 Pulgadas Planos Curvos LCD LED OLE|14.99
+TV y home cinema|B0DQNKM25Y|62|Acer Cable USB C a HDMI 4K@60Hz, Thunderbolt 3/4 Cable Tipo C a HDMI 2.0, Compatible con i|14.99
+TV y home cinema|B015OW3M1W|63|AmazonBasics Cable DisplayPort (Fuente) a HDMI (Pantalla), unidireccional, 4K a 30Hz, 1920|9.99
+TV y home cinema|B09X3FTL7F|64|TP-Link Archer TX20U Plus - Adaptador WiFi 6 USB, AX1800 Doble Banda Actualiza tu PC con W|22.22
+TV y home cinema|B0FSJ5F2F5|67|Mugust Universal Mando a Distancia para LG Smart TV,para Todos Mando LG Original AKB750953|7.09
+TV y home cinema|B08C2QCR7Q|68|Cable USB C Carga Rapida [2Pack 2M] 3.1A Cable Carga Rapida Tipo C Nylon Cable Carga Rapid|7.99
+TV y home cinema|B0859M539M|69|TP-Link Archer T3U Plus - Adaptador WiFi USB para PC, AC1300 Doble Banda Instalación Plug|17.99
+TV y home cinema|B08PQM7DDV|70|ERKO Bridas para Cables 100x2,5mm, 100u, Blanco Resistentes y duraderas, ideal para organi|1.99
+TV y home cinema|B0G1XJJQG2|71|toocki Cable USB A a USB C 2M, 3A Tipo-C 90 Grados, Nailon Trenzado, Azul Carga Rápida USB|6.99
+TV y home cinema|B01MZ6ZYU1|72|Perlegear Soporte TV de Pared Pantallas de 26-65 Pulgadas, Articulado Inclinable y Girator|25.99
+TV y home cinema|B0BNZXBGJ1|73|BONTEC Soporte TV Ruedas para TVs de 23 a 60 Pulgadas de LED, LCD, OLED Planos y Curvos, S|40.99
+TV y home cinema|B0F3JTJWGJ|74|Belkin Paquete de 2 Cables Trenzados USB-A a USB-C de 1,5 m (15 W),carga rápida, cables de|7.99
+TV y home cinema|B0CXF33ZGS|75|EDISION LIA-200 Amplificador Interior de Vivienda UHF/VHF, 12-24db Ajustable, 104dBmV, par|16.9
+TV y home cinema|B08TGG316Z|76|Ubluker 10K 8K Cable HDMI 2.1 48Gbps 2M, Certificado Ultra Alta Velocidad 0,01ms CEC Ether|12.74
+TV y home cinema|B0F1YNWL4Q|77|iPhone 15 16 17 18 Cable USB C[1M+2M], 60W Cable USB C Carga Rapida para iPhone 18 17 16 1|7.59
+TV y home cinema|B0DK14GTR2|78|UGREEN USB WiFi 6 AX900 Adaptador WiFi USB para PC Doble Banda 5GHz 2.4GHz Dongle Inalámbr|9.49
+TV y home cinema|B0BGXRBGCY|79|para Samsung Smart TV Control Remoto Universal Compatible Solo con Todos los televisores S|7.9
+TV y home cinema|B0BDFQHQJL|80|RAVIAD Cable USB C Carga Rapida 1M 2Pack [QC3.0 y 3,1A] Cable USB A USB C Cargador USB Tip|5.67
+Fotografía y vídeo|B0000C73CQ|2|Fujifilm Instax Mini Brillo - Película fotográfica instantánea (2 x 10 Hojas)|19.99
+Fotografía y vídeo|B07NY23WBG|7|SanDisk High Endurance 128 GB Tarjeta microSD para videovigilancia, hasta 100 MB/s, Class|34.99
+Fotografía y vídeo|B09X7FXHVJ|10|SanDisk Extreme PRO Tarjeta SD 128 GB SDXC, SD Card 4k UHD, UHS-I, V30, hasta 200 MB/s, Sa|49.99
+Fotografía y vídeo|B0BZMLKXL4|15|Tapo C510W - Cámara de Vigilancia WiFi Exterior 360º, 2K 3MP, Detección IA Detección Movim|49.99
+Fotografía y vídeo|B0GCFG2NRC|16|GNCC 2PCS Camara Vigilancia WiFi Exterior Solar con Bateria Sin Cables 1080p/2MP Visión No|68.99
+Fotografía y vídeo|B0G39G3SZM|17|DJI Mic Mini 2 (1 TX + 1 RX móvil + Estuche de Carga) Micrófono lavalier inalámbrico para|59
+Fotografía y vídeo|B00YMZC6LK|18|Intenso Professional MicroSDHC Memory Card, Class 10 UHS-I, 32 GB, blue Velocidad de lectu|11.99
+Fotografía y vídeo|B0D6KKG2RK|19|2 Pack Tarjeta De Memoria 128GB con Adaptador SD, Tarjeta De Memoria De Alta Velocidad, UH|44.99
+Fotografía y vídeo|B09X7DNF6G|25|SanDisk Extreme PRO 128GB tarjeta microSDXC + adaptador SD + RescuePro Deluxe, hasta 200 M|39.49
+Fotografía y vídeo|B0CG19QXWD|29|DJI Osmo Pocket 3, cámara con CMOS 1'' y vídeo 4K/120 fps estabilización en 3 ejes, enfoqu|288
+Fotografía y vídeo|B07J6QXBP4|51|Kylietech Prismaticos Profesionales Largo Alcance, Binoculares Pequeños y Potentes 12x42|38.99
+Fotografía y vídeo|B0F4CQVW6Z|53|ANXRE 172cm Tripode para Movil con Luz, Control Remoto,NT99 Palo Selfie Portátil&Compacto|19.85
+Fotografía y vídeo|B0F3P3X5P2|54|Sandisk Micro SD Express Card for Nintendo Switch 2|54.99
+Fotografía y vídeo|B09X7DZ9LG|55|SanDisk 128GB Extreme, Tarjeta de memoria, SDHC, hasta 180 MB/s + RescuePro Deluxe Class 1|39.49
+Fotografía y vídeo|B0FNRQYZB8|56|Tapo C610 Kit - Cámara Vigilancia WiFi Exterior 360º, Panel Solar, 2K 3MP Detección de Mov|84.99
+Fotografía y vídeo|B08BXZY1D2|57|Imou 2K Cámara Vigilancia WiFi Exterior, Cámara IP Vigilancia de Seguridad Detección de Hu|33.99
+Fotografía y vídeo|B0FT3QZ9K4|59|Película fotográfica Fujicolor C 200.|11.95
+Fotografía y vídeo|B0CYZ2DNQ6|60|2 Pack Tarjeta De Memoria 16GB con Adaptador SD, Tarjeta De Memoria De Alta Velocidad, UHS|16.99
+Fotografía y vídeo|B0CHFG8XBZ|61|Tapo C211 - Cámara vigilancia WiFi Interior, 2K, 360°, Detección IA, Negro Detección de Mo|23.49
+Fotografía y vídeo|B0FTST1GY5|62|Blink Outdoor 4 Cámara + Blink Mini 2K+ Cámara (Negro), Sync Module Core incluido|79.99
+Fotografía y vídeo|B0FGD91F4Z|63|GNCC Cámara Vigilancia WiFi Interior 2K 3MP 2.4/5GHz Visión Nocturna 1 Pack Negro, Monitor|13.71
+Fotografía y vídeo|B01CI8TVR4|64|Pantalla de proyeccion Manual Luxscreen 100" Pulgadas, área Visible Blanca 197 x 147cm, ca|68.99
+Fotografía y vídeo|B0CDCL6FLC|65|Tapo C220 - Cámara de Vigilancia WiFi Interior 360º, 2K QHD, Detección IA Detección Movimi|32.99
+Fotografía y vídeo|B0CYSZW34N|66|GREENKINDER Camara Fotos Infantil Instantanea para Niños 3 a 12 Años Pantalla de 3,0", Tar|36.08
+Fotografía y vídeo|B0GKPH85VZ|67|DJI Pack para Vlogs Osmo Pocket 4P, cámara Dos Objetivos, Tomas de Cine 4K Zoom óptico de|689
+Fotografía y vídeo|B091SWB5QR|68|Imou Tarjeta de Memoria Micro 32 GB SDHC imou Velocidad de Lectura de hasta 95 MB/s Clase|11
+Fotografía y vídeo|B0833XXLJR|69|Netac 32GB Tarjeta Micro SD A1, U1, C10, V10, UHS-I, Velocidad hasta 100MB/s Lectura y 10M|12.99
+Fotografía y vídeo|B0BZCTRKNK|72|Alyvisun Kit Limpieza Teclado, 11 en 1 Kit Limpieza PC Multifuncional, Cepillo de Limpiado|10.69
+Fotografía y vídeo|B08FT9XTH1|73|11.5'' Aro De Luz con Tripode Alto, Ring Light con 40 RGB Mode 13 Brillo Professional Trip|30.99
+Fotografía y vídeo|B0FC331VV7|74|XIAOMI C201 Camara Vigilancia WiFi Interior, 1080P HD Camara Vigilancia 360° Detección de|24.99
+Fotografía y vídeo|B0DS24YLFM|75|ANXRE 180cm Trípode para Movil con Control Remoto,NT79 Palo Selfie Monopies Extensible, Al|19.44
+Fotografía y vídeo|B0H3CF2N5J|76|Cámara instantánea instax Mini 13 Dreamy Purple|89.9
+Fotografía y vídeo|B0G2KGXGDD|77|Ring Intercom Video + Ring Cámara interior Plus|159.98
+Fotografía y vídeo|B0833VJ5FQ|78|Aro de Luz con Trípode Alto, 10.2" Ring Light con Control Remoto Aros de Luz para Móvil, A|25.99
+Fotografía y vídeo|B09DCKJBCH|79|Yoton Mini Proyector Y3 Negro, Cine Casa, 1080P, Zoom 50%, Keystone Carcasa negra elegante|37.99
+Fotografía y vídeo|B095SYK5FZ|80|instax WIDE film Paquete de 50 fotografías, Blanco|49.99
+Electrónica para coche|B0HKKKVD21|2|Adaptador CarPlay Inalámbrico para Coche, Mini Convertidor 2-in-1 de CarPlay y Android Aut|29.99
+Electrónica para coche|B0F3J3QHD7|6|GRIFEMA Soporte Móvil para Coche, Rejilla con Cierre Automático Rotación 360 grados, para|6.99
+Electrónica para coche|B0DBPQBGBQ|8|JOREST 5pcs 12(1)+16AWG(4) Portafusibles Impermeable, Portafusibles 12V en Línea para Coch|9.99
+Electrónica para coche|B0FVFNKP9J|11|Adaptador CarPlay Inalámbrico – Adaptador Android Auto Inalámbrico, Wi-Fi 5,8GHz Plug & Pl|22.99
+Electrónica para coche|B0D2Q5M35Y|13|UGREEN Soporte Móvil Coche MagSafe 360° Rotación Suporte Telemovel Carro Magnético Gancho|11.39
+Electrónica para coche|B0C1NNPS39|14|Blukar Soporte Móvil Coche, Upgraded Ajustable Soporte Teléfono Coche con Ventosa Fuerte &|11.99
+Electrónica para coche|B09Y8HJ4NT|15|Mohard Transmisor FM Bluetooth Coche con Puertos USB Duales (5V/2.4A & 1A) Manos Libres Ad|14.65
+Electrónica para coche|B0FMD7BTKC|16|Lamicall Soporte Móvil Coche para MagSafe, Ventosa de Vacío & 360° Rotación 24X N55 Imanes|23.74
+Electrónica para coche|B09MQ7R1D8|17|Cardo Spirit Motocicleta 2 Vías Bluetooth Sistema intercomunicador, Negro, Individual|87.74
+Electrónica para coche|B0C1NK79FK|18|Blukar Soporte Móvil Coche, Soporte Teléfono Coche del Aire Ventilación con Upgraded Clip|10.59
+Electrónica para coche|B0CVVS66XF|19|Tiardey Intercomunicador de Motocicleta Casco Auricular Bluetooth Asistente Voz Soporte Do|15.99
+Electrónica para coche|B0H744W11G|20|Miracase Soporte Movil Coche para Magsafe con Doble Gancho Metálico N55 Imán Potente, Rota|11.38
+Electrónica para coche|B081GGB53R|21|UGREEN Receptor Bluetooth 6.0 Jack AUX Adaptador USB Bluetooth Coche Gris Aux Auxiliar Con|12.74
+Electrónica para coche|B0FMQ1DNBS|22|2 en 1 Adaptador CarPlay Inalámbrico, CarPlay Cableado a Inalámbrico Sin Esfuerzo, para Co|23.78
+Electrónica para coche|B0CJYLFL19|23|OOONO Co-Driver 2 – Alertas de radares y peligros en Tiempo Real sin suscripción Recargabl|67.06
+Electrónica para coche|B0HHDT3W79|24|Mando a Distancia Universal 4 en 1 para 280-868 MHz Compatible Rolling Code y Código Fijo|10.49
+Electrónica para coche|B08ZXDN5GZ|25|Eightwood Antena Coche Universal Antena Radio Techo Antena 23cm Universal de Coche Repuest|7.99
+Electrónica para coche|B0GY7ZMGMN|26|Babacom Soporte Movil Moto Antivibración 360° Rotación,con Amortiguador de Vibraciones y C|16.2
+Electrónica para coche|B0B3D9XW8X|27|UGREEN 130W Cargador Coche USB C 3 Puertos Car Charger Carga Rápida 100W Cargador Mechero|18.99
+Electrónica para coche|B0BN3VYTQL|28|JOREST 280 Pcs 12v Kit Fusibles, 182 Mini + 98 Mediano Fusibles + 1 Clip - Coche/Caravana/|13.99
+Electrónica para coche|B07B7LKNMM|29|Ejeas V6 Pro Intercomunicador Bluetooth para Motocicletas, Gama Comunicación Intercom de 1|36.09
+Electrónica para coche|B0FBX1BN2P|30|Premium Pro Adaptador USB CarPlay Inalámbrico, Receptor Auto iPhone, Conexión Automática C|15.99
+Electrónica para coche|B075R5VG93|51|UGREEN Soporte Móvil Coche por Gravedad Suporte Telemovel Carro para Ventilación Car Phone|12.91
+Electrónica para coche|B01JG7ZMIW|52|YOSH Soporte Móvil Coche Magnético para Teléfono en Rejilla Ventilación Imán Mejorado Más|11.99
+Electrónica para coche|B0H1GWTJ2D|53|XINROAM Adaptador Carplay Inalámbrico para iPhone, Mini Car Play Adaptador Convertidor Cab|19.99
+Electrónica para coche|B0H4FZ6GF2|54|AWESAFE 1 DIN Radio Coche Universal con Pantalla Táctil 6.28 Pulgadas, con CarPlay/Android|52.99
+Electrónica para coche|B0H5K4RLCD|55|WityEye Adaptador CarPlay Inalámbrico y Android Auto Inalámbrico 2 en 1 Bluetooth V5.3 Con|29.99
+Electrónica para coche|B0CY3PMWJF|56|iZEEKER 2.5K Dashcam WiFi Dash Camera para Coches, Mini Cámara para Coche 1440P Front Dash|29.99
+Electrónica para coche|B0D2LVTZQC|57|MOGGAM Soporte Móvil Moto Antivibración Manillar y Retrovisor Scooter Bici Doble antivibra|29.99
+Electrónica para coche|B09KNBV1DX|58|CENPEK Comprobador y extractor de fusibles automotrices - Comprobador de fusibles de coche|11.99
+Electrónica para coche|B0DDKVKRY5|59|Wukong 8 placas de metal de 40 mm, autoadhesivas, para imanes de coche, soporte para teléf|5.99
+Electrónica para coche|B0C273FR2T|60|Miracase Soporte Móvil Coche 3 en 1 [Robusto y Seguro] Universal Suporte Telemovel Carro|13.29
+Electrónica para coche|B0GCDR9Q2G|61|Transmisor FM Bluetooth Coche, Bluetooth 5.0 Accesorios Coche Adaptador de Radio,Compatibi|8.99
+Electrónica para coche|B08L3WX26S|62|LENCENT Transmisor FM Bluetooth 5.3,Manos Libres Reproductor Música Coche Deep Bass Sonido|19.99
+Electrónica para coche|B0F99N77VY|63|Alltotive S2 Mini Adaptador Carplay Inalámbrico para iPhone, Convierte Cableado a Inalámbr|23.99
+Electrónica para coche|B0CKKYNJMF|64|LISEN 90W Cargador Coche USB C Carga Rapida para iPhone 17 Pro Max, Cargador Mechero Movil|13.99
+Electrónica para coche|B0GTQ2PYTG|65|Lamicall 3 EN 1 Cargador Coche Carga Rápida, 63W Cargador Mechero USB C [75% Más Pequeño]|19.99
+Electrónica para coche|B0CBR5TSGL|66|VooGenzek Mini Antena Coche Corta Universal de 6.5cm, Radio FM/Am Con 3 Tornillos M4/M5/M6|6.99
+Electrónica para coche|B0F2FYKC9D|67|YADOBIG Soporte Tablet Coche para Reposacabezas, 4,7-13 Pulgadas Soporte iPad Coche con Br|10.99
+Electrónica para coche|B08CKYFLHQ|68|Blukar Soporte Móvil Coche, Soporte Teléfono Rejillas de Ventilación Salidas de Aire, 360|7.99
+Electrónica para coche|B0BZ4BQ59L|69|AXFEE Soporte Móvil Coche, 720 ° Giratorio Plegable Soporte Magnético Universal soporte mo|8.99
+Electrónica para coche|B09MQ6TG4Q|70|Cardo FREECOM 2X para Motocicleta 2 Vías Bluetooth Sistema intercomunicador, Negro, Indivi|181.33
+Electrónica para coche|B09Y4BF9Y3|71|Aiuphing sensores aparcamiento coche, universal 4 sensores asistentes de aparcamiento con|13.9
+Electrónica para coche|B0CB1C69BY|73|Miracase Soporte Movil Coche [Potente Ventosa & Gancho Doble Metálico] 3 en 1 Suporte Tele|18.99
+Electrónica para coche|B0CQXFH7VH|74|Coolpow Soporte Magnetico Movil Coche [2 Piezas],Soporte Movil Coche Iman [Super Imanes,36|11.99
+Electrónica para coche|B00VHGFUL0|75|EJEAS V6 Pro+ BT Interphone 1200M Bluetooth Motocicleta Motocicleta Casco Intercom Auricul|68.99
+Electrónica para coche|B0D49GGJ85|76|GKU 4K Dashcam Cámara Coche, 5GHz WiFi &GPS, 1.5'' IPS Dash CAM Coche Doble con Tarjeta de|75.99
+Electrónica para coche|B0GRCWPW9J|77|Adaptador Carplay Inalambrico y Android Auto Inalambrico (Version 2026), Mini Plug & Play|27.99
+Electrónica para coche|B0G35F73M8|78|ABOHU 6 Piezas Láminas Metálicas para Soporte Movil Coche Magnético, Muy Finas Placa Metal|3.59
+Electrónica para coche|B07X6KFZV7|79|Pioneer MVH-S320BT Autoradio Bluetooth 1DIN|86.49
+Electrónica para coche|B0GVJPV6RF|80|Bemkia Adaptador CarPlay Inalámbrico y Android Auto Inalámbrico para Coche Compatible con|23.99
+Pilas y cargadores|B00E3DVQFS|7|DURACELL AA Pilas Recargables (Paquete de 4) 1.2V, 2500 mAh NiMH Pilas recargables de alta|11.99
+Pilas y cargadores|B07GNMFLKH|9|Amazon Basics - Paquete de 4 pilas alcalinas 23A de larga duración, 12 voltios|4.93
+Pilas y cargadores|B084ZJKRK6|12|VARTA Pilas AA, paquete de 100, Power on Demand, Alcalinas, 1,5V, para accesorios de orden|35.58
+Pilas y cargadores|B0G3XNS3PX|13|POWEROWL 24 X Pilas LR44 AG13 de 1,5 V, Pilas de Botón Alcalinas A76, 357, LR44H, SR44 par|2.99
+Pilas y cargadores|B00HZV9XKU|15|Amazon Basics paquete de 4 pilas AAA NiMH recargables de alta capacidad, 850 mAh, 1,2 V, s|5.78
+Pilas y cargadores|B07K62LY4N|16|Pack de 12 Pilas AG3 1.5V Alcalinas Tipo Botón de Litio, LR41, 192, GP92A, 392, SR41W, SR4|2.99
+Pilas y cargadores|B0B71DPXYL|17|Warriors 5X Pila CR2032 3V 240mAh Litio Botón Envase seguro para niños. Para llaves, balan|4.74
+Pilas y cargadores|B0DJW9482Z|18|Energizer Advanced - Pilas AA (Paquete de 24) - 1,5V Baterías Alcalinas Larga Duración - A|13.03
+Pilas y cargadores|B0G3XQDQ29|20|POWEROWL 12 Unidades CR2032 Pilas de Botón de Litio 3V Embalaje de Seguridad para Niños, L|3.99
+Pilas y cargadores|B000EGWOEU|21|Varta CR123A Pila de litio, 3 V, blíster de 2 unidades pila redonda para cámara digital, c|7.9
+Pilas y cargadores|B000IWW1G6|22|Energizer Ultimate Lithium AA Pilas (Paquete de 4) - Una de Las Pilas AA Mayor duración de|11.9
+Pilas y cargadores|B0BNVG3QHX|23|Warriors 10X Pila CR2032 3V 240mAh Litio Botón Envase seguro para niños. Para llaves, bala|5.99
+Pilas y cargadores|B0G3XTF27K|24|POWEROWL 12 Piezas CR2032 Pilas de Botón de Litio 3V Embalaje de Seguridad para Niños, Pil|3.99
+Pilas y cargadores|B0B1QJGBT8|25|Energizer - Max, Pack de 18+6 Pilas AAA 1,5V, Más Potencia y Larga duración para Uso Cotid|13.99
+Pilas y cargadores|B0C7QCSXQH|26|Beidongli Pilas de botón LR1130 AG10 1131 189 1,5 V batería alcalina 20 Unidades LR54 Pila|5.99
+Pilas y cargadores|B0G3XRY5CY|27|Pilas LR44, POWEROWL 12 Unidades Pilas Alcalinas de 1,5 V AG13 CR44 357 303 A76 Pilas de B|2.99
+Pilas y cargadores|B01CZS4TX8|28|EBL 1100mAh AAA Ni-MH Pilas Recargables 1,2V Batería 1200Tech Precargadas Larga Duración H|8.57
+Pilas y cargadores|B094D5LVSB|29|Amazon Basics - Paquete de 8 pilas alcalinas C para todo uso, 1,5 voltios, vida útil de 5|10.13
+Pilas y cargadores|B0DJWBHLQ2|30|Energizer Advanced - Pilas AAA (Paquete de 12) - 1,5V Baterías Alcalinas Larga Duración|8.79
+Pilas y cargadores|B0093IZTA6|51|Philips Minicells Pila CR2032P2/01B - Pilas (Single-Use Battery, CR2032, Litio, 3 V, 2 Pie|1.99
+Pilas y cargadores|B0DSLNNFS1|52|Granicell, Paquete de 12 Pilas Recargables AAA - 1100 mAh - Alta Capacidad - 1500 ciclos|10.99
+Pilas y cargadores|B0CHF134FV|53|CR2016 - Pilas de botón de Litio de 3 V CR 2016 (10 Unidades)|5.99
+Pilas y cargadores|B09PQNS4RR|54|LR41 Pilas de botón LR 41 Pilas de botón AG3 (16 Unidades) Sin Mercurio, 1,5 V, 392/SR41/1|5.99
+Pilas y cargadores|B0FCYT5P9R|55|AKIELO+ Comprobador de Pilas Universal Digital – Pantalla LCD de Fácil Lectura – No Requie|9.5
+Pilas y cargadores|B0B683RG7B|56|Amazon Basics - Paquete de 10 pilas de litio CR123A de 3 V, vida útil de 10 años|22.36
+Pilas y cargadores|B0DJD6WWRV|57|VARTA Pilas AAA, Pack de 20 (10+10), Longlife Power, alcalinas, 1,5 V pila AAA LR03, Made|9.99
+Pilas y cargadores|B07G3786VW|58|Energizer MAX - Pila 9V Alcalinas (Paquete de 3) - Baterías de 9 Voltios para Detector de|8.86
+Pilas y cargadores|B0D94JXFQW|59|Philips Lithium CR2032 3 Volt, Pilas optimas para Relojes, mandos a Distancia y calculador|9.99
+Pilas y cargadores|B003UOYB8A|60|DURACELL CR2032 Pilas de botón de litio 3 V (pack de 2) - Hasta un 70 % extra duración - T|3.9
+Pilas y cargadores|B0BYD6PXZH|61|Warriors 4X Pila Pilas 9V alcalinas bateria 9v, de Larga duración, potentes, para detector|7.59
+Pilas y cargadores|B0FZSYBCYB|62|POWEROWL Juego de 12 CR2032 Pilas de Botón de Litio 3V Embalaje de Seguridad para Niños, L|3.99
+Pilas y cargadores|B01K9YTI5E|63|PKCELL Pilas LR41 AG3 1,5V Batería de Botón - Alcalinas para Termómetro Pack de 10, Digita|4.89
+Pilas y cargadores|B08746RF8T|64|POWEROWL 40 Pilas de Botón Alcalinas AG13 LR44 de 1.5 V, A76/ V13GA / GP76A / 357 / SR44W|7.99
+Pilas y cargadores|B07JLBCH8L|65|Amazon Basics - Paquete de 6 pilas alcalinas de botón LR44 de larga duración, 1,5 voltios|5.99
+Pilas y cargadores|B093LT2N4Q|66|DURACELL Plus AAA Pilas Alcalinas (Paquete de 12) 1.5V, LR03 Hasta un 100% de extra duraci|11.99
+Pilas y cargadores|B09KLVB3SS|67|CR1632 Pila de Botón de Litio 3V Batería CR 1632 16pcs【5 Años de Garantía】 (1632-16p)|7.99
+Pilas y cargadores|B07JM6YZ2K|68|Amazon Basics - Paquete de 4 pilas de litio CR2 de larga duración, 800 mAh, 3 voltios|10.31
+Pilas y cargadores|B093LSCRBL|69|DURACELL Optimum AA Pilas Alcalinas (Paquete de 8) 1.5V, LR06 200% más POWER BOOST ACTIVES|9.99
+Pilas y cargadores|B0DMDXK3HF|70|BEVIGOR 8 Pilas AAA Recargables Ni-MH 1100mAh 1.2V, Alta Capacidad, Precargadas|9.99
+Pilas y cargadores|B0DRSXR6HG|71|MUNDDY - 10x Pilas de Boton Alcalinas AG6 LR920 371 SR920 1.55V|3.95
+Pilas y cargadores|B072FRJLJ5|72|Pilas Recargables AA, BONAI Alta Capacidad 2800mAh 1.2V NI-MH 8 Piezas 1200 Ciclos de Pila|12.99
+Pilas y cargadores|B093HGNC9S|73|Vinnic VIN-23A - Pila Alcalina Vinnic 23A - L1028F Pack 5 Pilas, Unisex|5.31
+Pilas y cargadores|B0G3XS2X9N|74|Pilas LR44, POWEROWL 12 Piezas Pilas Alcalinas de 1,5 V AG13 CR44 357 303 A76 Pilas de Bot|2.99
+Pilas y cargadores|B06XVH8DKZ|75|Salicru UBT 12/7 - Batería AGM recargable de 7 Ah / 12 V|15.98
+Pilas y cargadores|B00RWBN6H4|76|Duracell CR 2032 CR2032 - Pilas de litio (2 unidades, 3 V)|5.55
+Pilas y cargadores|B099352S6R|77|LR1130 Pilas de Botón AG10 Pila Batería Alcalinas 1.5 V 40 Piezas LR 1130 LR54 390 389A,Si|6.98
+Pilas y cargadores|B0G3XMSBVT|78|POWEROWL 12X CR2032 Pilas de Botón de Litio 3V Embalaje de Seguridad para Niños, Pilas 203|3.99
+Pilas y cargadores|B000ZLTYAG|79|Maxell 19040805 Pila Boton Litio CR-2032 (Blister 5 Pilas)|3.9
+Pilas y cargadores|B07RXQMZTY|80|Pilas de Botón Alcalinas LR1130 AG10 1,5V 78mAh para Libros de Música Juguetes Educativos|5.59
+Portátiles|B0GYQ36H8J|2|HP OmniBook 3 Ordenador Portátil, 14" WUXGA, Snapdragon X, 16GB, 512GB Adreno GPU, Copilot|549
+Portátiles|B0GR1C47GR|3|Apple MacBook Air de 13,6 Pulgadas con Chip M5: Pantalla Liquid Retina, CPU de 10 núcleos|1569
+Portátiles|B0F191D3C9|4|Acer Nitro V 15, Portátil Gaming 15.6" Full HD, Core i7, RTX 5050, 16GB RAM Intel Core i7|849
+Portátiles|B0GZKRBLPW|6|Lenovo Legion 5 Gen 11 - Portátil Gaming IA 15.3" OLED (AMD Ryzen 7 250, NVIDIA GeForce RT|1099
+Portátiles|B0GZKBHFY6|7|Lenovo IdeaPad Slim 5 Gen 10 – Ordenador Portátil 16" WUXGA (Intel Core Ultra 9 185H, 32 G|1049
+Portátiles|B0H29PJ5XN|8|Samsung Galaxy Book4, Ordenador Portátil Ultrafino 15.6" Full HD LED, Intel Core i7 13th G|749
+Portátiles|B0GZHWG8WL|10|Lenovo IdeaPad Slim 3 Gen 10 – Ordenador Portátil 15.3" WUXGA (Intel Core i5-13420H, 16 GB|566.4
+Portátiles|B0G5THF54W|11|Acer Aspire Go 15, Portátil 15.6" Full HD, Core 5, 16GB RAM, 512GB SSD Intel Core 5 120U|569
+Portátiles|B0H4ZFXX24|12|HP 15-fd1015nsx - Ordenador portátil 15,6" FHD (1920x1080), Intel Core 7 16GB RAM, 512GB S|629
+Portátiles|B09B33GMS4|14|ASUS Chromebook CM1505-15.6" Laptop Full HD (MediaTek Kompanio 540, 4GB RAM, 128GB eMMC, C|299.99
+Portátiles|B0G5SV5VHG|15|Acer Chromebook Plus, Portátil 14" WUXGA, Intel 3 N355, 8GB RAM, 256 GB SSD Intel Core 3 N|379
+Portátiles|B0H11PSJ3L|16|bvate 2026 Ordenador Portátil 14" Win11 8GB 256GB SSD - Gris Soporte 1TB SSD Expansión Por|249.99
+Portátiles|B0H29YYN8M|17|Samsung Galaxy Book4 Edge, Ordenador Portátil Ultrafino 15.6" Full HD LED, Snapdragon X 8|689
+Portátiles|B0FY1W2ZK1|18|Ordenador Portátil 14 Pulgadas Celeron N5095 Upto 2,9 GHz Portatiles 8GB RAM 256GB SSD TF|279.99
+Portátiles|B0HKJWM6DF|19|Lenovo IdeaPad Slim 3, Ordenador Portátil, Intel Core i5, 16GB, 1TB, W11 15,3" WUXGA, Inte|689
+Portátiles|B0GZKTKWVN|20|Lenovo Chromebook Gen 11 - Ordenador Portátil 14" WUXGA (MediaTek Kompanio 540, 8 GB RAM|349
+Portátiles|B0FGDH3597|21|Ordenador Portátil 14 Pulgadas hasta 2,8 GHz Celeron 256GB SSD PC Portátil Soporta 1TB SSD|239.99
+Portátiles|B0GR6CSBXR|22|Apple MacBook Neo de 13 Pulgadas con Chip A18 Pro: diseñado para Apple Intelligence, Liqui|899
+Portátiles|B0DVWDDJDP|23|Samsung Galaxy Book4, Ordenador Portátil Ultrafino 15.6" Full HD LED, Intel Core i7 13th G|799
+Portátiles|B0DYF496F9|24|Microsoft Surface Pro, 12" Snapdragon X Plus 16GB RAM, 512GB SSD 12" LCD Touchscreen Plati|1119
+Portátiles|B0F3P4FHTY|25|HP EliteBook 840 G6, FHD, Intel Core i5 8265U, 16 GB RAM, 512 GB SSD, Intel UHD Graphics|407
+Portátiles|B0836PMQ5K|27|Acer Aspire 14 AI Copilot+PC,Portátil 14", Core Ultra 5,16GB RAM, 512GB SSD Intel Core Ult|699
+Portátiles|B0GQYZ39SV|28|HP OmniBook 3 16-bu0097ns - Ordenador Portátil 16” WUXGA (1920x1200) Intel Core 5, 16GB RA|529
+Portátiles|B0FVZD8K72|29|MSI Katana 15 HX B14WFK-082XES Portátil 15" FHD Black Intel Core i9 14900HX, RTX 5060, 32G|1499
+Portátiles|B0H4ZJ6MD7|30|HP 15-fc1008nsx - Ordenador portátil 15,6" FHD (1920x1080), AMD Ryzen 5 16GB RAM, 512GB SS|949
+Portátiles|B0FVYYMHQT|51|MSI Cyborg 17 B2RWGKG-077XES - Portátil 17,3" FHD Intel® Core 7 240H, RTX 5070, 32GB, 1TB|1549
+Portátiles|B0H2P3SB3L|52|Portátil Alienware 15 - Intel Core 7 240H, RTX 5060 15,3'' FHD+ WUXGA 165 Hz Display, 16GB|1549
+Portátiles|B0GFF6FBJW|54|ASUS Vivobook 15 F1504VA-BQ360 - Ordenador Portátil 15.6" Full HD (Intel Core 7 150U, 16GB|559.99
+Portátiles|B0GK174P32|55|Lenovo ThinkPad T14 Gen 1 Portátil empresarial, pantalla FHD de 14 pulgadas (1920 x 1080)|349
+Portátiles|B0GZKCFDFK|56|Lenovo IdeaPad Slim 3 Gen 11 – Ordenador Portátil 15.3" WUXGA (Intel Core Ultra 7 355, Cop|969
+Portátiles|B0H3391F6L|57|Ordenador Portátil 15.6" PC Portatil Core i5-8210Y (hasta 3.6GHz), 24GB RAM 512GB SSD Ampl|409.99
+Portátiles|B0HJQXT9S6|58|MOONFISH 15,6 Pulgadas PC Portátil Laptop FHD, M3 6Y30, 16GB RAM, SSD 512GB Teclado comple|451.24
+Portátiles|B09BJRNW8V|59|ASUS Vivobook 14 F1407AA-LY037W Copilot+ PC - Ordenador Portátil WUXGA (Intel Core Ultra 5|799.99
+Portátiles|B0DHXF79F3|60|Lenovo IdeaPad Slim 3 Gen 8 - Portátil 15.6" FHD Intel Core i5-13420H, 16 GB RAM, 1 TB SSD|689.55
+Portátiles|B0H49NXDB9|61|Ordenador Portátil 15,6" Celeron N5095 (4C/4T, hasta 2,9 GHz) Procesador, Win 11 PC Portát|346.99
+Portátiles|B0FXGFLHTL|62|PC Portátil Win 11, 15.6 Pulgadas Ordenador Portatil 16GB LPDDR4 RAM 512GB SSD, Celeron N5|316.99
+Portátiles|B0H8YRFL38|63|Lenovo IdeaPad Slim 3, Ordenador Portátil, Intel Core 5, 16GB, 512GB, W11 15.3" WUXGA, Int|749
+Portátiles|B0H45427NM|64|Ordenador Portátil Win 11, 15.6 Pulgadas PC Portatil 16Go LPDDR4 RAM 512Go SSD, Celeron N5|349.99
+Portátiles|B0FBDVCRLY|65|DELL 15 Ordenador Portátil - AMD Ryzen 7 7730U, 16GB RAM, 1TB SSD 15,6" FHD 120Hz, AMD Rad|759
+Portátiles|B0FBWPKXYC|66|Dell Latitude 5400 - Ordenador portátil profesional de 14" HD Intel Core i5-8265U, 16 GB d|290
+Portátiles|B0DBM5WYJH|68|HP Chromebook x360 14" FHD, Intel N100, 4GB, 128GB, ChromeOS Suscripción Google AI Pro con|309
+Portátiles|B0H98LRXVJ|69|Kayoote 15,6" Portátil 8GB RAM y SSD de 256GB con Win 11 Pro, Celeron 3865U Pantalla IPS F|187.99
+Portátiles|B0B6B7VB7W|70|Lenovo ThinkPad T480 / Intel Core i5-8250U / 14" FHD / 256 GB SSD / 16GB RAM|369
+Portátiles|B0H7BLRS3V|71|HP Laptop EliteBook 840 G11 14" 16 GB RAM 512 GB SSD (Reacondicionado)|499
+Portátiles|B0CQPKHRF2|72|DELL Latitude 5400 14 Pulgadas 1920 x 1080 Full HD Intel Core i5 8365U 512 GB SSD Disco Du|499
+Portátiles|B0H8SW14FK|73|Ordenador Portátil 16 Pulgadas con Core i5 8210Y CPU, PC Portátil Win11 Pro 16GB RAM SSD 1|409.99
+Portátiles|B0D8KDCKZP|74|NOTODD Ordenador Portátil Win10 Pro Celeron N4020 Portátil 14 Pulgadas 6 + 64GB SSD Expans|199.99
+Portátiles|B0D8KG6SB8|75|NOTODD Ordenador Portátil 16 Pulgadas Celeron N5095 Up to 2.9Ghz Portátil Win 11 5G WiFi 1|294.49
+Portátiles|B0GWK2NP93|78|Microsoft Surface Laptop, 13.8" Snapdragon X2 Elite 16GB RAM, 512GB SSD 13.8" LCD Touchscr|1499
+Portátiles|B0GN5JQPVM|79|ASUS V16 V3607VH-TK214 - Ordenador Portátil Gaming de 16" WUXGA 144Hz (Intel Core 7 240H|1007.99
+Portátiles|B0H4G4H1LZ|80|MOREPC Ordenador Portátil 15,6 Pulgadas,Membrana de Teclado Español,Windows 11 Pro,16GB RA|309
+Tablets|B0G14W2ZWW|3|Samsung Galaxy Tab A11+ 128GB, Tableta con IA, Pantalla de 11" con 90 Hz, 6GB de Memoria|259
+Tablets|B0H33JHKDB|4|Tablet para Niños de 7 Pulgadas, Android con 8GB RAM y 64GB ROM Ampliable a 256GB, Pantall|54.98
+Tablets|B08N8VG1JQ|5|Apple iPad (8.ª Generación, 10.2-Pulgadas, 2020), 32GB, Wi-Fi, Plata (Reacondicionado)|152.89
+Tablets|B0FJ9234ZX|6|XIAOMI REDMI Pad 2 Pro Tablet 6+128GB Gris Batería de 12000 mAh Pantalla Crystal-Clear de|195.29
+Tablets|B0FQWBBLXT|7|Samsung Galaxy Tab S10 Lite 128 GB - Tablet con IA, Incluye S Pen, 6 GB Memoria, Pantalla|324.94
+Tablets|B0H8RX4R3D|8|NIDUBIO 2026 andriod 16 Tablet con Teclado, Tablet de 11 Pulgadas 30GB RAM+128GB ROM+1TB|115.99
+Tablets|B0GT9BW7DK|9|XIAOMI REDMI Pad 2 Tablet de 9,7” 4+64 GB Gris Grafito batería de 7600 mAh pantalla 2K 120|159
+Tablets|B0DT4XFFN6|10|Lenovo Tab – Tablet 10.1" WUXGA (MediaTek Helio G85, 4GB RAM, 64 GB, 60 Hz, 2 Altavoces, W|159
+Tablets|B0FBQQXPJZ|11|Xiaomi Redmi Pad 2 - Tablet de 11" 2.5K (MediaTek G100-Ultra, 4GB de RAM, 128GB de ROM, Wi|177.24
+Tablets|B0GQVLW917|12|Apple iPad Air de 11 Pulgadas (M4): Pantalla Liquid Retina, 128 GB, cámaras Frontal/Traser|759
+Tablets|B0GQM2H6G3|13|UBDXBD Tablet de 10 pulgadas, tablet Android 15, 18 GB de RAM (6+12) 128 GB ROM, T30 Octa|79.99
+Tablets|B0GWHQQJ56|15|Tablet 10 Pulgadas Android 16, 24GB RAM + 64GB ROM, 6000mAh Kit con Teclado, Ratón, Lápiz|89.99
+Tablets|B0GT4FX7BV|16|SUMTAB Tablet para Niños 10 Pulgadas Android 15 con 30GB RAM 128GB ROM (mpliable 2 TB), Co|84.68
+Tablets|B0H32FHRRP|17|TT.KIDS Tablet Android 16, Tableta de 11 Pulgadas, 32GB RAM+256GB ROM (TF 1TB), 7800mAh, 5|102.88
+Tablets|B09FL1D59W|18|TECLAST P50 Tablet 11" Android 16, 90Hz Tablets 32GB+128GB, 4G LTE, 8000mAh 2GHz Octa-Core|169.99
+Tablets|B09FL1SNPF|19|TECLAST P30T 120Hz Tablet 10" con 10 Accesorios Android 16, 16GB+128GB+5TB 2GHz Octa-Core|129.99
+Tablets|B0FRMC8FLH|20|Tablet 10 Pulgadas Android 15 con Gemini AI, 30 GB RAM + Ampliable 2 TB ROM, Octa-Core, Wi|99.99
+Tablets|B0GSW1D4R4|21|Tablet 10 Pulgadas, Android 15, 30GB RAM+128GB ROM, Pantalla IPS HD-Verde Procesador Octa|79.99
+Tablets|B0GQL6N4BG|22|Laptok Tablet 10 Pulgadas Android 16, 24GB RAM 64GB ROM Control Parental Pantalla IPS HD 1|89.99
+Tablets|B0DZT3YFQX|23|Xiaomi Pad 7, 11 Zoll, 3,2 K, 144 Hz, 8 GB/256 GB, 8850 mAh, 45 W, Snapdragon 7 + Gen 3, G|301.99
+Tablets|B0FLYPKMQ9|24|XIAOMI Redmi Pad 2 Pro Graphite Gray 6G RAM 128G ROM|238
+Tablets|B0DB1NG88R|25|TCL NXTPAPER 14 WiFi - Tablet de 14.25" 2.4K, Octa-Core, 8GB de RAM (+8GB Extensión RAM)|346.4
+Tablets|B0FY4Z9QZG|26|Tablet 11 Pulgadas Gemini AI, 36GB RAM + 512GB ROM/1TB TF, 4G LTE Dual SIM+5G WiFi, 2GHz O|132.99
+Tablets|B0H6J3WYZF|28|Tablet 10,1 pulgadas Android 15 tableta Gemini AI, 30+64GB+(1GB TF),Morado tablet con tecl|99.19
+Tablets|B0FP5D2LJN|29|SANNUO Tablet para Niños 7 Pulgadas, Tablet Android 13 con 8GB RAM 64GB ROM (mpliable 256|54.98
+Tablets|B09FKZ2YQ6|30|TECLAST P50T Tablet 11 Pulgadas Android 16 Tableta 90Hz, T7250 2GHz Octa-Core Gemini AI, 1|129.99
+Tablets|B09K1RVTV6|51|Apple iPad 2021 (10,2-pulgadas, 64GB) Gris Espacial (Reacondicionado) Wi-Fi|235.89
+Tablets|B0F7Q912Q4|52|TCL NXTPAPER 11 Plus Tablet, 11.45" 2.2K NXTPAPER 4.0 Display, MediaTek Helio G100, 256GB|209.99
+Tablets|B0FWD7LX46|53|Apple iPad Pro de 13″ (M5): Pantalla Ultra Retina XDR, cámara Frontal de 12 Mpx en Horizon|1701.48
+Tablets|B0F6CLXDD1|54|WOREGOO 11 Pulgadas Android 15 Tablet, 5G WiFi, Octa-Core, 36GB RAM+256GB ROM (1TB TF), HD|139.99
+Tablets|B0H6J4DDK9|55|Tablet 10.1 Pulgadas Android 15 Octa-Core 2.0 GHz,30GB RAM + 128GB ROM,Azul Con Teclado y|109.59
+Tablets|B09FL29NDX|56|TECLAST T65 Tablet 13.4" Android 16, 120Hz Tablet con Teclado, 4G LTE Gemini AI, tablet co|219.99
+Tablets|B0GXHTQPBN|57|DEERTiME 2026 Tablet 10 Pulgadas Android AI, Octa-Core 2.0GHz, 22GB(6GB+16GB)+128GB/TF 1TB|95.99
+Tablets|B0GVJKWLQV|58|Tablet para Niños 10 Pulgadas Android 15 con Gemini AI, 30GB+2TB TF - Rosa Tablet Infantil|109.99
+Tablets|B0H9RGCW8Y|59|VELVDIVA Tablet 11 Pulgadas Android 16, 36GB RAM+512GB ROM (Ampliable 2TB), Octa-Core, 4G|145.98
+Tablets|B0GF5X9354|60|Android Tableta de 10 pulgadas 12 GB RAM + 128 GB ROM, TF de 2 TB, 5G + 2,4G WiFi, GPS, BT|72.19
+Tablets|B0FF4XRLY7|61|Xiaomi Redmi Pad 2 11", Wi-Fi, 256GB 8GB RAM, Gris Grafito|254.99
+Tablets|B0855NVMVR|62|2019 Apple iPad 7th Gen (10,2-pulgadas, Wi-Fi, 32GB) Gris Espacial (Reacondicionado)|123.89
+Tablets|B0HHSBQNCT|63|ANTIOXID Tablet 10 Pulgadas Tabletas con Tarjeta SIM/WiFi,Octa-Core,19GB RAM+128 GB ROM (T|89.98
+Tablets|B0FJFKJYMX|64|XIAOMI Redmi Pad 2 8GB + 256GB Tableta, Pantalla 11" 2.5K 90Hz, Mediatek Helio G100 Ultra|219
+Tablets|B0GYX7XRLZ|65|SUAAT 2026 Android Tableta 10.1 Pulgadas, Octa-Core, con 20 GB de RAM + 128 GB de ROM +2 T|75.99
+Tablets|B0GX9SBDKC|66|Xiaomi REDMI Pad 2 4+256GB Tablet de 11" 2.5K Gris Batería de 9000 mAh Pantalla crystal-cl|279.9
+Tablets|B0GL91Y23T|67|Android 15 Tablet con Teclado y Lapiz - 30 GB RAM+ 128 GB ROM(2 TB TF), Octa-Core, Gemini|109.99
+Tablets|B0GX632VTH|68|Tablet 10 Pulgadas, Android 16 Tablet con Funda, 26GB RAM +128GB ROM, Octa-Core T606, 1TB|89.99
+Tablets|B0FJ8ZGSMF|69|XIAOMI REDMI Pad 2 Pro 5G 6+128 GB, 12,1 Pulgadas, 12000 mAh, batería Pantalla transparent|379.99
+Tablets|B0H4ZC1SFC|70|Tablet 10 Pulgadas Android 16, 64GB ROM+24GB RAM, 6000mAh Hasta 1TB TF, IPS HD 1280×800, W|69.99
+Tablets|B0HFW3TZSK|71|DOFACESH 7 Pulgadas Tableta con Android 15, 36GB RAM 256GB ROM (SD Expandible), Widevine L|79.98
+Tablets|B0H4KNK16B|72|TT.KIDS Tablet para Niños 10 Pulgadas, Tablet Infantil Android 16 Cinco Núcleos, 24GB RAM|139.99
+Tablets|B0F1DLNG74|73|Samsung Galaxy Tab S10 FE 128GB, Tablet Android + S Pen, Galaxy AI, 8GB RAM, Pantalla de 1|499.99
+Tablets|B0FR9KSNHD|74|Lenovo Idea Tab Plus – 12.1" 2.5K (MediaTek Dimensity 6400, 8 GB RAM, 256 GB UFS 2.2, 90 H|289
+Tablets|B0H7W61WXL|75|ALLDOCUBE Tablet 8.4 Pulgadas,Android 16,SIM 4G LTE,16GB+128GB,UNISOC T7300 Mini Tablet 60|159.99
+Tablets|B0D45M2SNB|76|Lenovo Tab M11 - Tablet de 11" 1920 x 1200 px (MediaTek Helio G88, 8GB RAM, 128GB Ampliabl|199.98
+Tablets|B0H3KN9P5Q|77|HONOR Pad X9a Tableta 11,5 Pulgadas WiFi 6GB+128GB Gris Pantalla 2.5K 120Hz, Batería 8300m|179
+Tablets|B0H33CQ14Y|78|Tableta Android 16, 30GB + 128GB (ampliable a 1TB), tableta de 11 pulgadas con Bluetooth 5|94.75
+Tablets|B0H9986MXZ|79|Tablet Android 15 Tablet 10 Pulgadas, 20GB RAM + 128GB ROM (TF 2TB), Octa-Core, Widevine L|99.99
+Tablets|B0G4827DCM|80|Samsung Galaxy Tab A11+ - Tablet - Android 16 - 128 Gb - 27.82 Cm (11")|225
+Monitores|B0FWCJYML5|3|LG Monitor Gaming Ultragear 27G610A-B - 27'', IPS, Morado QHD(2560 x 1440), 200 Hz, 1 ms|193.05
+Monitores|B0BYJ79PHH|4|Yodoit Monitor Portátil Pantalla Portatil de 15,6 Pulgadas IPS 1080P FHD Display USB Type|69.99
+Monitores|B0CKRVB58D|6|LG Monitor 32MR50C-B - 32'', VA, FHD, 100 Hz, NTSC 72%, Negro FHD (1920 x 1080), Panel VA|136.99
+Monitores|B0F29RSLHP|7|DELL 27 Plus USB-C Monitor - S2725QC, 4K UHD (3840x2160), 120Hz, IPS, 4ms, AMD FreeSync Pr|328.09
+Monitores|B0F5BTTM66|10|AOC Q27G42ZE Gaming Monitor 27 Pulgadas 260Hz Panel Fast IPS, 1ms GtG, HDR10, G-Sync Compa|159.9
+Monitores|B0DH51BPZD|11|LG Monitor Ultrafine 27US500-W - 27'', IPS, 4K UHD, 60 Hz, HDR10, Blanco DCI-P3 90%, UHD 4|175
+Monitores|B0CJCBQYDY|12|ARZOPA 16.1'' 144Hz Monitor Portátil con Kickstand, 106% sRGB 1920×1080P FHD HDR 144HZ Gam|119.99
+Monitores|B0BZYP24JC|13|KOORUI Gaming Monitor 34 Pulgadas Curvo 200Hz WQHD HDR400 Pip PBP HDMI/DP Adaptive Sync, A|229.99
+Monitores|B08MQLFVMX|14|Philips Monitors 346E2CUAE/00-34" Curved 1500R, WQHD, 100Hz, 1ms, VA, Adaptive Sync (3440x|211.65
+Monitores|B0FH54QNFY|15|AOC 24B36X Gaming Monitor 24 Pulgadas 144Hz Panel IPS, 4ms GtG, HDR10, (1920x1080 HDMI 1x|89.9
+Monitores|B0FWCTL8CW|16|MSI Pro MP273WA E14A Monitor Profesional de 27" FHD, 1920 x 1080 IPS, 144 Hz, 1 ms, Compat|104
+Monitores|B0DCZF5X4P|17|AOC Gaming Q27G4XF - Monitor QHD de 27 Pulgadas, 180 Hz, Plano, 0,5 ms, FreeSync Prem., Co|112.59
+Monitores|B0F8F1GXCV|18|Lenovo L24-4e - Monitor FHD 23.8" (IPS, 1920x1080, Tasa de Refresco 48 Hz – 100 Hz, Tiempo|74.99
+Monitores|B0FR44R88G|19|AOC 27G4ZR Gaming Monitor 27 Pulgadas 260Hz Panel Fast IPS, 1ms GtG, HDR10, G-Sync Compati|109
+Monitores|B0F8VZS3QJ|20|PHILIPS Evnia 27M2N3501PA Gaming Monitor 27 Pulgadas 260Hz Panel Fast IPS, 1ms GtG, HDR10|159
+Monitores|B0CP7R6KDQ|21|Amazon Basics Monitor de 27"/68.6 cm, FHD 1080p, MAX 100 Hz, Compatible con VESA, Altavoce|99.9
+Monitores|B0DBM1P775|22|PHILIPS 27E1N1900AE Monitor 27 Pulgadas 60Hz Panel IPS, 4ms GtG, HDR10, Altavoces, Altura|189
+Monitores|B0DJD4SX35|23|PHILIPS Evnia 34M2C5501A Gaming Monitor 34 Pulgadas 180Hz Panel Fast VA, 1ms GtG, HDR400|260
+Monitores|B0FQ5F2QSQ|24|DELL 24 Plus Monitor - S2425HSM, Full HD (1920x1080), 144Hz, IPS, 1ms MPRT AMD FreeSync, 9|106.18
+Monitores|B0FCS4D6L2|25|ARZOPA [Ganador del Red Dot 2026] Monitor Portátil 16,1", FHD IPS 100% sRGB, USB-C y Mini|94.99
+Monitores|B0FWCRFFWB|26|MSI Pro MP165A E6 Monitor portátil de 15,6" FHD, 1920 x 1080 IPS, 60 Hz, 4 ms, protección|94
+Monitores|B0CRRG8P8W|27|HONGO Monitor Portátil Pantalla Portatil Extensible 15.6 Pulgadas 1080P HDR IPS Pantalla E|66.49
+Monitores|B0FWCPNPCV|28|MSI mag 276CFA E20 Monitor Gaming de 27" FHD 1500R, 1920 x 1080 Rapid VA, 200 Hz, 0,5 ms|119
+Monitores|B0CPM45WF7|29|MSI G255F - Monitor Gaming de 24.5", FHD (1920x1080), 180 Hz / 1ms, Adaptive-Sync, Display|123.03
+Monitores|B0CJCCDV65|30|ARZOPA Monitor portátil, Pantalla Portátil IPS FHD de 15,6" 1920 × 1080 con Soporte, Segun|99.99
+Monitores|B0DF84JPCW|51|Lenovo L27h-4A - Monitor QHD 27" (IPS, 4 Lados Ultrafinos, HDMI - DP - USB-C, 16:9, Tasa d|158.63
+Monitores|B0DJ9KZG6P|52|MSI Pro MP273U Monitor Profesional de 27", Panel IPS 4K 3840 x 2160 PIP/PBP, 60Hz, 300 nit|164
+Monitores|B09CD57PMJ|53|ASUS ROG Strix OLED XG27AQWMG - Monitor Gaming de 27, 1440p TrueBlack Glossy Tandem, 280 H|524.89
+Monitores|B0GF22VY1Q|54|siaviala Monitor Portatil 15.6” Ultra-Delgado, 1080P FHD IPS Extensor Pantalla Portatil, T|198.54
+Monitores|B0FV92PFV5|55|MSI mag 242CA Monitor Gaming de 24" FHD 1500R, 1920 x 1080 VA, 180 Hz, 1 ms, Compatible co|131.99
+Monitores|B0FJRG2RR2|56|MSI Pro MP275PG E14 Monitor Profesional FHD de 27 Pulgadas, 1920x1080 IPS, 144Hz, 1ms, HDR|112.99
+Monitores|B0DF9ZLFTN|57|BenQ MA320U 32” Monitor 4K 3840x2160 para MacBook Pro/Air, Doble USB-C de 90W, Coincidenci|599.99
+Monitores|B096Y34M8Z|58|67,3 Cm (26.5") 2560 X 1440 Pixel Msi 9s6-3cfa9T-001 16:9 Wide Quad Hd Oled 0,03 Ms 300 Hz|349
+Monitores|B0HJ8MSF1L|59|Alurin CoreVision, 120IPSLite Monitor Gaming 22" FHD IPS 120Hz, 2ms HDR10 Adaptive Sync, r|69.99
+Monitores|B0FWCY4ZTD|60|MSI mag 274QPA QD-OLED X24 de 27" - Monitor Gaming, WQHD, Panel QD-OLED de 2560 x 1440, 24|369
+Monitores|B0FWCLJ51V|61|MSI Pro MP275QA E14 de 27" WQHD, 2560 x 1440 IPS, 144 Hz, 1 ms, Compatible con HDR, Adapti|139
+Monitores|B0DJTDVCVT|62|ASUS VY279HGR- Monitor Eye Care Gaming IPS FHD 120Hz de 27" 120 Hz, SmoothMotion, 1 ms, Ad|104.9
+Monitores|B0FWRNS5CJ|63|UPERFECT Monitor portátil Táctil 15,6" Ultradelgado 125% sRGB 2000:1 1080P Pantalla Portat|129.99
+Monitores|B096B3PBFZ|64|BenQ PD2705U Monitor de diseño (tecnología AQCOLOR, 27 pulgadas, 4K UHD, IPS, color panorá|379.99
+Monitores|B0FR9M5NL6|65|AOC Q27G41ZDF Gaming Monitor 27 Pulgadas 240Hz Panel QD-OLED, 0.03ms GtG, HDR10, G-Sync Co|318.96
+Monitores|B0F9Z1SS65|66|ASUS TUF Gaming VG249Q5R - Monitor Fast IPS FHD 200Hz de 24" 200 Hz, Fast IPS, ELMB, 0.3 m|99
+Monitores|B0H5KBJ41F|67|Corsair XENEON Edge 14.5" Pantalla táctil LCD 2K HDMI USB‑C – Smoke 2560 x 720, 60Hz, Port|209.9
+Monitores|B096Z7QJLF|68|MSI MPG 346CQRF X24 - Monitor Gaming Curvo UWQHD 1500R de 34" 3440 x 1440 VA rápida, 240 H|380.33
+Monitores|B0G5Q7465Y|69|MSI Pro MP251A E14L 24,5" FHD 1920 x 1080, Monitor de Ordenador IPS, 144 Hz, 1 ms, Adaptiv|89
+Monitores|B0D5CRPLWN|70|Philips 34E1C5600AM - Monitor Curvo WQHD de 34 Pulgadas, Webcam, Altura Regulable, Altavoz|329
+Monitores|B08H4THPSB|71|ASUS ProArt PA27JCV - Monitor USB-C para Mac 5K de 27" 5120 x 2880, 99% DCI-P3, LuxPixel A|662.49
+Monitores|B0BRL8B5L5|72|Samsung Monitor Curvo Gaming Odyssey G5 G55T QHD 34" con 165Hz y AMD Freesync Premium|252.8
+Monitores|B0CZ78PQ7Q|73|AOC CU34G2XPD/BK Gaming Monitor 34 Pulgadas 180Hz Panel Fast VA, 1ms GtG, HDR400, Altura A|259
+Monitores|B0DT4NRV5Z|74|ASUS ZenScreen MB169CK - Monitor portátil IPS de 15,6" Doble USB Tipo-C, Antiparpadeo, Fil|80.85
+Monitores|B0HGKKHRZC|75|BenQ GW2491PE Monitor 24" 1080p 120Hz IPS Oogzorg voor kantoor in huis 920x1080, Visual Op|79.99
+Monitores|B0DPHGY8VB|76|KOORUI Gaming Monitor 24" 170Hz PC Pantalla FHD Adaptive Sync HDMI 1.4|82.99
+Monitores|B0BY2R4BHW|77|ASUS ProArt PA279CRV - Monitor USB-C Profesional 4K IPS de 27" 4K (3840 x 2160), 99% DCI-P|425
+Monitores|B0F82M3GHX|78|Yodoit Monitor Portátil 15,6", IPS FHD 1920×1080P Pantalla Portatil con Soporte, Conectivi|69.99
+Monitores|B0GHVY7F4M|79|Gawfolk 27 Pulgadas IPS 2K QHD Monitor de PC,Altavoces Integrados resolución(2560×1440), 7|99.34
+Monitores|B0FWCRDT8V|80|msi mag 275QFA E20 27" Gaming Monitor, 2560x1440 WQHD Rapid IPS, 200 Hz, 0,5 ms, HDR Ready|159
+Componentes de PC|B0FLY49P6T|6|WD 2TB Elements Ae Disco Duro Externo Portátil, USB SuperSpeed 3.2 Gen 1/USB 3.0, Ampliaci|123.99
+Componentes de PC|B0C9DP3G86|7|ORIGBELIE Lector CD Externo, Plug & Play CD DVD +/-RW Drive Ultradelgada Grabadora DVD Ext|21.99
+Componentes de PC|B0DC8RVRBZ|8|Crucial P310 SSD 2TB PCIe Gen4 NVMe M.2 2280, Disco Interno, hasta 7.100 MB/s, Compatible|249.99
+Componentes de PC|B0DMTMK2Q5|10|CORSAIR RM750e (2025) Fuente de alimentación ATX - Negro Incluye un cable de 12V-2x6, Tota|110.99
+Componentes de PC|B07BCP3PYL|11|Maxone Disco Duro Externo 500GB - 2.5" USB 3.0 Ultrafino Diseño Metálico HDD Portátil para|38.59
+Componentes de PC|B09XV2JTWT|12|SYY Pasta Térmica 4g con Kit Alto Rendimiento CPU GPU Consolas Portátiles Base de carbono;|5.75
+Componentes de PC|B0DQP58C2D|13|Disco Duro Externo Portátil Ultra Delgado 500GB HDD Disco Duro USB 3.0 SATA Expansión de A|34.69
+Componentes de PC|B07PDBYX48|16|Rodzon Grabadora Externa USB 3.0, Unidades Portátil CD/DVD /-RW/ROM Estable con Lector/Que|17.99
+Componentes de PC|B087DF1L2J|17|Samsung T7 Portable SSD - 1 TB - USB 3.2 Gen.2 External SSD Indigo Blue (MU-PC1T0H/WW)|168.99
+Componentes de PC|B07TNQXQ6N|18|Lexar NS100 SSD Interno 2,5" SATA III 256GB 6Gb/s, Hasta 520 MB/s de Lectura, Unidad de Es|42.99
+Componentes de PC|B0GBY1GSDX|19|CORSAIR 3200D RS Caja para PC Semitorre – Negro 3 Ventiladores RS120 PWM Incluidos, Brazo|36.2
+Componentes de PC|B0BHZGT2FY|20|Uyubao Soporte Tarjeta Grafica GPU, Soporte Tarjeta De Video,GPU Holder, L(70mm-120mm)|6.64
+Componentes de PC|B01NAXBSIY|23|Timetec 16GB Kit(2x8GB) DDR3L / DDR3 1600MHz (DDR3L-1600) PC3L-12800 / PC3-12800 Non-ECC U|46.99
+Componentes de PC|B0CK8NDN1Q|24|CORSAIR CX650 ATX 650W Fuente de Alimentación - Eficiencia 80 Plus Bronze - Bajo Ruido - C|56.99
+Componentes de PC|B0DNMCJHJP|25|Lexar EQ790 SSD, M.2 2280 PCIe Gen4 NVMe SSD, EQ790 1TB Velocidad hasta 7000 MB/s, para Ca|172.99
+Componentes de PC|B09NHV3CK9|26|Seagate 4TB IronWolf Disco Duro Interno NAS SATA 6 Gb/s (ST4000VNZ06) 5400 RPM. HDD optimi|232.56
+Componentes de PC|B07WCMXJ6X|27|Blueendless Disco Duro Externo 2.5" USB3.0 Almacenamiento De Disco Duro Portátil Ultrafino|32
+Componentes de PC|B0D8T5XD3P|29|ELEGOO 3PCS Placa de Desarrollo ESP32 Type C-USB Compatible con Arduino IDE Microcontrolad|20.99
+Componentes de PC|B08LK8ZYJ1|30|Patriot Memory SSD Disco Sólido Interno 2.5" SATA III Interno 240GB Burst Elite 6 Gbps|41.99
+Componentes de PC|B0DB84CQW6|51|Thermal Grizzly PhaseSheet PTM 50x40 mm Pad térmico CPU GPU PCM, 50x40 mm, no conductor, C|13.14
+Componentes de PC|B0BWRXZZC8|52|TP-Link Archer TX20E-Tarjeta WiFi PCIe, AX1800, 1201 Mbps, WiFi 6, Gigabit Actualiza tu PC|24.95
+Componentes de PC|B0B1M6Z25X|53|TP-Link Archer TX55E-Tarjeta WiFi PCIe, AX3000, 2402 Mbps, WiFi 6, Gigabit Tarjeta de Red|32.98
+Componentes de PC|B07L9BDY3T|54|ARCTIC MX-4 (4 g) - Premium Performance Pasta Térmica Para todos los procesadores (CPU, GP|8.54
+Componentes de PC|B0D9C1DT62|55|CORSAIR RM850x Fuente de Alimentación ATX Totalmente Modular de Bajo Ruido – Compatible co|134.9
+Componentes de PC|B0GBXXB5L3|56|CORSAIR 3200D RS Caja para PC Semitorre ARGB – Negro 3 Ventiladores RS120 ARGB PWM Incluid|48.52
+Componentes de PC|B0DB26N2ZV|57|Grabadora de Reproductor DVD Externa USB3.0 Tipo C Unidad de CD Externa Plug and Play Lect|16.99
+Componentes de PC|B0FZSW4H9S|58|fanxiang SSD 240GB SATA III 6Gb/s 2,5", Disco Duro SSD 240GB-hasta 560MB/s, Disco Duro Int|39.99
+Componentes de PC|B01BIWKP58|59|Crucial RAM DDR4 8GB 2400MHz SODIMM CL17, Memoria para Ordenador Portátil/Laptop, Mini PC|72.91
+Componentes de PC|B0B3LPF1YG|60|Transcend SSD portátil ESD380C 2TB, 2000 MB/s, Antigolpes, USB-C Carcasa de goma, disco du|489.9
+Componentes de PC|B07S8VK1NL|61|One enjoy Pasta térmica de Metal líquido, 79 W/MK de Alto Rendimiento, Pasta de disipador|14.99
+Componentes de PC|B0H1Q1D41X|62|Disco Duro Externo portátil de 1 TB y 25 Pulgadas USB 3.0 Compatible con tabletas y Dispos|32.06
+Componentes de PC|B0H6J2Y9PQ|63|SAISTOR Disco Duro Externo Mecánico Portátil Ultradelgado de 500 GB HDD Externo USB 3.0 SA|35.99
+Componentes de PC|B077D1WXPD|64|Intenso 3832440 Top ssd 256gb m.2|41.95
+Componentes de PC|B09V5G5R4G|65|TACENS Anima APIII500, Fuente Alimentación PC ATX 500W, Tecnología SMD 85% Bronze 12V, Ven|16.99
+Componentes de PC|B0D1YHC4KW|66|WD 6TB My Passport Disco Duro Externo Portátil, USB 3.2 Gen 1/USB 3.0, Copia de seguridad|246.64
+Componentes de PC|B0DKFMSMYK|67|Processore - Amd - Ryzen 7 9800x3d - 4,7 Ghz, 8 Core, 104 Mb L2 E L3, Am5|438.95
+Componentes de PC|B0CGW1FQV4|68|Crucial X9 SSD 1TB Portátil, hasta 1050MB/s, Compatible con PC, Mac, PlayStation y Xbox, D|169.99
+Componentes de PC|B0H41D4KFT|69|AMD Ryzen 7 5800X3D Edición 10.º Aniversario, procesador de sobremesa para Socket AM4 y Me|361
+Componentes de PC|B0DGXJS6BF|70|UGREEN Capturadora Vídeo HDMI 4K30Hz 1080P HD 60FPS Entrada USB A C Capture USB C USB A Ta|22.99
+Componentes de PC|B0F1C8XKT1|71|Dictien Lector CD Externo para PC, Superdelgado Grabadora DVD Externa Unidades USB 3.0 y U|19.7
+Componentes de PC|B0CYW62PXJ|72|Capturadora Video HDMI, Placa de Captura 1080p60, Loop-out 4K60, Streaming Capturadora de|24.99
+Componentes de PC|B0FJ8MFWSY|73|Lexar Thor Pro SSD 1TB, M.2 2280 PCIe Gen4 NVMe SSD Unidad de Estado Sólido Interna de Alt|159.99
+Componentes de PC|B0C3M56Y13|74|Tacens Anima APIII750, Fuente Alimentación PC ATX 750W, Tecnología SMD, 85% Eficiencia 12V|27
+Componentes de PC|B0BQ3XS1LZ|75|Tacens Anima APIII600, Fuente Alimentación PC ATX 600W, Tecnología SMD, 85% Eficiencia 12V|18.98
+Componentes de PC|B093BVQYYM|76|Seagate Expansion Desktop 6TB, Unidad De Disco Duro Externa HDD, 3.5 Pulgadas, USB 3.0, PC|229.95
+Componentes de PC|B09VCHQHZ6|77|AMD Ryzen 7 5700X Procesador (8 núcleos/16 threads, 65W TDP, Socket AM4, 36MB Caché, Reloj|194.96
+Componentes de PC|B09NSTR7JZ|78|Thermalright Peerless Assassin 120 SE Enfriador de aire de CPU, enfriador de CPU de 6 tubo|37.59
+Componentes de PC|B0B55SWRCY|79|fanxiang SSD M.2- SSD 256GB NVMe PCIe Gen3x4 2280, hasta 3000 MB/s, M.2 256GB NVMe con Pas|53.99
+Componentes de PC|B07RW6Z692|80|CORSAIR Vengeance LPX DDR4 RAM 32GB (2x16GB) hasta 3200MHz CL16-20-20-38 1.35V Intel AMD M|270
+Almacenamiento|B0DH1MKVQV|20|Lexar D40E Unidad Flash Dual USB Tipo-C, USB-A/C, 128GB, Champán Plateado USB 3.2 Gen 1, T|24.36
+Almacenamiento|B08TJRVWV1|21|Amazon Basics Tarjeta de memoria microSDXC con adaptador de tamaño completo, A2, U3, veloc|34.99
+Almacenamiento|B0B6148YKN|22|Amazon Basics Memoria flash USB 3.1 de 128 GB, velocidad de lectura de hasta 130 MB/s, Neg|17.94
+Almacenamiento|B08JD4TBM3|23|Kingston DataTraveler Exodia DTX/128GB Flash Drive USB 3.2 Gen 1 - with Protective Cap and|14.95
+Almacenamiento|B0833XD33G|24|Netac 2 Paquetes 64 GB Tarjeta de Memoria Micro SD A1 U3 C10 V30 UHS-I Velocidad hasta 100|25.99
+Almacenamiento|B0B7NWR653|25|SanDisk 64 GB Ultra SDXC Tarjeta, con hasta 140 MB/s, rendimiento de apps A1, UHS-1, Clase|21.29
+Almacenamiento|B0GT3Z7C8W|26|KEXIN Tarjeta Micro SD de 16 GB, microSDHC UHS-I Class 10 A1 U1, Tarjeta Mini SD Tarjeta d|9.99
+Almacenamiento|B0DRXPLZFK|27|Amazon Basics Memoria USB, Memoria Portátil con Puertos USB C y USB A Duales, 128GB, Color|24.57
+Almacenamiento|B08J4HJ98L|51|SanDisk Ultra 32 GB microSDHC Memory Card + SD Adapter with A1 App Performance Up to 120 M|30.49
+Almacenamiento|B08GYG6T12|52|SanDisk Ultra 32GB SDHC Memory Card, Up to 120 MB/s, Class 10, UHS-I, V10 U1, C10, Full HD|21.54
+Almacenamiento|B09Y82JQHL|56|Lexar Tarjeta Micro SD de 32 GB con Adaptador, 2 Paquetes, hasta 100 MB/s A1, U1, C10, V10|29.99
+Almacenamiento|B0B2K3ZCHH|58|Kingspec SSD 512GB 2,5" SATA III, TLC 3D NAND Flash Disco Duro Interno, Lectura de Hasta 5|72.99
+Almacenamiento|B0BFG8BPQF|59|SanDisk Ultra de 64 GB microSDXC UHS-I Tarjeta para Chromebook con Adaptador SD y Velocida|19.29
+Almacenamiento|B0CCN9NHTC|60|Crucial BX500 SATA SSD 1TB Interno 2.5", hasta 540MB/s, Compatible con Ordenador Portátil|159.99
+Almacenamiento|B0DBR3DZWG|61|Kingston NV3 NVMe PCIe 4.0 SSD Interno 1TB M.2 2280-SNV3S/1000G|149.95
+Almacenamiento|B09X7BQB4J|62|SanDisk Extreme microSDXC 128GB SD Adapter Action Cams and Drones 170MB/s 80MB/s A2 C10 V3|32.49
+Almacenamiento|B084R9PM6M|63|KEXIN Micro SD Tarjeta Memoria de 32GB, MicroSDHC Tarjeta hasta 70 MB/s de Alta Velocidad|29.99
+Almacenamiento|B09X7CRKRZ|64|SanDisk Extreme Tarjeta Micro SDXC 256GB + adaptador SD, (Para teléfonos inteligentes, cám|61.99
+Almacenamiento|B0GDQRNTF3|65|SANDISK Extreme Pro Tarjeta SD UHS-I de 128 GB (con hasta 250 MB/s de Velocidad de Lectura|52.99
+Almacenamiento|B0CBC1G93G|66|Lexar SILVER PRO Tarjeta SD de 128GB, tarjeta de memoria SD UHS-II, V60, U3, C10, lectura|103.34
+Almacenamiento|B076HGTTK1|67|ENUODA Memorias USB 16GB 3 Piezas Pendrive USB 2.0 Flash Drive para PC, Portátil, Audio de|14.24
+Almacenamiento|B0B9C3ZVHR|68|SAMSUNG Unidad de estado sólido 990 Pro M.2 1000 GB PCI Express 4.0 V-NAND MLC NVMe, negro|209.95
+Almacenamiento|B0FNWWDGSX|69|UGREEN NASync DH2300 NAS de Escritorio 2 Bahías Servidor NAS, LAN 1GbE 4GB RAM, NFC, NAS p|209.99
+Almacenamiento|B00M2X5IPA|70|Intenso 4034303019984 Conector Usb Tipo A, 32 Gb - USB 3.0, Negro|8.99
+Almacenamiento|B0BX9BH17W|72|Lexar 633x Tarjeta Micro SD 64GB microSDXC UHS-I sin Adaptador Hasta 100 MB/s de Lectura|15.94
+Almacenamiento|B09XDJ673F|73|fanxiang S101 SSD 1TB- SATA III 6 GB/s, Disco Duro ssd 1tb, 2,5 Pulgadas-Velocidad de Lect|116.99
+Almacenamiento|B0DZ5ZK225|74|Crucial P510 SSD 1TB PCIe 5.0 x5 Gen5 NVMe M.2, Velocidades de lectura hasta 11.000 MB/s|179.99
+Almacenamiento|B01EZ0X3L8|75|SanDisk Ultra 64 GB Dual Type-C USB 3.0 Flash Drive, Silver|18.99
+Almacenamiento|B00YMZBPKI|77|Intenso 3533490 lápiz USB 3.2 Speed 64gb|9.95
+Almacenamiento|B0FN881MSS|80|Kingston Unidad Flash USB DataTraveler Duo 128GB USB-A + C 3.2 DuoG2 - DTDEG2/128GB|18.57
+Redes y wifi|B09FDRMZ73|4|TP-Link UE306 - Adaptador USB a Ethernet, Gigabit, USB 3.0, Nano USB a Gigabit Ethernet. P|9.49
+Redes y wifi|B0DYV5MPLF|5|UGREEN USB Bluetooth 6.0 Adaptador Bluetooth para PC Windows 11 10 8.1 USB BT para PC Plug|8.99
+Redes y wifi|B07RPVQY62|9|TP-Link LS105G - Switch Gigabit de 5 Puertos, Plug & Play, Carcasa Acero Plug & Play, No N|14.99
+Redes y wifi|B098K3H92Z|11|TP-Link UB500 - Adaptador Bluetooth USB para PC, Plug & Play, Tamaño Mini Ideal para PC si|9.99
+Redes y wifi|B01EXDG2MO|14|TP-Link TL-SG108 - Switch Gigabit de 8 Puertos, Plug & Play, Carcasa Acero No Necesita Con|24.99
+Redes y wifi|B0DYNMWHBG|15|Amazon Basics Adaptador USB Bluetooth 5.4 para PC, Receptor USB para ratón Bluetooth, Tecl|6.81
+Redes y wifi|B08989MYQ2|18|Amazon Basics Adaptador de USB 3.1 tipo C a Gigabit Ethernet RJ-45 de aluminio, Gris, 5,23|8.38
+Redes y wifi|B00A128S24|22|TP-Link TL-SG105 - Switch Gigabit de 5 Puertos, Plug & Play, Carcasa Acero Plug & Play, No|16.96
+Redes y wifi|B09LVFNMVJ|23|TP-Link Deco X50 Sistema WiFi 6 AI Mesh, AX3000 Doble Banda 2.4 GHz/5 GHz, Cobertura hasta|154.49
+Redes y wifi|B0H495Q7M1|24|WiFi Repeater, 1200Mbps Amplificador Señal Repetidor Doble Banda 2.4G/5G con 4 Antenas, Wi|18.99
+Redes y wifi|B07M8GSLQB|26|UGREEN Adaptador USB C a Ethernet RJ45 Gigabit 1000Mbps Type-C LAN Compatible con iPhone 1|14.24
+Redes y wifi|B0F4KYFFXY|29|TP-Link Archer TX1U Nano - Adaptador WiFi USB, AX300, 300 Mbps, WiFi 6 Actualiza tu PC con|8.99
+Redes y wifi|B08WQ16H4N|51|TP-Link TL-SG108-M2 - Switch ethernet 2.5G, 8 Puertos, Plug & Play 8 Puertos 2.5G. Plug &|79.49
+Redes y wifi|B0DVGSK2DF|52|ASUS RT-BE50 - Router Extensible Inteligente AiMesh WiFi 7 de Doble Banda 802.11be, 3600 M|56.99
+Redes y wifi|B00A0VBPLM|53|TP-Link TL-PA4010 Kit - Powerline PLC Kit, AV 600 Mbps, Plug & Play Amplía tu Red a Través|35.01
+Redes y wifi|B0FMJD288B|54|SONOFF Zigbee/Thread USB Dongle Plus MG24 Dongle-PMG24 Gateway Zigbee y Thread Border Rout|22.99
+Redes y wifi|B00V4BGDKU|55|TP-Link UE300 - Adaptador USB a Ethernet, 1000 Mbps, Gigabit, USB 3.0, Nano USB a Gigabit|11.99
+Redes y wifi|B01MD1SKLL|56|TP-Link RE305 - Repetidor WiFi 5 AC1200 Doble Banda, Puerto Ethernet Amplificador de Señal|36.95
+Redes y wifi|B0DK7KB2DM|57|TP-Link Archer MR202 - Router 4G LTE SIM, WiFi 5 AC750 Doble Banda Inserta una Tarjeta SIM|73.79
+Redes y wifi|B0DBHC7RG9|58|Tenda AX900 U11 Adaptador WiFi USB para PC, WiFi 6 USB WiFi Doble Banda 5GHz 2.4GHz, Adapt|9.49
+Redes y wifi|B08KWC7D78|59|BENFEI Adaptador USB 3.0 a Ethernet RJ45 10/100/1000 Gigabit Ethernet LAN Compatible con M|11.39
+Redes y wifi|B0CS6WK6YL|60|Mercusys MA30H - Adaptador WiFi USB, AC1300, 867 Mbps, con Antena, para PC Actualiza tu PC|11.99
+Redes y wifi|B0FDWP65HJ|61|TP-Link Deco BE3600 (2-Pack) Sistema WiFi 7 Mesh, BE3600 Doble Banda, 420m² Cobertura para|195.99
+Redes y wifi|B0H5VGTXML|62|WONLINK AX1500Mbps Amplificador de señal WiFi Repetidor WiFi 6 Dual Banda 5G/2.4G, Extenso|41.14
+Redes y wifi|B0D5YW9NS6|63|Mercusys MA530 - Adaptador WiFi USB, Bluetooth 5.4, Nano, para PC Adaptador WiFi USB para|6.99
+Redes y wifi|B079YSQGT2|64|Omada EA225-Outdoor - Punto de Acceso WiFi 5 AC1200, para Exterior, PoE Alimentación PoE.|73.19
+Redes y wifi|B0CD1FDKT1|65|UGREEN Adaptador USB C a Ethernet 2.5G RJ45 Aluminio 2500Mbps LAN Compatible con iPhone 18|22.79
+Redes y wifi|B07VC41CXJ|66|TP-Link LS1008G - Switch Ethernet Gigabit, 8 Puertos, Plug & Play, Smart TV 8 Puertos Giga|18.99
+Redes y wifi|B08R3ZHZ78|67|TP-Link TL-POE160S - Inyector PoE Plus Gigabit, 30 W, IEEE 802.3at AF Inyector PoE+ 30W. A|19.99
+Redes y wifi|B0CS3FD17C|68|TP-Link TL-MR110 - Router 4G LTE SIM, WiFi 4 300 Mbps, 2 Puertos Ethernet Inserta una Tarj|49.99
+Redes y wifi|B08D8QTNKG|69|TP-Link TL-WPA8631P Kit - Adaptador Powerline AV1300, Kit PLC WiFi AC1200 Amplía tu Red a|111.24
+Redes y wifi|B0GR8WXNH1|70|COMFAST Amplificador Señal WiFi, AC1200Mbps Repetidor WiFi Antenas Externas Doble Banda 5G|45.58
+Redes y wifi|B0BYZR8T38|71|TP-Link Archer MR550 - Router 4G+ LTE SIM, WiFi 5 AC1200, 4 Puertos GE Inserta una Tarjeta|114.49
+Redes y wifi|B0FNWXZ115|72|ASUS TUF Gaming BE9400 - Router WiFi 7 Ampliable de Triple Banda Cobertura de hasta 232 m2|132.99
+Redes y wifi|B0BVKZDF98|73|TP-Link Deco X50-Outdoor -Sistema WiFi 6 Mesh de Exterior, AX3000, PoE Cobertura en el Ext|119.99
+Redes y wifi|B0FQW6D63L|74|Mercusys MS105GS-M2 - Switch 5G, 5 Puertos, Plug and Play, sin Ventilador 5 Puertos Gigabi|36.99
+Redes y wifi|B0B6P22YJC|75|SONOFF Dongle USB Zigbee Más - ZBDongle-E 3.0 Interfaz Antena Externa SMA Gateway Universa|18.98
+Redes y wifi|B0DBVYKZT8|76|TP-Link Archer NX200 - Router 5G SIM, WiFi 6 AX1800 Doble Banda, EasyMesh Internet sin Fib|269.19
+Redes y wifi|B0DVGWCGD4|77|ASUS USB-BT540 - Adaptador Bluetooth 5.4, hasta 7 Dispositivos, Ultracompacto, EDR y BLE|13.9
+Redes y wifi|B0763TGBTS|78|TP-Link TL-SG1005P - Switch Gigabit de 5 Puertos (4 PoE+), Plug & Play, QoS 5 Puertos Giga|41.95
+Redes y wifi|B0CFYMG5J2|79|TP-Link Archer AX58 - Router WiFi 6 AX3000, Doble Banda, 5 Puertos GE Amplia Cobertura. Co|69.99
+Redes y wifi|B0DXVD4K1Z|80|UGREEN 2.5G Switch Ethernet 5X2.5G Puertos+1X10G SFP+ (6 Puertos) Switch RJ45 Carcasa Meta|36
+Impresoras|B08T1HR5CS|1|HP 305 Negro y Tricolor, Pack de 2 Cartuchos de Tinta Originales Compatible con HP DeskJet|26.45
+Impresoras|B087DH9GT3|2|HP 305XL Negro, Cartucho de Tinta Original, Alta Capacidad Compatible con HP DeskJet serie|26.96
+Impresoras|B087DKRSH1|3|HP 305 Negro, Cartucho de Tinta Original Compatible con HP DeskJet serie 2700, 4100, HP En|14.41
+Impresoras|B07GTWD7Z7|4|HP 304 Negro y Tricolor, Pack de 2 Cartuchos de Tinta Originales Compatible con HP DeskJet|34.78
+Impresoras|B0GR9W5G3K|5|HP 308 Negro y Tricolor, Pack de 2 Cartuchos de Tinta Originales Compatible con HP Envy 61|35.5
+Impresoras|B087DJ43K3|6|HP 305 Negro, 3YM61AE, Cartucho Original de 120 Páginas, Compatible con Impresoras DeskJet|14.41
+Impresoras|B01LXLFF6H|8|HP 302 Negro y Tricolor, Pack de 2 Cartuchos de Tinta Originales Compatible con HP DeskJet|40.85
+Impresoras|B003LNLPQ6|9|HP 301 Negro, Cartucho de Tinta Original Compatible con HP DeskJet 1050, 2050, 3050, HP En|21.45
+Impresoras|B0GLQFZTVW|10|HP 302/304 Negro, Cartucho de Tinta Original Compatible con DeskJet 1110, 2130, 3630, Envy|21.9
+Impresoras|B087DGWYNS|12|HP 305XL Cartucho de Tinta de Alta Capacidad Compatible con HP DeskJet serie 2700, 4100, H|22.99
+Impresoras|B08K81325J|13|HP 305XL Tricolor, Cartucho de Tinta Original de Gran Capacidad, Compatible con Impresoras|20.4
+Impresoras|B0DHKBY591|14|305XL Cartuchos de Impresora para HP 305 Cartuchos de Repuesto para HP 305 Original Cartuc|34.99
+Impresoras|B087DJZ5TK|16|HP 305 Tricolor, Cartucho de Tinta Original Compatible con HP DeskJet 2300, 2700, 2700e, H|13.75
+Impresoras|B0B8X2D5DD|17|Epson Multipack de 4 Cartuchos de Tinta Original 604 Piña Negro, Cian, Magenta, Amarillo 1|41.99
+Impresoras|B09N782PTX|19|HP 142A Negro, W1420A, Cartucho Tóner Original de 950 Páginas, Compatible con Las Impresor|51.45
+Impresoras|B0GHSQP3QV|20|HP 308 Negro, Cartucho de Tinta Original Compatible con HP Envy 6110e, 6120e, 6122e, 6130e|22.9
+Impresoras|B00ET2LU2M|21|Canon PG-545 Fine Cartucho de Tinta Negro Original 8ml Tinta negra auténtica para document|18.25
+Impresoras|B01ARRTHUE|22|HP 62 Negro y Tricolor, Pack de 2 Cartuchos de Tinta Originales Compatible con HP Envy 554|52.25
+Impresoras|B0CH8L2DW1|23|Canon PG-575 + CL-576 Fine Cartuchos de Tinta Original + Papel Fotográfico 5.6ml + 6.2ml T|32.52
+Impresoras|B07GTS7SWK|24|HP 303 Negro y Tricolor, Pack de 2 Cartuchos de Tinta Originales Compatible con HP Tango|45.58
+Impresoras|B0BPMHFNTJ|25|Canon PG-575 Fine Cartucho de Tinta Negro Original 5.6ml Tinta negra auténtica para docume|15.49
+Impresoras|B00ET01FR4|26|Cartucho de tinta PG-545XL de alta capacidad (15 ml) original de Canon para hasta 400 pági|25.45
+Impresoras|B0DSCDGXD7|27|305 XL Cartuchos Compatibles para HP 305 XL Negro y Color, Alta Capacidad, 305XL Original|34.89
+Impresoras|B0DGLXK3B9|28|HP Envy 6120e 714L8B, Impresora multifunción de inyección de Tinta A4 a Color, Conexión Wi|64.82
+Impresoras|B07VVSTH27|29|Epson 603 cartucho multipack (4 colores)|40.83
+Impresoras|B0CKYHXT3S|30|Hookink 603XL Cartuchos de Tinta Compatibles con Tinta Epson 603XL 603 XL para XP-3100 XP|11.72
+Impresoras|B0G3W4K18S|51|Denvoer Cartucho de Tinta Compatible para 604XL para Epson XP-2200 XP-3200 Compatible para|15.89
+Impresoras|B00OSX7PYY|52|HP Cartucho de Tinta Original C2P04AE Negro|14.56
+Impresoras|B0D9S7923D|53|304XL Cartuchos para HP 304 Cartuchos de Compatible con HP 304 Cartuchos de Impresora para|28.48
+Impresoras|B076QJPWFZ|54|Brother TN2410 Tóner Negro para Las impresoras: HLL2310D, HLL2350DW,HLL2370DN, HLL2375DW|49.15
+Impresoras|B0CRB9JDNP|55|304 304 XL Tinta 304 Cartuchos Remanufacturado para HP 304XL para 5010 5030 304XL Cartucho|27.99
+Impresoras|B08GKXLKHV|56|HP 953 Negro, Cian, Magenta, Amarillo, Pack de 4 Cartuchos Tinta Originales Compatible con|127.99
+Impresoras|B09C8M1VDF|57|TONER PACK TN2420 Cartuchos de Tóner Compatible para Brother MFC-L2710DW Compatible para H|18.9
+Impresoras|B0GQ6MVMVZ|58|HP 308 Tricolor, Cartucho de Tinta Original Compatible con HP Envy 6110e, 6120e, 6122e, 61|18.9
+Impresoras|B0FX5CZX4F|59|ONLYU 575XL 576XL Cartuchos compatibles Negro y Color para Canon 575 576 compatible con Ca|32.98
+Impresoras|B0GX12RDK1|60|Epson EcoTank ET-2912 para hogares dinámicos Wi-Fi A4 Impresión, Copia, escaneado Compatib|179.99
+Impresoras|B0DHH3GLG6|61|Cartuchos de Tinta 305XL Negro y Color Compatible con HP DeskJet 2700e 2720e 2820e, Envy 6|34.86
+Impresoras|B01MXT0SU7|62|Brother LC3219XLVAL Juego de 4 Cartuchos (Negro, Cian, Magenta y Amarillo) para Las impres|115.34
+Impresoras|B0BPJK37V7|63|HP Smart Tank 5105, Impresora Multifunción A4 con deposito de Tinta Grande Impresión dúple|157.94
+Impresoras|B07FXXKFSC|64|Brother TN243CMYK - Cartucho de tóner Negro, Cian, Magenta, Amarillo, Multi-Pack|202.58
+Impresoras|B0FMDSQWC8|65|GREENSKY PG-575XL CL-576XL Cartuchos compatibles para Canon 575 576 Negro y Color para imp|29.77
+Impresoras|B0B8X3THPT|66|Epson Impresora de inyección de Tinta multifunción Expression XP-3200 A4 con conectividad|92.99
+Impresoras|B0D4WMV7X9|67|INKYEAH Tinta 305 XL Negro y Color - 1200+ Páginas, Reemplazo para Cartucho Tinta HP 305 O|34.89
+Impresoras|B0G3W2P8DY|68|Denvoer 142A W1420A Cartucho de Tóner Compatible per HP LaserJet M110 M140 Toner 142A 142X|20.89
+Impresoras|B0BKZG2KPC|69|iNKPAD TN2420 Cartuchos Tóner Compatibles con Brother TN 2420 MFC-L2710DW Compatible para|21.99
+Impresoras|B08BXSR45Z|70|Botellas de tinta originales EcoTank de la serie 102 de Epson - 4 Colores negro, cian, mag|42.99
+Impresoras|B0F4D4L7CP|71|Redsee PG-575XL CL-576XL Multipack Cartuchos de Tinta Reemplazo para Canon 575 576 XL para|30.86
+Impresoras|B0GV4C414Y|72|HP 937 Negro, Cian, Magenta, Amarillo, Pack de 4 Cartuchos Tinta Originales Compatible con|104.13
+Impresoras|B0DSK5FL1Q|73|Economink 302XL Cartuchos de Impresora, Cartucho 302 Compatible con HP 302 Cartuchos de Im|28.49
+Impresoras|B0DDCSVYY7|74|SUNPRINTZ 302XL Cartuchos de Tinta Remanufacturado para HP 302XL, 302 XL Negro y Color par|28.48
+Impresoras|B0BPMGX9FV|75|Canon CL-576 Fine Cartucho de Tinta Color Original 6.2ml Tinta de color auténtica para doc|13.72
+Impresoras|B0798J5TZX|76|HP 31 Cian, Botella de Tinta Original Compatible con HP Smart Tank Series 100, 300, 400, 5|12.99
+Impresoras|B09B26M9J6|77|Brother LC421XLBK Cartucho Original de Tinta de Alta Capacidad para Las impresoras MFCJ101|22.99
+Impresoras|B0C9PNHJY7|78|Economink 301XL Cartuchos de Tinta, 301 XL Negro y Color Remanufacturado para HP 301XL Car|28.48
+Impresoras|B0DFQ42MFS|79|301XL Cartuchos de Tinta Remanufacturado para HP 301 para HP 301 Negro y Color, 301 XL Tin|28.48
+Impresoras|B0CRDLK1LJ|80|305XL Cartuchos de Tinta Remanufacturado para Tinta HP 305 XL, 305XL Cartuchos para HP Des|36.89
+Accesorios de informática|B0D2DR6YND|5|NGS Fog Pro Pink - Ratón Inalámbrico Óptico Silencioso 1000 dpi, Rosa Receptor nano USB, d|4.95
+Accesorios de informática|B0875VL1CJ|10|UGREEN Cat 8 Cable Ethernet Red RJ45 Super Velocidad 40Gbps 2000MHz (2M) Nylon Trenzado Do|7.28
+Accesorios de informática|B0DC44B473|11|Lápiz para iPad 2018-2026, función magnética rechazo Palma Precision píxel Compatible con|9.99
+Accesorios de informática|B0D69T4MGW|12|GRIFEMA Soporte para Ordenador Portátil, Laptop Stand Ajustable 7 Ángulos Elevador Portáti|8.39
+Accesorios de informática|B0HG4XCQGL|13|BSTOEM Cable Cargador iPhone Carga Rápida, para Apple MFi Certificado 1M+2M Cable USB-A a|8.99
+Accesorios de informática|B00552K0GM|14|Logitech M185 Ratón Inalámbrico, 2.4GHz con Mini Receptor USB Batería de 12 Meses, Seguimi|9.95
+Accesorios de informática|B0DK8MRZNL|15|Aioneus Cable Cargador iPhone 2M Cable iPhone Carga Rápida [Apple MFi Certificado] Nylon T|5.99
+Accesorios de informática|B07W6HCFYX|16|Logitech M240 Silencioso Bluetooth Ratón, inalámbrico, Compacto Portátil, seguimiento suav|12.99
+Accesorios de informática|B0B7QWBZC9|18|EooCoo para Funda MacBook Air 13,6 Pulgadas M5 M4 M3 M2 Transparente Carcasa Rígida Ultra|11.98
+Accesorios de informática|B0BR3M8XHK|21|UGREEN Revodok 105 Hub USB C 5 en 1 Adaptador de USB-C a HDMI 4K Alta Definición, PD 100W|13.99
+Accesorios de informática|B0BJV4XG35|22|Gerutek [2 Piezas Protector Pantalla para iPad A16 11ª/10ª Gen (2025/2022) 11/10,9 Pulgada|7.99
+Accesorios de informática|B0DDPMQJVH|26|Metapen Air8 Lápiz para Apple iPad 2018-2026,Rechazo Palma,Alta Precisión 2X Carga Rápida|17.99
+Accesorios de informática|B09X2NB8PF|27|Nixsto Cable Ethernet 5 metros, Cat 6 Cable de Red, Cable Internet Plano Alta Velocidad Ca|5.99
+Accesorios de informática|B0DHZH21J3|29|MAS CARNEY Auriculares con Cable Tipo C para iPhone 17 Pro MAX 16 15, iPad Cascos con Cabl|8.99
+Accesorios de informática|B078SD7XVM|51|tomtoc 360° Funda para 13 Pulgadas Nuevo MacBook Air M5/A3449 (2026), M4/A3240 (2025), M3/|25.49
+Accesorios de informática|B07W7KGYN1|52|Logitech MK295 Silent, QWERTY Español - Negro Combo teclado y ratón inalámbricos SilentTou|29.99
+Accesorios de informática|B07Z66MK6L|53|Basesailor Adaptador USB a USB C,Convertidor Cargador USBC Hembra a USB A Cargador Tipo C|6.99
+Accesorios de informática|B0756WD4LW|54|Cable CAT 6 Cable de red LAN para Gigabit Ethernet Cable de conexión blindado S-FTP con co|3.94
+Accesorios de informática|B0F9P1GPGL|55|BENFEI Soporte para Portátil con Docking Station USB C 7 en 1, HDMI 4K@60Hz, Ranura SD y M|33.7
+Accesorios de informática|B0CX23929Q|56|Apple Cable de USB-C a conector Lightning (1 m)|19
+Accesorios de informática|B08T1RP8NK|57|DOBAOJIA Alfombrilla Teclado y Raton, Alfombrilla de Escritorio 90 x 43cm Alfombrilla Orde|18.99
+Accesorios de informática|B0FBVBNTB9|58|45W Cargador Portátil Compatible con HP Pavilion Elitebook Probook Stream Pavilion X360 11|12.62
+Accesorios de informática|B00CD8AFFW|62|Amazon Basics Funda para portátiles de hasta 14-Pulgadas, Color Negro|11.47
+Accesorios de informática|B01GGKZ0V6|63|Amazon Basics Cable de carga rápida USB-C a USB-C, velocidad de 480 Mbps, certificado USB|7.34
+Accesorios de informática|B07W5JHM12|64|Logitech Signature M650 L ratón inalámbrico de tamaño Normal (Grafito) Para manos grandes|30.95
+Accesorios de informática|B0CZ6YS8PR|65|JETech Protector Pantalla para iPad Air 11" M4/M3/M2, 2 Unidades Para 2026/2025/2024 Model|11.99
+Accesorios de informática|B0CBLKQL6F|66|Uiosmuph Ratón Inalámbrico Bluetooth, Silencioso Wireless Mouse, Plata 3 Modos Bluetooth5.|18.99
+Accesorios de informática|B0CD1BHXPZ|69|UGREEN Hub USB 3.0 con 4 Puertos Adaptador Ladron Multipuertos (15cm) 5Gbps Alta Velocidad|8.92
+Accesorios de informática|B07ZH3DGGN|70|RAVIAD Cable Cargador iPhone 1.2M MFi Certificado Cable iPhone Carga Rápida Nylon Trenzado|4.99
+Accesorios de informática|B0787D6SGQ|71|Amazon Basics Ratón inalámbrico ergonómico, dpi Ajustable, Negro|11.39
+Accesorios de informática|B07WPC7HBJ|72|MoKo Funda para iPad de 9ª/8ª/7ª generación 2021/2019/2018, Gris Espacial Funda Funda para|8.45
+Accesorios de informática|B0CY1Y3TSQ|73|UGREEN Adaptador USB a Tipo C 10Gbps Convertidor Machoa a Hembra (3 Pack) Compatible con i|7.19
+Accesorios de informática|B0B9XZVLS6|76|NK Base Refrigeradora Portátil - Ventilador Ordenador Portatil de 12-17" con Soporte Ajust|19.99
+Accesorios de informática|B0DXDTX47W|77|Anker Zolo 240W Cable USB C Carga Rapida, [1,8m+1,8m] 2Pack PD 3.1, Nylon Conector Ultrafi|19.79
+Accesorios de informática|B0DDCCZS5P|78|RAVIAD Cable USB C Carga Rápida 2M 3Pack, Trenzado Nylon Cable Tipo C Cable Cargador USB C|9.99
+Accesorios de informática|B07W7LHVBN|79|Logitech Pebble Mouse 2 M350s, estilizado ratón inalámbrico Bluetooth Ligero, personalizab|17.99
+Ordenadores de sobremesa|B099KMCT4X|2|NiPoGi AK1PLUS Mini PC,Ιntel N5030,WIN-11 Pro,12GB RAM,256GB SSD (hasta 3,1GHz),Mini Orden|239.99
+Ordenadores de sobremesa|B0HGGKGRVR|3|Apple Mac Mini con Chip M6 de Apple - Plata CPU de 12 núcleos y GPU de 12 núcleos, 16GB Me|1029
+Ordenadores de sobremesa|B0FDGYD529|4|HP EliteDesk 800 G1 - Ordenador de sobremesa + TFT 23'' (Intel Core i5-4570, 3.2 GHz, 16GB|185
+Ordenadores de sobremesa|B0DYHSFMJP|5|GEEKOM IT13 MAX Mini PC con Intel Core Ultra 9 185H, 500GB SSD+ 24GB LPDDR5 Productivity A|849
+Ordenadores de sobremesa|B0GX162BBY|6|Glorlin Mini PC Ryzen 5 6600H (Beats 7430U/5825U), 16G LPDDR5 512G NVMe SSD, Mini Computad|364.37
+Ordenadores de sobremesa|B0D5YSDDZV|7|ACEMAGICIAN V1 Mini PC, AMD Ryzen 5 3500U (Supera N100/N150,4C/8T,3.7GHz) 8GB DDR4+256GB S|249
+Ordenadores de sobremesa|B0C1ZPND7K|8|NiPoGi AK1PLUS Mini PC,Ιntel N5030,WIN-11 Pro,12GB RAM,256GB SSD (hasta 3,1GHz),Mini Orden|239
+Ordenadores de sobremesa|B0D1MKTH6G|9|GMKtec G10 Mini PC Ryzen 5 3500U (Más Potente Que el N150), 16 GB RAM, 512 GB SSD, LAN 2.5|303.01
+Ordenadores de sobremesa|B0DQVCGGM3|10|HP All-in-One 27-cr0073ns - Ordenador de sobremesa 27" Full HD con cámara, Teclado y ratón|789
+Ordenadores de sobremesa|B0BMQHY6DN|11|HP Ordenador de Sobremesa Compaq 8300 SFF Core i5 hasta 3,60 GHz Windows 11 Pro 16 GB RAM|160
+Ordenadores de sobremesa|B0GMCB744B|12|BMAX B1Plus Mini PC Win 11,Intel Celeron J3355 6 GB LPDDR3 128 GB eMMC SSD (hasta 2,5 GHz)|169.99
+Ordenadores de sobremesa|B0DHRN92XS|13|Beelink SER9 MAX Mini PC, AMD Ryzen 7 H255, 64GB DDR5 RAM, 1TB PCIe 4.0 SSD Mini PC de jue|1239
+Ordenadores de sobremesa|B0F8HCZMB9|14|MINISFORUM AI X1-255 Mini PC, AMD Ryzen 7 255 (8C / 16T, hasta 4.9 GHz), 32 GB DDR5 RAM 1|829
+Ordenadores de sobremesa|B0CQT8NMPM|16|NiPoGi E3B Mini PC AMD Ryzen 5 7430U hasta 4,3 GHz 16GB RAM 512 GB SSD 6C/12T, Mejor Que 5|449
+Ordenadores de sobremesa|B0FK7S5NPZ|17|HP - EliteDesk 800 G1 Negro Intel Core i5‑4570 3,2 GHz 16 GB RAM DDR3 SSD 240 GB Lector DV|149
+Ordenadores de sobremesa|B0881WDJ5B|18|HP ELITEDESK 800 G1 i5-4570 3.2GHz 16GB RAM 240GB SSD + 500GB HDD Windows 11 con WiFi y Pa|255
+Ordenadores de sobremesa|B0FY2NBCM6|19|GMKtec Mini PC Ryzen 5 Pro 6650H(vencer a 5825U/7430U, 6C/12T 4.50 GHz), Dual 2.5GbE LAN|398.96
+Ordenadores de sobremesa|B0FH4R9BYX|20|GMKtec Mini PC AMD Ryzen 5 W11 Pro 3500U (Rendimiento Superior a 4300U/N150/N100/N95 4C/8T|288.96
+Ordenadores de sobremesa|B0GF8B7SK8|22|STGsivir PC Gaming, Core i7, GTX 1660S 6G, 16G RAM, 512G SSD Ordenador Gaming para Streami|514.42
+Ordenadores de sobremesa|B0CJR7ZY6Z|23|Beelink SER5 MAX 7735U Mini PC, AMD Ryzen 7 7735U, 24GB de RAM, SSD de 1TB AMD Radeon Grap|569
+Ordenadores de sobremesa|B0FN445DJJ|24|GMKtec M6 Ultra Gaming Mini PC Ryzen 5 7640HS (Actualizado Desde 6600H/6800U), 32GB RAM DD|569.96
+Ordenadores de sobremesa|B0F99LZMW7|25|Lenovo - PC rápido con Intel Core i7 6700 - Ordenador de sobremesa + calculadora silencios|469
+Ordenadores de sobremesa|B0CS6V3GMV|26|Acer Aspire All in One, Monitor 27", Core i5,16GB RAM, 1TB SSD Intel Core i5-12450H,Teclad|658.45
+Ordenadores de sobremesa|B0DC6V781B|27|BOSGAME E5 Home-Office-Mini PC, Ryzen 5300U (Supera 4300U/N150, hasta 3.8GHz), 16GB DDR4 R|309
+Ordenadores de sobremesa|B0CLCZBVTQ|28|NiPoGi E1 Mini PC ΑΜD Ryzen 5 3500U(3,7GHz, 4C/8T), 16 GB DDR4, 256 GB SSD Doble pantalla|299
+Ordenadores de sobremesa|B0G2BZGX1N|29|GEEKOM A7 Mini PC con AMD Ryzen 7 7730U, 500GB SSD+32GB DDR4, Agentic PC Mini Ordenador pa|699
+Ordenadores de sobremesa|B0H9LQ6FRK|30|MINISFORUM NAB9S Mini PC, Dual LAN 2,5G, Barebone (Sin RAM ni SSD) Intel Core i9-13900HK|425
+Ordenadores de sobremesa|B0HFWGL9RS|51|HP EliteDesk 800 G6 Mini Ordenador de Escritorio, Intel Core i5-10500T, 16GB RAM, 512GB SS|365
+Ordenadores de sobremesa|B0F9XFBN8L|52|Memory PC Gaming AMD Ryzen 7 5700, NVIDIA RTX 5060 8GB, 32GB DDR4, 1TB SSD De gama alta pa|1219
+Ordenadores de sobremesa|B0H5J6MW9D|53|Beelink SER3 Mini PC, AMD Ryzen 3 3200U (2C/4T, hasta 3.5GHz) Mini Ordenador de Sobremesa|199
+Ordenadores de sobremesa|B0FDN8RKH6|54|HP Elite 8300 Ordenador de sobremesa (Reacondicionado) Intel Core i7-3770, 16GB RAM, 240GB|260
+Ordenadores de sobremesa|B0C279CYC5|55|Beelink Mini PC Mini S13, Intel Twin Lake-N150 (4 núcleos/4 Hilos, hasta 3.6 GHz), 16 GB D|379
+Ordenadores de sobremesa|B0G6DLVFR2|56|HP EliteDesk 800 G3 SFF - Ordenador de sobremesa con Monitor de 24 Pulgadas, Intel Core i5|274
+Ordenadores de sobremesa|B0FFHBVHHP|57|PC Business, Desktop Dell sff, listo para usar, Core i7 6th, RAM 16 GB DRR4, SSD 512 Nvme|345.19
+Ordenadores de sobremesa|B0HDTLCCHY|58|Revampix Torre Gaming Intel Core i7, Tarjeta Gráfica GTX750 4GB, 16GB RAM, 256GB SSD + 500|399
+Ordenadores de sobremesa|B0FY7H9HRL|59|Lenovo ThinkCentre neo 50q Gen 5 Intel® Core??? i5 i5-13420H 16 GB DDR5-SDRAM 512 GB SSD W|891.79
+Ordenadores de sobremesa|B0F9YMR7MP|60|GMKtec Mini PC Ryzen 7 8845HS (8C/16T, hasta 5,1 GHz), K8 Plus, 32 GB DDR5 1 TB SSD, Panta|919.96
+Ordenadores de sobremesa|B0F4KQHHB6|61|HP 27-ct2003ss - Ordenador de 27" Full HD con Cámara, Teclado y Ratón Inalámbricos (AMD Ry|1149
+Ordenadores de sobremesa|B0GJ5M6Q8R|63|NiPoGi AK1PLUS Mini PC Ιntel Celeron N5095 16 Go RAM 256 Go SSD(MAX 4 To) Max 2.9GHz, 4K D|299
+Ordenadores de sobremesa|B0GFS76CDY|64|GEEKOM Mini PC A5 Pro AMD Ryzen 5 7530U, 16GB RAM+ 1TB SSD, Agentic PC (para el 95 % de lo|549
+Ordenadores de sobremesa|B0DP4F315R|65|Beelink Mini S12 Mini PC, Intel Alder Lake N95, 8 GB de RAM, SSD de 256 GB Windows 11 Home|259
+Ordenadores de sobremesa|B0BYHY89TF|66|Lenovo ThinkCentre M720Q MiniPC Core i5 8500T 16Gb DDR4 512Gb SSD WiFi - BT Windows 11 Pro|289
+Ordenadores de sobremesa|B0FM79TS76|67|Beelink GTi15 Mini PC, Intel Core Ultra 9 285H,64 GB DDR5, 1 TB SSD (16C/16T, hasta 5,4 GH|1599
+Ordenadores de sobremesa|B0BVB7JRJB|68|Beelink MINI-S13 Mini PC, Intel Twin Lake N150 de 13.ª Gen, Windows 11 4C/4T, hasta 3,6 GH|359
+Ordenadores de sobremesa|B0H11QRXWC|69|Glorlin GT100 Mini PC AMD Ryzen 5 3501U, 16GB DDR4 512GB SSD, W11 Pro Radeon Vega 8, WiFi|299.22
+Ordenadores de sobremesa|B0C6G53XPF|71|Beelink EQR7 Mini PC con AMD Ryzen 7 7735U, 16 GB RAM LPDDR5, SSD 500 GB 8C/16T de hasta 4|479
+Ordenadores de sobremesa|B0GWGYSMND|72|HP EliteDesk 800 G2 Mini PC de Escritorio, Intel Core i5-6500T, 8 GB de RAM, SSD de 256 GB|147.1
+Ordenadores de sobremesa|B0C16N4ZDN|73|Lenovo ThinkCentre M720q Tiny Intel Six Core i5-8500T 512 GB SSD 16 GB RAM Windows 11 Pro|249
+Ordenadores de sobremesa|B0DM4LMN72|74|GMKtec Mini PC AMD Ryzen 5 W11 Pro 3500U (Rendimiento Superior a 4300U/N150/N100/N95 4C/8T|799.95
+Ordenadores de sobremesa|B0FP4XMN7N|75|Beelink EQR7 Mini PC AMD Ryzen 7 7735U, 24 GB de RAM LPDDR5, SSD de 1 TB AMD Radeon 680M|579
+Ordenadores de sobremesa|B0GTZ5QDHJ|76|GMKtec K17 AI Mini PC, Intel Core Ultra 5 226V (hasta 4,5 GHz), 16 GB LPDDR5X 8533 MT/s, S|683.96
+Ordenadores de sobremesa|B0DDKZW186|78|MINIX Fanless Windows 11 Pro Mini PC, Intel 12th Gen N300, Neo Z300-0dB 16GB DDR4, 512GB M|535.9
+Ordenadores de sobremesa|B0BYDK1Y4X|79|MINISFORUM Venus Serie UM773 Lite Mini PC AMD Ryzen 7 7735HS jusqu'à 4,75 GHz 32 GB DDR5 1|727
+Ordenadores de sobremesa|B0GJ6TDYQF|80|Vibox IV-636 PC Gaming • AMD Ryzen 7 5700X 8 Cores • Nvidia RTX 5050 8GB • 16GB RAM • 500G|1084.95
+Reacondicionados|B0CVJ5FCK9|2|Apple iPhone 15 128 GB - Azul (Reacondicionado)|433
+Reacondicionados|B09MGFJK73|3|Apple iPhone 13, 128GB, Medianoche (Reacondicionado)|275
+Reacondicionados|B0CVJ5WF3K|5|Apple iPhone 15 Pro 128 GB - Titanio Azul (Reacondicionado)|605
+Reacondicionados|B0CVJVM1DH|6|Apple iPhone 15 Pro MAX 256 GB - Titanio Negro (Reacondicionado)|712.75
+Reacondicionados|B0DHYG26HH|7|Apple iPhone 16, 128GB, Blanco (Reacondicionado)|644
+Reacondicionados|B09CLGDGTL|8|Apple iPhone 12 128GB - Morado (Reacondicionado)|251
+Reacondicionados|B0DHYF7JW3|9|Apple iPhone 16 Pro Max, 256GB, Titanio color Desierto (Reacondicionado)|860.89
+Reacondicionados|B09MJRSWGZ|10|Apple iPhone 13 Mini 128GB - Azul (Reacondicionado)|274
+Reacondicionados|B08PCD1417|11|Apple iPhone 12 mini, 64GB, Azul - (Reacondicionado)|179
+Reacondicionados|B0BNLZSY18|12|Apple iPhone 14 Pro 128 GB - Morado Oscuro (Reacondicionado)|440
+Reacondicionados|B0CVJSHFZ8|14|Apple iPhone 15 Plus (256 GB) - Negro (Reacondicionado)|551.17
+Reacondicionados|B0F54CY1C4|15|Apple iPhone 16e, 128GB, Negro (Reacondicionado)|449.99
+Reacondicionados|B0BNM1RSW8|16|Apple iPhone 14 Pro MAX 256GB (Reacondicionado)|587.6
+Reacondicionados|B09MJSWN7Z|17|Apple iPhone 13 Pro MAX 128GB - Plata (Reacondicionado)|582
+Reacondicionados|B08PCB8QCV|18|Apple iPhone 12 Pro, 128GB, Azul Pacifico - (Reacondicionado)|310
+Reacondicionados|B08D39SX4M|21|Apple iPhone SE (2.ª Gen), 64GB, Negro (Reacondicionado)|115
+Reacondicionados|B0DHYDMJ1W|22|Apple iPhone 16 Pro, 256GB, Titanio Negro (Reacondicionado)|774
+Reacondicionados|B09MJTK6HR|24|Apple iPhone 13 Pro 128 GB - Plata (Reacondicionado)|425
+Reacondicionados|B0BNLZ9G4N|25|Apple iPhone 14 Pro, 128GB, Negro Espacial (Reacondicionado)|440
+Reacondicionados|B0BNMBHM8Z|26|Apple iPhone 14 Plus, 128GB, Medianoche (Reacondicionado)|375
+Reacondicionados|B09NW4BWFB|28|DELL Latitude 5480 Core i5 Windows 11 Pro Pantalla 14" Full HD 16 GB RAM SSD M.2 256 GB Ty|355
+Reacondicionados|B0GFW9K691|29|Lenovo Thinkpad T14 Gen 1 Portátil empresarial, 14 Pulgadas FHD (1920 x 1080), AMD Ryzen 5|514
+Reacondicionados|B0BDY71GRG|30|Apple iPhone SE (3.ª Gen), 64GB, Medianoche (Reacondicionado)|158.89
+Reacondicionados|B0DF7S7TY6|52|Google Handy Pixel 8a 128GB (Generalüberholt)|259.89
+Reacondicionados|B09MJVJM9Y|53|Apple iPhone 13, 128GB, Medianoche (Reacondicionado)|324.89
+Reacondicionados|B0FG8ZQ328|54|Samsung Galaxy A15 5G 64GB Smartphone - Azul Negro (AT&T) (Reacondicionado)|153.89
+Reacondicionados|B0D2QTLRQ3|55|Samsung Galaxy S24+ 5G Dual-SIM 12 GB RAM 256 GB Violeta (Reacondicionado)|510
+Reacondicionados|B0DGV7MMBB|57|Lenovo ThinkCentre M920q Tiny Mini PC Ordenador de sobremesa, Intel i5-8400T, memoria RAM|322
+Reacondicionados|B07YYNM6CJ|58|Apple iPad Mini 2019 (7,9-pulgadas, Wi-Fi + Celullar, 64GB) Gris Espacial (Reacondicionado|211.89
+Reacondicionados|B0FF9MZTGD|59|HP EliteBook 840 G8 14 pulgadas 1920 x 1080 Full HD Intel Core i5 1145G7 256 GB SSD Disco|610
+Reacondicionados|B0G34RRG1F|60|Mini PC Ordenador de Escritorio DELL Optiplex 3040, procesador Core i5-6400T, Memoria RAM|139
+Reacondicionados|B0BZMLL176|62|HP EliteBook 850 G5 / Intel Core I5-8250U / 15" / 8GB RAM / 256 GB SSD|350
+Reacondicionados|B07RDQBFXY|63|Corsair Harpoon Pro RGB Ratón Ligero con Cable para Juegos FPS/MOBA - Negro 12.000 PPP, 6|29.88
+Reacondicionados|B0CQC58T9N|64|Dell Latitude 5400 / Intel Core i5-8365U / 14" / 16GB RAM / 512 GB SSD (Reacondicionado)|307
+Reacondicionados|B0DVXYLF6C|65|HP EliteBook 840 G6 14 pulgadas 1920 x 1080 Full HD Intel Core i5 8265U 512 GB SSD Disco d|407
+Reacondicionados|B07G79ZP4W|66|2017 Microsoft Surface Pro 5 con Intel Core i5-7300U (12.3-pulgadas, 8GB RAM, 256GB SSD) P|176.89
+Reacondicionados|B0FSNTGYLC|67|Apple iPhone 17 Pro, 256GB, SIM Global, Plateado- Desbloqueado (Reacondicionado)|1240.95
+Reacondicionados|B0HC7BDFCC|68|HP ProDesk 400 G4 Mini Desktop Computer PC i5-8th 8GB RAM (Renewed) Micro PC 256 GB SSD, D|179
+Reacondicionados|B0D76RDKKG|69|Dell Latitude 5400 14 pulgadas 1920 x 1080 Full HD Intel Core i5 8365U 256 GB SSD Disco du|219
+Reacondicionados|B0BMW37HC7|70|Samsung Galaxy A33 5G, 128GB, Awesome Black (Reacondicionado)|176.89
+Reacondicionados|B0CCXX2KYZ|72|HP EliteBook 840 G6 / Intel Core i5-8365U / 14" FHD / 16GB RAM / 512 GB SSD (Reacondiciona|407
+Reacondicionados|B084SFH988|74|Apple iPad 10.2 (7.ª Generación) 32GB Wi-Fi - Plata (Reacondicionado)|123.89
+Reacondicionados|B0F29BCKFJ|76|Apple MacBook Air 2019 con Intel Core i5 (13-Pulgadas, 8GB de RAM, 128GB SSD de Almacenami|429
+Reacondicionados|B0GDXS3WGW|77|Lenovo ThinkPad T14 Gen 1 Notebook Business Notebook Procesador FHD de 14 pulgadas Intel C|379
+Reacondicionados|B0DNYR9YW2|78|HP EliteBook 840 G7 14" Full HD Intel Core i5 10210U 512 GB SSD 16 GB RAM Windows 11 Pro L|339
+Reacondicionados|B0CLV7Y46Q|79|Lenovo ThinkPad X270 / Intel Core I5-6300U / 12" / 8GB RAM / 128 GB SSD (Reacondicionado)|194
+Software|B09DDKHBPH|1|Bitdefender Total Security 2026 5 Dispositivos 1 Año PC/Mac/iOS/Android Código de activaci|22.99
+Software|B07HWXT1T2|2|Microsoft 365 Familia 12 meses 6 personas Apps Office con IA Hasta 6TB de Almacenamiento O|122.55
+Software|B07NLL3TH1|3|Creative Cloud Photography plan with 1TB 1 Año PC/Mac Código de activación enviado por ema|120.5
+Software|B07VNBHDZQ|4|Kaspersky Plus Internet Security 2026 1 Dispositivo 1 año Anti-Phishing y Firewall VPN ili|19.95
+Software|B0BGPKX8VT|5|McAfee Total Protection para 10 Dispositivos 2026, 15 meses, Exclusivos de Amazon Antiviru|21.99
+Software|B0FFWFR1BH|6|Adobe Lightroom and Lightroom Classic 1TB Código de activación enviado por email|68.59
+Software|B09DDK7VK5|7|Bitdefender Antivirus Plus 2026 1 Dispositivo 1 Año PC Código de activación por email Reno|9.99
+Software|B0BGPJXDFX|8|McAfee Total Protection para 3 Dispositivos 2026, 15 meses, Exclusivos de Amazon Antivirus|19.95
+Software|B0BPYCBN2R|9|Norton 360 Premium+Utilities 2026 Antivírus 10 Dispositivos 1 año con renovación automátic|24.41
+Software|B0BGPLKTVF|10|McAfee Total Protection para 5 Dispositivos 2026, 15 meses, Exclusivos de Amazon Antivirus|19.95
+Software|B0CXZ5M38J|11|NordVPN Estándar, Exclusivo de Amazon, 10 Dispositivos, 1 Año + 1 Mes Extra, Código Digita|28.99
+Software|B07V3GS97T|12|Norton 360 Estándar 2026 Antivirus 1 Dispositivo 1 año con renovación automática Descarga|12.49
+Software|B09SJ4NG8S|13|Kaspersky Password Manager Sin límite de dispositivos 1 Año Windows/Mac/Android/iOS Código|13.99
+Software|B0C4C8L45Z|14|Norton 360 Premium 2026 Antivírus 10 Dispositivos 15 meses com renovação automática Descar|19.81
+Software|B0CF3DMR1X|15|Adobe Creative Cloud Pro para estudiantes y docentes Software Creativo con IA 1 Año PC/Mac|145.21
+Software|B0B47LF5X4|16|Norton 360 Deluxe 2026 Antivirus 2+1 Dispositivos 15 meses con renovación automática Desca|20
+Software|B092JLV7JX|17|Bitdefender Total Security 5 dispositivos 1 año PC/MAC/iOS/Android Código de activación en|29.99
+Software|B07DX73SD3|18|Bitdefender Total Security 10 dispositivos 2 años PC/MAC/Móvil Código de activación enviad|59.99
+Software|B07V2BWWF8|19|Norton 360 Deluxe 2025 Antivirus 5 Dispositivos 15 meses con renovación automática Descarg|33.17
+Software|B07V8NB171|20|Norton 360 Premium 2026 Antivírus 10 Dispositivos 1 año con renovación automática Descarga|38.17
+Software|B0C5NKTJJH|21|McAfee+ Premium Individual para dispositivos ilimitados 2026 Antivirus, VPN, software de c|29.99
+Software|B07NLMPDXN|22|Adobe Creative Cloud Pro Software Creativo con IA 1 Año PC/Mac Descarga Digital|376.83
+Software|B089GSKXML|23|Bitdefender Internet Security 1 dispositivo 1 año PC Código de activación enviado por corr|19.99
+Software|B0D82BGYJT|24|Panda Dome Advanced – Antivirus Cloud VPN, Control Parental ( 3 dispositivos), Advanced, 3|27.9
+Software|B07NLMBV6G|25|Adobe Acrobat Pro 1 Año PC/Mac Descarga Digital|116.86
+Software|B08N6FZWZR|26|Norton 360 for Gamers 2026 Antivirus 3 Dispositivos 1 año Descarga digital|29.96
+Software|B092F1JMMB|27|Avast Ultimate 2026 Antivirus 10 Dispositivos 1 Año Descarga digital|53.64
+Software|B092F34VMF|28|AVG Internet Security 2026 Antivirus 10 Dispositivos 1 Año Descarga digital|15.99
+Software|B0DJCLFDS5|29|Norton 360 Premium Exclusivo Amazon* Antivirus 10 Dispositivos 15 meses Descarga digital|41.99
+Software|B0CYP35K6B|30|Surfshark ONE VPN Ilimitada 1 Mes VPN+Antivirus Código Digital|17.99
+Software|B0C5NKG88T|51|McAfee+ Premium Familiar para dispositivos ilimitados 2026 Antivirus, VPN, software de cib|39.99
+Software|B0BXPW6H5P|52|Nero VHS a USB Video Grabber Recode Stick – Convertidor analógico a digital para VHS, S-VH|49.95
+Software|B0CTLDVKHY|53|ESET HOME Security Essential 2026 1 dispositivo 1 año banca online y navegación seguras, i|39.99
+Software|B09MYJ1R6L|54|Microsoft System Builder Windоws 11 Home Intended use for new systems Install on a new PC|146.14
+Software|B0BS6H9GLY|55|Nero El Original Nero Burning ROM 2026 Programa de Grabación Grabar, Copiar, Proteger y Ri|49.95
+Software|B09LVSC3KM|56|Avast Ultimate 2027 - Antivirus Avast Premium Security con Avast SecureLine VPN, Avast Cle|40.99
+Software|B092DY51PL|57|Avast Cleanup Premium 2026 10 Dispositivos 1 Año Descarga digital|34.14
+Software|B09BQCQJ9M|58|Microsoft 365 Individual - 1 PC/MAC, 1 año - DE - Caja, Negro, (QQ2-01421)|84
+Software|B0CG7J4C42|59|Adobe Photoshop Lightroom Including 1TB Cloud Memory & McAfee Total Protection 2026 (Renov|199.25
+Software|B0BLK7RCY6|60|Office Suite 2026 en CD DVD Paquete Office permanente compatible con MS Office – Crear, Ab|21.99
+Software|B092F11W48|61|Avast Premium Security 2026 Antivirus 10 Dispositivos 1 Año Descarga digital|23.99
+Software|B0CRX4VQFS|62|Norton 360 Deluxe Exclusivo Amazon* Antivirus 5 Dispositivos 1 año con renovación automáti|36.99
+Software|B0BQRMBHHX|64|Norton 360 for Mobile 2026 1 Dispositivo 1 año con renovación automática Descarga digital|10.37
+Software|B01NCS0S3U|65|AVG Ultimate 2027 - Antivirus con AVG Secure VPN y AVG TuneUp para agilizar su PC 10 Dispo|39.99
+Software|B0G51CKV5D|66|[Exclusivo en Amazon] Bitdefender Total Security 3 Dispositivos 18 Meses Código de activac|34.99
+Software|B0BK9TTDPY|67|OfficeSuite Home & Business - Licencia de Por Vida - Documents, Sheets, Slides, PDF, Mail|99.99
+Software|B0BGPPLP5C|68|Bitdefender Premium VPN 10 dispositivos 1 año PC/Mac/Smartphone Código de activación envia|29.99
+Software|B01MY4LA8A|69|AVG TuneUp Unlimited 2027 - Elimina los archivos basura y acelera el sistema operativo 10|34.99
+Software|B0D66TBLP7|70|MAGIX Music Maker 2025 Premium - MUSIC MADE EASY Software de audio Programa de música para|59.99
+Software|B00ZWQ6N3A|71|Avanquest Architekt 3D X8 Innenarchitekt - Software de diseño automatizado (CAD) (Alemán|18.65
+Software|B0FGHJD1KY|72|Smartbox Caja regalo Spa y relax para dos , Idea de regalo para padres , 1 actividad de bi|39.9
+Software|B0C5XQH39D|73|Nero Guardar cintas VHS fácilmente – Digitalizar VHS, S-VHS y Hi8 sin conocimientos técnic|39.95
+Software|B0FN93Y2YB|74|Norton VPN Ultimate 2026 │ 10 Dispositivos │ 1 Año con renovación automática │ Descarga di|26.33
+Software|B0CF749R38|75|Bitdefender Premium VPN 2026 10 Dispositivos 1 Año PC/Mac/iOS/Android Código de activación|69.99
+Software|B0GV1QSR2Y|76|Adobe Firefly Standard incl. Generación de Vídeo con IA, Suscripción 12 Meses, 2000 Crédit|61.34
+Software|B092F4R1YY|77|AVG Ultimate 2026 Antivirus 10 Dispositivos 1 Año Descarga digital|49.99
+Software|B0DHWBP21P|78|Norton 360 Advanced 2026 │ 10 Dispositivos │ 12 meses renovación automática │ Social Media|42.99
+Software|B083DZWWXN|79|Audio Converter - Edit and convert your sound and music files to other audio formats - eas|32.6
+Software|B07KCLZ1R2|80|Microsoft 365 Empresa Estándar - 1 usuario - 5 PC/Mac + 5 Tabletas +5 móviles - Suscripció|149
+Grandes electrodomésticos|B0DLGHY39F|5|ACTIV CUISINE Adaptador de inducción de disco placa de 14 cm de difusión de calor de acero|14.99
+Grandes electrodomésticos|B0DK76H3DX|6|Cecotec Lavadora 12Kg Carga Frontal Bolero DressCode 12500 Inverter. 1400rpm, 16 Programas|263.44
+Grandes electrodomésticos|B0DJ3453ZS|10|Cecotec Vinoteca Bolero GrandSommelier 1250 CoolCrystal. Bodega para 12 botellas, enfriami|139
+Grandes electrodomésticos|B06W5KYNNG|11|WENKO Placas protectoras para cocina Mod Almuerzo, ajustable en altura para todo tipo de c|29.99
+Grandes electrodomésticos|B0C4LJWLD7|18|Soporte para Lavar Gorras Lavadora, Jaula Funda para Lavadora de Sombreros Arandela Limpia|11.99
+Grandes electrodomésticos|B0BW7FY87Z|19|Manguera Lavadora y Lavavajillas 3m para Entrada Agua 25°C 20-60 Bar Ø3/4" MADE IN ITALY|15.99
+Grandes electrodomésticos|B07DVM36PS|20|Filtro de agua genuino Samsung DA29-10105J Aqua Pure Plus para refrigerador|21.95
+Grandes electrodomésticos|B0BML4GD1F|21|SCNNC Bombilla E14 LED Frigo T18 3W AC230V 300LM Blanco Cálido 3000K No Regulable, Equival|8.99
+Grandes electrodomésticos|B0CS3CN3WG|25|McFilter 4 amortiguadores de vibraciones para lavadoras y secadoras Amortiguadores de vibr|10.89
+Grandes electrodomésticos|B097CBKX29|27|Soporte Lavadora Antivibracion 4 Piezas, con amortiguación de impactos Alfombrillas antide|9.98
+Grandes electrodomésticos|B00NVEEHL0|30|Bosch 311925 Genuine Original lavadora limpiador, 200 g, Paquete de 4|34.03
+Grandes electrodomésticos|B09YM746ZD|51|Manguera Lavadora y Lavavajillas Entrada Universal 6m LG Bosch Siemens AEG Compatible LG B|22.7
+Grandes electrodomésticos|B07CN94CY7|53|Micel Marco Microondas, 600mm X 400mm, Blanco (94505)|12.69
+Grandes electrodomésticos|B0FR6TZXRX|54|HOMELAY Tapa encimera gas. Tapa vitroceramica con ancho máximo de 58 cm. Cubre fuegos Coci|49.95
+Grandes electrodomésticos|B0DK4ZTVJH|55|AWNIC Funda Lavadora Exterior Impermeable, 60x64x85cm Funda con Apertura Frontal para Cubr|16.99
+Grandes electrodomésticos|B01LY856ZO|56|TEKA Placa Vitrocerámica 60 cm, 3 Fuegos, Touch Control, Función Stop & Go, Indicador de C|149
+Grandes electrodomésticos|B06XNMZQCV|57|Bosch, Lavavajillas, Serie 2, 12 Servicios, Silencioso, blanco, SMS25AW05E Vajilla impecab|279.91
+Grandes electrodomésticos|B01LCHUF72|58|TEKA Campana Extractora Telescópica de 60 cm, Doble Turbina, 2 Velocidades, Acero Inoxidab|78.99
+Grandes electrodomésticos|B0DNMRNRF2|60|TempPro TP110 Termómetro Frigorífico Digital, IPX6 Impermeable, 1 pieza Termómetro Nevera|11.99
+Grandes electrodomésticos|B0GHS35VKK|61|Cecotec Campana Extractora Convencional 60 cm Bolero Flux CM 602100 White A. Acabado Pinta|49.9
+Grandes electrodomésticos|B0GL39WYD6|62|MIDEA Arcon Congelador Pequeño de 418L Congelador Horizontal Convertible a Frigorífico con|320.43
+Grandes electrodomésticos|B0CHBFVMVV|64|FilterBase® Filtro de Grasa Universal para Campana Extractora Paquete de 2 Indicador de Sa|8.65
+Grandes electrodomésticos|B0B55ZCKG8|65|2 x Filtro para Secadora Miele 9164761, Esponjas Filtro Secadora 207 x 157 x 30 mm, Filtro|15.99
+Grandes electrodomésticos|B0F38HVGSH|66|Bandeja para botellas (47,1 x 12,2 x 9,6 cm) para frigorífico Bosch - 00704406|18
+Grandes electrodomésticos|B0CR6KQ179|67|Anchira Manguera Desague Lavadora 3m, Manguera de Desague Lavavajillas con Soporte Conecto|13.99
+Grandes electrodomésticos|B09S11NN2N|70|CABLEPELADO Junta Puerta Horno Goma Universal Medidas 490 mm ancho x 360 mm alto Incluye 4|17.99
+Grandes electrodomésticos|B0G4PP154L|71|Reparador de Óxido para Cestas de Lavavajillas, Impermeable, 50ml (Gris) Líquido Reparador|11.99
+Grandes electrodomésticos|B0F79MRMNG|72|Bosch - Bandeja de verduras, Cajón CrisperBox para frutas y verduras, 689256|68.97
+Grandes electrodomésticos|B08PNQW3RP|73|W B D WEIBIDA Base con 4 Ruedas con Bloqueo Ancho Ajustable 40-62cm, Carga 200KG Soporte L|35.99
+Grandes electrodomésticos|B0H2XVM3G6|74|Atrapa Pelos Lavadora 12PCS Reutilizables Elimina Pelo de Perro/Gato Quita Pelos Mascota p|14.99
+Grandes electrodomésticos|B0CB4DH8NR|75|LG F4WR6010A1W - Lavadora Inteligente, 10kg, AI Direct Drive, 1400rpm, Carga Frontal, Clas|515.32
+Grandes electrodomésticos|B0D9FW7JPZ|76|Midea Lavavajillas 60 cm+++ Blanco para 14 servicios - Lavaplatos libre instalación - Comp|299.99
+Grandes electrodomésticos|B07FCPXSYY|77|Cinta de sellado cinta de sellado 3mx 9mm x 2mm cinta de montaje para vitrocerámica|4.9
+Grandes electrodomésticos|B0FF9MPLH4|79|Ruedas Lavadora，Soporte con Ruedas Lavadora，Base Lavadora Ajustable，con 24 Ruedas, 46 a 71|17.99
+Grandes electrodomésticos|B0DPFTQMZ9|80|Wehimo - Placa de cocina de gas de 4 fuegos, mesa de cocción de gas 60 cm, rejilla hierro|108.9
+Industria y ciencia|B0CD7B7ZKK|2|ELEGOO Filamento PLA 1.75 1KG Blanco Precisión Dimensional +/- 0.02mm, Carrete de Filament|13.99
+Industria y ciencia|B0CD7DYZ1B|3|ELEGOO Filamento PLA+ 1.75 1KG Blanco PLA Plus para Impresora 3D, Precisión Dimensional +/|12.63
+Industria y ciencia|B07SH9FY7G|4|EQM - ECO-301 - Alcohol Isopropílico 99,9% - 1L - Isopropanol - Limpieza componentes elect|8.39
+Industria y ciencia|B0CR1DBBFN|5|eSUN PLA Filamento 1.75mm 1KG Negro, PLA Basic 3D Impresora Filamento Filamento PLA Basic|13.99
+Industria y ciencia|B01M27AW5O|6|KH-7 Desic Insecticida, Elimina y protege de insectos rastreros tu hogar, Aroma a Lavanda|8.64
+Industria y ciencia|B086GTG1D8|7|eSUN Filamento PLA+ 1.75mm, Filamento de Resistencia Mejorada Blanco Hueso Mejorado Tenaci|13.95
+Industria y ciencia|B07ZHLHKV2|8|Limpiezabarata Toalla Papel Secamanos Tejido Zig Zag, Laminadas Doble Capa, Caja 3000 Unid|19.5
+Industria y ciencia|B0CL4RH21B|9|ELEGOO Filamento PLA+ de Alta Velocidad 1.75 1KG Negro Velocidad 30-600mm/s, Precisión Dim|12.85
+Industria y ciencia|B0CJ63CKFY|10|Double Dragon 60 Bolsas de Envío Resellables de Tamaño Mixto Plástico Antimanipulación par|6.94
+Industria y ciencia|B0F444BR84|11|ELEGOO Filamento PLA+ 1.75 4KG Negro Blanco Rojo Azul PLA Plus para Impresora 3D, Precisió|36.09
+Industria y ciencia|B0D4ZB6D5D|12|ELEGOO Filamento PLA MATE 1.75 1KG Negro Precisión Dimensional +/- 0.02mm, Carrete de Fila|15.99
+Industria y ciencia|B0BGXX5GM1|13|Limpiador de suelos para robots de limpieza - 750ml para todos los fabricantes|8.03
+Industria y ciencia|B0DT4G7K5K|14|DEEPLEE PLA Pro Filamento 1.75 mm, Negro, Bobina 1 kg Alta tenacidad, fácil impresión, pre|11.39
+Industria y ciencia|B0CJCBKDQ6|15|Rollo de papel camilla 58cmx62m 6 Rollos ECO blanco|23.95
+Industria y ciencia|B0F48G7PVK|16|ELEGOO Filamento PLA MATE 1.75 1KG Beige Precisión Dimensional +/- 0.02mm, Carrete de Fila|15.19
+Industria y ciencia|B0CBSGWZRW|17|Pegamento Impresión 3D Gel 50 g - Filamento PLA ABS PETG TPU ASA Modelismo sin goteo, rell|10.31
+Industria y ciencia|B0F59YZD2C|18|SUNLU Pack de 16 Colores Filamento PLA Plus, Filamento PLA+ Multicolor para Impresoras 3D|59.84
+Industria y ciencia|B0BVFX88CZ|19|Meowyn Nebulizador Portatil, Nebulizador para Bebe Niños Adultos, Silenciosa Inhaladores E|31.99
+Industria y ciencia|B08LWGNQYY|20|WINKLE Filamento PLA HD Naranja Nemo 1.75mm 300g, Filamento Impresora 3D Compatible con To|9.51
+Industria y ciencia|B0F6633L77|21|DEEPLEE Filamento PLA Basic 1.75 mm, Pack 2 x 1 kg, Blanco Precisión ±0.02 mm, enrollado p|22.99
+Industria y ciencia|B0BTKYZSZR|22|JAYO Madera PLA+ Filamento 1.75mm 1.1kg, No Se Rompe Fácilmente PLA Reforzado de Alta Tena|14.99
+Industria y ciencia|B0F443Q9KS|23|ELEGOO Filamento PETG 1.75 1KG Negro PETG para Impresora 3D, Precisión Dimensional +/- 0.0|11.99
+Industria y ciencia|B0D4Z7WNN1|24|ELEGOO Filamento PETG Rápido 1.75 1KG Negro Velocidad 30-600mm/s, Precisión Dimensional +/|13.99
+Industria y ciencia|B0FDFW5MGY|25|SUNLU PLA+ Filament 1.75mm, Filamento PLA Plus, 1KG Negro Mayor Durabilidad, Alta Resisten|13.99
+Industria y ciencia|B0F5X27H4P|26|DEEPLEE PLA+ 2.0 Filamento 1.75 mm, Pack 2 x 1 kg, Rosa Resistencia al impacto, baja defor|23.74
+Industria y ciencia|B0DKNMPNC1|27|DEEPLEE PLA Mate 1.75 mm Rosa Cerezo, Bobina 1 kg Acabado mate uniforme, precisión ±0.02 m|15.29
+Industria y ciencia|B00L2IQK80|28|Asevi Fregasuelos Perfumado Naranja 1L pH Neutro para Todo Tipo de Suelos Fórmula concentr|1.99
+Industria y ciencia|B0GHY1YGZV|29|DEEPLEE Filamento PLA+ 1.75 mm, 8 colores, Pack 8 x 250 g (Total 2 kg) Negro, Blanco, Gris|27.54
+Industria y ciencia|B0FDGJVWQR|30|SUNLU PLA+ Silk Filament, Carrete de 1KG, silk Oro Claro Seda Metálica Brillante, Alta Res|15.99
+Industria y ciencia|B0BW3QC3XD|51|OFFCUP Jeringas, 8pcs 10ml Jeringa de Plástico, Jeringa de Jardín, Jeringa de Líquido Reut|6.49
+Industria y ciencia|B08P7TTB5Y|52|HIBRON 100 Mascarillas Negras Higiénicas Desechables Homologadas CWA 17553: 2020, BFE > 99|9.9
+Industria y ciencia|B0B934KTP5|53|eSUN Actualizado PLA Mate Filamento 1.75mm 1KG Blanco Lechoso Impresora 3D Filamento PLA M|13.02
+Industria y ciencia|B0CQKY5HJ8|54|flintronic 2 PCS Ventosa para Reparador Arañazos Abolladuras Coche, Naranja Pequeño, Resta|7.99
+Industria y ciencia|B0BT9FCHGJ|55|eSUN Filamento PLA 1.75mm 1KG(2.2LBS), 3D Impresión Filamento PLA, Amarillo Carrete 1KG (2|11.99
+Industria y ciencia|B0BFHJ4131|56|SUNLU Filamento PLA Matte 1.75mm Negro, Filamento para Impresora 3D con Superficie Mate, N|16.99
+Industria y ciencia|B0DYCP3ZW9|57|SUNLU PETG Filament 1.75 mm,Bobina de 1 kg, petg Negro Durabilidad y Flexibilidad Insupera|14.24
+Industria y ciencia|B08R588JZC|58|chiner Toallas de papel secamanos Zig Zag 3000 unidades, blanco, gofradas Absorción eficie|22.69
+Industria y ciencia|B0FY2J9YL8|59|WOUOW Kit para Mover Muebles Pesados con Elevador Placa de Acero al Carbono Reforzada, 5 R|39.99
+Industria y ciencia|B0051PY0OG|60|3-IN-ONE Spray Multiusos Lubricante 200 ml|5.95
+Industria y ciencia|B0DMNR5D6C|61|MAGABALLNET 100 Pcs 5 x 2 mm Imanes Neodimio Pequeños Imanes Fuertes, Imanes Pequeños Redo|7.99
+Industria y ciencia|B0F9PF7H9N|62|ANGEEK 608-2RS rodamientos de bolas sellados, paquete de 10, 8x22x7 mm Acero para rodamien|10.93
+Industria y ciencia|B0H5R76714|63|Waterpik Cordless Pulse, Irrigador Dental Eléctrico Portátil, Verde Menta Portátil y recar|49.99
+Industria y ciencia|B08KM1HM26|64|Merryland 25 Piezas Disco de Corte 125 X 1,0 Metal Acero INOX Craft-Line 125mm Amoladora A|15.9
+Industria y ciencia|B083KHGPQ2|65|VEVOR Limpiador Ultrasónico Profesional de Acero Inoxidable 800ml, 35W, Máquina de Limpiez|26.9
+Industria y ciencia|B0FL2B1VXV|66|flintronic 1Pcs Caja Férula Dental, Caja Ortodoncia, Caja de Almacenamiento, Funda para Al|6.89
+Industria y ciencia|B0CPPTRLR1|67|2pcs Atornilladura de Latón G1/2 Pulgadas (Macho Ø 20,3mm x Hembra Ø 19,5mm), DN15, Racor|8.99
+Industria y ciencia|B0FPBP9335|68|PhD Products Diluyente Bacteriostático - 10 ml - Solución de Reconstitución Ultra Limpia|15.45
+Industria y ciencia|B0DTV5W8JF|69|MERCURY TEXTIL- Carretilla Plegable de Aluminio con Cuerda, Carro de Mano Compacto, Portát|27.95
+Industria y ciencia|B0CTHLDWJQ|70|KH7 Quitagrasas, Desengrasante Elimina Grasa y Suciedad Aplícalo en Cocina, Ropa, Exterior|3.09
+Industria y ciencia|B0D9NM35LT|71|SUNLU Pack 4KG PETG Rápido - Filamento 3D 1.75mm ±0.02mm, Alta Velocidad 30-600mm/s, 4 Bob|47.99
+Industria y ciencia|B08H8BZB5Q|72|BACTERISAN Germosan Nor BP3, Desinfectante Multiusos Triple Acción, Elimina El 99.95 De Vi|18.57
+Industria y ciencia|B0FC2PN67H|73|ELEGOO Filamento PLA Refill 1.75 4KG Rosa, Morado, Amarillo, Verde Filamento para Impresor|37.99
+Industria y ciencia|B0GCQX9YY4|74|VANSKIVA Parches Cicatrizantes 4x150cm Silicone Scar Sheets Reutilizable Parches Cicatrice|14.99
+Industria y ciencia|B0H1HRGZP7|75|YISUNF Tensiómetro de Brazo Digital Automático para Uso Doméstico, Monitor de Presión Arte|33.6
+Industria y ciencia|B0FG2NLM8S|76|SMARTFIL PLA BASIC Filamento para impresión 3D ácido poliláctico Gran facilidad de impresi|15.79
+Industria y ciencia|B0CHYG6VSH|77|WINKLE Filamento PLA Silk (Seda) Oro Rey 1.75mm 1kg, Impresora 3D Acabado Suave y Sedoso|20.99
+Industria y ciencia|B08K39Q1DL|78|Magnetpro 12 imanes 10 kg fuerza 20 x 7 mm con orificio y cápsula, imán en recipiente avel|14.99
+Industria y ciencia|B08VJF338V|79|6 Bobinas de Papel Industrial de celulosa Blanco Rollos de Papel Industrial de Pasta Virge|16.5
+Industria y ciencia|B0GS99NVP7|80|Anykuu Fiambrera Eléctrica 120W 1,8L 12V/24V/220V para Coche y Trabajo Diseño 3 en 1 con a|27.96
+Películas y series|B0HB4TF558|1|Star Wars: The Mandalorian and Grogu (4K UHD + Blu-ray)|26.99
+Películas y series|B0HHFRP7RZ|2|El día de la revelación (4K UHD + BD) [Blu-ray]|26.99
+Películas y series|B0HKT4BF3X|3|Posesión infernal: en llamas (4K UHD + BD) Edición Metálica|36.95
+Películas y series|B08V9W4YZ2|4|Trilogía El Señor de los Anillos versión extendida 4k Ultra-HD [Blu-ray]|89.99
+Películas y series|B08HQ1Z57H|5|Interstellar 4k Ultra-HD [Blu-ray]|19.95
+Películas y series|B0HKT94KFF|6|Entrevista con un vampiro (4K UHD + BD)|19.95
+Películas y series|B0H6KDL7Q6|7|Super Mario Galaxy: La película (4K UHD + BD) [Blu-ray]|26.95
+Películas y series|B0CHS9Y7BZ|8|Pesadilla Antes de Navidad (The Nightmare Before Christmas) (4K UHD + Blu-ray)|19.99
+Películas y series|B00AJE198Y|9|Der Clou [Alemania] [Blu-ray]|5.81
+Películas y series|B0H8T3HKR6|10|Howard the Duck: Collector's Edition [4K Ultra HD & Blu-Ray] Limited Steelbook|64.31
+Películas y series|B0HKT6Q14V|11|Obsession (4K UHD + BD)|26.95
+Películas y series|B0053C8V6A|13|El Reino de los Cielos (Kingdom of Heaven) (Montaje del Director) (2005) (Ridley Scott) (B|12.99
+Películas y series|B0CMW1FPHV|14|Titanic (4K UHD + Blu-ray + Blu-ray Extras)|21.99
+Películas y series|B0HHFQ87G7|15|Supergirl (4K UHD + BD) [Blu-ray]|26.99
+Películas y series|B0GWHF655S|16|Avatar: Fuego y Ceniza (Avatar: Fire and Ash) (Blu-ray + Blu-ray Extras)|21.99
+Películas y series|B0HJ865YHZ|17|Batman (1966) (Leslie H. Martinson) (Blu-ray)|14.99
+Películas y series|B0H955474Q|18|Michael (4K UHD + BD) [Blu-ray]|26.68
+Películas y series|B0HKTDWR1V|19|Angel´s Egg (4K UHD + BD) Edición Especial|29.95
+Películas y series|B07CXYN2WX|20|Salvar Al Soldado Ryan [4K Ultra-HD + Blu-ray] [Blu-ray]|19.99
+Películas y series|B0HKTD8DYQ|22|Regreso al futuro. Trilogía 40º Ani. (4K UHD+BD+ BONUS) Edición Metálica|69.95
+Películas y series|B0HJ8BCVMY|23|Supersonic Man (1979) (Juan Piquer Simón) (Blu-ray)|17.99
+Películas y series|B07NN2MDKZ|24|Alien 1: El Octavo Pasajero (4K UHD + Blu-ray)|19.99
+Películas y series|B00LXUKPVU|25|El Club de los Poetas Muertos (Dead Poets Society) (1989) (Peter Weir) (DVD)|9.99
+Películas y series|B0HB4MXK7D|26|Barbarian (Steelbook) (2022) (Zach Cregger) (4K UHD + Blu-ray)|34.99
+Películas y series|B0HKT7W1JQ|27|Prácticamente magia (4K UHD + BD) Edición Metálica|29.95
+Películas y series|B09TPC6YHS|28|El Padrino (The Godfather) - Trilogia 50 Aniversario (4K UHD + Blu-ray)|64.99
+Películas y series|B0BD5BMT6M|29|Top Gun: Maverick (4K UHD + Blu-ray)|19.99
+Películas y series|B0DJD6R96W|30|Deadpool y Lobezno (Deadpool & Wolverine) (4K UHD + Blu-ray)|25.11
+Películas y series|B003Z7SI4U|51|Tarzán (Edición especial)|9.99
+Películas y series|B0B3RNDK69|52|Doctor Strange en el Multiverso de la Locura (DVD)|11.99
+Películas y series|B0HKT7NM6Y|53|Van Helsing (4K UHD + BD) UCE Edición Metálica|59.99
+Películas y series|B093782XLX|54|Las tres noches de Eva|6.9
+Películas y series|B0C9HYZ1W4|55|Guardianes de la Galaxia Vol.3 (Blu-ray)|14.99
+Películas y series|B0GVL2RYS8|56|Scream 7 (Blu-ray)|21.99
+Películas y series|B0H9S8XPV5|57|Incontrolable Bluray Película|13.76
+Películas y series|B00GZOCM7O|58|Frozen,El Reino Del Hielo|9.99
+Películas y series|B08GLMMXZ7|59|Sleepy Hollow (1999) (Tim Burton) (Blu-ray)|12.99
+Películas y series|B003Z7R486|61|La Mision Edicion Especial [DVD]|9.99
+Películas y series|B0GVLHJQ8S|62|El Club de la Lucha (Fight Club) (1999) (David Fincher) (4K UHD + Blu-ray)|26.99
+Películas y series|B0DLHTRBHH|63|El Profesional (León) (Blu-ray)|9.99
+Películas y series|B0FK52FX2Z|64|Mision Imposible (Mission Impossible) 7+8 (Blu-ray + Blu-ray Extras) Pack 2 peliculas: Sen|27.99
+Películas y series|B0CL7N6RYQ|65|Indiana Jones Y El Dial Del Destino (Indiana Jones and the Dial of Destiny) (Blu-ray)|14.99
+Películas y series|B0B6XSNT4S|66|Nils Holgersson (Klassik) - TV-Serien Komplettbox (9 DVDs, 52 Folgen): TV-Serie / Komplett|18.85
+Películas y series|B0GFNKYHFC|67|Predator: Badlands (4K UHD + Blu-ray)|26.99
+Películas y series|B0D45FZT97|68|La novia cadáver (Blu-ray) [Blu-ray]|11.99
+Películas y series|B0FS6XP9CM|70|Los 4 Fantasticos: Primeros Pasos (The Fantastic Four: First Steps) (Blu-ray)|20.67
+Películas y series|B0GVL9ZTTN|71|Send Help (Enviad ayuda) (2026) (Sam Raimi) (Blu-ray)|21.99
+Películas y series|B076CNDNXY|72|Blade Runner 2049 (4K Ultra-HD + BD) [Blu-ray]|24.99
+Películas y series|B0GV3Z4PCL|73|A Knight of the Seven Kingdoms - A Game of Thrones Tale - Staffel 1 (2 4K Ultra HDs) [Alem|29.58
+Películas y series|B0053CBOG4|74|El americano [DVD]|7.49
+Películas y series|B0C4FJPKMW|75|John Wick 1 (Otro Día para Matar) (Blu-ray)|17.99
+Películas y series|B01AB92J4Y|76|Michael Jackson Live At Wembley July 16 1988|16.17
+Películas y series|B0HKTDBP2M|77|La tienda de los horrores (4K UHD + BD) UCE Edición Metálica|59.95
+Películas y series|B0GVLQ7FX5|79|Vengadores (The Avengers) 1-4 (DVD) Pack 4 peliculas: Los Vengadores, La Era de Ultron, In|34.99
+Películas y series|B0CL26T9D8|80|Airbag (1997) ( Airbag - Jetzt knallt's richtig! ) ( Air Bag ) (Blu-Ray)|12
+CD y vinilos|B0HLZWYWBX|1|El tiempo de las cerezas XX Aniversario. BOX (5 LP) + Libro + Póster [Vinilo]|124.49
+CD y vinilos|B0HJT4Z5RB|4|Grand Theft Auto VI: The Album Color Rosa y Morado. Edición Exclusiva Amazon|47.99
+CD y vinilos|B0HKXPF1ZX|5|LAPSUS (LP) Edición Especial [Vinilo]|26.99
+CD y vinilos|B0GY9SW57Y|7|Come This Madness (CD)|16.99
+CD y vinilos|B0HDSRCPY6|8|Dopamine Chamber|25.99
+CD y vinilos|B0FYQLMLLQ|11|DeBÍ TiRAR MáS FOToS|40.99
+CD y vinilos|B00M30T9F2|12|Led Zeppelin IV Original izado|20.99
+CD y vinilos|B0HHSD9LPM|14|Eternos - Vinilo Deluxe|33.99
+CD y vinilos|B07VNS48HD|18|Abbey Road - 50 Aniversario|31.99
+CD y vinilos|B0BXT9X8BS|19|Cowboys de la A3|23.99
+CD y vinilos|B094HTCGZQ|20|A tope amb la vida|14.99
+CD y vinilos|B0HF62VRL9|21|Manufacturas Del Club De La Gente Sola (Mcgs) Lp Standard.|44.04
+CD y vinilos|B0CGJVLF9Q|22|The Dark Side Of The Moon (50th Anniversary)|36.99
+CD y vinilos|B07FSRBCPB|23|The Hits (20 Greatest Hits)|14.99
+CD y vinilos|B0HLL44FF1|26|Evita: The Complete Motion Picture Soundtrack (3 LP) Color Rojo|67.49
+CD y vinilos|B0DBF9DN26|28|Fruit Del Deliri . Limitada Transparente) Lp|24.99
+CD y vinilos|B017IIM8SS|29|The Best Of Sade|32.37
+CD y vinilos|B0GVQ4ZWSF|30|you seem pretty sad for a girl so in love|31.99
+CD y vinilos|B00LCT48L0|51|(What’s The Story) Morning Glory|41.99
+CD y vinilos|B0GZSK42Z5|52|Sanctuary Deluxe|24.41
+CD y vinilos|B09LDV4WJH|53|Extremoduro - Canciones 1989-2013 (3 Cd)|14.99
+CD y vinilos|B0H1NZKB5M|54|Cursum Perficio (CD Digipack)|18.99
+CD y vinilos|B000091P9D|56|Outlandos D'Amour|21.07
+CD y vinilos|B0HM8BGG1S|57|Pearls of Passion|19.99
+CD y vinilos|B0HKWFZS7N|58|RockFM On ición Color Azul Transparente)|31.4
+CD y vinilos|B0DHHG5KNX|59|Elige Tu Propia Aventura - Vinilo|17.99
+CD y vinilos|B0HK2FHFQN|60|Laundry Service 25th Anniversary (Amazon Exclusive)|59.9
+CD y vinilos|B00C061HZY|61|Random Access Memories|31.99
+CD y vinilos|B00004ZLB4|64|Yellow Submarine|9.93
+CD y vinilos|B0DZY6CTMW|66|Brothers In Arms 40 Aniversario - Vinilo|28.99
+CD y vinilos|B0DQ5VT9JP|67|Si Abro Los Ojos No Es Real|19.99
+CD y vinilos|B000OCXMAE|68|minutes to midnight|8.99
+CD y vinilos|B008Z9L94O|70|mellon collie and the infinite sadness (ltd)|104.75
+CD y vinilos|B0DK2DCJ7Q|71|Del Rosa Al Amarillo|29.99
+CD y vinilos|B00004YVNS|72|The Fat of the Land|33.99
+CD y vinilos|B0F79QYYDG|74|BEAUTIFUL CHAOS verde|31.99
+CD y vinilos|B0DK2BLVTD|75|Material Defectuoso|23.99
+CD y vinilos|B0HLLJL3NW|76|Fever (XXV edition) Transparente|29.99
+CD y vinilos|B00IGJP0Q6|77|C.P.E. Bach : Intégrale de l'uvre pour piano seul. Markovina.|11.13
+Handmade|B0971QBR5G|1|Pack Manta con Doudou Personalizados Regalo Recien Nacidos Nombre Bordado Manta extra suav|27.95
+Handmade|B0965D7ZZT|2|Capa de Baño para Bebe Personalizada 0-3 Años Toalla 100% de Algodon Capucha Personalizada|22.95
+Handmade|B0D42DTW87|3|MPZONLINE Letra con nombre personalizada decorativa, mesas dulces, comuniones, decoración|9.95
+Handmade|B0BXTTQCD7|4|Qué Kawaii® ORIGINAL Kit ratoncito Pérez MÁGICO. Puerta NATURAL de ABETO QUE ABRE Y BRILLA|15.95
+Handmade|B0DS999MLG|5|CUBIBOO ART Número Madera 50 Cumpleaños Mujer, Hombre - 50 Aniversario Bodas Oro - Bodas d|7.95
+Handmade|B0DJ93VGJP|6|Tazas Personalizadas Tazas Personalizadas con Foto y Texto Tazas originales para regalar R|4.5
+Handmade|B0CRS2DR1B|7|Velas de Miel de Abeja Natural Velas de Cera de Abeja (Pack de 8 Velas,10 cm x 2,4cm aprox|8.99
+Handmade|B0847NJTKB|8|bub's Collar Martingale - Collar para Perro, antialérgico y Suave.Diseñado para Todo Tipo|10.39
+Handmade|B0D9YJ6Y6F|9|Variouss Dou Dou Personalizado para Bebé, Muñeco Dou Dou Atrapasueños, Regalo bebé con Nom|12.9
+Handmade|B0C6488N4R|10|Velas de Miel de Abeja.Natural 100% Velas de Cera de Abeja. Pura (Pack de 30 Velas,11,5 cm|16.99
+Handmade|B0GNP72CVR|11|Zaldun Puerta Ratoncito Pérez de Madera – Casita Mágica con Puerta Que se Abre, Cajita par|16.99
+Handmade|B07QXQNLHW|12|Fundación Nuestra Señora del Camino Velas de cumpleaños Personalizadas con Nombre, Edad y|9.99
+Handmade|B09RKS585V|13|The Ilex Wood Desodorante Natural Ylang Ylang y Cedro – 70 ml Dulce y amaderado. Natural|12.95
+Handmade|B09ZYFSBH1|14|ASTER ALHELÍ - Llavero de Cuero con Iniciales Personalizado - Letras y abalorios de zamak|10.99
+Handmade|B0HLF29HJL|15|TeteByNoa - Clip para Chupete Chupetero Personalizado de Silicona Sujeta Chupetes con Una|16.95
+Handmade|B0FHWZBWV5|16|Imanes para Nevera Personalizados Rectangulares Flexibles Pack de 5 y 9 Unidades Imán de F|11.5
+Handmade|B08N6G4V14|17|Made by Nami Collar de Acero Inoxidable para Hombres Collar Maciza de 60cm. Cadena Reforza|8.99
+Handmade|B0D5F7J7R5|18|Olesea Tarjeta Regalo - Ideas Dar Dinero - Regalos De Boda para Los Novios- Detalles para|10.99
+Handmade|B0HLMPHVGQ|19|PEQUEANDO - Clip para Chupete Chupetero Personalizado de Silicona Sujeta Chupetes con Una|21.99
+Handmade|B0CL3LBQ47|20|EGV Collar Martingale 4 cm Ancho (L, Negro) Collar Martingale para Perro y Galgo, Ajustabl|17.99
+Handmade|B0FL9GD2G5|21|Qué Kawaii® ORIGINAL. Kits mágicos Ratón Pérez – Puertas que brilla en la oscuridad con ac|13.95
+Handmade|B0CR1PHFBX|22|Qué Kawaii® Puerta Ratoncito Pérez Mágica que Abre y Brilla (Rosa)– Kit Completo con Escal|14.95
+Handmade|B09H6DVRLW|23|Tres Aristas Letra con Nombre decorativa personalizada para Apoyar o Colgar - Decoracion H|13.5
+Handmade|B0B3Q7FN8Y|24|Qué Kawaii® Kit Ratón Pérez – Caja de los Dientes con 24 Certificados + Diario + Cuento In|7.95
+Handmade|B0GVK9XS8Z|25|Dalvitas Manta Bebé Personalizada Bordada con Nombre + Doudou 100% Algodón - Pack Regalo R|29.99
+Handmade|B09GYRFG14|26|variouss Manta de Bebe Personalizado con su Nombre Bordado, Incluye DouDou, Manta Suave pa|25.99
+Handmade|B0H2HYWQDC|27|Canvartin Planificador de Presupuesto Mensual A4 con Espiral, Cuaderno de Finanzas Persona|12.99
+Handmade|B0H4J2HP6V|28|Balú Dudú Jirafa Personalizado con Nombre Bordado (Jirafa Beige) Tejido Minky 26x26 cm Reg|14.99
+Handmade|B0DHVLJBJX|29|Taza Mágica Personalizada Taza que Cambia de Color con la Temperatura Taza termica Taza Má|8
+Handmade|B0H2J63Q63|30|Pañuelo de Bautizo Bordado Personalizado con Nombre, Color y Fecha - Toalla Bautizo - Rega|18.95
+Handmade|B0CPWW9G6G|51|PARCHE Personalizado ARNES Perro K9 Etiquetas con Nombre Bordado Perros o Gatos para Arnes|7.99
+Handmade|B0BVYZ64LT|52|7GANSOS NUEVA PUERTA DEL RATONCITO PEREZ ROSA de madera, con repisa en forma de ratón para|11.99
+Handmade|B07H447QHB|53|The Ilex Wood Crema Facial de Rosa e Incienso para Piel Madura, 60 ml Crema facial hidrata|29.95
+Handmade|B09H4SZ2PK|54|Tres Aristas Nombre Decorativo Grande Personalizado Tipo de Letra, Color y Tamaño a Elegir|12.9
+Handmade|B0C5QPYK16|55|25 Velas de Miel de Abeja + Palo Santo para Rituales 100% Natural Cera Pura(25 Velas 11,5|15.29
+Handmade|B0G3B593CZ|56|Pack de Imanes de Barcelona para Nevera|11.5
+Handmade|B0HG1XYJH2|57|Balú Mochila Personalizada con Nombre Bordado (ELEFANTE AZUL) Escuela infantil, preescolar|17.99
+Handmade|B0926YL2SQ|58|Doudou Bebe Personalizado con Nombre Bordado Regalo Original Recien Nacido Muñeco de Apego|13.95
+Handmade|B0CYF39G34|59|WORLD GOBLINS Pendientes Hippies Mujer de Colores Largos. Llamativos, Boho Vintage. Pendie|13.98
+Handmade|B08N6RJYHW|60|Made by Nami Pulsera Fina para Hombres y Mujeres con Cierre de Mosquetón Hecha a Mano - Jo|9.99
+Handmade|B0CVSCGLRZ|61|Olesea Manta Bebé Personalizada con Nombre Bordado+Cumplemeses de madera +Dou Dou–Regalo R|29.99
+Handmade|B0H2JPG3RN|62|Planificador Diario A4 con Espiral, 100 Días Sin Fechas. Agenda Día por Página para Organi|12.98
+Handmade|B0FTZJCMZL|63|Placa metálica personalizada – Cartel vintage con texto propio, 9 colores, efecto óxido, d|20
+Handmade|B0CSC2NT6H|64|Regalos Originales, Joyas Mujer|22.95
+Handmade|B0BKT5CXWD|65|Bolas de Navidad personalizadas para árbol.Olesea.Adornos navideños original|19.99
+Handmade|B0CGKVVD3P|66|KIT Para fabricar Velas de Cera de abeja,Natural, Origen ESPAÑA en La Sierra de La Culebra|11.99
+Handmade|B0FLRLJ6Y5|67|Tote Bag y Botella Personalizada con Nombre, Set Regalo Personalizado Mujer Taza opcional|24.99
+Handmade|B098K1PQXC|69|Qué Kawaii® 12 Certificados de colores caída dientes puerta Ratoncito Pérez. Recibo (12 CE|4.95
+Handmade|B0FFZVDN2Y|70|WORLD GOBLINS Pulseras Plata Mujer 925 Originales, Piedras Naturales Colores, Hecha a Mano|38.5
+Handmade|B0BNZ1W6KH|71|ASTER ALHELÍ - Collar Mujer con Piedra Natural - Cadena de Acero Inoxidable Plateada con C|9.99
+Handmade|B0CL7P8GBQ|72|ASTER ALHELÍ – Colgante Mujer Piedra Natural Ágata Negra – Collar Chapado en Platino con D|16.95
+Handmade|B0GRMWYDZ8|73|CABRERIZO SOAP Jabon Acido Salicilico cuerpo - Jabón exfoliante facial Jabón con Acido Sal|9.99
+Handmade|B0H8L2SV66|74|Planificador Semanal de Pared A4 - Calendario de Sobremesa y Pared para 6 Meses (26 Hojas)|13.99
+Handmade|B0CXNGBHBJ|75|8 Velas de Miel de Abeja + Palo Santo para Rituales 100% Natural Cera Pura(8 Velas 10 cm x|8.59
+Handmade|B0FCHB2H4H|76|CABRERIZO SOAP Jabon carbon activo - Pastilla Jabon acne y granos Jabón limpiador facial p|8.99
+Handmade|B0C949Q77J|77|Body “Yo también estuve…” personalizado boda celebración regalo original Recuerdo único No|16.95
+Handmade|B0FNLVFSGW|78|Pulsera Virgen del Pilar en Plata – Macramé Ajustable Unisex en Negro, Azul y Rojo – Joyer|16.99
+Handmade|B08SKM9SXF|79|variouss Manta de Bebe Personalizado con su Nombre Bordado, Manta de copito, Regalos Padre|26.9
+Handmade|B0DX8F42T3|80|H'Helen Pulsera Personalizable de Acero o Dorado para mujer y hombre,niño y niña Regalo Dí|16.99
+eBooks Kindle|B0F48R6TJT|1|Te vas a morir y todavía no has empezado a vivir: 29 principios para vivir mejor (y con má|7.99
+eBooks Kindle|B0DZXN8VB2|2|La última huella: Un thriller impredecible, frenético y de lectura compulsiva|3.99
+eBooks Kindle|B0HKLJ9VKQ|3|Otro maldito escocés: Romance de oficina · Slow burn · Convivencia forzada|3.99
+eBooks Kindle|B0DQYSVG6K|4|No la dejes entrar: Un adictivo thriller psicológico|4.99
+eBooks Kindle|B0H6GW642B|5|Un hombre de honor (Autores Españoles e Iberoamericanos)|12.34
+eBooks Kindle|B08PZH1ZVY|6|La Biblioteca de la Medianoche (AdN) (AdN Alianza de Novelas)|9.97
+eBooks Kindle|B0FCSF4M8V|7|La playa de las sirenas: Un thriller policíaco. Los orígenes de la inspectora Erin Butler|2.99
+eBooks Kindle|B0DRJJ57M9|8|La Bailarina del Plata: Una historia de amor en una época fascinante y peligrosa (Años 20|2.99
+eBooks Kindle|B0H5VQRQVD|9|Los Huérfanos (Autores Españoles e Iberoamericanos)|12.34
+eBooks Kindle|B0HL78CWMH|10|Mi corazón no se equivocaba|3.5
+eBooks Kindle|B0H6N4KKNM|11|Una familia moderna|11.39
+eBooks Kindle|B0D9R2MPPG|12|Una visita inesperada. : New adult, friends to lovers & enemies to lovers. Universidad, yo|2.99
+eBooks Kindle|B0H6G43BKD|13|Drake, error millonario: Jefe ayuda a su secretaria a conquistar a otro hombre y... termin|2.99
+eBooks Kindle|B0HLBQG6PY|14|Besos Prohibidos (Los Hermanos Sterling)|3.99
+eBooks Kindle|B0HMBFHTF7|15|Los McAverley. Infieles, odiosos y escoceses.|0.99
+eBooks Kindle|B0HLR2LT1C|16|¡Sorpresa! Vas a ser padre: Solo iba a ser una noche... nueve meses después son padres (¡S|2.99
+eBooks Kindle|B0HKB5GLF5|18|Plantada en el altar: Un falso romance con el hermano del hombre que me humilló (Multimill|3.99
+eBooks Kindle|B0F5PB7THJ|19|¡Arréstame, por favor! : Una comedia romántica de enredos, estrategias fallidas y un polic|2.99
+eBooks Kindle|B0HK5Z7DC6|20|Gracias a Booktok : Un Cozy crime sobrenatural, con mucho salseo y romcom.|3.9
+eBooks Kindle|B0HHH4D9BM|21|Besos Robados (Los Hermanos Sterling)|3.99
+eBooks Kindle|B0DQ2192XL|22|Café con aroma a calabaza: EL FENÓMENO LITERARIO Y PREMIO AL LIBRO DEL AÑO 2024 EN TIKTOK|3.79
+eBooks Kindle|B0HBQXXSDJ|23|Prisionera del Duque Siniestro: Sombras y Luces 3|3.99
+eBooks Kindle|B0F4X15GTY|24|Soltar para sanar: Aprende a amarte a ti mismo y dejar ir lo que te lastima|3.03
+eBooks Kindle|B0F8JC3NRP|25|El asesinato de Aristóteles: LA NOVELA MÁS VALORADA POR LOS LECTORES Y LA CRÍTICA|5.99
+eBooks Kindle|B0DKB9QNSX|26|La isla del Café Azul: (Thriller psicológico)|1.99
+eBooks Kindle|B0HFTKNQ9C|27|Mi Jefe Provocador: Una noche con un desconocido que resulta ser mi jefe multimillonario (|2.99
+eBooks Kindle|B0FF3KQN72|28|MR. STERLING: Romance con el CEO de enemigos a amantes (LOS MR. IRRESISTIBLES nº 1)|2.99
+eBooks Kindle|B0HLBC5YC1|29|El día de la Trilla (Empíreo) (Edición española)|12.34
+eBooks Kindle|B0H4BK4GMP|30|Por Culpa de Booktok: Un Cozy crime sobrenatural, con mucho salseo y romcom.|3.8
+eBooks Kindle|B0DFZH7ZBQ|51|La espera (AdN Editorial Grupo Anaya)|5.03
+eBooks Kindle|B0D9BDGHQR|52|Tú no me recuerdas|2.99
+eBooks Kindle|B0HFXLJRTF|53|Mi ángel de la nieve|3.99
+eBooks Kindle|B00BFGQYRQ|54|1984 (edición definitiva avalada por The Orwell Estate)|6.64
+eBooks Kindle|B0HKMVFMTH|55|No entrabas en mi temario|2.99
+eBooks Kindle|B0GX2TRN7C|56|Una breve historia de casi todo 2.0|9.49
+eBooks Kindle|B0HJC76CKW|57|La promesa que me llevó hasta ti|0.99
+eBooks Kindle|B0DHD6PQJK|58|Una noche sin reglas: Su plan era renunciar... hasta que su jefe le hizo una oferta que no|3.99
+eBooks Kindle|B0HLV534MV|59|El hacendado que me rechazó (Cartas a los corazones rotos nº 4)|4.99
+eBooks Kindle|B0HJVKB6G9|62|Prohibido besar al comandante|0.99
+eBooks Kindle|B0H4SQFNX1|63|A 55 millas por hora (Contraluz)|14.24
+eBooks Kindle|B07TWTGX7Y|64|La paciente silenciosa|7.12
+eBooks Kindle|B0H3M4JJVJ|65|El lobo de las Orcadas: rendido ante la escocesa (Serie Sinclair nº 4)|2.99
+eBooks Kindle|B0HJMJJRTB|66|Mi Jefe no Pide Permiso: billionaire romance, CEO jefe, una noche con un desconocido, amor|0.99
+eBooks Kindle|B0C2KRY2HL|67|DOMINA CHATGPT EN 3 DÍAS: Aprovecha la Inteligencia Artificial para Destacar y ser más Efi|8.99
+eBooks Kindle|B0F91HM8JV|68|Antes de ser tuya: Novela romántica histórica en Escocia (Los Cuervos de Perthshire nº 1)|3.99
+eBooks Kindle|B0FH7CWPRY|69|Lucía Solla Sobral|9.49
+eBooks Kindle|B0HLZYYQDF|70|Moruena Estríngana|5.99
+eBooks Kindle|B0HJNGQDCG|71|Por favor, ¡cásate conmigo!|0.99
+eBooks Kindle|B0DTGNM5L8|72|DIARIO DE ESTOICOS : 365 REFLEXIONES para una mente fuerte, un espiritu libre y un corazón|4.99
+eBooks Kindle|B0851NYR3S|73|La Cripta de los Capuchinos (El libro de bolsillo - Bibliotecas de autor - Biblioteca Roth|5.22
+eBooks Kindle|B0HL5QMTKG|74|La última casa de Water Mill: Un thriller psicológico sorprendentemente adictivo y repleto|0.99
+eBooks Kindle|B0F3J4X9WN|75|Apostando al negro de tus ojos: Romance con el mejor amigo del hermano mayor (Apuestas al|1.99
+eBooks Kindle|B0DRW5Z3MC|76|Un plan catastrófico (comedia romántica)|3.8
+eBooks Kindle|B0H1S5339J|77|El baile de las criadas: Premio de Novela Fernando Lara 2026 (Autores Españoles e Iberoame|12.34
+eBooks Kindle|B0H8D9VGDT|78|LA CASA DE LAS AGUAS- LIBRO 1: Novela histórica ambientada a comienzos del siglo XX, en un|2.99
+eBooks Kindle|B0GYT8KFT8|79|MR. MORGAN: Romance con el CEO padre soltero por sorpresa (LOS MR. IRRESISTIBLES nº 4)|2.99
+eBooks Kindle|B0H3W1H8QP|80|Lo que pasa en Londres no se queda en Londres: una comedia romántica familiar slow burn so|2.99
+`;
 /* Fotos de ambiente por categoría (Unsplash, licencia libre) */
 const PHOTOS = {"Alimentación":["photo-1504630083234-14187a9df0f5","photo-1655979283362-535e6a167a53","photo-1612880202987-b1ec29fb0839","photo-1530268430791-f7d3be9b5f52"],"Bebé":["photo-1613685301918-59b1039422cc","photo-1505043203398-7e4c111acbfa","photo-1586102728466-46b99b3bc411","photo-1770831208117-c0dd9469e95d"],"Belleza":["photo-1608068811588-3a67006b7489","photo-1583209814683-c023dd293cc6","photo-1670201203208-055d6d79db4a","photo-1612817288484-6f916006741a"],"Bricolaje":["photo-1426927308491-6380b6a9936f","photo-1671040690726-b78261eff126","photo-1522832712787-3fbd36c9fe2d","photo-1731694411560-050e5b91e943"],"Coche y moto":["photo-1533630217389-3a5e4dff5683","photo-1625690180114-5530b1304127","photo-1610647752706-3bb12232b3ab","photo-1583573278124-e8d4fd3edf3c"],"Deporte":["photo-1583454110551-21f2fa2afe61","photo-1584735935682-2f2b69dff9d2","photo-1544033527-b192daee1f5b","photo-1638536532686-d610adfc8e5c"],"Dispositivos Amazon":["photo-1760087616415-62270db23966","photo-1593784991095-a205069470b6","photo-1562851529-482d8189f5a5","photo-1604914417296-7a813352ae9d"],"Electrodomésticos":["photo-1484154218962-a197022b5858","photo-1586208958839-06c17cacdf08","photo-1602028915047-37269d1a73f7","photo-1588854337115-1c67d9247e4d"],"Electrónica":["photo-1579586337278-3befd40fd17a","photo-1434493789847-2f02dc6ca35d","photo-1461141346587-763ab02bced9","photo-1434494878577-86c23bcb06b9"],"Hogar y cocina":["photo-1541004995602-b3e898709909","photo-1612152605347-f93296cb657d","photo-1622429420441-60dd67f737a6","photo-1703783010857-9bd7a7b97c50"],"Iluminación":["photo-1679205700241-bd122d6beaa3","photo-1542681575-352258e0c854","photo-1701281941392-fd6c2d8d652b","photo-1731019801529-ae2632811136"],"Informática":["photo-1499951360447-b19be8fe80f5","photo-1510519138101-570d1dca3d66","photo-1616440347437-b1c73416efc2","photo-1626968361222-291e74711449"],"Instrumentos musicales":["photo-1564186763535-ebb21ef5277f","photo-1510915361894-db8b60106cb1","photo-1511379938547-c1f69419868d","photo-1516924962500-2b4b3b99ea02"],"Jardín":["photo-1444392061186-9fc38f84f726","photo-1727358572955-3d66cd0d5876","photo-1737740439064-bd1e9b041677","photo-1693479291707-21b5f8eb88fd"],"Juguetes":["photo-1596461404969-9ae70f2830c1","photo-1599623560574-39d485900c95","photo-1515488042361-ee00e0ddd4e4","photo-1545558014-8692077e9b5c"],"Libros":["photo-1610116306796-6fea9f4fae38","photo-1506880018603-83d5b814b5a6","photo-1513185041617-8ab03f83d6c5","photo-1495446815901-a7297e633e8d"],"Mascotas":["photo-1561037404-61cd46aa615b","photo-1623387641168-d9803ddd3f35","photo-1450778869180-41d0601e046e","photo-1573435567032-ff5982925350"],"Moda":["photo-1542291026-7eec264c27ff","photo-1608231387042-66d1773070a5","photo-1600185365483-26d7a4cc7519","photo-1549298916-b41d501d3772"],"Oficina":["photo-1566699270403-3f7e3f340664","photo-1500067803284-4304564c8655","photo-1725465119917-e20a0f5a54f2","photo-1700451761309-656bd9439443"],"Salud":["photo-1707129785947-ddc627a8bab9","photo-1664956618021-73c47736845e","photo-1732900293895-233f769299b3","photo-1565071783280-719b01b29912"],"Videojuegos":["photo-1612287230202-1ff1d85d1bdf","photo-1493711662062-fa541adb3fc8","photo-1552820728-8b83bb6b773f","photo-1600861194942-f883de0dfe96"]};
 const META_PIXEL_ID = ""; /* pega aquí el ID de tu Píxel de Meta cuando lo tengas */
-const img=(d,w=480,h=300)=>{const a=PHOTOS[d.cat];return a?`https://images.unsplash.com/${a[d.id%a.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=70`:""};
+const PHOTO_ALIAS={"Móviles y accesorios": "Electrónica", "Auriculares y audio portátil": "Electrónica", "Audio y Hi-Fi": "Electrónica", "TV y home cinema": "Dispositivos Amazon", "Fotografía y vídeo": "Electrónica", "Electrónica para coche": "Coche y moto", "Pilas y cargadores": "Electrónica", "Portátiles": "Informática", "Tablets": "Informática", "Monitores": "Informática", "Componentes de PC": "Informática", "Almacenamiento": "Informática", "Redes y wifi": "Informática", "Impresoras": "Oficina", "Accesorios de informática": "Informática", "Ordenadores de sobremesa": "Informática", "Reacondicionados": "Electrónica", "Software": "Informática", "Grandes electrodomésticos": "Electrodomésticos", "Industria y ciencia": "Bricolaje", "Películas y series": "Videojuegos", "CD y vinilos": "Instrumentos musicales", "Handmade": "Hogar y cocina", "eBooks Kindle": "Libros"};
+const img=(d,w=480,h=300)=>{const a=PHOTOS[d.cat]||PHOTOS[PHOTO_ALIAS[d.cat]];return a?`https://images.unsplash.com/${a[d.id%a.length]}?w=${w}&h=${h}&fit=crop&auto=format&q=70`:""};
 
 const DEALS = DATA.trim().split("\n").map((l,i)=>{const p=l.split("|");return {id:i,cat:p[0],icon:ICONS[p[0]]||"🛒",asin:p[1],rank:+p[2],title:p.slice(3,-1).join(" "),price:+p[p.length-1],link:`https://www.amazon.es/dp/${p[1]}?tag=${AFFILIATE_TAG}`}});
 const CATS=[...new Set(DEALS.map(d=>d.cat))];
@@ -1442,8 +2607,9 @@ $("#nprod").textContent=DEALS.length.toLocaleString("es-ES");$("#ncat").textCont
 const best={};DEALS.forEach(d=>{if(!best[d.cat]||d.rank<best[d.cat].rank)best[d.cat]=d});
 $("#rail").innerHTML=Object.values(best).map(d=>`<a class="champ" style="background-image:url(${img(d,520,520)})" href="${d.link}" target="_blank" rel="sponsored noopener"><span class="one" aria-hidden="true">1</span><span class="em" aria-hidden="true">${esc(brand(d.title))}</span><span class="c">${esc(d.cat)}</span><span class="t">${esc(d.title)}</span><span class="p">${eur(d.price)}</span></a>`).join("");
 
+const GROUPS={"💻 Tecnología":["Informática", "Electrónica", "Dispositivos Amazon", "Videojuegos", "Móviles y accesorios", "Auriculares y audio portátil", "Audio y Hi-Fi", "TV y home cinema", "Fotografía y vídeo", "Pilas y cargadores", "Portátiles", "Tablets", "Monitores", "Componentes de PC", "Almacenamiento", "Redes y wifi", "Impresoras", "Accesorios de informática", "Ordenadores de sobremesa", "Reacondicionados", "Software"]};
 function chips(){
-  $("#chips").innerHTML=["Todas",...CATS].map(c=>`<button class="chip" data-c="${esc(c)}" aria-pressed="${c===cat}">${esc(c)}</button>`).join("");
+  $("#chips").innerHTML=["Todas",...Object.keys(GROUPS),...CATS].map(c=>`<button class="chip" data-c="${esc(c)}" aria-pressed="${c===cat}">${esc(c)}</button>`).join("");
 }
 $("#chips").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.dataset.c;shown=PAGE;chips();render()};
 document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{sort=b.dataset.s;shown=PAGE;document.querySelectorAll("[data-s]").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
@@ -1455,7 +2621,7 @@ function card(d){
 }
 function render(){
   const words=query.split(/\s+/).filter(Boolean);
-  let list=DEALS.filter(d=>(cat==="Todas"||d.cat===cat)&&words.every(w=>(d.title+" "+d.cat).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").includes(w)));
+  let list=DEALS.filter(d=>(cat==="Todas"||d.cat===cat||(GROUPS[cat]||[]).includes(d.cat))&&words.every(w=>(d.title+" "+d.cat).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").includes(w)));
   if(sort==="cheap")list=list.filter(d=>d.price<15);
   list.sort({rank:(a,b)=>a.rank-b.rank||a.id-b.id,cheap:(a,b)=>a.rank-b.rank||a.id-b.id,asc:(a,b)=>a.price-b.price,desc:(a,b)=>b.price-a.price}[sort]);
   $("#count").textContent=`${list.length.toLocaleString("es-ES")} productos${cat!=="Todas"?" en "+cat:""}`;
