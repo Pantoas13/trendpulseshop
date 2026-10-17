@@ -15,7 +15,7 @@
 <meta name="theme-color" content="#2B32E8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232B32E8'/%3E%3Cpath d='M4 17h6l3-8 5 15 3-7h7' fill='none' stroke='%23FFC530' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F3F5FF;--surface:#FFFFFF;--ink:#161A3A;--muted:#5B6185;--line:#DCE0F5;--cobalt:#2B32E8;--cobalt-ink:#fff;--sun:#FFC530;--magenta:#E5007E;--tile-l:92%;--tile-s:80%;color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1033;--surface:#161A47;--ink:#EEF0FF;--muted:#A3A8D6;--line:#2A2F6B;--cobalt:#6E75FF;--cobalt-ink:#0D1033;--sun:#FFCF52;--magenta:#FF4FA8;--tile-l:26%;--tile-s:55%;color-scheme:dark}}
@@ -2638,7 +2638,7 @@ document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{sort=b.dataset.s
 function card(d){
   return `<article class="card"><div class="tile" style="background-color:hsl(${HUE[d.cat]} var(--tile-s) var(--tile-l))"><img src="${img(d)}" alt="" loading="lazy" decoding="async" onerror="this.remove()"><span class="rank"><small>#</small>${d.rank}</span>${d.rank<=3?'<span class="hot">Top 3</span>':""}<span class="brand" aria-hidden="true">${esc(brand(d.title))}</span></div>
   <div class="body"><span class="cat">${esc(d.cat)}</span><h3>${esc(d.title)}</h3><span class="price">${eur(d.price)}</span>
-  <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ver precio de hoy <span class="eye" aria-hidden="true">👀</span></a></div></article>`;
+  <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ver precio en Amazon <span class="eye" aria-hidden="true">→</span></a></div></article>`;
 }
 function render(){
   const words=query.split(/\s+/).filter(Boolean);
@@ -2686,6 +2686,63 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[rel~="sponsore
 .bot-f input:focus{border-color:var(--cobalt)}
 .bot-f button{height:44px;padding:0 16px;border-radius:999px;border:0;background:var(--sun);color:#161A3A;font-weight:800;cursor:pointer}
 @media (max-width:760px){.bot-btn span{display:none}.bot-btn{padding:0 15px}.bot{bottom:80px;right:12px}}
+/* ===== PRO THEME ===== */
+:root{--bg:#F5F6F8;--surface:#FFFFFF;--ink:#0F172A;--muted:#64748B;--line:#E5E7EB;--cobalt:#1E40AF;--cobalt-ink:#fff;--sun:#FFD814;--magenta:#C2410C;--cta:#FFD814;--cta-h:#F7CA00;--cta-ink:#0F1111;--shadow:0 1px 2px rgba(15,23,42,.05),0 4px 14px rgba(15,23,42,.06)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1120;--surface:#111A2E;--ink:#E5E9F2;--muted:#94A3B8;--line:#1F2A44;--cobalt:#8AB4FF;--magenta:#FDBA74;--shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25)}}
+:root[data-theme="dark"]{--bg:#0B1120;--surface:#111A2E;--ink:#E5E9F2;--muted:#94A3B8;--line:#1F2A44;--cobalt:#8AB4FF;--magenta:#FDBA74;--shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25)}
+body{font:400 15.5px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.005em}
+.disp,.logo,.hero h1,.sec-h h2,.champ .em,.champ .p,.champ .one,.brand,.tile>.rank,.price,.join h2{font-family:Inter,system-ui,sans-serif!important}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.03em}
+.top{background:color-mix(in srgb,var(--surface) 90%,transparent);box-shadow:0 1px 0 var(--line)}
+.search input{border-radius:10px;border:1px solid var(--line);background:var(--bg)}
+.theme{border-radius:10px;border:1px solid var(--line)}
+.guias{border-radius:10px;background:var(--ink);color:var(--surface);font-weight:700}
+.hero{padding-top:48px;padding-bottom:24px}
+.hero h1{font-weight:800;font-size:clamp(32px,5vw,58px);letter-spacing:-.035em;line-height:1.05;max-width:18ch}
+.hero p{font-size:clamp(16px,1.8vw,18px)}
+.pulse{height:60px;margin-top:20px}.pulse path{stroke-width:3}
+.fact{border:1px solid var(--line);border-radius:10px;font-weight:600;box-shadow:var(--shadow)}
+.sec-h{margin:40px 0 16px}.sec-h h2{font-weight:800;font-size:clamp(20px,2.4vw,26px);letter-spacing:-.025em}
+.dealbar a{background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow);border-left:4px solid #F97316;border-radius:12px}
+.dealbar a:nth-child(2){border-left-color:#2563EB}.dealbar a:nth-child(3){border-left-color:#7C3AED}.dealbar a:nth-child(4){border-left-color:#059669}.dealbar a:nth-child(5){border-left-color:#DC2626}
+.dealbar span{color:var(--muted);opacity:1}
+.champ{border-radius:16px;min-height:260px;box-shadow:var(--shadow)}
+.champ::before,.champ:nth-child(3n+2)::before,.champ:nth-child(3n+3)::before{background:linear-gradient(180deg,rgba(2,6,23,.05) 0%,rgba(2,6,23,.35) 45%,rgba(2,6,23,.9) 100%)}
+.champ .one{display:none}
+.champ .em{font-weight:800;font-size:22px;letter-spacing:-.03em}
+.champ .em::before{content:"#1 · ";color:#FFD814}
+.champ .p{font-weight:800}
+.chip{border:1px solid var(--line);border-radius:10px;font-weight:600}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.bar{box-shadow:0 1px 0 var(--line)}
+.sort button[aria-pressed="true"]{color:var(--ink);background:var(--surface);box-shadow:var(--shadow)}
+.grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(15,23,42,.06),0 14px 30px rgba(15,23,42,.12)}
+.tile{height:auto;aspect-ratio:4/3;padding:0;align-items:flex-start}
+.tile::after{background:linear-gradient(180deg,rgba(2,6,23,.28) 0%,rgba(2,6,23,0) 30%)}
+.tile>.brand{display:none}
+.tile>.rank{left:10px;top:10px;font-size:13px;font-weight:800;letter-spacing:0;background:rgba(255,255,255,.95);color:#0F172A;text-shadow:none;border-radius:8px;padding:4px 8px;line-height:1}
+.rank small{font-size:13px;margin-right:0;vertical-align:baseline}
+.tile>.hot{background:#F59E0B;color:#1F1300;border-radius:8px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;font-size:11px;padding:4px 8px}
+.body{padding:14px 16px 16px;gap:6px}
+.cat{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.card h3{font-size:14.5px;font-weight:600;line-height:1.4;min-height:calc(1.4em * 3)}
+.price{font-weight:800;font-size:22px;letter-spacing:-.02em;margin-top:6px}
+.go{height:42px;border-radius:10px;background:var(--cta);color:var(--cta-ink);font-weight:700;font-size:14.5px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.12);margin-top:4px}
+.go::after{display:none}
+.go:hover{background:var(--cta-h);transform:none;box-shadow:inset 0 -1px 0 rgba(0,0,0,.12)}
+.more button{border-radius:10px;background:var(--ink);color:var(--surface);font-weight:700}
+.wcard{border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 16px}
+.wcard .wimg{aspect-ratio:16/9;height:auto}
+.wcard .r{color:var(--magenta);text-transform:uppercase;letter-spacing:.04em;font-size:.72rem}
+.wcard .wgo{color:var(--cobalt)}
+.gpromo a{border-radius:14px;box-shadow:var(--shadow)}
+.join{background:linear-gradient(135deg,#0F172A,#1E293B);color:#F8FAFC;border-radius:20px}
+.join input{border-radius:10px;background:#fff;color:#0F172A}
+.join button{border-radius:10px;background:var(--cta);color:var(--cta-ink);font-weight:700}
+.bot-btn{border-radius:12px!important}
+@media (max-width:760px){.grid{gap:10px}.card h3{font-size:13.5px}.price{font-size:18px}.go{height:38px;font-size:13px}.body{padding:10px 10px 12px}}
 </style>
 <button class="bot-btn" id="botBtn" aria-expanded="false" aria-controls="bot"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>¿Te ayudo?</span></button>
 <section class="bot" id="bot" hidden aria-label="Asistente de TrendPulseShop">
