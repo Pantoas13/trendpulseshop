@@ -206,7 +206,7 @@ footer .wrap{max-width:900px}
 </section>
 
 <section class="wrap" aria-labelledby="h-world">
-  <div class="sec-h"><h2 id="h-world">Tendencia mundial</h2><span>Lo más vendido en Amazon.com (EE. UU.), búscalo en Amazon.es</span></div>
+  <div class="sec-h"><h2 id="h-world">Tendencias en tecnología</h2><span>Los productos que más se buscan ahora — cómpralos en Amazon.es</span></div>
   <div class="chips" id="wchips" role="group" aria-label="Categorías mundiales"></div>
   <div class="wgrid" id="wgrid"></div>
   <div class="more"><button id="wmore">Ver más tendencias</button></div>
@@ -2804,7 +2804,7 @@ const short=t=>t.split(/[,(|–-]/)[0].split(/\s+/).slice(0,7).join(" ");
 const wlink=t=>`https://www.amazon.es/s?k=${encodeURIComponent(short(t))}&tag=${AFFILIATE_TAG}`;
 function wr(){const l=WORLD.filter(w=>wc==="Todas"||w[0]===wc).sort((a,b)=>a[1]-b[1]);
 document.getElementById("wchips").innerHTML=WC.map(c=>`<button class="chip" data-w="${esc(c)}" aria-pressed="${c===wc}">${esc(c)}</button>`).join("");
-document.getElementById("wgrid").innerHTML=l.slice(0,wn).map((w,k)=>`<a class="wcard" href="${wlink(w[2])}" target="_blank" rel="sponsored noopener"><img class="wimg" src="${img({cat:({"Móviles":"Electrónica","Hogar":"Hogar y cocina","Herramientas":"Bricolaje"})[w[0]]||w[0],id:w[1]+k*7},400,240)}" alt="" loading="lazy" onerror="this.remove()"><span class="r">#${w[1]} en EE. UU. · ${esc(w[0])}</span><span class="t">${esc(w[2])}</span><span class="wgo">Buscar en Amazon.es →</span></a>`).join("");
+document.getElementById("wgrid").innerHTML=l.slice(0,wn).map((w,k)=>`<a class="wcard" href="${wlink(w[2])}" target="_blank" rel="sponsored noopener"><img class="wimg" src="${img({cat:({"Móviles":"Electrónica","Hogar":"Hogar y cocina","Herramientas":"Bricolaje"})[w[0]]||w[0],id:w[1]+k*7},400,240)}" alt="" loading="lazy" onerror="this.remove()"><span class="r">Top ${w[1]} · ${esc(w[0])}</span><span class="t">${esc(w[2])}</span><span class="wgo">Buscar en Amazon.es →</span></a>`).join("");
 document.getElementById("wmore").hidden=wn>=l.length;}
 document.getElementById("wchips").onclick=e=>{const b=e.target.closest("[data-w]");if(!b)return;wc=b.dataset.w;wn=12;wr()};
 document.getElementById("wmore").onclick=()=>{wn+=12;wr()};wr();})();
