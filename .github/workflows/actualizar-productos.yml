@@ -1,0 +1,35 @@
+name: Actualizar productos desde Amazon
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"   # cada lunes, 05:17 UTC
+  workflow_dispatch: {}      # botón "Run workflow" para lanzarlo a mano
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Traer productos de la Creators API
+        env:
+          CREATORS_CLIENT_ID: ${{ secrets.CREATORS_CLIENT_ID }}
+          CREATORS_CLIENT_SECRET: ${{ secrets.CREATORS_CLIENT_SECRET }}
+          PARTNER_TAG: ${{ secrets.PARTNER_TAG }}
+        run: python scripts/actualizar_productos.py
+      - name: Guardar cambios
+        run: |
+          if git diff --quiet -- productos-api.js; then
+            echo "Sin cambios en productos."
+            exit 0
+          fi
+          git config user.name "trendpulse-bot"
+          git config user.email "trendpulse-bot@users.noreply.github.com"
+          git add productos-api.js
+          git commit -m "Actualizar productos desde la API de Amazon"
+          git push
