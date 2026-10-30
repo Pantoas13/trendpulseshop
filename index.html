@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TrendPulseShop · Lo más vendido en Amazon.es hoy</title>
+<title>TrendPulseShop · Lo más vendido en Amazon.es</title>
 <meta name="description" content="Los productos más vendidos de Amazon.es en 45 categorías: móviles, portátiles, tablets, TV, audio, informática, hogar, belleza, deporte, juguetes, mascotas y más.">
 <meta property="og:title" content="TrendPulseShop · Lo más vendido en Amazon.es">
 <meta property="og:description" content="Los 2.385 productos más vendidos de Amazon.es en 45 categorías y las ofertas del día.">
@@ -178,6 +178,7 @@ footer .wrap{max-width:1000px}
 @media (prefers-reduced-motion:reduce){.pulse path{animation:none}.pulse circle{animation:none;opacity:1}}
 
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"TrendPulseShop","url":"https://pantoas13.github.io/trendpulseshop/","inLanguage":"es","description":"Los productos más vendidos de Amazon.es por categoría."}</script>
 </head>
 <body>
 <header class="top">
@@ -199,10 +200,10 @@ footer .wrap{max-width:1000px}
 
 <main id="top">
 <section class="hero wrap">
-  <h1>Lo que más se compra en España, hoy.</h1>
+  <h1>Lo que más se compra en España.</h1>
   <p>Los productos más vendidos de Amazon.es, categoría por categoría. Encuentra lo que todo el mundo está comprando y ve directo a su ficha.</p>
   <svg class="pulse" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 H380 L410 60 L432 18 L458 84 L486 8 L512 72 L530 60 H760 L782 60 L800 40 L818 60 H1186"/><circle cx="1186" cy="60" r="9"/></svg>
-  <div class="facts"><span class="fact"><strong id="nprod"></strong> productos</span><span class="fact"><strong id="ncat"></strong> categorías</span><span class="fact">Precios del <strong id="pdate"></strong></span></div>
+  <div class="facts"><span class="fact"><strong id="nprod"></strong> productos</span><span class="fact"><strong id="ncat"></strong> categorías</span><span class="fact">Ranking del <strong id="pdate"></strong> · el precio actual lo ves en la ficha de Amazon</span></div>
 </section>
 
 <section class="wrap" aria-labelledby="h-deals">
@@ -268,9 +269,6 @@ footer .wrap{max-width:1000px}
     <div class="row2"><span class="count" id="count" aria-live="polite"></span>
       <div class="sort" role="group" aria-label="Ordenar">
         <button data-s="rank" aria-pressed="true">Más vendidos</button>
-        <button data-s="cheap" aria-pressed="false">Menos de 15 €</button>
-        <button data-s="asc" aria-pressed="false">Precio más bajo</button>
-        <button data-s="desc" aria-pressed="false">Precio más alto</button>
       </div></div>
   </div>
   <div class="grid" id="grid"></div>
@@ -2700,7 +2698,7 @@ const PAGE=24; let cat="Todas", sort="rank", query="", shown=PAGE;
 $("#nprod").textContent=DEALS.length.toLocaleString("es-ES");$("#ncat").textContent=CATS.length;$("#pdate").textContent=PRICE_DATE;
 
 const best={};DEALS.forEach(d=>{if(!best[d.cat]||d.rank<best[d.cat].rank)best[d.cat]=d});
-$("#rail").innerHTML=Object.values(best).map(d=>`<a class="champ" href="${d.link}" target="_blank" rel="sponsored noopener"><span class="ph" style="background-image:url(${img(d,520,325)})"><span class="one">Nº 1</span></span><span class="in"><span class="c">${esc(d.cat)}</span><span class="t">${esc(d.title)}</span><span class="p">${eur(d.price)}</span></span></a>`).join("");
+$("#rail").innerHTML=Object.values(best).map(d=>`<a class="champ" href="${d.link}" target="_blank" rel="sponsored noopener"><span class="ph" style="background-image:url(${img(d,520,325)})"><span class="one">Nº 1</span></span><span class="in"><span class="c">${esc(d.cat)}</span><span class="t">${esc(d.title)}</span><span class="p">Ver en Amazon ›</span></span></a>`).join("");
 
 const GROUPS={"💻 Tecnología":["Informática", "Electrónica", "Dispositivos Amazon", "Videojuegos", "Móviles y accesorios", "Auriculares y audio portátil", "Audio y Hi-Fi", "TV y home cinema", "Fotografía y vídeo", "Pilas y cargadores", "Portátiles", "Tablets", "Monitores", "Componentes de PC", "Almacenamiento", "Redes y wifi", "Impresoras", "Accesorios de informática", "Ordenadores de sobremesa", "Reacondicionados", "Software"]};
 function chips(){
@@ -2711,7 +2709,7 @@ document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{sort=b.dataset.s
 
 function card(d){
   return `<article class="card"><div class="tile" style="background-color:hsl(${HUE[d.cat]} var(--tile-s) var(--tile-l))"><img src="${img(d)}" alt="" loading="lazy" decoding="async" onerror="this.remove()"><span class="rank"><small>#</small>${d.rank}</span>${d.rank===1?'<span class="hot">Más vendido</span>':""}<span class="brand" aria-hidden="true">${esc(brand(d.title))}</span></div>
-  <div class="body"><span class="cat">${esc(d.cat)}</span><h3>${esc(d.title)}</h3><span class="price">${eur(d.price)}</span>
+  <div class="body"><span class="cat">${esc(d.cat)}</span><h3>${esc(d.title)}</h3><span class="price"></span>
   <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ver en Amazon <span class="eye" aria-hidden="true">›</span></a></div></article>`;
 }
 function render(){
@@ -2776,22 +2774,22 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[rel~="sponsore
 (()=>{
 const norm=t=>t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const log=$("#botLog"),quick=$("#botQuick"),box=$("#bot"),btn=$("#botBtn");
-const QUICK=["¿Cómo compro?","¿Los precios son reales?","Envíos y devoluciones","¿Es seguro?","Ideas de regalo","Lo más barato"];
+const QUICK=["¿Cómo compro?","¿Dónde veo el precio?","Envíos y devoluciones","¿Es seguro?","Ideas de regalo"];
 const say=(html,who="b")=>{const d=document.createElement("div");d.className="msg "+who;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight};
-const mini=d=>`<a class="mini" href="${d.link}" target="_blank" rel="sponsored noopener"><img src="${img(d,120,120)}" alt="" loading="lazy" onerror="this.remove()"><span>${esc(d.title)}<em>${eur(d.price)} · #${d.rank} en ${esc(d.cat)}</em></span></a>`;
+const mini=d=>`<a class="mini" href="${d.link}" target="_blank" rel="sponsored noopener"><img src="${img(d,120,120)}" alt="" loading="lazy" onerror="this.remove()"><span>${esc(d.title)}<em>#${d.rank} en ${esc(d.cat)}</em></span></a>`;
 const showQuick=(arr=QUICK)=>{quick.innerHTML=arr.map(q=>`<button type="button">${esc(q)}</button>`).join("")};
 const FAQ=[
- {k:/hola|buenas|hey|saludos/,a:()=>"¡Hola! 👋 Puedo contarte cómo funciona la web o buscarte productos. Escribe, por ejemplo, <b>freidora</b>, <b>regalo para niño</b> o <b>auriculares menos de 30 €</b>."},
+ {k:/hola|buenas|hey|saludos/,a:()=>"¡Hola! 👋 Puedo contarte cómo funciona la web o buscarte productos. Escribe, por ejemplo, <b>freidora</b>, <b>regalo para niño</b> o <b>auriculares</b>."},
  {k:/gracias|genial|perfecto|vale/,a:()=>"¡De nada! Si necesitas algo más, aquí estoy. 🙌"},
- {k:/como compr|comprar|pedido|pedir|carrito|donde compr/,a:()=>"Es muy fácil:<br>1. Busca el producto aquí.<br>2. Pulsa <b>Ver precio de hoy</b>.<br>3. Se abre la ficha en Amazon.es y lo compras allí con tu cuenta, como siempre.<br>Nosotros no vendemos ni cobramos nada: solo te mostramos lo más vendido."},
- {k:/precio|caro|cuesta|vale |oferta|descuento|cambi/,a:()=>`Los precios se tomaron de Amazon.es el <b>${PRICE_DATE}</b>. En Amazon cambian a menudo, así que el precio que vale es el que ves en la ficha al comprar. A veces está incluso más barato. 😉`},
+ {k:/como compr|comprar|pedido|pedir|carrito|donde compr/,a:()=>"Es muy fácil:<br>1. Busca el producto aquí.<br>2. Pulsa <b>Ver precio actual</b>.<br>3. Se abre la ficha en Amazon.es y lo compras allí con tu cuenta, como siempre.<br>Nosotros no vendemos ni cobramos nada: solo te mostramos lo más vendido."},
+ {k:/precio|caro|cuesta|vale |oferta|descuento|cambi/,a:()=>`En esta web no mostramos precios: cambian a menudo en Amazon. El precio que vale es el que ves en la ficha de Amazon.es al comprar. 😉`},
  {k:/envio|envia|llega|entrega|prime|tarda|gastos/,a:()=>"El envío lo hace <b>Amazon</b> (o el vendedor de la ficha). El plazo y los gastos aparecen en la ficha antes de pagar. Con <b>Prime</b>, muchos productos llegan en 1 día y con envío gratis."},
  {k:/devol|devuelv|garant|roto|defect|reembols/,a:()=>"Las devoluciones y la garantía las gestiona <b>Amazon</b> desde tu cuenta (Mis pedidos → Devolver o reemplazar). En muchos productos tienes 30 días para devolver; mira las condiciones en la ficha de cada producto."},
  {k:/segur|fiable|estafa|confi|pago|tarjeta|pagar/,a:()=>"Sí, es seguro. El pago se hace <b>solo en Amazon.es</b>, con tu cuenta. Aquí nunca te pediremos datos de tarjeta ni contraseñas."},
  {k:/quien|que es|que sois|afiliad|comision|ganais|gratis/,a:()=>"TrendPulseShop es una guía de los productos más vendidos de Amazon.es, ordenados por categoría. Participamos en el Programa de Afiliados de Amazon: si compras desde nuestros enlaces, Amazon nos paga una pequeña comisión <b>sin que tú pagues nada extra</b>."},
  {k:/actualiz|cada cuanto|nuevo|ranking/,a:()=>`El ranking sale de «Los más vendidos» de Amazon.es. La última actualización fue el <b>${PRICE_DATE}</b> y lo renovamos con frecuencia.`},
  {k:/contact|hablar|correo|email|telefono|whatsapp|persona/,a:()=>"Puedes escribirnos por mensaje privado en nuestra página de Facebook <b>TrendPulseShop</b>. Para dudas sobre un pedido, lo más rápido es el servicio de atención de Amazon desde <b>Mis pedidos</b>."},
- {k:/foto|imagen/,a:()=>"Las fotos de las tarjetas son ilustrativas de cada categoría. La foto exacta del producto la verás en su ficha de Amazon al pulsar <b>Ver precio de hoy</b>."},
+ {k:/foto|imagen/,a:()=>"Las fotos de las tarjetas son ilustrativas de cada categoría. La foto exacta del producto la verás en su ficha de Amazon al pulsar <b>Ver precio actual</b>."},
 ];
 const GIFT={nino:["Juguetes"],nina:["Juguetes"],bebe:["Bebé"],mama:["Belleza","Hogar y cocina"],madre:["Belleza","Hogar y cocina"],papa:["Bricolaje","Electrónica","Coche y moto"],padre:["Bricolaje","Electrónica","Coche y moto"],gamer:["Videojuegos"],deport:["Deporte"],mascota:["Mascotas"],perro:["Mascotas"],gato:["Mascotas"],lector:["Libros"],musica:["Instrumentos musicales"]};
 const STOP=new Set("quiero busco buscar necesito un una unos unas el la los las de del para por con sin me algo que hay tienes teneis ver mas menos euros euro eur barato barata baratos baratas bueno buena mejor mejores regalo regalar ideas idea".split(" "));
@@ -2803,14 +2801,13 @@ function search(qn){
   const words=qn.replace(/[^a-z0-9ñ ]/g," ").split(/\s+/).filter(w=>w.length>2&&!STOP.has(w)&&!/^\d+$/.test(w)&&!Object.keys(GIFT).some(k=>w.startsWith(k)));
   let list=DEALS.filter(d=>{const t=norm(d.title+" "+d.cat);return (!words.length||words.every(w=>t.includes(w.replace(/s$/,""))))&&(!cats.length||cats.includes(d.cat)||words.length)});
   if(!words.length&&cats.length)list=DEALS.filter(d=>cats.includes(d.cat));
-  if(max)list=list.filter(d=>d.price<=+max);
-  list.sort(cheap&&!words.length?(a,b)=>a.price-b.price:(a,b)=>a.rank-b.rank||a.price-b.price);
-  return {list,words,cats,max,cheap};
+  list.sort((a,b)=>a.rank-b.rank||a.id-b.id);
+  return {list,words,cats,max:undefined,cheap:false};
 }
 function answer(raw){
   const qn=norm(raw.trim());if(!qn)return;
-  if(/^(lo mas barato|baratos?|ofertas baratas)$/.test(qn)){const l=DEALS.filter(d=>d.rank<=30).sort((a,b)=>a.price-b.price).slice(0,4);say("Estos son superventas por muy poco dinero:"+l.map(mini).join(""));return}
-  if(/ideas? de regalo|que regalo|regalar/.test(qn)&&!Object.keys(GIFT).some(k=>qn.includes(k))){say("¡Claro! ¿Para quién es el regalo?");showQuick(["Regalo para niño","Regalo para mamá","Regalo para papá","Regalo gamer","Regalo para mascota","Regalo menos de 20 €"]);return}
+  if(/^(lo mas barato|baratos?|ofertas baratas)$/.test(qn)){const l=DEALS.filter(d=>d.rank<=30).sort((a,b)=>a.rank-b.rank).slice(0,4);say("No mostramos precios, pero estos son superventas; mira el precio actual en Amazon:"+l.map(mini).join(""));return}
+  if(/ideas? de regalo|que regalo|regalar/.test(qn)&&!Object.keys(GIFT).some(k=>qn.includes(k))){say("¡Claro! ¿Para quién es el regalo?");showQuick(["Regalo para niño","Regalo para mamá","Regalo para papá","Regalo gamer","Regalo para mascota","Regalo para lector"]);return}
   const faq=FAQ.find(f=>f.k.test(qn));
   const r=search(qn);
   const extra=faq?r.words.filter(w=>!faq.k.test(w)&&!/^(como|que|quien|donde|cuando|cuanto|puedo|hacer|hace|tiene|son|esta|estan|seguro|pagar)$/.test(w)):[];
