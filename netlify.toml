@@ -1,0 +1,8 @@
+# Publica solo las paginas del sitio (no scripts, ni .github, ni el README).
+[build]
+  publish = "dist"
+  command = '''
+    mkdir -p dist &&
+    cp -r index.html guias.html privacidad.html anuncio.html anuncio-vertical.html anuncio-vertical.png og.png productos-api.js sitemap.xml img pins promo dist/ &&
+    sed -i 's#https\?://pantoas13.github.io/trendpulseshop/\?#https://trendpulseshop.netlify.app/#g' dist/*.html dist/sitemap.xml
+  '''
