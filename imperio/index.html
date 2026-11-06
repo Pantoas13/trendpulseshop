@@ -50,6 +50,13 @@ canvas{display:block;position:fixed;inset:0}#fx{pointer-events:none;z-index:2}
 #start{margin-top:16px;font-size:20px;padding:14px 48px}
 .legal{font-size:11px;opacity:.55;margin-top:14px;max-width:380px}
 .tabs{display:flex;gap:6px;margin-bottom:10px}.tabs button{flex:1;border:0;border-radius:10px;padding:8px;font-weight:800;color:#fff;background:rgba(255,255,255,.08)}.tabs button.on{background:#f0a500;color:#2a1600}
+#cam{position:fixed;left:10px;bottom:calc(env(safe-area-inset-bottom) + 84px);display:grid;grid-template-columns:repeat(3,40px);gap:6px;z-index:4}
+#cam button{width:40px;height:40px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(20,10,45,.7);backdrop-filter:blur(6px);color:#fff;font-size:18px;font-weight:900;box-shadow:0 3px 10px rgba(0,0,0,.3)}
+#all{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom) + 86px);display:none;align-items:center;gap:8px;padding:10px 16px;border-radius:22px;border:2px solid #ffe08a;background:linear-gradient(180deg,#ffd24a,#e09a00);color:#2a1600;font-weight:900;font-size:14px;z-index:4;box-shadow:0 4px 14px rgba(255,180,40,.5)}
+#all b{background:#2a1600;color:#ffd24a;border-radius:10px;padding:1px 7px;font-size:12px}
+#clock{position:fixed;right:12px;top:calc(env(safe-area-inset-top) + 104px);z-index:4;font-size:12px;font-weight:900;padding:4px 10px;border-radius:10px;background:rgba(20,10,45,.6);backdrop-filter:blur(6px)}
+#top{backdrop-filter:blur(4px)}
+.r{backdrop-filter:blur(6px)}
 </style>
 </head>
 <body>
@@ -58,6 +65,7 @@ canvas{display:block;position:fixed;inset:0}#fx{pointer-events:none;z-index:2}
   <div id="prof"><div id="av">👑</div><div id="lvlbox"><b id="lvlT">Nivel 1 · Aldea</b><div class="xpb"><i id="xpF"></i></div></div><div id="happy">😊 70%</div><div id="gold">🪙 <span id="goldN">0</span></div></div>
   <div id="res"></div>
 </div>
+<div id="cam"><button id="rotL" title="Girar">⟲</button><button id="zin">＋</button><button id="rotR" title="Girar">⟳</button><button id="home" title="Centrar">🧭</button><button id="zout">－</button></div><button id="all">🧺 Recoger todo <b>0</b></button><div id="clock">☀️ 12:00</div>
 <button id="boost">🎁 Bonus x2</button>
 <button id="mine">⛏️<small id="mineT">+0.1 oro</small></button>
 <div id="nav">
