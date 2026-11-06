@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buscador de regalos: el regalo perfecto en 30 segundos · TrendPulseShop</title>
+<meta name="description" content="Responde 3 preguntas (para quién, qué le gusta y cuánto quieres gastar) y descubre los regalos más vendidos de Amazon España que encajan. Ideas para Navidad, Black Friday y amigo invisible 2026.">
+<link rel="canonical" href="https://pantoas13.github.io/trendpulseshop/buscador-regalos.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿No sabes qué regalar? Encuentra el regalo perfecto en 30 segundos">
+<meta property="og:description" content="3 preguntas y te enseñamos los regalos más vendidos de Amazon España para esa persona y tu presupuesto.">
+<meta property="og:image" content="https://pantoas13.github.io/trendpulseshop/og.png">
+<meta property="og:url" content="https://pantoas13.github.io/trendpulseshop/buscador-regalos.html">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#EAEDED;--surface:#fff;--ink:#0F1111;--muted:#565959;--line:#D5D9D9;--nav:#131921;--link:#007185;--btn:#FFD814;--btn-b:#FCD200;--btn-h:#F7CA00;--best:#C45500;--accent:#FF9900;--soft:#F7FAFA;--sel:#FFF5D6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#131A22;--surface:#1D2530;--ink:#E7ECEE;--muted:#9AA4AD;--line:#3A4553;--link:#56C2D6;--soft:#222c38;--sel:#3a3320;color-scheme:dark}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 Arial,Helvetica,sans-serif}
+a{color:var(--link)}
+header{background:var(--nav);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header .logo{color:#fff;text-decoration:none;font-weight:800;font-size:20px}header .logo b{color:var(--accent)}
+header nav a{color:#fff;text-decoration:none;font-size:14px;margin-left:14px;opacity:.9}
+.w{max-width:980px;margin:0 auto;padding:0 16px}
+.hero{padding:28px 0 10px;text-align:center}
+.count{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.count span{background:#CC0C39;color:#fff;font-weight:700;font-size:12.5px;padding:5px 10px;border-radius:999px}
+.count span.x{background:#067D62}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.08}
+.hero p{color:var(--muted);margin:10px auto 0;max-width:60ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;margin:20px 0}
+.prog{display:flex;gap:6px;margin-bottom:16px}.prog i{flex:1;height:6px;border-radius:9px;background:var(--line)}.prog i.on{background:var(--accent)}
+.q{font-size:clamp(20px,3.4vw,26px);font-weight:700;margin-bottom:4px}
+.qs{color:var(--muted);font-size:14px;margin-bottom:16px}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.opt{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;border:2px solid var(--line);border-radius:12px;background:var(--soft);color:var(--ink);font:inherit;font-weight:600;font-size:15px;cursor:pointer;transition:transform .12s,border-color .12s}
+.opt:hover{transform:translateY(-2px);border-color:var(--accent)}.opt.sel{border-color:var(--accent);background:var(--sel)}
+.opt .e{font-size:34px;line-height:1}.opt small{font-weight:400;color:var(--muted);font-size:12.5px}
+.back{background:none;border:0;color:var(--link);font:inherit;font-size:14px;cursor:pointer;margin-top:14px;padding:0}
+.rh{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.rh h2{font-size:clamp(20px,3.4vw,28px);line-height:1.15;max-width:30ch}
+.note{font-size:13px;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:18px}
+.g{display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);position:relative;transition:box-shadow .15s}
+.g:hover{box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.g .ic{font-size:40px;line-height:1}.g .tg{font-size:12px;color:var(--best);font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+.g b{color:var(--link);font-weight:400;font-size:15px;line-height:1.3;flex:1}
+.g .pr{font-size:20px;font-weight:700}.g .pr small{font-size:12px;font-weight:400;color:var(--muted)}
+.btn{display:block;text-align:center;background:var(--btn);border:1px solid var(--btn-b);border-radius:999px;padding:9px 14px;font-weight:700;font-size:14px;color:#0F1111;text-decoration:none;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--btn-h)}
+.btn.sec{background:var(--soft);border-color:var(--line);color:var(--ink)}
+.g.star{border:2px solid var(--accent)}.g.star::before{content:"✨ Tu sorpresa";position:absolute;top:-11px;left:14px;background:var(--accent);color:#0F1111;font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.share{margin-top:20px;padding:16px;border-radius:12px;background:var(--soft);border:1px dashed var(--line)}
+.share p{font-weight:700;margin-bottom:10px}.share .row{display:flex;gap:8px;flex-wrap:wrap}
+.share a,.share button{border-radius:999px;padding:8px 14px;font:700 13.5px Arial,Helvetica,sans-serif;text-decoration:none;color:#fff;border:0;cursor:pointer}
+.fb{background:#1877F2}.pin{background:#E60023}.xx{background:#000}.tg2{background:#229ED9}.cp{background:#555}
+.prime{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--btn);border-radius:12px;padding:14px 18px;text-decoration:none;color:#0F1111;font-weight:700;margin:20px 0}
+.prime span.b{background:#0F1111;color:#fff;border-radius:999px;padding:7px 14px;font-size:14px}
+.seo h2{font-size:20px;margin:6px 0 8px}.seo h3{font-size:16px;margin:14px 0 4px}.seo p{color:var(--muted);font-size:14.5px}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:13px;margin-top:20px}
+.hide{display:none}
+@media (max-width:520px){.opts{grid-template-columns:repeat(2,1fr)}.card{padding:16px}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="./">Trend<b>Pulse</b>Shop</a><nav><a href="./">Lo más vendido</a><a href="regalos-black-friday.html">Regalos &lt;30 €</a></nav></header>
+
+<main class="w">
+  <section class="hero">
+    <div class="count" id="count"></div>
+    <h1>¿No sabes qué regalar?<br>Encuéntralo en 30 segundos</h1>
+    <p>Responde 3 preguntas y te enseñamos los regalos que más se venden en Amazon España para esa persona y tu presupuesto.</p>
+  </section>
+
+  <section class="card" id="quiz">
+    <div class="prog"><i id="p1"></i><i id="p2"></i><i id="p3"></i></div>
+    <div id="step"></div>
+  </section>
+
+  <section class="card hide" id="res">
+    <div class="rh">
+      <div><h2 id="rtitle"></h2><p class="note" id="rnote"></p></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="acts">
+      <button class="btn" id="more">Ver más ideas</button>
+      <button class="btn sec" id="surprise">✨ Sorpréndeme</button>
+      <button class="btn sec" id="restart">Buscar otro regalo</button>
+    </div>
+    <div class="share">
+      <p>¿Le pasas la idea a alguien? Comparte estos resultados:</p>
+      <div class="row">
+        <button class="cp" id="native">Compartir</button>
+        <a class="fb" id="sfb" target="_blank" rel="noopener">Facebook</a>
+        <a class="pin" id="spin" target="_blank" rel="noopener">Pinterest</a>
+        <a class="xx" id="sx" target="_blank" rel="noopener">X</a>
+        <a class="tg2" id="stg" target="_blank" rel="noopener">Telegram</a>
+        <button class="cp" id="copy">Copiar enlace</button>
+      </div>
+    </div>
+  </section>
+
+  <a class="prime" href="https://www.amazon.es/prime?tag=trendpulsesho-21" target="_blank" rel="sponsored nofollow noopener">
+    <span>⚡ Llega a tiempo: prueba Amazon Prime gratis y recibe tus regalos con envío rápido</span><span class="b">Probar gratis</span>
+  </a>
+
+  <section class="card seo">
+    <h2>Cómo funciona el buscador de regalos</h2>
+    <p>Usamos el ranking de los productos más vendidos de Amazon España, categoría por categoría. Según para quién es el regalo, lo que le gusta y tu presupuesto, te mostramos los que mejor encajan, empezando por los más vendidos.</p>
+    <h3>¿Los precios son los de hoy?</h3>
+    <p>No. Los precios son aproximados y se consultaron el __FECHA__. El precio actual y las ofertas del día (Black Friday, Cyber Monday) se ven siempre en la ficha de Amazon.</p>
+    <h3>¿Sirve para el amigo invisible?</h3>
+    <p>Sí. Elige «Amigo / amigo invisible», marca el presupuesto acordado y pulsa «Sorpréndeme» si no conoces bien sus gustos.</p>
+  </section>
+</main>
+
+<footer><div class="w">
+  <p>TrendPulseShop participa en el Programa de Afiliados de Amazon EU, un programa de publicidad para afiliados diseñado para ofrecer a sitios web un modo de obtener comisiones por publicidad, publicitando e incluyendo enlaces a Amazon.es. Como afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. <a href="privacidad.html">Privacidad</a></p>
+</div></footer>
+
+<script>
+const D = __DATA__;
+const TAG = "trendpulsesho-21";
+const P = D.p.map(([cat, asin, rank, title, price]) => ({cat, asin, rank, title, price}));
+
+const WHO = [
+  {k:"pareja", e:"💝", t:"Pareja", n:"tu pareja", boost:["Belleza","Moda","Dispositivos Amazon","Auriculares y audio portátil"]},
+  {k:"mama", e:"👩", t:"Mamá", n:"mamá", boost:["Belleza","Hogar y cocina","Electrodomésticos"]},
+  {k:"papa", e:"👨", t:"Papá", n:"papá", boost:["Bricolaje","Coche y moto","Electrónica para coche","Dispositivos Amazon"]},
+  {k:"nino", e:"🧒", t:"Niño o niña", s:"3 a 12 años", n:"un niño o niña", only:["Juguetes","Videojuegos","Tablets","Libros","Deporte","Instrumentos musicales","Películas y series"]},
+  {k:"teen", e:"🧑‍🎤", t:"Adolescente", n:"un adolescente", boost:["Videojuegos","Auriculares y audio portátil","Móviles y accesorios","Moda"]},
+  {k:"bebe", e:"👶", t:"Bebé", n:"un bebé", only:["Bebé","Juguetes"], skip:true},
+  {k:"amigo", e:"🎁", t:"Amigo", s:"o amigo invisible", n:"un amigo", boost:[]},
+  {k:"yo", e:"🛋️", t:"Para mí", s:"o para casa", n:"ti", boost:["Hogar y cocina","Dispositivos Amazon"]}
+];
+const LIKE = [
+  {k:"tech", e:"📱", t:"Tecnología", n:"le gusta la tecnología", c:["Dispositivos Amazon","Auriculares y audio portátil","Móviles y accesorios","Electrónica","Tablets","Accesorios de informática","Fotografía y vídeo","Audio y Hi-Fi","Redes y wifi","TV y home cinema","Portátiles"]},
+  {k:"hogar", e:"🏠", t:"Cocina y hogar", n:"le gusta la casa y la cocina", c:["Hogar y cocina","Electrodomésticos","Iluminación","Jardín"]},
+  {k:"deporte", e:"🏃", t:"Deporte", n:"le gusta el deporte", c:["Deporte","Salud"]},
+  {k:"belleza", e:"💄", t:"Belleza y moda", n:"le gusta cuidarse", c:["Belleza","Moda","Salud"]},
+  {k:"gaming", e:"🎮", t:"Juegos", s:"videojuegos y de mesa", n:"le gustan los juegos", c:["Videojuegos","Juguetes","Accesorios de informática"]},
+  {k:"musica", e:"🎵", t:"Música", n:"le gusta la música", c:["Instrumentos musicales","CD y vinilos","Audio y Hi-Fi","Auriculares y audio portátil"]},
+  {k:"lectura", e:"📚", t:"Leer y cine", n:"le gusta leer o el cine", c:["Libros","eBooks Kindle","Películas y series"]},
+  {k:"mascotas", e:"🐾", t:"Mascotas", n:"con mascota", c:["Mascotas"]},
+  {k:"motor", e:"🔧", t:"Bricolaje y coche", n:"le gusta el bricolaje o el coche", c:["Bricolaje","Coche y moto","Electrónica para coche"]},
+  {k:"todo", e:"✨", t:"No lo sé", s:"sorpréndeme", n:"", c:null}
+];
+const BUD = [
+  {k:"15", e:"🪙", t:"Menos de 15 €", lo:0, hi:15},
+  {k:"30", e:"💶", t:"15 – 30 €", lo:15, hi:30},
+  {k:"60", e:"💳", t:"30 – 60 €", lo:30, hi:60},
+  {k:"150", e:"💎", t:"60 – 150 €", lo:60, hi:150},
+  {k:"max", e:"👑", t:"Más de 150 €", lo:150, hi:1e9}
+];
+
+const st = {who:null, like:null, bud:null, list:[], shown:0, star:null};
+const $ = id => document.getElementById(id);
+
+function countdown(){
+  const now = new Date(), day = 864e5, out = [];
+  const bf = Math.ceil((new Date("2026-11-27T00:00:00") - now) / day);
+  const nav = Math.ceil((new Date("2026-12-25T00:00:00") - now) / day);
+  if (bf > 0) out.push(`<span>Black Friday en ${bf} día${bf > 1 ? "s" : ""}</span>`);
+  else if (bf > -4) out.push(`<span>Semana del Black Friday</span>`);
+  if (nav > 0) out.push(`<span class="x">Navidad en ${nav} días</span>`);
+  $("count").innerHTML = out.join("");
+}
+
+function prog(n){ ["p1","p2","p3"].forEach((id, i) => $(id).classList.toggle("on", i < n)); }
+
+function render(n){
+  prog(n);
+  const box = $("step");
+  let title, sub, opts, pick;
+  if (n === 1){ title = "¿Para quién es el regalo?"; sub = "Elige una opción"; opts = WHO; pick = o => { st.who = o; render(o.skip ? 3 : 2); }; }
+  else if (n === 2){ title = "¿Qué le gusta?"; sub = "Si no lo tienes claro, elige «No lo sé»"; opts = LIKE; pick = o => { st.like = o; render(3); }; }
+  else { title = "¿Cuánto quieres gastar?"; sub = "Precio aproximado en Amazon"; opts = BUD; pick = o => { st.bud = o; results(true); }; }
+  box.innerHTML = `<p class="q">${title}</p><p class="qs">${sub}</p><div class="opts"></div>${n > 1 ? '<button class="back">← Atrás</button>' : ""}`;
+  const grid = box.querySelector(".opts");
+  opts.forEach(o => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    b.innerHTML = `<span class="e">${o.e}</span><span>${o.t}</span>${o.s ? `<small>${o.s}</small>` : ""}`;
+    b.onclick = () => pick(o);
+    grid.appendChild(b);
+  });
+  const back = box.querySelector(".back");
+  if (back) back.onclick = () => render(n === 3 && st.who && st.who.skip ? 1 : n - 1);
+}
+
+function pool(){
+  const who = st.who, like = st.like && st.like.c;
+  let cats = like ? like.slice() : null;
+  if (who.only){
+    cats = cats ? cats.filter(c => who.only.includes(c)) : who.only.slice();
+    if (cats.length < 2) cats = cats.concat(who.only.slice(0, 2).filter(c => !cats.includes(c)));
+  }
+  return P.filter(p => {
+    if (cats && !cats.includes(p.cat)) return false;
+    if (who.only && /adult|\+18|18\+/i.test(p.title)) return false;
+    if (!who.only && (p.cat === "Bebé")) return false;
+    if (!who.only && p.cat === "Juguetes" && !(st.like && st.like.k === "gaming")) return false;
+    return true;
+  });
+}
+
+const GOOD = /regalo|\bset\b|\bkit\b|l[áa]mpara|taza|altavoz|auricular|juego|lego|reloj|perfume|colonia|estuche|manta|cafetera|freidora|batidora|inteligente|smart|\bled\b|echo|fire tv|kindle|masaje|termo|botella|mochila|cartera|bolso|pulsera|collar|peluche|puzzle|vinilo|c[áa]mara|proyector|tablet|consola|mando|gaming|teclado|cascos|cepillo el[ée]ctrico|secador|plancha|depiladora|afeitadora|multiherramienta|linterna|novela|edici[óo]n/i;
+const MEH = /percha|funda|protector|adaptador|cable|tornillo|bolsas|organizador|recambio|repuesto|soporte|junta|tap[óo]n|enchufe|alargador|cinta adhesiva|pegamento|tuerca|clavo|placas?|s[áa]banas|arena|trampa|estante|bayeta|estropajo|escobilla|calcetines/i;
+function score(p){
+  let s = p.rank;
+  if (GOOD.test(p.title)) s -= 20;
+  if (MEH.test(p.title)) s += 40;
+  if (st.who.boost && st.who.boost.includes(p.cat)) s -= 15;
+  return s;
+}
+
+function diversify(list){
+  const first = [], rest = [], seen = {};
+  list.forEach(p => { seen[p.cat] = (seen[p.cat] || 0) + 1; (seen[p.cat] <= 2 ? first : rest).push(p); });
+  return first.concat(rest);
+}
+
+function results(push){
+  const all = pool();
+  const b = st.bud;
+  let list = all.filter(p => p.price >= b.lo && p.price < b.hi);
+  let widened = false;
+  for (const f of [1.4, 2, 3]){
+    if (list.length >= 6) break;
+    const lo = b.lo / f, hi = b.hi === 1e9 ? 1e9 : b.hi * f;
+    list = all.filter(p => p.price >= lo && p.price < hi);
+    widened = true;
+  }
+  list.sort((a, c) => score(a) - score(c));
+  st.list = diversify(list);
+  st.shown = 0;
+  st.star = null;
+  $("grid").innerHTML = "";
+  $("quiz").classList.add("hide");
+  $("res").classList.remove("hide");
+  const likeTxt = st.like && st.like.n ? (st.like.n.startsWith("le ") ? ` a quien ${st.like.n}` : ` ${st.like.n}`) : "";
+  const who = st.who.k === "yo" ? "ti" : st.who.n;
+  $("rtitle").textContent = `Regalos para ${who}${likeTxt}: ${b.t.toLowerCase()}`;
+  $("rnote").textContent = st.list.length
+    ? `${st.list.length} ideas, ordenadas de más a menos vendidas en Amazon España.${widened ? " Hemos añadido algunas un poco fuera de tu presupuesto." : ""} Precios aproximados (__FECHA__): mira el precio de hoy en Amazon.`
+    : "No hemos encontrado ideas con esa combinación. Prueba con otro presupuesto o con «No lo sé».";
+  more();
+  share();
+  if (push) history.replaceState(null, "", `#para=${st.who.k}&gusta=${st.like ? st.like.k : "todo"}&p=${b.k}`);
+  $("res").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function card(p, star){
+  const a = document.createElement("a");
+  a.className = "g" + (star ? " star" : "");
+  a.href = `https://www.amazon.es/dp/${p.asin}?tag=${TAG}`;
+  a.target = "_blank";
+  a.rel = "sponsored nofollow noopener";
+  const t = p.title.length > 95 ? p.title.slice(0, 92).trim() + "…" : p.title;
+  a.innerHTML = `<span class="ic"></span><span class="tg"></span><b></b><span class="pr"></span><span class="btn">Ver en Amazon</span>`;
+  a.querySelector(".ic").textContent = D.i[p.cat] || "🎁";
+  a.querySelector(".tg").textContent = `Nº ${p.rank} en ${p.cat}`;
+  a.querySelector("b").textContent = t;
+  a.querySelector(".pr").innerHTML = `≈ ${p.price.toFixed(2).replace(".", ",")} € <small>aprox.</small>`;
+  return a;
+}
+
+function more(){
+  const g = $("grid"), next = st.list.slice(st.shown, st.shown + 6);
+  next.forEach(p => g.appendChild(card(p)));
+  st.shown += next.length;
+  $("more").classList.toggle("hide", st.shown >= st.list.length);
+}
+
+function surprise(){
+  if (!st.list.length) return;
+  const pick = st.list[Math.floor(Math.random() * Math.min(st.list.length, 40))];
+  const old = document.querySelector(".g.star");
+  if (old) old.remove();
+  $("grid").prepend(card(pick, true));
+  $("grid").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function share(){
+  const url = location.href.split("#")[0] + `#para=${st.who.k}&gusta=${st.like ? st.like.k : "todo"}&p=${st.bud.k}`;
+  const text = `🎁 ${$("rtitle").textContent}. Ideas con lo más vendido de Amazon:`;
+  const e = encodeURIComponent;
+  $("sfb").href = `https://www.facebook.com/sharer/sharer.php?u=${e(url)}`;
+  $("spin").href = `https://www.pinterest.com/pin/create/button/?url=${e(url)}&description=${e(text)}&media=${e("https://pantoas13.github.io/trendpulseshop/og.png")}`;
+  $("sx").href = `https://twitter.com/intent/tweet?text=${e(text)}&url=${e(url)}`;
+  $("stg").href = `https://t.me/share/url?url=${e(url)}&text=${e(text)}`;
+  $("copy").onclick = () => navigator.clipboard.writeText(url).then(() => { $("copy").textContent = "¡Copiado!"; setTimeout(() => $("copy").textContent = "Copiar enlace", 1800); });
+  $("native").onclick = () => navigator.share ? navigator.share({title:"Buscador de regalos", text, url}).catch(() => {}) : $("copy").click();
+}
+
+function fromHash(){
+  const h = new URLSearchParams(location.hash.slice(1));
+  const who = WHO.find(o => o.k === h.get("para")), like = LIKE.find(o => o.k === h.get("gusta")), bud = BUD.find(o => o.k === h.get("p"));
+  if (who && bud){ st.who = who; st.like = who.skip ? null : (like || LIKE.at(-1)); st.bud = bud; results(false); return true; }
+  return false;
+}
+
+$("more").onclick = more;
+$("surprise").onclick = surprise;
+$("restart").onclick = () => { history.replaceState(null, "", location.pathname); $("res").classList.add("hide"); $("quiz").classList.remove("hide"); st.who = st.like = st.bud = null; render(1); $("quiz").scrollIntoView({behavior:"smooth"}); };
+
+countdown();
+window.addEventListener("hashchange", fromHash);
+if (!fromHash()) render(1);
+</script>
+</body>
+</html>
