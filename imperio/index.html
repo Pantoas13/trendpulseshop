@@ -10,7 +10,7 @@
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;overflow:hidden;background:#1b1033;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#fff;user-select:none;-webkit-user-select:none;touch-action:none}
-canvas{display:block;position:fixed;inset:0}
+canvas{display:block;position:fixed;inset:0}#fx{pointer-events:none;z-index:2}
 #top{position:fixed;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top) + 6px) 8px 6px;background:linear-gradient(180deg,rgba(20,10,45,.95),rgba(20,10,45,.6) 80%,transparent);z-index:3}
 #prof{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 #av{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b0,#f0b400 55%,#9a6200);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid #ffe08a;box-shadow:0 0 12px rgba(255,200,60,.6)}
@@ -43,7 +43,7 @@ canvas{display:block;position:fixed;inset:0}
 .cost{font-size:11px;margin-top:3px}.cost .no{color:#ff8a8a}
 #toast{position:fixed;left:50%;top:132px;transform:translateX(-50%);background:rgba(20,10,45,.92);border:1px solid rgba(255,215,90,.6);padding:8px 16px;border-radius:14px;font-weight:800;font-size:13px;opacity:0;transition:opacity .3s;z-index:8;text-align:center;max-width:88vw}
 #toast.show{opacity:1}
-#intro{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(ellipse at 50% 30%,#4a2a8a,#140a2e 70%)}
+#intro{position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(ellipse at 50% 30%,rgba(60,30,120,.55),rgba(20,10,46,.85) 75%)}
 #intro h1{font-size:46px;line-height:.95;margin:10px 0;font-weight:900;font-style:italic;background:linear-gradient(180deg,#fff8d0,#ffd24a 45%,#c47a00);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 16px rgba(255,190,40,.6))}
 #intro p{max-width:420px;opacity:.9;line-height:1.5;font-size:15px}
 #intro .big{font-size:84px;filter:drop-shadow(0 0 20px rgba(255,200,60,.8))}
@@ -68,268 +68,14 @@ canvas{display:block;position:fixed;inset:0}
 </div>
 <div id="sheet"></div>
 <div id="toast"></div>
-<div id="intro">
+<div id="intro"><div id="load" style="position:absolute;bottom:30px;font-weight:800;color:#ffd84a">Cargando ciudad… 0%</div>
   <div class="big">🏰</div>
   <h1>IMPERIO<br>DORADO</h1>
   <p>Construye tu ciudad, pon a trabajar a tus aldeanos y excava las minas de oro más ricas del reino.<br>Granjas, aserraderos, canteras, minas y fundiciones: ¡haz crecer tu imperio!</p>
   <button class="btn" id="start">JUGAR</button>
   <div class="legal">El oro de este juego es una moneda virtual sin valor real. No se puede comprar ni cambiar por dinero.</div>
 </div>
-<script>
-'use strict';
-const $=id=>document.getElementById(id);
-const cv=$('c'),ctx=cv.getContext('2d');let W=0,H=0,DPR=1;
-function resize(){DPR=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cv.style.width=W+'px';cv.style.height=H+'px';ctx.setTransform(DPR,0,0,DPR,0,0);}
-addEventListener('resize',resize);resize();
-
-// ================= Datos del juego =================
-const RES={comida:{ic:'🌾',n:'Comida'},madera:{ic:'🪵',n:'Madera'},piedra:{ic:'🪨',n:'Piedra'},hierro:{ic:'⛓️',n:'Hierro'},gemas:{ic:'💎',n:'Gemas'}};
-const BT={
-  granja:{n:'Granja',ic:'🌾',d:'Produce comida para tus aldeanos.',res:'comida',base:1.1,work:1,cost:{madera:15},col:'#8bc34a',wall:'#c9a26b',roof:'#b5452e',h:14,lv:1},
-  aserradero:{n:'Aserradero',ic:'🪵',d:'Corta madera del bosque.',res:'madera',base:.9,work:1,cost:{madera:10,comida:10},col:'#795548',wall:'#a5774a',roof:'#6b3a1e',h:16,lv:1},
-  casa:{n:'Casa',ic:'🏠',d:'Da hogar a 4 aldeanos (trabajadores).',pop:4,cost:{madera:25,piedra:5},col:'#e0a070',wall:'#f2dcb3',roof:'#c0392b',h:13,lv:1},
-  cantera:{n:'Cantera',ic:'🪨',d:'Extrae piedra.',res:'piedra',base:.7,work:2,cost:{madera:40,comida:20},col:'#9e9e9e',wall:'#b8b8c2',roof:'#5d5d6a',h:10,lv:2,flat:1},
-  plaza:{n:'Plaza',ic:'⛲',d:'Sube la felicidad: tu ciudad produce más.',happy:10,cost:{piedra:50,madera:30},col:'#4fc3f7',wall:'#d8d8e8',roof:'#3a9ad9',h:5,lv:3,flat:1},
-  hierro:{n:'Mina de hierro',ic:'⛏️',d:'Saca hierro de la montaña.',res:'hierro',base:.45,work:3,cost:{madera:70,piedra:50},col:'#607d8b',wall:'#7a8494',roof:'#37474f',h:18,lv:4,tower:1},
-  almacen:{n:'Almacén',ic:'📦',d:'Aumenta el límite de recursos en 400.',cap:400,cost:{madera:90,piedra:70},col:'#8d6e63',wall:'#b08a6a',roof:'#5d4037',h:15,lv:4},
-  minaoro:{n:'Mina de oro',ic:'💰',d:'¡Oro! Consume comida para alimentar a los mineros.',res:'oro',base:.18,work:3,eat:{comida:.5},cost:{madera:120,piedra:90,hierro:30},col:'#ffc107',wall:'#8a7a5a',roof:'#e6a800',h:20,lv:5,tower:1,shine:1},
-  fundicion:{n:'Fundición',ic:'🔥',d:'Funde hierro y madera en lingotes de oro.',res:'oro',base:.5,work:4,eat:{hierro:.5,madera:.6},cost:{piedra:180,hierro:90},costOro:15,col:'#e64a19',wall:'#8a4a3a',roof:'#3a2a2a',h:22,lv:7,chim:1},
-  joyeria:{n:'Joyería',ic:'💎',d:'Talla gemas preciosas con oro.',res:'gemas',base:.04,work:3,eat:{oro:.05},cost:{piedra:250,hierro:150},costOro:40,col:'#ab47bc',wall:'#d6c6e6',roof:'#7b1fa2',h:17,lv:9,shine:1},
-};
-const ORDER=['granja','aserradero','casa','cantera','plaza','hierro','almacen','minaoro','fundicion','joyeria'];
-const N=8;
-let S=null;
-function newState(){
-  const tiles=[];for(let y=0;y<N;y++)for(let x=0;x<N;x++){const own=x>=2&&x<=4&&y>=2&&y<=4;tiles.push({x,y,own,b:null,lvl:0,buf:0,deco:Math.random()<.18&&!own?(Math.random()<.6?'tree':'rock'):null});}
-  const t=(x,y)=>tiles[y*N+x];t(3,3).b='casa';t(3,3).lvl=1;t(2,3).b='granja';t(2,3).lvl=1;t(3,2).b='aserradero';t(3,2).lvl=1;
-  return {v:1,res:{comida:30,madera:40,piedra:0,hierro:0,gemas:0},oro:2,xp:0,lvl:1,pick:1,tiles,boostUntil:0,boostReady:0,last:Date.now(),done:{},stats:{tap:0,oroTot:0,built:3},prices:{comida:.02,madera:.025,piedra:.04,hierro:.09},auto:0};
-}
-function save(){try{S.last=Date.now();localStorage.setItem('imperio_v1',JSON.stringify(S));}catch(e){}}
-function load(){try{const j=JSON.parse(localStorage.getItem('imperio_v1'));if(j&&j.v===1)return j;}catch(e){}return null;}
-
-// ================= Economía =================
-const upCost=(k,l)=>{const b=BT[k],m=Math.pow(1.65,l);const c={};for(const r in b.cost)c[r]=Math.ceil(b.cost[r]*m);let o=b.costOro?Math.ceil(b.costOro*m):(l>=2?Math.ceil(l*l*1.5):0);return {c,o};};
-const landCost=()=>{const owned=S.tiles.filter(t=>t.own).length;return Math.ceil(8*Math.pow(1.35,owned-9));};
-function cap(){let c=300;S.tiles.forEach(t=>{if(t.b==='almacen')c+=BT.almacen.cap*t.lvl;});return c;}
-function pop(){let p=2;S.tiles.forEach(t=>{if(t.b==='casa')p+=BT.casa.pop*t.lvl;});return p;}
-function workNeed(){let w=0;S.tiles.forEach(t=>{const b=t.b&&BT[t.b];if(b&&b.work)w+=b.work*t.lvl;});return w;}
-function happiness(){let h=60;let n=0;S.tiles.forEach(t=>{if(t.b==='plaza')h+=BT.plaza.happy*t.lvl;if(t.b)n++;});h-=n*1.5;if(S.res.comida<=1)h-=25;const ratio=pop()/Math.max(1,workNeed());if(ratio<1)h-=10;return Math.max(5,Math.min(150,Math.round(h)));}
-function mult(){const wr=Math.min(1,pop()/Math.max(1,workNeed()));const hm=.5+happiness()/100;const boost=Date.now()<S.boostUntil?2:1;return wr*hm*boost;}
-function rate(t){const b=BT[t.b];if(!b||!b.res)return 0;return b.base*Math.pow(t.lvl,1.2)*mult();}
-function bufMax(t){return rate(t)*90+1;}
-function canPay(c,o=0){for(const r in c)if((S.res[r]||0)<c[r])return false;return S.oro>=o;}
-function pay(c,o=0){for(const r in c)S.res[r]-=c[r];S.oro-=o;}
-function costHtml(c,o){let h='';for(const r in c)h+=`<span class="${(S.res[r]||0)<c[r]?'no':''}">${RES[r].ic}${fmt(c[r])}</span> `;if(o)h+=`<span class="${S.oro<o?'no':''}">🪙${fmt(o)}</span>`;return h||'Gratis';}
-function fmt(n){if(n>=1e6)return (n/1e6).toFixed(1)+'M';if(n>=1e4)return (n/1e3).toFixed(1)+'k';if(n>=100)return Math.floor(n).toString();if(n>=10)return n.toFixed(1);return n.toFixed(n<1?2:1);}
-function addXp(n){S.xp+=n;let need=50*S.lvl*S.lvl;while(S.xp>=need){S.xp-=need;S.lvl++;S.oro+=S.lvl*3;toast(`⭐ ¡Nivel ${S.lvl}! +${S.lvl*3} 🪙 · Nuevos edificios disponibles`);sfx.level();need=50*S.lvl*S.lvl;}}
-const TITLES=['Aldea','Aldea','Pueblo','Pueblo','Villa','Villa','Ciudad','Ciudad','Gran ciudad','Capital','Capital','Imperio'];
-
-// ================= Misiones =================
-const MISS=[
-  {id:'m1',t:'Construye una Cantera',ok:()=>S.tiles.some(t=>t.b==='cantera'),r:5},
-  {id:'m2',t:'Ten 3 Casas',ok:()=>S.tiles.filter(t=>t.b==='casa').length>=3,r:6},
-  {id:'m3',t:'Mina a mano 50 veces',ok:()=>S.stats.tap>=50,r:5},
-  {id:'m4',t:'Compra un terreno nuevo',ok:()=>S.tiles.filter(t=>t.own).length>9,r:8},
-  {id:'m5',t:'Construye una Plaza',ok:()=>S.tiles.some(t=>t.b==='plaza'),r:10},
-  {id:'m6',t:'Mejora un edificio a nivel 3',ok:()=>S.tiles.some(t=>t.lvl>=3),r:10},
-  {id:'m7',t:'Construye una Mina de hierro',ok:()=>S.tiles.some(t=>t.b==='hierro'),r:15},
-  {id:'m8',t:'Construye una Mina de oro',ok:()=>S.tiles.some(t=>t.b==='minaoro'),r:25},
-  {id:'m9',t:'Consigue 200 de oro en total',ok:()=>S.stats.oroTot>=200,r:30},
-  {id:'m10',t:'Alcanza el nivel 7',ok:()=>S.lvl>=7,r:40},
-  {id:'m11',t:'Construye una Fundición',ok:()=>S.tiles.some(t=>t.b==='fundicion'),r:60},
-  {id:'m12',t:'Ten 20 terrenos',ok:()=>S.tiles.filter(t=>t.own).length>=20,r:80},
-  {id:'m13',t:'Construye una Joyería',ok:()=>S.tiles.some(t=>t.b==='joyeria'),r:120},
-  {id:'m14',t:'Consigue 2.000 de oro en total',ok:()=>S.stats.oroTot>=2000,r:200},
-];
-
-// ================= Vista isométrica =================
-let cam={x:0,y:0,z:1},TW=84,TH=42;
-function iso(x,y){return {x:(x-y)*TW/2*cam.z+W/2+cam.x,y:(x+y)*TH/2*cam.z+H*.3+cam.y};}
-// (x,y) centrados con fitCam
-function fitCam(){cam.z=Math.max(.7,Math.min(1.5,Math.min(W/(5.2*TW),(H-230)/(5.2*TH))));cam.x=0;cam.y=0;const c=iso(3.5,3.5);cam.y=H*.52-c.y;cam.x=W/2-c.x;}
-function screenToTile(px,py){const sx=(px-W/2-cam.x)/(TW/2*cam.z),sy=(py-H*.3-cam.y)/(TH/2*cam.z);const x=Math.floor((sx+sy)/2+.5),y=Math.floor((sy-sx)/2+.5);if(x<0||y<0||x>=N||y>=N)return null;return S.tiles[y*N+x];}
-function shade(hex,f){const n=parseInt(hex.slice(1),16);let r=n>>16,g=(n>>8)&255,b=n&255;r=Math.min(255,Math.max(0,r*f));g=Math.min(255,Math.max(0,g*f));b=Math.min(255,Math.max(0,b*f));return `rgb(${r|0},${g|0},${b|0})`;}
-function poly(pts,fill,stroke){ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1;ctx.stroke();}}
-function drawTile(t,time){
-  const p=iso(t.x,t.y),z=cam.z,hw=TW/2*z,hh=TH/2*z;
-  const top=[[p.x,p.y-hh],[p.x+hw,p.y],[p.x,p.y+hh],[p.x-hw,p.y]];
-  let g;
-  if(t.own){g=((t.x+t.y)%2)?'#5fa83a':'#68b443';}else g=((t.x+t.y)%2)?'#3b5f2d':'#416833';
-  poly(top,g,'rgba(0,0,0,.18)');
-  // borde de tierra
-  const d=6*z;poly([[p.x-hw,p.y],[p.x,p.y+hh],[p.x,p.y+hh+d],[p.x-hw,p.y+d]],t.own?'#8a5a32':'#5a3d22');poly([[p.x+hw,p.y],[p.x,p.y+hh],[p.x,p.y+hh+d],[p.x+hw,p.y+d]],t.own?'#6e4526':'#46301a');
-  if(!t.own){ctx.globalAlpha=.35;poly(top,'#0a0520');ctx.globalAlpha=1;}
-  if(sel===t){ctx.globalAlpha=.35+Math.sin(time*6)*.15;poly(top,'#ffe07a');ctx.globalAlpha=1;}
-  if(t.deco==='tree')drawTree(p,z,t);else if(t.deco==='rock')drawRock(p,z);
-  if(!t.own&&!t.deco&&isAdjOwned(t)){ctx.font=`${14*z}px sans-serif`;ctx.textAlign='center';ctx.globalAlpha=.75;ctx.fillText('🔒',p.x,p.y+5*z);ctx.globalAlpha=1;}
-}
-function drawTree(p,z,t){ctx.fillStyle='#5a3a1e';ctx.fillRect(p.x-2*z,p.y-12*z,4*z,12*z);for(let i=0;i<3;i++){ctx.beginPath();ctx.moveTo(p.x,p.y-(40-i*9)*z);ctx.lineTo(p.x+(12+i*3)*z,p.y-(14-i*7)*z);ctx.lineTo(p.x-(12+i*3)*z,p.y-(14-i*7)*z);ctx.closePath();ctx.fillStyle=i===0?'#2e7d32':i===1?'#388e3c':'#43a047';ctx.fill();}}
-function drawRock(p,z){poly([[p.x-14*z,p.y],[p.x-8*z,p.y-12*z],[p.x+4*z,p.y-15*z],[p.x+14*z,p.y-4*z],[p.x+10*z,p.y+3*z],[p.x-6*z,p.y+4*z]],'#8a8a96','#5a5a66');poly([[p.x-8*z,p.y-12*z],[p.x+4*z,p.y-15*z],[p.x+2*z,p.y-6*z],[p.x-6*z,p.y-4*z]],'#a8a8b4');}
-function isAdjOwned(t){return [[1,0],[-1,0],[0,1],[0,-1]].some(([dx,dy])=>{const x=t.x+dx,y=t.y+dy;return x>=0&&y>=0&&x<N&&y<N&&S.tiles[y*N+x].own;});}
-function drawBuilding(t,time){
-  const b=BT[t.b],p=iso(t.x,t.y),z=cam.z;const s=.62,hw=TW/2*z*s,hh=TH/2*z*s;const h=(b.h+t.lvl*1.6)*z;
-  const cx=p.x,cy=p.y;
-  // sombra
-  ctx.globalAlpha=.25;poly([[cx,cy-hh+4*z],[cx+hw+6*z,cy+2*z],[cx,cy+hh+6*z],[cx-hw,cy+2*z]],'#000');ctx.globalAlpha=1;
-  // paredes
-  poly([[cx-hw,cy],[cx,cy+hh],[cx,cy+hh-h],[cx-hw,cy-h]],shade(b.wall,.95));
-  poly([[cx+hw,cy],[cx,cy+hh],[cx,cy+hh-h],[cx+hw,cy-h]],shade(b.wall,.72));
-  // ventanas / puerta
-  ctx.fillStyle=b.shine?'#ffe9a0':'#3a2a1a';const wy=cy-h*.55;
-  ctx.fillRect(cx-hw*.62,wy+hh*.2,4*z,5*z);ctx.fillRect(cx+hw*.45,wy+hh*.2,4*z,5*z);
-  ctx.fillStyle='#4a2c18';poly([[cx-hw*.35,cy+hh*.65],[cx-hw*.05,cy+hh*.95],[cx-hw*.05,cy+hh*.95-9*z],[cx-hw*.35,cy+hh*.65-9*z]],'#4a2c18');
-  // techo
-  const ty=cy-h;
-  if(b.flat){poly([[cx,ty-hh],[cx+hw,ty],[cx,ty+hh],[cx-hw,ty]],shade(b.roof,1.1),'rgba(0,0,0,.2)');}
-  else{const rh=(b.tower?16:12)*z;poly([[cx-hw-2*z,ty],[cx,ty+hh+1*z],[cx,ty-rh],],shade(b.roof,1));poly([[cx+hw+2*z,ty],[cx,ty+hh+1*z],[cx,ty-rh]],shade(b.roof,.75));poly([[cx-hw-2*z,ty],[cx,ty-hh-1*z],[cx,ty-rh]],shade(b.roof,1.15));poly([[cx+hw+2*z,ty],[cx,ty-hh-1*z],[cx,ty-rh]],shade(b.roof,.9));}
-  if(b.chim){ctx.fillStyle='#3a2a2a';ctx.fillRect(cx+hw*.3,ty-22*z,6*z,16*z);smokeAt(cx+hw*.3+3*z,ty-22*z,time,t);}
-  if(t.b==='aserradero'){ctx.fillStyle='#8a5a2a';for(let i=0;i<3;i++)ctx.fillRect(cx-hw-6*z,cy-4*z-i*4*z,12*z,3*z);}
-  if(t.b==='granja'){ctx.fillStyle='#e6c84a';for(let i=0;i<4;i++){ctx.fillRect(cx+hw*.2+i*4*z,cy+hh*.3-i*2*z,2*z,6*z);}}
-  if(b.shine&&Math.sin(time*3+t.x)>.7){ctx.fillStyle='#fff';ctx.font=`${10*z}px sans-serif`;ctx.fillText('✨',cx+hw*.5,ty-6*z);}
-  // nivel
-  ctx.fillStyle='rgba(20,10,45,.85)';const bx=cx-hw-4*z,by=cy-h*.4;ctx.beginPath();ctx.arc(bx,by,7*z,0,7);ctx.fill();ctx.fillStyle='#ffd84a';ctx.font=`900 ${9*z}px sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t.lvl,bx,by+.5);ctx.textBaseline='alphabetic';
-  // burbuja de recogida
-  if(b.res&&t.buf>=Math.max(1,bufMax(t)*.15)){const bb=ty-26*z+Math.sin(time*4+t.x)*2*z;ctx.fillStyle='rgba(255,255,255,.95)';ctx.beginPath();ctx.arc(cx,bb,11*z,0,7);ctx.fill();ctx.beginPath();ctx.moveTo(cx-4*z,bb+9*z);ctx.lineTo(cx+4*z,bb+9*z);ctx.lineTo(cx,bb+15*z);ctx.fill();ctx.font=`${13*z}px sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(b.res==='oro'?'🪙':RES[b.res].ic,cx,bb+1);ctx.textBaseline='alphabetic';}
-}
-const smoke=[];function smokeAt(x,y,time,t){if(Math.random()<.08)smoke.push({x,y,l:1,vx:(Math.random()-.3)*6});}
-const floats=[];function floatTxt(x,y,txt,col='#ffd84a'){floats.push({x,y,txt,col,l:1.2});}
-let sel=null;
-function draw(time){
-  const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#2a1a5e');g.addColorStop(.45,'#5a3a9a');g.addColorStop(1,'#1a0f33');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-  // colinas al fondo
-  ctx.fillStyle='rgba(40,25,80,.7)';ctx.beginPath();ctx.moveTo(0,H*.3);for(let x=0;x<=W;x+=40)ctx.lineTo(x,H*.24+Math.sin(x*.012)*22+Math.sin(x*.031)*10);ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.fill();
-  for(let s=0;s<N*2-1;s++)for(let y=0;y<N;y++){const x=s-y;if(x<0||x>=N)continue;drawTile(S.tiles[y*N+x],time);}
-  for(let s=0;s<N*2-1;s++)for(let y=0;y<N;y++){const x=s-y;if(x<0||x>=N)continue;const t=S.tiles[y*N+x];if(t.b)drawBuilding(t,time);}
-  for(let i=smoke.length-1;i>=0;i--){const s=smoke[i];s.l-=.012;s.y-=.5;s.x+=s.vx*.02;if(s.l<=0){smoke.splice(i,1);continue;}ctx.globalAlpha=s.l*.5;ctx.fillStyle='#bbb';ctx.beginPath();ctx.arc(s.x,s.y,(1-s.l)*10*cam.z+3,0,7);ctx.fill();}ctx.globalAlpha=1;
-  for(let i=floats.length-1;i>=0;i--){const f=floats[i];f.l-=.016;f.y-=.7;if(f.l<=0){floats.splice(i,1);continue;}ctx.globalAlpha=Math.min(1,f.l*1.5);ctx.font='900 16px system-ui';ctx.textAlign='center';ctx.lineWidth=3;ctx.strokeStyle='rgba(0,0,0,.6)';ctx.strokeText(f.txt,f.x,f.y);ctx.fillStyle=f.col;ctx.fillText(f.txt,f.x,f.y);}ctx.globalAlpha=1;
-}
-
-// ================= Bucle =================
-let lastT=performance.now(),hudT=0,saveT=0,priceT=0;
-function tick(dt){
-  // consumo y producción
-  const m=mult(),c=cap();
-  for(const t of S.tiles){const b=t.b&&BT[t.b];if(!b||!b.res)continue;
-    let ok=true;if(b.eat)for(const r in b.eat){const need=b.eat[r]*t.lvl*dt;if(r==='oro'){if(S.oro<need)ok=false;}else if(S.res[r]<need)ok=false;}
-    if(!ok)continue;if(b.eat)for(const r in b.eat){const need=b.eat[r]*t.lvl*dt*Math.min(1,m);if(r==='oro')S.oro-=need;else S.res[r]-=need;}
-    t.buf=Math.min(bufMax(t),t.buf+rate(t)*dt);
-  }
-  // los aldeanos comen
-  S.res.comida=Math.max(0,S.res.comida-pop()*.03*dt);
-  // recogida automática (capataz)
-  if(S.auto>0){S.autoT=(S.autoT||0)+dt;if(S.autoT>=Math.max(4,30-S.auto*5)){S.autoT=0;S.tiles.forEach(t=>{if(t.b&&BT[t.b].res&&t.buf>=1)collect(t,true);});}}
-  for(const r in S.res)if(r!=='gemas')S.res[r]=Math.min(c,S.res[r]);
-}
-function collect(t,silent){const b=BT[t.b];const amt=Math.floor(t.buf*100)/100;if(amt<.01)return;t.buf-=amt;
-  if(b.res==='oro'){S.oro+=amt;S.stats.oroTot+=amt;}else S.res[b.res]=Math.min(b.res==='gemas'?1e9:cap(),S.res[b.res]+amt);
-  addXp(Math.max(1,Math.round(amt*(b.res==='oro'?4:.2))));
-  if(!silent){const p=iso(t.x,t.y);floatTxt(p.x,p.y-40*cam.z,`+${fmt(amt)} ${b.res==='oro'?'🪙':RES[b.res].ic}`,b.res==='oro'?'#ffd84a':'#fff');sfx.coin();}
-}
-function loop(now){const dt=Math.min(.25,(now-lastT)/1000);lastT=now;if(started){tick(dt);hudT+=dt;saveT+=dt;priceT+=dt;if(hudT>.25){hudT=0;hud();}if(saveT>5){saveT=0;save();}if(priceT>45){priceT=0;movePrices();}}draw(now/1000);requestAnimationFrame(loop);}
-
-// ================= Interfaz =================
-function hud(){
-  $('goldN').textContent=fmt(S.oro);
-  const c=cap();$('res').innerHTML=Object.keys(RES).map(r=>`<div class="r">${RES[r].ic} ${fmt(S.res[r])}<small>${r==='gemas'?'gemas':'/'+fmt(c)}</small></div>`).join('');
-  const need=50*S.lvl*S.lvl;$('xpF').style.width=(S.xp/need*100)+'%';$('lvlT').textContent=`Nivel ${S.lvl} · ${TITLES[Math.min(TITLES.length-1,S.lvl-1)]}`;
-  const h=happiness();$('happy').textContent=(h>=80?'😄':h>=50?'🙂':'😟')+' '+Math.min(100,h)+'%';$('happy').title=`Aldeanos ${pop()} · Trabajo ${workNeed()}`;
-  $('mineT').textContent=`+${fmt(pickVal())} oro`;
-  const bt=$('boost');if(Date.now()<S.boostUntil){bt.textContent=`⚡ x2 ${Math.ceil((S.boostUntil-Date.now())/60000)} min`;bt.disabled=true;}else if(Date.now()<S.boostReady){bt.textContent=`🎁 en ${Math.ceil((S.boostReady-Date.now())/60000)} min`;bt.disabled=true;}else{bt.textContent='🎁 Bonus x2 gratis';bt.disabled=false;}
-  $('mDot').style.display=MISS.some(m=>!S.done[m.id]&&m.ok())?'block':'none';
-  if(sheetMode)refreshSheet();
-}
-function toast(t,d=2.6){const e=$('toast');e.innerHTML=t;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('show'),d*1000);}
-let sheetMode=null,sheetArg=null;
-function openSheet(mode,arg){sheetMode=mode;sheetArg=arg;refreshSheet(true);$('sheet').classList.add('open');}
-function closeSheet(){$('sheet').classList.remove('open');sheetMode=null;sel=null;}
-let lastHtml='';
-function refreshSheet(force){
-  let h='';const close='<button onclick="closeSheet()">✕</button>';
-  if(sheetMode==='build'){
-    const t=sheetArg;h=`<h2>🏗️ Construir${t?'':' (toca un terreno libre)'} ${close}</h2>`;
-    for(const k of ORDER){const b=BT[k];const locked=S.lvl<b.lv;const c=upCost(k,0);
-      h+=`<div class="card"><div class="ic">${b.ic}</div><div class="tx"><b>${b.n}</b><div>${b.d}${b.work?` · 👷 ${b.work}`:''}</div><div class="cost">${locked?`🔒 Nivel ${b.lv}`:costHtml(c.c,c.o)}</div></div><button class="btn" ${locked||!t||!canPay(c.c,c.o)?'disabled':''} onclick="build('${k}')">Construir</button></div>`;}
-  }else if(sheetMode==='tile'){
-    const t=sheetArg,b=BT[t.b];const c=upCost(t.b,t.lvl);const max=t.lvl>=10;
-    h=`<h2>${b.ic} ${b.n} · Nv ${t.lvl} ${close}</h2><div class="card"><div class="tx"><div>${b.d}</div>`;
-    if(b.res)h+=`<div style="margin-top:6px;font-size:13px">Produce <b>${fmt(rate(t)*60)} ${b.res==='oro'?'🪙 oro':RES[b.res].ic+' '+RES[b.res].n}</b> por minuto${b.eat?`<br>Consume ${Object.entries(b.eat).map(([r,v])=>fmt(v*t.lvl*60)+' '+(r==='oro'?'🪙':RES[r].ic)).join(' + ')} por minuto`:''}</div><div style="font-size:12px;margin-top:4px">Listo para recoger: <b>${fmt(t.buf)}</b> / ${fmt(bufMax(t))}</div>`;
-    if(b.pop)h+=`<div style="margin-top:6px">Aldeanos: <b>${b.pop*t.lvl}</b></div>`;if(b.happy)h+=`<div style="margin-top:6px">Felicidad: <b>+${b.happy*t.lvl}%</b></div>`;if(b.cap)h+=`<div style="margin-top:6px">Capacidad: <b>+${b.cap*t.lvl}</b></div>`;
-    h+=`</div></div><div style="display:flex;gap:8px;flex-wrap:wrap">`;
-    if(b.res)h+=`<button class="btn alt" onclick="collectSel()">Recoger</button>`;
-    h+=max?`<button class="btn" disabled>Nivel máximo</button>`:`<button class="btn" ${canPay(c.c,c.o)?'':'disabled'} onclick="upgrade()">Mejorar a Nv ${t.lvl+1}</button><div class="cost" style="align-self:center">${costHtml(c.c,c.o)}</div>`;
-    h+=`<button class="btn red" style="margin-left:auto" onclick="demolish()">Derribar</button></div>`;
-  }else if(sheetMode==='land'){
-    const t=sheetArg,adj=isAdjOwned(t),c=landCost();
-    h=`<h2>🗺️ Terreno ${close}</h2><div class="card"><div class="ic">${t.deco==='tree'?'🌲':t.deco==='rock'?'🪨':'🟩'}</div><div class="tx"><b>Ampliar tu ciudad</b><div>${adj?'Compra este terreno para construir más edificios.':'Solo puedes comprar terrenos junto a tu ciudad.'}${t.deco?' Al comprarlo, el '+(t.deco==='tree'?'árbol te da 30 🪵':'peñasco te da 30 🪨')+'.':''}</div><div class="cost">🪙${fmt(c)}</div></div><button class="btn" ${adj&&S.oro>=c?'':'disabled'} onclick="buyLand()">Comprar</button></div>`;
-  }else if(sheetMode==='market'){
-    h=`<h2>⚖️ Mercado del reino ${close}</h2><div style="font-size:12px;opacity:.8;margin-bottom:8px">Los precios cambian cada poco. Vende cuando estén altos 📈</div>`;
-    for(const r of ['comida','madera','piedra','hierro']){const p=S.prices[r],buy=p*1.3;
-      h+=`<div class="card"><div class="ic">${RES[r].ic}</div><div class="tx"><b>${RES[r].n}</b><div>Tienes ${fmt(S.res[r])} · 100 = 🪙${fmt(p*100)} (venta) / 🪙${fmt(buy*100)} (compra)</div></div><div style="display:flex;flex-direction:column;gap:5px"><button class="btn" ${S.res[r]>=100?'':'disabled'} onclick="sell('${r}')">Vender 100</button><button class="btn alt" ${S.oro>=buy*100?'':'disabled'} onclick="buy('${r}')">Comprar 100</button></div></div>`;}
-    h+=`<div class="card"><div class="ic">💎</div><div class="tx"><b>Gemas</b><div>Tienes ${fmt(S.res.gemas)} · 1 gema = 🪙25</div></div><button class="btn" ${S.res.gemas>=1?'':'disabled'} onclick="sellGem()">Vender 1</button></div>`;
-  }else if(sheetMode==='missions'){
-    h=`<h2>📜 Misiones ${close}</h2>`;let shown=0;
-    for(const m of MISS){if(S.done[m.id])continue;if(shown>=6)break;shown++;const ok=m.ok();h+=`<div class="card"><div class="ic">${ok?'✅':'🎯'}</div><div class="tx"><b>${m.t}</b><div>Recompensa: 🪙${m.r}</div></div><button class="btn" ${ok?'':'disabled'} onclick="claim('${m.id}')">${ok?'Cobrar':'Pendiente'}</button></div>`;}
-    if(!shown)h+='<div class="card"><div class="tx"><b>¡Has completado todas las misiones! 👑</b></div></div>';
-    h+=`<div style="font-size:12px;opacity:.75;margin-top:6px">Aldeanos ${pop()} · Puestos de trabajo ${workNeed()} · Felicidad ${happiness()}%. Si faltan aldeanos o comida, tus edificios producen menos.</div>`;
-  }else if(sheetMode==='tools'){
-    const pc=pickCost(),ac=autoCost();
-    h=`<h2>⛏️ Mejoras ${close}</h2>
-    <div class="card"><div class="ic">⛏️</div><div class="tx"><b>Pico de minero · Nv ${S.pick}</b><div>Cada toque en el botón de minar da 🪙${fmt(pickVal())} → 🪙${fmt(pickVal(S.pick+1))}</div><div class="cost">${costHtml({},pc)}</div></div><button class="btn" ${S.oro>=pc?'':'disabled'} onclick="upPick()">Mejorar</button></div>
-    <div class="card"><div class="ic">🧑‍🌾</div><div class="tx"><b>Capataz · Nv ${S.auto}</b><div>${S.auto?`Recoge solo la producción cada ${Math.max(4,30-S.auto*5)} s`:'Contrata a alguien que recoja la producción por ti'}</div><div class="cost">${S.auto>=6?'Máximo':costHtml({},ac)}</div></div><button class="btn" ${S.auto<6&&S.oro>=ac?'':'disabled'} onclick="upAuto()">${S.auto?'Mejorar':'Contratar'}</button></div>
-    <div class="card"><div class="tx"><b>Tu imperio</b><div>Oro conseguido en total: 🪙${fmt(S.stats.oroTot)} · Toques: ${S.stats.tap} · Edificios: ${S.tiles.filter(t=>t.b).length}</div></div></div>
-    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn red" onclick="resetGame()">Empezar de cero</button><a href="privacidad.html" style="color:#b9a8ff;font-size:12px;align-self:center">Privacidad</a></div>`;
-  }
-  if(h!==lastHtml||force){$('sheet').innerHTML=h;lastHtml=h;}
-}
-const pickVal=(l=S.pick)=>.1*Math.pow(l,1.35);
-const pickCost=()=>Math.ceil(3*Math.pow(1.7,S.pick-1));
-const autoCost=()=>Math.ceil(40*Math.pow(2.6,S.auto));
-window.closeSheet=closeSheet;
-window.build=k=>{const t=sheetArg;if(!t||t.b||!t.own)return;const c=upCost(k,0);if(!canPay(c.c,c.o))return;pay(c.c,c.o);t.b=k;t.lvl=1;t.buf=0;S.stats.built++;addXp(10+BT[k].lv*5);sfx.build();const p=iso(t.x,t.y);floatTxt(p.x,p.y-30,'¡'+BT[k].n+'!','#9fffa0');openSheet('tile',t);save();};
-window.upgrade=()=>{const t=sheetArg;const c=upCost(t.b,t.lvl);if(!canPay(c.c,c.o)||t.lvl>=10)return;pay(c.c,c.o);t.lvl++;addXp(8*t.lvl+BT[t.b].lv*4);sfx.build();const p=iso(t.x,t.y);floatTxt(p.x,p.y-40,'Nivel '+t.lvl+' ⬆️','#9fffa0');save();};
-window.collectSel=()=>collect(sheetArg);
-window.demolish=()=>{const t=sheetArg;if(!confirm('¿Derribar '+BT[t.b].n+'? Recuperas parte de la madera y la piedra.'))return;const c=upCost(t.b,0);for(const r in c.c)S.res[r]=Math.min(cap(),S.res[r]+Math.floor(c.c[r]*.4));t.b=null;t.lvl=0;t.buf=0;closeSheet();save();};
-window.buyLand=()=>{const t=sheetArg,c=landCost();if(!isAdjOwned(t)||S.oro<c)return;S.oro-=c;t.own=true;if(t.deco==='tree')S.res.madera+=30;if(t.deco==='rock')S.res.piedra+=30;t.deco=null;addXp(15);sfx.build();openSheet('build',t);save();};
-window.sell=r=>{if(S.res[r]<100)return;S.res[r]-=100;const g=S.prices[r]*100;S.oro+=g;S.stats.oroTot+=g;S.prices[r]*=.97;sfx.coin();toast(`Vendiste 100 ${RES[r].ic} por 🪙${fmt(g)}`);};
-window.buy=r=>{const g=S.prices[r]*130;if(S.oro<g)return;S.oro-=g;S.res[r]=Math.min(cap(),S.res[r]+100);S.prices[r]*=1.03;sfx.coin();};
-window.sellGem=()=>{if(S.res.gemas<1)return;S.res.gemas-=1;S.oro+=25;S.stats.oroTot+=25;sfx.coin();};
-window.claim=id=>{const m=MISS.find(x=>x.id===id);if(!m||S.done[id]||!m.ok())return;S.done[id]=1;S.oro+=m.r;addXp(m.r*2);sfx.level();toast(`📜 Misión cumplida: +🪙${m.r}`);save();};
-window.upPick=()=>{const c=pickCost();if(S.oro<c)return;S.oro-=c;S.pick++;sfx.build();};
-window.upAuto=()=>{const c=autoCost();if(S.oro<c||S.auto>=6)return;S.oro-=c;S.auto++;sfx.build();toast('🧑‍🌾 El capataz recogerá la producción por ti');};
-window.resetGame=()=>{if(confirm('¿Seguro? Perderás todo tu progreso.')){localStorage.removeItem('imperio_v1');location.reload();}};
-function movePrices(){const base={comida:.02,madera:.025,piedra:.04,hierro:.09};for(const r in S.prices){S.prices[r]=Math.max(base[r]*.5,Math.min(base[r]*2,S.prices[r]*(.85+Math.random()*.3)+(base[r]-S.prices[r])*.1));}}
-
-document.querySelectorAll('.nb').forEach(b=>b.addEventListener('click',()=>{audioInit();const p=b.dataset.p;if(sheetMode===p){closeSheet();return;}sel=null;openSheet(p,p==='build'?null:undefined);}));
-$('mine').addEventListener('pointerdown',e=>{e.preventDefault();audioInit();const v=pickVal()*(Date.now()<S.boostUntil?2:1);S.oro+=v;S.stats.oroTot+=v;S.stats.tap++;if(S.stats.tap%5===0)addXp(1);floatTxt(W-55+(Math.random()-.5)*30,H-150,'+'+fmt(v)+' 🪙');sfx.pick();});
-$('boost').addEventListener('click',()=>{audioInit();if(Date.now()<S.boostReady)return;
-  // Aquí se mostrará un anuncio con recompensa (AdMob) en la versión de Google Play.
-  S.boostUntil=Date.now()+10*60000;S.boostReady=Date.now()+4*3600000;sfx.level();toast('⚡ ¡Producción x2 durante 10 minutos!');save();});
-// toques y arrastre en el mapa
-let down=null,moved=false;
-cv.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y};moved=false;});
-cv.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-down.x,dy=e.clientY-down.y;if(Math.hypot(dx,dy)>8)moved=true;if(moved){cam.x=down.cx+dx;cam.y=down.cy+dy;}});
-cv.addEventListener('pointerup',e=>{const d=down;down=null;if(!d||moved||!started)return;audioInit();const t=screenToTile(e.clientX,e.clientY);if(!t){closeSheet();return;}sel=t;
-  if(!t.own)openSheet('land',t);else if(!t.b)openSheet('build',t);else{if(BT[t.b].res&&t.buf>=.01)collect(t);openSheet('tile',t);}});
-cv.addEventListener('wheel',e=>{cam.z=Math.max(.45,Math.min(2,cam.z*(e.deltaY<0?1.1:.9)));});
-
-// ================= Sonido (sintetizado) =================
-let AC=null;function audioInit(){if(AC){if(AC.state==='suspended')AC.resume();return;}try{AC=new(window.AudioContext||window.webkitAudioContext)();}catch(e){}}
-function tone(f,d,type='sine',v=.1,slide,w=0){if(!AC)return;const t=AC.currentTime+w,o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(slide)o.frequency.exponentialRampToValueAtTime(slide,t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d+.05);}
-const sfx={pick(){tone(900+Math.random()*200,.07,'square',.04,500);tone(1800,.05,'triangle',.03,null,.02);},coin(){tone(1318,.07,'square',.04);tone(1760,.1,'square',.04,null,.05);},build(){tone(220,.12,'square',.06,330);tone(440,.15,'triangle',.06,null,.08);},level(){[523,659,784,1046].forEach((f,i)=>tone(f,.2,'triangle',.08,null,i*.08));}};
-
-// ================= Inicio =================
-let started=false;
-S=load()||newState();
-// ganancias mientras estabas fuera (máx. 2 h, al 50 %)
-(function offline(){const sec=Math.min(7200,(Date.now()-(S.last||Date.now()))/1000);if(sec<60)return;let got=0;for(const t of S.tiles){if(t.b&&BT[t.b].res&&!BT[t.b].eat){const add=Math.min(bufMax(t),rate(t)*sec*.5);t.buf=Math.min(bufMax(t),t.buf+add);got+=add;}}
-  if(got>0)setTimeout(()=>toast(`🌙 Mientras no estabas tus aldeanos trabajaron ${Math.round(sec/60)} min. ¡Recoge la producción!`,4),900);})();
-fitCam();
-$('start').addEventListener('click',()=>{audioInit();$('intro').style.display='none';started=true;hud();if(!S.stats.seenTut){S.stats.seenTut=1;setTimeout(()=>toast('👆 Toca tus edificios para recoger lo que producen. Toca un terreno libre para construir.',5),400);}});
-addEventListener('resize',fitCam);
-document.addEventListener('visibilitychange',()=>{if(document.hidden)save();});
-requestAnimationFrame(loop);hud();
-if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{});
-window.__S=()=>S;
-</script>
+<canvas id="fx"></canvas>
+<script src="game.js"></script>
 </body>
 </html>
