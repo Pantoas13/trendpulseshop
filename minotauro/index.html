@@ -56,15 +56,43 @@ canvas{display:block}
 #screen p{max-width:560px;opacity:.92;line-height:1.5}
 #play{margin-top:14px;padding:16px 54px;font-size:22px;font-weight:900;border:0;border-radius:14px;background:linear-gradient(180deg,#ff5ac8,#7a3dff);color:#fff;box-shadow:0 0 28px rgba(200,80,255,.75);cursor:pointer;letter-spacing:2px}
 .tip{font-size:12px;opacity:.65;margin-top:14px;line-height:1.5}
-@media (max-height:430px){#player{transform:scale(.85);transform-origin:left top}#radarW,#radar{width:110px;height:110px}#compass{right:125px}.chip{font-size:14px;padding:4px 10px}#bShoot{width:80px;height:80px;bottom:58px}#mission{font-size:13px;bottom:8px}}
+#lvl{position:absolute;left:52px;top:52px;background:linear-gradient(180deg,#ffb84d,#ff6a00);color:#2a1200;font-weight:900;font-size:11px;padding:2px 6px;border-radius:8px;box-shadow:0 0 8px #ff9a2e}
+#avatarW{position:relative}
+.xp{height:5px;border-radius:3px;background:rgba(0,0,0,.5);margin-top:4px;overflow:hidden}.xp i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd27a,#ff8a00);transition:width .3s}
+#skills{position:absolute;left:10px;top:92px;display:grid;grid-template-columns:repeat(3,42px);gap:6px;pointer-events:auto;z-index:2}
+.sk{position:relative;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid rgba(255,255,255,.55);box-shadow:0 0 10px rgba(0,0,0,.5);overflow:hidden}
+.sk:nth-child(1){background:linear-gradient(160deg,#ff5a6a,#b3002a)}.sk:nth-child(2){background:linear-gradient(160deg,#4fb0ff,#1636c9)}.sk:nth-child(3){background:linear-gradient(160deg,#b06bff,#4a1aa8)}
+.sk:nth-child(4){background:linear-gradient(160deg,#4dff8a,#0d8a3a)}.sk:nth-child(5){background:linear-gradient(160deg,#ffb84d,#c45a00)}.sk:nth-child(6){background:linear-gradient(160deg,#45e3ff,#1660c9)}
+.sk .cd{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.65);height:0}
+.sk .k{position:absolute;right:2px;bottom:0;font-size:9px;font-weight:900;opacity:.8}
+.sk.act{box-shadow:0 0 16px #fff;border-color:#fff}
+#zone{position:absolute;left:50%;bottom:62px;transform:translateX(-50%);font-size:clamp(22px,4vw,40px);font-weight:900;font-style:italic;letter-spacing:3px;opacity:0;transition:opacity .6s;text-shadow:0 0 18px #45e3ff,0 2px 4px #000;white-space:nowrap}
+#zone small{display:block;font-size:.38em;letter-spacing:5px;color:#ffb84d;text-align:center}
+#chars{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;justify-content:center}
+.ch{width:128px;padding:10px 8px;border-radius:14px;cursor:pointer;border:2px solid rgba(110,200,255,.35);background:linear-gradient(180deg,rgba(40,30,120,.7),rgba(10,8,40,.8));transition:transform .15s}
+.ch.sel{border-color:#ffb84d;box-shadow:0 0 22px rgba(255,170,60,.7);transform:translateY(-3px)}
+.ch .ic{font-size:40px;line-height:1.1}.ch b{display:block;font-size:14px;margin-top:4px}.ch span{font-size:11px;opacity:.75}
+#load{margin-top:12px;font-weight:800;color:#45e3ff;letter-spacing:1px}
+@media (max-height:500px){#skills{top:80px;transform:scale(.85);transform-origin:left top}#chars{margin-top:6px}.ch{width:108px;padding:6px}.ch .ic{font-size:30px}#screen p{margin:6px 0;font-size:13px}#screen h1{font-size:44px}.tag{margin-top:4px;font-size:12px}#play{margin-top:8px;padding:10px 44px;font-size:19px}.tip{margin-top:6px;font-size:10px}#zone{bottom:48px}
+#player{transform:scale(.85);transform-origin:left top}#radarW,#radar{width:110px;height:110px}#compass{right:125px}.chip{font-size:14px;padding:4px 10px}#bShoot{width:80px;height:80px;bottom:58px}#mission{font-size:13px;bottom:8px}}
 </style>
 </head>
 <body>
 <div id="dmg"></div>
-<div id="hud">
-  <div id="player" class="glass"><div id="avatar"></div><div class="bars">
+<div id="hud" style="display:none">
+  <div id="player" class="glass"><div id="avatarW"><div id="avatar"></div><div id="lvl">NV 1</div></div><div class="bars">
     <div class="bar"><i id="hpF"></i><b id="hpT">100/100</b></div>
-    <div class="bar"><i id="enF"></i><b id="enT">100/100</b></div></div></div>
+    <div class="bar"><i id="enF"></i><b id="enT">100/100</b></div>
+    <div class="xp"><i id="xpF"></i></div></div></div>
+  <div id="skills">
+    <div class="sk" data-s="0" title="Salud">✚<div class="cd"></div><span class="k">1</span></div>
+    <div class="sk" data-s="1" title="Energía">⚡<div class="cd"></div><span class="k">2</span></div>
+    <div class="sk" data-s="2" title="Salto avanzado">🦘<div class="cd"></div><span class="k">3</span></div>
+    <div class="sk" data-s="3" title="Carrera rápida">💨<div class="cd"></div><span class="k">4</span></div>
+    <div class="sk" data-s="4" title="Disparo especial">🎯<div class="cd"></div><span class="k">5</span></div>
+    <div class="sk" data-s="5" title="Construcción">🧱<div class="cd"></div><span class="k">6</span></div>
+  </div>
+  <div id="zone"></div>
   <div id="money"><div><div style="display:flex;gap:10px"><div class="chip glass"><span class="coin">$</span><span id="coinN">0</span></div><div class="chip glass"><span class="gem"></span><span id="gemN">0</span></div></div><div id="score">PUNTOS <span id="scoreN">0</span></div></div></div>
   <div id="compass" class="glass"><svg id="arrow" viewBox="0 0 24 24"><path d="M12 2 L19 20 L12 15 L5 20 Z" fill="#45e3ff"/></svg><span id="dist">—</span></div>
   <div id="radarW"><canvas id="radar" width="140" height="140"></canvas></div>
@@ -83,9 +111,15 @@ canvas{display:block}
 <div id="screen">
   <h1>MINOTAURO<span>2059</span></h1>
   <div class="tag">MUNDO ABIERTO · SUPERVIVENCIA · ACCIÓN</div>
-  <p id="stext">El Neo Distrito se ha quedado sin energía y los Centinelas averiados toman las calles.<br>Recupera <b>3 células de energía</b>, recoge monedas y gemas, y vuelve a la <b>Base Minotauro</b>.</p>
-  <button id="play">JUGAR</button>
-  <div class="tip">Móvil (en horizontal): joystick izquierda · desliza a la derecha para mirar · ✸ disparar · 👊 golpe · ⤒ saltar · 🚗 conducir<br>PC: WASD · ratón mirar/disparar · F disparar · Q golpe · Espacio saltar · Shift correr · E coche</div>
+  <p id="stext">Año 2059. Los Robots IA se han rebelado y la red de energía ha caído.<br>Explora la ciudad, la Base Militar, el Desierto, el Bosque y la Zona Industrial. Completa las misiones y sube de nivel.</p>
+  <div id="chars">
+    <div class="ch sel" data-c="minotauro"><div class="ic">🐂</div><b>Minotauro</b><span>Fuerza y blindaje</span></div>
+    <div class="ch" data-c="soldado"><div class="ic">🪖</div><b>Soldado Élite</b><span>Más daño de disparo</span></div>
+    <div class="ch" data-c="ninja"><div class="ic">🥷</div><b>Ninja Cibernético</b><span>Más velocidad</span></div>
+  </div>
+  <div id="load">Cargando modelos 3D… 0%</div>
+  <button id="play" style="display:none">JUGAR</button>
+  <div class="tip">Móvil (en horizontal): joystick izquierda · desliza a la derecha para mirar · ✸ disparar · 👊 golpe · ⤒ saltar · 🚗 subir a vehículo · iconos de arriba = habilidades<br>PC: WASD · ratón mirar/disparar · F disparar · Q golpe · Espacio saltar · Shift correr · E vehículo · 1-6 habilidades</div>
 </div>
 <script src="game.js"></script>
 </body>
