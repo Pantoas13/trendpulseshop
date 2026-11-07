@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Webs para concesionarios y compraventas de coches · TrendPulse Motor Web</title>
+<meta name="description" content="Tu concesionario o compraventa con web profesional en 7 días: catálogo de coches, calculadora de financiación, tasación y formulario de contacto. Precio cerrado.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+:root{--or:#ff6a00;--or2:#ff8a2a;--navy:#0b1530;--navy2:#16285e;--ink:#121829;--mut:#5b6478;--bg:#f5f6fa;--ok:#2f9e44}
+body{font:16px/1.55 "DM Sans",Arial,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit}
+.w{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Poppins,Arial,sans-serif;line-height:1.12;letter-spacing:-.01em}
+header{background:var(--navy);color:#fff}
+.hrow{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Poppins,Arial,sans-serif;font-weight:800;font-size:20px}
+.logo b{color:var(--or2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(180deg,var(--or2),var(--or));color:#fff;font:inherit;font-weight:700;font-size:16px;padding:12px 22px;border:0;border-radius:10px;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(255,106,0,.28)}
+.btn.out{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);box-shadow:none}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:60px 0 70px}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.pill{display:inline-block;background:rgba(255,138,42,.2);color:#ffb37a;font-weight:700;font-size:13px;padding:6px 13px;border-radius:999px}
+.hero h1{font-size:clamp(32px,4.6vw,52px);margin:16px 0}
+.hero h1 em{font-style:normal;color:var(--or2)}
+.hero p{font-size:18px;opacity:.92}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.mock{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.mock .bar{background:#e9edf4;padding:8px 12px;display:flex;gap:6px}
+.mock .bar i{width:10px;height:10px;border-radius:50%;background:#c5ccd8}
+.mock .scr{aspect-ratio:16/10;background:url(https://images.unsplash.com/photo-1777175013302-eaf4b3ef785a?w=900&h=560&fit=crop&auto=format&q=75) center/cover;position:relative}
+.mock .scr::after{content:"Tu concesionario";position:absolute;left:18px;bottom:18px;background:rgba(11,21,48,.85);color:#fff;font-family:Poppins,Arial,sans-serif;font-weight:700;padding:10px 14px;border-radius:10px}
+section{padding:64px 0}
+.alt{background:var(--bg)}
+h2{font-size:clamp(26px,3.2vw,38px);margin-bottom:10px}
+.sub{color:var(--mut);font-size:17px;max-width:720px;margin-bottom:28px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border-radius:14px;padding:22px;box-shadow:0 3px 14px rgba(15,25,55,.07)}
+.card .i{font-size:30px}
+.card h3{font-size:18px;margin:10px 0 6px}
+.card p{color:var(--mut);font-size:15px}
+.prob li{list-style:none;margin:10px 0;padding-left:30px;position:relative}
+.prob li::before{content:"✕";position:absolute;left:0;color:#e03131;font-weight:800}
+.sol li::before{content:"✓";color:var(--ok)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{background:#fff;border-radius:16px;padding:26px;box-shadow:0 3px 16px rgba(15,25,55,.08);display:flex;flex-direction:column;border:2px solid transparent}
+.plan.top{border-color:var(--or);position:relative}
+.plan.top::before{content:"Recomendado";position:absolute;top:-13px;left:22px;background:var(--or);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px}
+.plan h3{font-size:20px}
+.plan .p{font-family:Poppins,Arial,sans-serif;font-size:38px;font-weight:800;margin:10px 0 0}
+.plan .m{color:var(--mut);font-size:14px;margin-bottom:14px}
+.plan ul{padding-left:0;flex:1}
+.plan li{list-style:none;margin:8px 0;padding-left:26px;position:relative;font-size:15px}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+.plan .btn{margin-top:16px}
+.steps{counter-reset:s}
+.steps .card::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700}
+.form{background:#fff;border-radius:16px;padding:28px;box-shadow:0 6px 24px rgba(15,25,55,.1);display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;font:inherit;padding:11px 12px;border:1.5px solid #d6dbe6;border-radius:9px}
+.form .full{grid-column:1/-1}
+.form textarea{min-height:90px}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:var(--mut)}
+.chk input{width:auto;margin-top:3px}
+.ok{background:#ebfbee;border:1.5px solid var(--ok);color:#1b5e20;border-radius:12px;padding:16px;font-weight:700}
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:start}
+.faq details{background:#fff;border-radius:12px;padding:16px 18px;margin-bottom:10px;box-shadow:0 2px 10px rgba(15,25,55,.06)}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+footer{background:var(--navy);color:#c9d1e3;padding:30px 0;font-size:14px}
+@media (max-width:900px){.hgrid,.two,.plans{grid-template-columns:1fr}.g3,.g4{grid-template-columns:1fr 1fr}.form{grid-template-columns:1fr}}
+@media (max-width:560px){.g3,.g4{grid-template-columns:1fr}.hrow .btn{display:none}}
+</style>
+</head>
+<body>
+<header><div class="w hrow">
+  <a class="logo" href="#"><svg width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#ff6a00"/><path d="M9 24l3-7c.6-1.4 1.9-2.3 3.4-2.3h9.2c1.5 0 2.8.9 3.4 2.3l3 7v4a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H13v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" fill="#fff"/></svg><span>TrendPulse<b>Motor</b> Web</span></a>
+  <a class="btn" href="#contacto">Quiero mi web</a>
+</div></header>
+
+<section class="hero"><div class="w hgrid">
+  <div>
+    <span class="pill">Para concesionarios, compraventas y talleres</span>
+    <h1>Tus coches en internet, <em>vendiendo las 24 horas</em></h1>
+    <p>Web profesional para tu negocio de coches en 7 días: catálogo con fotos, buscador, calculadora de financiación, tasación de coches y formulario de contacto. Precio cerrado, sin sorpresas.</p>
+    <div class="cta"><a class="btn" href="demo/" target="_blank">👀 Ver web de demostración</a><a class="btn out" href="#precios">Ver precios</a></div>
+  </div>
+  <div class="mock" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="scr"></div></div>
+</div></section>
+
+<section><div class="w two">
+  <div>
+    <h2>¿Te suena esto?</h2>
+    <ul class="prob">
+      <li>Tus coches solo se ven en portales donde compites con cientos de anuncios.</li>
+      <li>Los clientes te preguntan lo mismo una y otra vez: precio, financiación, si aceptas su coche.</li>
+      <li>Buscan tu negocio en Google y no encuentran una web propia.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Lo que te damos</h2>
+    <ul class="prob sol">
+      <li>Una web con tu nombre, tus colores y tus coches, que funciona en móvil.</li>
+      <li>Cada coche con su ficha, fotos y cuota orientativa de financiación.</li>
+      <li>Formulario para pedir información, prueba o tasación: las consultas te llegan al correo.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="alt"><div class="w">
+  <h2>Qué incluye tu web</h2>
+  <p class="sub">Todo lo que ves en la <a href="demo/" target="_blank">demostración</a>, adaptado a tu negocio.</p>
+  <div class="g4">
+    <div class="card"><div class="i">🚗</div><h3>Catálogo de coches</h3><p>Fotos, precio, año, kilómetros, combustible y cambio de cada coche.</p></div>
+    <div class="card"><div class="i">🔎</div><h3>Buscador y filtros</h3><p>Por marca, tipo, combustible y precio máximo.</p></div>
+    <div class="card"><div class="i">💳</div><h3>Calculadora de cuota</h3><p>El cliente ve al momento cuánto pagaría al mes.</p></div>
+    <div class="card"><div class="i">🔁</div><h3>Tasación</h3><p>Sección para captar clientes que quieren vender o cambiar su coche.</p></div>
+    <div class="card"><div class="i">✉️</div><h3>Formulario de contacto</h3><p>Las consultas llegan a tu correo con el coche que le interesa.</p></div>
+    <div class="card"><div class="i">📱</div><h3>Perfecta en móvil</h3><p>La mayoría de clientes buscan coche desde el teléfono.</p></div>
+    <div class="card"><div class="i">⚡</div><h3>Rápida</h3><p>Carga en segundos y sin anuncios de terceros.</p></div>
+    <div class="card"><div class="i">🌐</div><h3>Dominio propio</h3><p>tuconcesionario.es (el dominio se contrata a tu nombre).</p></div>
+  </div>
+</div></section>
+
+<section id="precios"><div class="w">
+  <h2>Precios claros</h2>
+  <p class="sub">Pago único por crear la web y, si quieres, una cuota mensual para que te actualicemos los coches.</p>
+  <div class="plans">
+    <div class="plan"><h3>Básico</h3><div class="p">290 €</div><div class="m">pago único</div><ul><li>Web con hasta 20 coches</li><li>Buscador y calculadora de cuota</li><li>Formulario de contacto</li><li>Entrega en 7 días</li></ul><a class="btn" href="#contacto" data-plan="Básico">Lo quiero</a></div>
+    <div class="plan top"><h3>Profesional</h3><div class="p">390 € <span style="font-size:18px">+ 29 €/mes</span></div><div class="m">creación + mantenimiento</div><ul><li>Todo lo del plan Básico</li><li>Coches ilimitados</li><li>Actualizamos tus coches cada semana: tú nos mandas fotos y datos</li><li>Alojamiento y cambios pequeños incluidos</li></ul><a class="btn" href="#contacto" data-plan="Profesional">Lo quiero</a></div>
+    <div class="plan"><h3>A medida</h3><div class="p">Consultar</div><div class="m">para negocios grandes</div><ul><li>Varias sedes o marcas</li><li>Secciones especiales (renting, taller, recambios)</li><li>Integración con tu sistema actual</li></ul><a class="btn" href="#contacto" data-plan="A medida">Pedir presupuesto</a></div>
+  </div>
+  <p class="sub" style="font-size:13.5px;margin-top:14px">Precios sin IVA. El dominio (aprox. 10–15 €/año) se contrata a nombre del cliente.</p>
+</div></section>
+
+<section class="alt"><div class="w">
+  <h2>Cómo trabajamos</h2>
+  <div class="g4 steps" style="margin-top:20px">
+    <div class="card"><h3>Nos escribes</h3><p>Cuéntanos tu negocio y qué necesitas.</p></div>
+    <div class="card"><h3>Nos mandas fotos y datos</h3><p>Logo, colores, coches y forma de contacto.</p></div>
+    <div class="card"><h3>Revisas la web</h3><p>Te enseñamos el resultado y ajustamos lo que quieras.</p></div>
+    <div class="card"><h3>¡Publicada!</h3><p>Tu web en internet con tu dominio, lista para recibir clientes.</p></div>
+  </div>
+</div></section>
+
+<section id="contacto"><div class="w two">
+  <div>
+    <h2>Pide tu web</h2>
+    <p class="sub">Rellena el formulario y te respondemos por correo con una propuesta. Sin compromiso.</p>
+    <p class="sub" style="font-size:15px">¿Quieres verla antes? <a href="demo/" target="_blank">Abre la demostración</a> desde el móvil.</p>
+  </div>
+  <form class="form" name="webs-concesionarios" method="POST" data-netlify="true" netlify-honeypot="empresa2" id="form">
+    <input type="hidden" name="form-name" value="webs-concesionarios">
+    <p hidden><label>No rellenar: <input name="empresa2"></label></p>
+    <div><label for="n">Tu nombre</label><input id="n" name="nombre" required autocomplete="name"></div>
+    <div><label for="e">Correo</label><input id="e" name="email" type="email" required autocomplete="email"></div>
+    <div><label for="neg">Nombre del negocio</label><input id="neg" name="negocio" required></div>
+    <div><label for="ciu">Ciudad</label><input id="ciu" name="ciudad"></div>
+    <div><label for="pl">Plan</label><select id="pl" name="plan"><option>Profesional</option><option>Básico</option><option>A medida</option><option>No lo sé todavía</option></select></div>
+    <div><label for="nc">¿Cuántos coches tienes a la venta?</label><select id="nc" name="coches"><option>Menos de 10</option><option>10–30</option><option>30–80</option><option>Más de 80</option></select></div>
+    <div class="full"><label for="msg">Mensaje (opcional)</label><textarea id="msg" name="mensaje"></textarea></div>
+    <label class="chk full"><input type="checkbox" required> Acepto que se usen mis datos solo para responder a esta solicitud.</label>
+    <div class="full"><button class="btn" type="submit">Enviar solicitud</button></div>
+  </form>
+</div></section>
+
+<section class="alt"><div class="w faq">
+  <h2 style="margin-bottom:20px">Preguntas frecuentes</h2>
+  <details><summary>¿Necesito saber de informática?</summary><p>No. Tú nos mandas las fotos y los datos de tus coches y nosotros lo ponemos todo.</p></details>
+  <details><summary>¿Cuánto tarda?</summary><p>Unos 7 días desde que recibimos tu logo, fotos y datos.</p></details>
+  <details><summary>¿La web es mía?</summary><p>Sí. El dominio se registra a tu nombre y, si un día quieres irte, te damos los archivos de tu web.</p></details>
+  <details><summary>¿Puedo cancelar la cuota mensual?</summary><p>Sí, cuando quieras, avisando con un mes de antelación.</p></details>
+</div></section>
+
+<footer><div class="w"><p>TrendPulse Motor Web · Webs para negocios de automoción · <a href="#contacto" style="color:#fff">Contacto</a></p></div></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+document.querySelectorAll("[data-plan]").forEach(a=>a.addEventListener("click",()=>{const v=a.dataset.plan;[...$("#pl").options].forEach(o=>o.selected=o.text===v)}));
+$("#form").addEventListener("submit",async e=>{
+  e.preventDefault();const f=e.target;
+  if(location.protocol==="file:"){f.innerHTML='<p class="ok full">Vista previa: el formulario funcionará al publicar la web en Netlify.</p>';return}
+  const b=f.querySelector("button[type=submit]");b.disabled=true;b.textContent="Enviando…";
+  try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;f.innerHTML='<p class="ok full">✅ ¡Recibido! Te escribiremos con una propuesta muy pronto.</p>'}
+  catch(_){b.disabled=false;b.textContent="Enviar solicitud";alert("No se pudo enviar. Inténtalo de nuevo.")}
+});
+</script>
+</body>
+</html>

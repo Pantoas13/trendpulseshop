@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TrendPulse Motor · Coches de ocasión revisados y con financiación</title>
+<meta name="description" content="Coches de segunda mano revisados, con garantía y financiación a tu medida. Tasamos tu coche y te lo llevamos. Pide información sin compromiso.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+:root{--or:#ff6a00;--or2:#ff8a2a;--navy:#0b1530;--navy2:#16285e;--ink:#121829;--mut:#5b6478;--bg:#f5f6fa;--ok:#2f9e44}
+body{font:16px/1.55 "DM Sans",Arial,sans-serif;color:var(--ink);background:#fff}
+a{color:inherit}
+.w{max-width:1200px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Poppins,Arial,sans-serif;line-height:1.12;letter-spacing:-.01em}
+/* Cabecera */
+header{position:sticky;top:0;z-index:30;background:rgba(11,21,48,.96);backdrop-filter:blur(6px);color:#fff}
+.hrow{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Poppins,Arial,sans-serif;font-weight:800;font-size:22px}
+.logo b{color:var(--or2)}
+nav.main{display:flex;gap:26px;font-weight:600}
+nav.main a{text-decoration:none;opacity:.9}
+nav.main a:hover{opacity:1;color:var(--or2)}
+.hbtn{background:var(--or);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:9px;white-space:nowrap}
+/* Portada */
+.hero{position:relative;color:#fff;min-height:560px;display:flex;align-items:center;background:var(--navy) url(https://images.unsplash.com/photo-1777175013302-eaf4b3ef785a?w=1800&h=1000&fit=crop&auto=format&q=75) center/cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,21,48,.95) 0%,rgba(11,21,48,.75) 45%,rgba(11,21,48,.2) 100%)}
+.hero .w{position:relative;width:100%}
+.pill{display:inline-block;background:rgba(255,138,42,.2);color:#ffb37a;font-weight:700;font-size:13px;padding:6px 13px;border-radius:999px}
+.hero h1{font-size:clamp(34px,5vw,58px);margin:16px 0;max-width:680px}
+.hero h1 em{font-style:normal;color:var(--or2)}
+.hero p{font-size:19px;opacity:.92;max-width:560px}
+.search{margin-top:30px;background:#fff;border-radius:14px;padding:14px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:10px;max-width:900px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.search select,.search input{width:100%;font:inherit;color:var(--ink);padding:12px;border:1.5px solid #dfe3ec;border-radius:9px;background:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(180deg,var(--or2),var(--or));color:#fff;font:inherit;font-weight:700;font-size:16px;padding:12px 22px;border:0;border-radius:10px;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(255,106,0,.28)}
+.btn.out{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
+.trust{display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:22px;font-size:15px;opacity:.95}
+/* Secciones */
+section{padding:64px 0}
+.alt{background:var(--bg)}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+h2{font-size:clamp(26px,3.2vw,38px)}
+.sub{color:var(--mut);font-size:17px;margin-top:6px}
+/* Filtros e inventario */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-weight:600;font-size:14px;padding:8px 14px;border-radius:999px;border:1.5px solid #d6dbe6;background:#fff;cursor:pointer}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.car{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 16px rgba(15,25,55,.09);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.car:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,25,55,.16)}
+.car .ph{position:relative;aspect-ratio:16/10;background:#e9edf4 center/cover}
+.car .tag{position:absolute;left:10px;top:10px;background:var(--or);color:#fff;font-size:12px;font-weight:700;padding:4px 9px;border-radius:6px}
+.car .demo{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 8px;border-radius:5px}
+.car .bd{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.car h3{font-size:18px}
+.specs{display:flex;flex-wrap:wrap;gap:6px}
+.specs span{background:var(--bg);border-radius:6px;font-size:12.5px;padding:3px 8px;color:#2a3147}
+.price{display:flex;align-items:baseline;justify-content:space-between;margin-top:auto;padding-top:6px}
+.price b{font-family:Poppins,Arial,sans-serif;font-size:24px}
+.price small{color:var(--mut);font-size:13px}
+.car .btn{width:100%;margin-top:6px;padding:10px}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:30px}
+/* Ventajas */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.wcard{background:#fff;border-radius:14px;padding:22px;box-shadow:0 3px 14px rgba(15,25,55,.07)}
+.wcard .i{font-size:32px}
+.wcard h3{font-size:18px;margin:10px 0 6px}
+.wcard p{color:var(--mut);font-size:15px}
+/* Financiación */
+.fin{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.calc{background:#fff;border-radius:16px;padding:26px;box-shadow:0 6px 24px rgba(15,25,55,.1)}
+.calc label{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin:16px 0 6px}
+.calc input[type=range]{width:100%;accent-color:var(--or)}
+.quota{margin-top:20px;background:var(--navy);color:#fff;border-radius:12px;padding:18px;text-align:center}
+.quota b{display:block;font-family:Poppins,Arial,sans-serif;font-size:38px;color:var(--or2)}
+.note{font-size:12.5px;color:var(--mut);margin-top:10px}
+/* Tasación */
+.tas{background:linear-gradient(120deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.tas .txt{padding:40px}
+.tas .txt p{opacity:.9;margin-top:10px}
+.tas .img{background:url(https://images.unsplash.com/photo-1574023240744-64c47c8c0676?w=900&h=700&fit=crop&auto=format&q=75) center/cover;min-height:280px}
+/* Formulario */
+.form{background:#fff;border-radius:16px;padding:28px;box-shadow:0 6px 24px rgba(15,25,55,.1);display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;font:inherit;padding:11px 12px;border:1.5px solid #d6dbe6;border-radius:9px}
+.form .full{grid-column:1/-1}
+.form textarea{min-height:100px;resize:vertical}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:var(--mut)}
+.chk input{width:auto;margin-top:3px}
+.ok{background:#ebfbee;border:1.5px solid var(--ok);color:#1b5e20;border-radius:12px;padding:16px;font-weight:700}
+.contact{display:grid;grid-template-columns:1fr 1.3fr;gap:30px;align-items:start}
+.info li{list-style:none;margin:12px 0;display:flex;gap:10px}
+.faq details{background:#fff;border-radius:12px;padding:16px 18px;margin-bottom:10px;box-shadow:0 2px 10px rgba(15,25,55,.06)}
+.faq summary{font-weight:700;cursor:pointer}
+.faq p{margin-top:8px;color:var(--mut)}
+footer{background:var(--navy);color:#c9d1e3;padding:34px 0;font-size:14px}
+.frow{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+footer a{color:#fff}
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(5,10,25,.6);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+.modal.on{display:flex}
+.mbox{background:#fff;border-radius:16px;max-width:760px;width:100%;max-height:92vh;overflow:auto}
+.mbox .ph{aspect-ratio:16/8;background:#e9edf4 center/cover}
+.mbox .bd{padding:22px}
+.mx{float:right;font-size:26px;background:none;border:0;cursor:pointer;line-height:1}
+.mspecs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.mspecs div{background:var(--bg);border-radius:10px;padding:10px;font-size:14px}
+.mspecs b{display:block;font-size:15px}
+@media (max-width:1000px){.grid,.why{grid-template-columns:repeat(2,1fr)}.fin,.tas,.contact{grid-template-columns:1fr}.search{grid-template-columns:1fr 1fr}nav.main{display:none}}
+@media (max-width:560px){.hbtn{display:none}.hero .w{padding-top:36px;padding-bottom:36px}.grid,.why,.form,.mspecs{grid-template-columns:1fr}.search{grid-template-columns:1fr}.hero{min-height:620px}.tas .txt{padding:26px}}
+</style>
+</head>
+<body>
+<header><div class="w hrow">
+  <a class="logo" href="#"><svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#ff6a00"/><path d="M9 24l3-7c.6-1.4 1.9-2.3 3.4-2.3h9.2c1.5 0 2.8.9 3.4 2.3l3 7v4a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H13v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" fill="#fff"/><circle cx="14" cy="23.5" r="1.6" fill="#ff6a00"/><circle cx="26" cy="23.5" r="1.6" fill="#ff6a00"/></svg><span>TrendPulse<b>Motor</b></span></a>
+  <nav class="main"><a href="#stock">Coches</a><a href="#financiacion">Financiación</a><a href="#tasacion">Vende tu coche</a><a href="#contacto">Contacto</a></nav>
+  <a class="hbtn" href="#contacto">Pedir información</a>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="w">
+  <span class="pill">🚗 Coches de ocasión revisados</span>
+  <h1>Tu próximo coche, <em>revisado, con garantía</em> y a tu medida</h1>
+  <p>Seleccionamos cada vehículo, lo revisamos a fondo y te ayudamos con la financiación y con la venta de tu coche actual.</p>
+  <form class="search" id="search" onsubmit="return false">
+    <select id="fMarca" aria-label="Marca"><option value="">Todas las marcas</option></select>
+    <select id="fTipo" aria-label="Tipo"><option value="">Todos los tipos</option></select>
+    <select id="fComb" aria-label="Combustible"><option value="">Combustible</option></select>
+    <select id="fPrecio" aria-label="Precio máximo"><option value="">Precio máximo</option><option>15000</option><option>25000</option><option>35000</option><option>50000</option></select>
+    <button class="btn" id="go">Buscar</button>
+  </form>
+  <div class="trust"><span>✅ Revisión completa</span><span>🛡️ Garantía incluida</span><span>💳 Financiación a medida</span><span>🔁 Aceptamos tu coche</span></div>
+</div></section>
+
+<section id="stock"><div class="w">
+  <div class="sh"><div><h2>Coches disponibles</h2><p class="sub" id="count"></p></div><div class="chips" id="chips"></div></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="alt"><div class="w">
+  <h2 style="margin-bottom:24px">Por qué comprar con nosotros</h2>
+  <div class="why">
+    <div class="wcard"><div class="i">🔧</div><h3>Revisión a fondo</h3><p>Mecánica, frenos, neumáticos y electrónica revisados antes de la entrega.</p></div>
+    <div class="wcard"><div class="i">🛡️</div><h3>Garantía</h3><p>Todos nuestros coches se entregan con garantía, como mínimo la que marca la ley.</p></div>
+    <div class="wcard"><div class="i">📄</div><h3>Papeles en regla</h3><p>Historial, ITV y transferencia de propiedad: nos encargamos nosotros.</p></div>
+    <div class="wcard"><div class="i">🤝</div><h3>Trato directo</h3><p>Sin prisas ni presiones. Prueba el coche y decide con calma.</p></div>
+  </div>
+</div></section>
+
+<section id="financiacion"><div class="w fin">
+  <div>
+    <h2>Calcula tu cuota</h2>
+    <p class="sub">Elige el precio, la entrada y el plazo. Te damos una cuota orientativa al momento y después te preparamos una propuesta personalizada.</p>
+    <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#contacto">Pedir estudio de financiación</a></div>
+  </div>
+  <div class="calc">
+    <label for="cP">Precio del coche <span id="vP"></span></label><input type="range" id="cP" min="5000" max="60000" step="500" value="18000">
+    <label for="cE">Entrada <span id="vE"></span></label><input type="range" id="cE" min="0" max="30000" step="500" value="3000">
+    <label for="cM">Plazo <span id="vM"></span></label><input type="range" id="cM" min="12" max="96" step="12" value="60">
+    <label for="cT">Interés (TIN) <span id="vT"></span></label><input type="range" id="cT" min="3" max="12" step="0.5" value="7.5">
+    <div class="quota"><span>Cuota orientativa</span><b id="vQ"></b><span id="vTot"></span></div>
+    <p class="note">Cálculo orientativo sin comisiones ni seguros. La cuota final depende del estudio de la entidad financiera.</p>
+  </div>
+</div></section>
+
+<section class="alt" id="tasacion"><div class="w">
+  <div class="tas">
+    <div class="txt">
+      <span class="pill">🔁 Vende o cambia tu coche</span>
+      <h2 style="margin-top:12px">Tasamos tu coche sin compromiso</h2>
+      <p>Dinos marca, modelo, año y kilómetros y te damos una valoración. Puedes usarla como entrada para tu próximo coche o venderlo directamente.</p>
+      <div style="margin-top:20px"><a class="btn" href="#contacto" data-motivo="Tasación de mi coche">Quiero tasar mi coche</a></div>
+    </div>
+    <div class="img" role="img" aria-label="Coches aparcados en un concesionario"></div>
+  </div>
+</div></section>
+
+<section id="contacto"><div class="w contact">
+  <div>
+    <h2>Pide información</h2>
+    <p class="sub">Déjanos tus datos y te respondemos lo antes posible. Sin compromiso.</p>
+    <ul class="info">
+      <li>📍 <span>Visita con cita previa</span></li>
+      <li>🕘 <span>Lunes a viernes 9:00–19:00 · Sábados 10:00–14:00</span></li>
+      <li>✉️ <span>Te contestamos por correo o por teléfono, como prefieras</span></li>
+    </ul>
+  </div>
+  <form class="form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="empresa" id="form">
+    <input type="hidden" name="form-name" value="contacto">
+    <p hidden><label>No rellenar: <input name="empresa"></label></p>
+    <div><label for="n">Nombre</label><input id="n" name="nombre" required autocomplete="name"></div>
+    <div><label for="e">Correo</label><input id="e" name="email" type="email" required autocomplete="email"></div>
+    <div><label for="t">Teléfono (opcional)</label><input id="t" name="telefono" type="tel" autocomplete="tel"></div>
+    <div><label for="m">Motivo</label><select id="m" name="motivo"><option>Información sobre un coche</option><option>Estudio de financiación</option><option>Tasación de mi coche</option><option>Reservar una prueba</option><option>Otro</option></select></div>
+    <div class="full"><label for="c">Coche que te interesa</label><input id="c" name="coche" placeholder="Ej.: Volkswagen Polo azul"></div>
+    <div class="full"><label for="msg">Mensaje</label><textarea id="msg" name="mensaje" placeholder="Cuéntanos qué buscas o tu coche a tasar (marca, modelo, año, km)"></textarea></div>
+    <label class="chk full"><input type="checkbox" required> Acepto que se usen mis datos solo para responder a esta consulta.</label>
+    <div class="full"><button class="btn" type="submit">Enviar consulta</button></div>
+  </form>
+</div></section>
+
+<section class="alt"><div class="w faq">
+  <h2 style="margin-bottom:20px">Preguntas frecuentes</h2>
+  <details><summary>¿Puedo probar el coche antes de comprarlo?</summary><p>Sí. Pide cita en el formulario y te reservamos el coche para la prueba.</p></details>
+  <details><summary>¿Aceptáis mi coche como parte del pago?</summary><p>Sí. Lo tasamos sin compromiso y descontamos su valor del precio del coche que elijas.</p></details>
+  <details><summary>¿Qué garantía tienen los coches?</summary><p>Todos se entregan con garantía, como mínimo la que establece la ley para vehículos de ocasión vendidos por profesionales. Te la detallamos por escrito en cada coche.</p></details>
+  <details><summary>¿Hacéis la transferencia de propiedad?</summary><p>Sí, nos encargamos de todo el papeleo para que solo tengas que conducir.</p></details>
+</div></section>
+
+<footer><div class="w frow">
+  <div><strong style="color:#fff;font-size:18px">TrendPulse Motor</strong><p style="margin-top:6px">Coches de ocasión revisados · Financiación · Tasación</p></div>
+  <div><p>Los precios no incluyen gastos de transferencia salvo indicación. Imágenes ilustrativas.</p><p style="margin-top:6px">© <span id="yr"></span> TrendPulse Motor · <a href="#">Aviso legal</a> · <a href="#">Privacidad</a></p></div>
+</div></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="mbox" id="mbox"></div></div>
+
+<script>
+/* ===== INVENTARIO: cambia aquí tus coches =====
+   marca, modelo, año, km, combustible, cambio, tipo, precio (€), foto (id de Unsplash o URL), etiqueta opcional */
+const COCHES=[
+ {marca:"Volkswagen",modelo:"Polo 5 puertas",anio:2019,km:68000,comb:"Gasolina",cambio:"Manual",tipo:"Compacto",precio:12900,foto:"1541899481282-d53bffe3c35d",tag:"Ideal ciudad"},
+ {marca:"Hyundai",modelo:"Compacto 5 puertas",anio:2020,km:54000,comb:"Gasolina",cambio:"Manual",tipo:"Compacto",precio:13900,foto:"1573899754191-bd20f600141c"},
+ {marca:"BMW",modelo:"Berlina",anio:2018,km:92000,comb:"Diésel",cambio:"Automático",tipo:"Berlina",precio:21500,foto:"1441148489547-da3f133be9ae"},
+ {marca:"Mercedes-Benz",modelo:"Berlina",anio:2019,km:81000,comb:"Diésel",cambio:"Automático",tipo:"Berlina",precio:26900,foto:"1629005559534-e71542e2a24a",tag:"Destacado"},
+ {marca:"Mercedes-Benz",modelo:"SUV",anio:2020,km:63000,comb:"Diésel",cambio:"Automático",tipo:"SUV",precio:38900,foto:"1622893288761-823ba60f17a6"},
+ {marca:"Ford",modelo:"Explorer",anio:2019,km:77000,comb:"Gasolina",cambio:"Automático",tipo:"SUV",precio:32500,foto:"1533473359331-0135ef1b58bf"},
+ {marca:"Jeep",modelo:"Wrangler",anio:2018,km:85000,comb:"Gasolina",cambio:"Automático",tipo:"Todoterreno",precio:34900,foto:"1506015391300-4802dc74de2e",tag:"4x4"},
+ {marca:"Chevrolet",modelo:"Pick-up doble cabina",anio:2019,km:99000,comb:"Gasolina",cambio:"Automático",tipo:"Pick-up",precio:29900,foto:"1612057473166-af2affdb92ad"}
+];
+const DEMO=true; /* pon false cuando subas tus coches reales */
+const $=s=>document.querySelector(s),fmt=n=>n.toLocaleString("es-ES");
+const img=(f,w,h)=>f.startsWith("http")?f:`https://images.unsplash.com/photo-${f}?w=${w}&h=${h}&fit=crop&auto=format&q=75`;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const uniq=k=>[...new Set(COCHES.map(c=>c[k]))].sort();
+uniq("marca").forEach(v=>$("#fMarca").add(new Option(v,v)));
+uniq("tipo").forEach(v=>$("#fTipo").add(new Option(v,v)));
+uniq("comb").forEach(v=>$("#fComb").add(new Option(v,v)));
+let tipoChip="";
+function chips(){const t=["",...uniq("tipo")];$("#chips").innerHTML=t.map(x=>`<button class="chip${x===tipoChip?" on":""}" data-t="${esc(x)}">${x||"Todos"}</button>`).join("");$("#chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{tipoChip=b.dataset.t;$("#fTipo").value=tipoChip;render();chips()})}
+function list(){const m=$("#fMarca").value,t=$("#fTipo").value,c=$("#fComb").value,p=+$("#fPrecio").value||Infinity;return COCHES.map((x,i)=>({...x,i})).filter(x=>(!m||x.marca===m)&&(!t||x.tipo===t)&&(!c||x.comb===c)&&x.precio<=p)}
+function cuota(precio,entrada=0,meses=60,tin=7.5){const P=Math.max(precio-entrada,0),r=tin/100/12;return r?P*r/(1-Math.pow(1+r,-meses)):P/meses}
+function render(){
+  const L=list();$("#count").textContent=`${L.length} ${L.length===1?"coche":"coches"} disponibles`;
+  $("#grid").innerHTML=L.length?L.map(c=>`<article class="car"><div class="ph" style="background-image:url('${img(c.foto,640,400)}')">${c.tag?`<span class="tag">${esc(c.tag)}</span>`:""}${DEMO?'<span class="demo">Vehículo de ejemplo</span>':""}</div><div class="bd"><h3>${esc(c.marca)} ${esc(c.modelo)}</h3><div class="specs"><span>${c.anio}</span><span>${fmt(c.km)} km</span><span>${esc(c.comb)}</span><span>${esc(c.cambio)}</span></div><div class="price"><b>${fmt(c.precio)} €</b><small>desde ${fmt(Math.round(cuota(c.precio,c.precio*.15)))} €/mes*</small></div><button class="btn" data-i="${c.i}">Ver detalles</button></div></article>`).join(""):`<p class="empty">No hay coches con esos filtros. Prueba a quitar alguno o <a href="#contacto">dinos qué buscas</a> y te lo encontramos.</p>`;
+  $("#grid").querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>open(+b.dataset.i));
+}
+function open(i){const c=COCHES[i];$("#mbox").innerHTML=`<div class="ph" style="background-image:url('${img(c.foto,1200,600)}')"></div><div class="bd"><button class="mx" aria-label="Cerrar" id="mx">×</button><h2>${esc(c.marca)} ${esc(c.modelo)}</h2><p class="sub">${esc(c.tipo)} · ${DEMO?"Vehículo de ejemplo":"Disponible"}</p><div class="mspecs"><div>Año<b>${c.anio}</b></div><div>Kilómetros<b>${fmt(c.km)}</b></div><div>Combustible<b>${esc(c.comb)}</b></div><div>Cambio<b>${esc(c.cambio)}</b></div><div>Precio<b>${fmt(c.precio)} €</b></div><div>Cuota orientativa<b>${fmt(Math.round(cuota(c.precio,c.precio*.15)))} €/mes*</b></div></div><p class="note">*Con 15% de entrada, 60 meses y 7,5% TIN. Orientativo.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a class="btn" href="#contacto" id="mReq">Me interesa este coche</a><a class="btn out" href="#financiacion" id="mFin">Calcular financiación</a></div></div>`;
+  $("#modal").classList.add("on");const close=()=>$("#modal").classList.remove("on");$("#mx").onclick=close;
+  $("#mReq").onclick=()=>{$("#c").value=`${c.marca} ${c.modelo} (${c.anio}, ${fmt(c.precio)} €)`;$("#m").value="Información sobre un coche";close()};
+  $("#mFin").onclick=()=>{$("#cP").value=c.precio;calc();close()};
+}
+$("#modal").onclick=e=>{if(e.target.id==="modal")$("#modal").classList.remove("on")};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#modal").classList.remove("on")});
+["#fMarca","#fTipo","#fComb","#fPrecio"].forEach(s=>$(s).onchange=()=>{tipoChip=$("#fTipo").value;chips();render()});
+$("#go").onclick=()=>{render();document.getElementById("stock").scrollIntoView({behavior:"smooth"})};
+function calc(){const P=+$("#cP").value;$("#cE").max=P;let E=Math.min(+$("#cE").value,P);const M=+$("#cM").value,T=+$("#cT").value,q=cuota(P,E,M,T);
+  $("#vP").textContent=fmt(P)+" €";$("#vE").textContent=fmt(E)+" €";$("#vM").textContent=M+" meses";$("#vT").textContent=String(T).replace(".",",")+" %";
+  $("#vQ").textContent=fmt(Math.round(q))+" €/mes";$("#vTot").textContent=`Importe financiado: ${fmt(P-E)} € · Total a plazos: ${fmt(Math.round(q*M))} €`}
+["#cP","#cE","#cM","#cT"].forEach(s=>$(s).oninput=calc);
+document.querySelectorAll("[data-motivo]").forEach(a=>a.addEventListener("click",()=>{$("#m").value=a.dataset.motivo}));
+$("#form").addEventListener("submit",async e=>{
+  if(location.protocol==="file:"){e.preventDefault();$("#form").innerHTML='<p class="ok full">Vista previa: el formulario se activará al publicar la web en Netlify.</p>';return}
+  e.preventDefault();const f=e.target;const b=f.querySelector("button[type=submit]");b.disabled=true;b.textContent="Enviando…";
+  try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;f.innerHTML='<p class="ok full">✅ ¡Gracias! Hemos recibido tu consulta y te responderemos pronto.</p>'}
+  catch(_){b.disabled=false;b.textContent="Enviar consulta";alert("No se pudo enviar. Inténtalo de nuevo en unos minutos.")}
+});
+$("#yr").textContent=new Date().getFullYear();
+chips();render();calc();
+</script>
+</body>
+</html>
