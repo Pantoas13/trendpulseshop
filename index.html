@@ -409,11 +409,28 @@ main section.wrap{scroll-margin-top:120px}
 .tile .brand{display:none}
 .ph-note{position:absolute;right:8px;bottom:8px;z-index:2;font-style:normal;font-size:10px;color:#fff;background:rgba(0,0,0,.45);padding:1px 6px;border-radius:4px}
 
+
+/* TrendPulse: navegación clara y catálogo adaptable */
+:root{--bg:#f5f6fa;--surface:#fff;--nav:#151b35;--nav2:#222b4b;--btn:#ffdc60;--btn-b:#e9c54c;--btn-h:#f4ce48}
+.wrap{max-width:1320px}.top-main{height:72px}.logo{font-size:22px}.logo b{color:#ffdc60}
+.hero{padding:40px 0 22px}.hero h1{font-size:clamp(30px,4.5vw,54px);max-width:22ch;letter-spacing:-.04em;line-height:1.08}
+.hero p{font-size:17px;line-height:1.7}.facts{gap:12px}.fact{padding:7px 12px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.market-note{margin:16px 0 0;padding:14px 18px;border:1px solid var(--line);border-left:4px solid var(--link);border-radius:10px;background:var(--surface);font-size:14px;line-height:1.65;color:var(--muted)}
+.market-note strong{color:var(--ink)}.market-note a{color:var(--link)}
+.card,.champ,.wcard,.dealbar a{border-radius:14px}.card h3{font-weight:600;line-height:1.5;min-height:4.5em;-webkit-line-clamp:3}
+.tile img{object-fit:contain;padding:12px}.go{min-height:44px;height:auto;padding:10px 12px}
+.bar{top:110px}.chip{min-height:42px}.sort button{min-height:42px}.grid{gap:18px}
+.skip-link{position:fixed;top:-100px;left:12px;z-index:100;background:var(--surface);color:var(--ink);padding:12px 18px;border-radius:8px}.skip-link:focus{top:12px}
+.photo-note{position:absolute;right:6px;bottom:6px;background:rgba(255,255,255,.95);color:#565959;padding:3px 7px;border-radius:4px;font-size:10px}
+@media(max-width:760px){.top-main{height:auto;min-height:64px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.search{order:4;flex-basis:100%;max-width:none}.logo{font-size:19px;margin-right:auto}.top{position:relative}.bar{top:0}.hero{padding-top:26px}.hero h1{font-size:34px}.facts{gap:6px}.fact{font-size:12px;padding:6px 8px}.grid{gap:10px}.body{padding:12px 10px}.card h3{font-size:13px}.market-note{padding:12px;font-size:13px}.bot-btn{bottom:12px;right:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"TrendPulseShop","url":"https://pantoas13.github.io/trendpulseshop/","inLanguage":"es","description":"Los productos más vendidos de Amazon.es por categoría."}</script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<a class="skip-link" href="#h-all">Saltar al catálogo</a>
 <header class="mk-head">
   <div class="mk-wrap mk-hrow">
     <a class="mk-logo" href="#top" aria-label="TrendPulseShop, inicio"><svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 11V9a6 6 0 0 1 12 0v2" fill="none" stroke="#e8590c" stroke-width="2.6" stroke-linecap="round"/><path d="M5 11h22l-1.6 16.2A2 2 0 0 1 23.4 29H8.6a2 2 0 0 1-2-1.8z" fill="#ff7a1a"/><path d="M5 11h22l-.5 5H5.5z" fill="#ff922b"/></svg><span>TrendPulse<b>Shop</b></span></a>
@@ -430,6 +447,7 @@ main section.wrap{scroll-margin-top:120px}
     <a href="kit-antiestafas.html">🛡️<span>Antiestafas</span></a>
   </div></nav>
 </header>
+<div class="wrap"><aside class="market-note" aria-label="Información de compra"><strong>Compras en Amazon España.</strong> Los enlaces de esta web abren Amazon.es. Si compras desde Latinoamérica o Polonia, comprueba el envío a tu dirección, los gastos de importación y la moneda antes de pagar. Podemos recibir una comisión por las compras que cumplan los requisitos, sin coste adicional para ti.</aside></div>
 
 <main id="top">
 <section class="mk-wrap mk-hero">
@@ -2983,9 +3001,9 @@ $("#chips").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;cat=b.
 document.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{sort=b.dataset.s;shown=PAGE;document.querySelectorAll("[data-s]").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
 
 function card(d){
-  return `<article class="card"><div class="tile" style="--h:${HUE[d.cat]||210}"><span class="ico" aria-hidden="true">${d.icon}</span>${img(d)?`<img class="ph-real" src="${img(d,480,360)}" alt="" loading="lazy" onerror="this.remove()"><i class="ph-note">Foto ilustrativa</i>`:""}<span class="rank"><small>#</small>${d.rank}</span>${d.rank===1?'<span class="hot">Más vendido</span>':""}<span class="brand" aria-hidden="true">${esc(brand(d.title))}</span></div>
+  return `<article class="card"><div class="tile" style="--h:${HUE[d.cat]||210}"><span class="ico" aria-hidden="true">${d.icon}</span>${img(d)?`<img class="ph-real" src="${img(d,480,360)}" alt="" loading="lazy" onerror="this.remove()"><i class="ph-note">Foto ilustrativa</i>`:""}<span class="rank"><small>#</small>${d.rank}</span>${d.rank===1?'<span class="hot">Más vendido</span>':""}<span class="photo-note">Imagen ilustrativa</span><span class="brand" aria-hidden="true">${esc(brand(d.title))}</span></div>
   <div class="body"><span class="cat">${esc(d.cat)}</span><h3>${esc(d.title)}</h3><span class="price"></span>
-  <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ver en Amazon <span class="eye" aria-hidden="true">›</span></a></div></article>`;
+  <a class="go" href="${d.link}" target="_blank" rel="sponsored noopener">Ver en Amazon.es <span class="eye" aria-hidden="true">›</span></a></div></article>`;
 }
 function render(){
   const words=query.split(/\s+/).filter(Boolean);
@@ -2997,7 +3015,7 @@ function render(){
   const m=$("#more");m.hidden=list.length<=shown;m.textContent=`Cargar más productos (${(list.length-shown).toLocaleString("es-ES")} restantes)`;
 }
 $("#more").onclick=()=>{shown+=PAGE;render()};
-let t;$("#q").oninput=e=>{clearTimeout(t);t=setTimeout(()=>{query=e.target.value.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");shown=PAGE;render();if(query)document.getElementById("h-all").scrollIntoView({behavior:"smooth"})},180)};
+let t;$("#q").oninput=e=>{clearTimeout(t);t=setTimeout(()=>{query=e.target.value.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");shown=PAGE;render();},180)};
 $("#nl").onsubmit=async e=>{e.preventDefault();const f=e.target,b=f.querySelector("button");b.disabled=true;b.textContent="Enviando…";try{const r=await fetch("https://assets.mailerlite.com/jsonp/2665092/forms/201586991397078824/subscribe",{method:"POST",body:new FormData(f)});const j=await r.json().catch(()=>({}));if(!r.ok||j.success===false)throw 0;f.innerHTML='<p style="font-weight:700">¡Casi listo! 📩 Revisa tu correo y confirma la suscripción.</p>'}catch(_){b.disabled=false;b.textContent="Apuntarme";alert("No se pudo completar. Revisa el correo e inténtalo de nuevo.")}};
 $("#theme").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("tps-theme",r.dataset.theme)}catch(e){}};
 try{const s=localStorage.getItem("tps-theme");if(s)document.documentElement.dataset.theme=s}catch(e){}
@@ -3058,15 +3076,15 @@ const showQuick=(arr=QUICK)=>{quick.innerHTML=arr.map(q=>`<button type="button">
 const FAQ=[
  {k:/hola|buenas|hey|saludos/,a:()=>"¡Hola! 👋 Puedo contarte cómo funciona la web o buscarte productos. Escribe, por ejemplo, <b>freidora</b>, <b>regalo para niño</b> o <b>auriculares</b>."},
  {k:/gracias|genial|perfecto|vale/,a:()=>"¡De nada! Si necesitas algo más, aquí estoy. 🙌"},
- {k:/como compr|comprar|pedido|pedir|carrito|donde compr/,a:()=>"Es muy fácil:<br>1. Busca el producto aquí.<br>2. Pulsa <b>Ver precio actual</b>.<br>3. Se abre la ficha en Amazon.es y lo compras allí con tu cuenta, como siempre.<br>Nosotros no vendemos ni cobramos nada: solo te mostramos lo más vendido."},
+ {k:/como compr|comprar|pedido|pedir|carrito|donde compr/,a:()=>"Es muy fácil:<br>1. Busca el producto aquí.<br>2. Pulsa <b>Ver en Amazon.es</b>.<br>3. Se abre la ficha en Amazon.es y lo compras allí con tu cuenta, como siempre.<br>Nosotros no vendemos ni cobramos nada: solo te mostramos lo más vendido."},
  {k:/precio|caro|cuesta|vale |oferta|descuento|cambi/,a:()=>`En esta web no mostramos precios: cambian a menudo en Amazon. El precio que vale es el que ves en la ficha de Amazon.es al comprar. 😉`},
- {k:/envio|envia|llega|entrega|prime|tarda|gastos/,a:()=>"El envío lo hace <b>Amazon</b> (o el vendedor de la ficha). El plazo y los gastos aparecen en la ficha antes de pagar. Con <b>Prime</b>, muchos productos llegan en 1 día y con envío gratis."},
+ {k:/envio|envia|llega|entrega|prime|tarda|gastos/,a:()=>"El envío lo hace <b>Amazon</b> (o el vendedor de la ficha). El plazo y los gastos aparecen en la ficha antes de pagar. La disponibilidad de Prime, los plazos y los costes dependen del producto y de tu dirección de entrega."},
  {k:/devol|devuelv|garant|roto|defect|reembols/,a:()=>"Las devoluciones y la garantía las gestiona <b>Amazon</b> desde tu cuenta (Mis pedidos → Devolver o reemplazar). En muchos productos tienes 30 días para devolver; mira las condiciones en la ficha de cada producto."},
  {k:/segur|fiable|estafa|confi|pago|tarjeta|pagar/,a:()=>"Sí, es seguro. El pago se hace <b>solo en Amazon.es</b>, con tu cuenta. Aquí nunca te pediremos datos de tarjeta ni contraseñas."},
  {k:/quien|que es|que sois|afiliad|comision|ganais|gratis/,a:()=>"TrendPulseShop es una guía de los productos más vendidos de Amazon.es, ordenados por categoría. Participamos en el Programa de Afiliados de Amazon: si compras desde nuestros enlaces, Amazon nos paga una pequeña comisión <b>sin que tú pagues nada extra</b>."},
- {k:/actualiz|cada cuanto|nuevo|ranking/,a:()=>`El ranking sale de «Los más vendidos» de Amazon.es. La última actualización fue el <b>${PRICE_DATE}</b> y lo renovamos con frecuencia.`},
+ {k:/actualiz|cada cuanto|nuevo|ranking/,a:()=>`El ranking sale de «Los más vendidos» de Amazon.es. La última actualización fue el <b>${PRICE_DATE}</b> ; comprueba el precio, la disponibilidad y la posición actual en Amazon.`},
  {k:/contact|hablar|correo|email|telefono|whatsapp|persona/,a:()=>"Puedes escribirnos por mensaje privado en nuestra página de Facebook <b>TrendPulseShop</b>. Para dudas sobre un pedido, lo más rápido es el servicio de atención de Amazon desde <b>Mis pedidos</b>."},
- {k:/foto|imagen/,a:()=>"Las fotos de las tarjetas son ilustrativas de cada categoría. La foto exacta del producto la verás en su ficha de Amazon al pulsar <b>Ver precio actual</b>."},
+ {k:/foto|imagen/,a:()=>"Las fotos de las tarjetas son ilustrativas de cada categoría. La foto exacta del producto la verás en su ficha de Amazon al pulsar <b>Ver en Amazon.es</b>."},
 ];
 const GIFT={nino:["Juguetes"],nina:["Juguetes"],bebe:["Bebé"],mama:["Belleza","Hogar y cocina"],madre:["Belleza","Hogar y cocina"],papa:["Bricolaje","Electrónica","Coche y moto"],padre:["Bricolaje","Electrónica","Coche y moto"],gamer:["Videojuegos"],deport:["Deporte"],mascota:["Mascotas"],perro:["Mascotas"],gato:["Mascotas"],lector:["Libros"],musica:["Instrumentos musicales"]};
 const STOP=new Set("quiero busco buscar necesito un una unos unas el la los las de del para por con sin me algo que hay tienes teneis ver mas menos euros euro eur barato barata baratos baratas bueno buena mejor mejores regalo regalar ideas idea".split(" "));
