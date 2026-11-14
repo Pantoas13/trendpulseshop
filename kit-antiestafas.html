@@ -278,5 +278,6 @@ showQ();
 
 $("#nl").onsubmit=async e=>{e.preventDefault();const f=e.target,b=f.querySelector("button");b.disabled=true;b.textContent="Enviando…";try{const r=await fetch("https://assets.mailerlite.com/jsonp/2665092/forms/201586991397078824/subscribe",{method:"POST",body:new FormData(f)});const j=await r.json().catch(()=>({}));if(!r.ok||j.success===false)throw 0;f.innerHTML='<p style="font-weight:700">¡Casi listo! 📩 Revisa tu correo y confirma la suscripción.</p>'}catch(_){b.disabled=false;b.textContent="Avisarme →";alert("No se pudo completar. Revisa el correo e inténtalo de nuevo.")}};
 </script>
+<script src="geo-amazon.js" defer></script>
 </body>
 </html>
