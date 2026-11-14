@@ -1,0 +1,49 @@
+name: Publicar en Netlify
+
+# Publica la web en https://trendpulseshop-es.netlify.app/ cada vez que hay cambios en main.
+# Necesita 2 secretos en GitHub (Settings > Secrets and variables > Actions):
+#   NETLIFY_AUTH_TOKEN  -> token personal de Netlify (User settings > Applications > New access token)
+#   NETLIFY_SITE_ID     -> ID del sitio (Site configuration > Site details > Site ID)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: netlify-produccion
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar secretos
+        id: s
+        env:
+          T: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          S: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          if [ -z "$T" ] || [ -z "$S" ]; then
+            echo "Faltan los secretos NETLIFY_AUTH_TOKEN y/o NETLIFY_SITE_ID: no se publica."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Construir (igual que netlify.toml)
+        if: steps.s.outputs.ok == 'true'
+        run: |
+          CMD=$(python3 -c "import tomllib;print(tomllib.load(open('netlify.toml','rb'))['build']['command'])")
+          bash -c "$CMD"
+          ls dist
+      - uses: actions/setup-node@v4
+        if: steps.s.outputs.ok == 'true'
+        with:
+          node-version: "20"
+      - name: Publicar en producción
+        if: steps.s.outputs.ok == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx --yes netlify-cli@17.38.1 deploy --prod --dir=dist --no-build --site "$NETLIFY_SITE_ID" --message "GitHub ${GITHUB_SHA::7}"
