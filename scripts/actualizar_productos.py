@@ -10,7 +10,7 @@ Necesita estos "secrets" en GitHub (Settings > Secrets and variables > Actions):
   CREATORS_CLIENT_SECRET  -> Client Secret de la Creators API
   (opcional) PARTNER_TAG  -> tu tag de afiliado; por defecto trendpulsesho-21
 
-Si los secrets no existen todavía, el script no cambia nada y termina sin error.
+Si faltan secrets, no cambia el catálogo y señala la configuración pendiente.
 Solo usa la librería estándar de Python (no hay que instalar nada).
 """
 import json
@@ -110,10 +110,10 @@ def leer_item(it, categoria, puesto):
             break
     prim = ((it.get("images") or {}).get("primary") or {})
     foto = (prim.get("large") or prim.get("medium") or {}).get("url", "")
-    if not (asin and titulo and precio and precio > 0):
+    if not (asin and titulo and foto):
         return None
     return {"cat": categoria, "asin": asin, "rank": puesto,
-            "title": titulo[:140], "price": round(precio, 2), "img": foto}
+            "title": titulo[:140], "price": round(precio, 2) if precio else None, "img": foto}
 
 
 def main():
@@ -121,13 +121,14 @@ def main():
     csec = os.environ.get("CREATORS_CLIENT_SECRET", "").strip()
     tag = os.environ.get("PARTNER_TAG", "").strip() or "trendpulsesho-21"
     if not cid or not csec:
-        print("Aún no hay credenciales de la Creators API. No se cambia nada.")
-        return 0
+        faltan = [nombre for nombre, valor in (("CREATORS_CLIENT_ID", cid), ("CREATORS_CLIENT_SECRET", csec)) if not valor]
+        print("Faltan secretos de repositorio: " + ", ".join(faltan) + ". Configúralos en Settings > Secrets and variables > Actions.")
+        return 1
 
     try:
         token = obtener_token(cid, csec)
     except urllib.error.HTTPError as e:
-        print("ERROR al obtener el token:", e.code, e.read().decode("utf-8", "ignore")[:500])
+        print("ERROR al obtener el token de Amazon. HTTP", e.code)
         return 1
 
     productos, vistos, errores = [], set(), 0
@@ -139,7 +140,7 @@ def main():
                     r = buscar(token, tag, search_index, palabras, pagina)
                 except urllib.error.HTTPError as e:
                     errores += 1
-                    print(f"  aviso {categoria}/{palabras} p{pagina}: HTTP {e.code} {e.read().decode('utf-8','ignore')[:200]}")
+                    print(f"  aviso {categoria}/{palabras} p{pagina}: HTTP {e.code}")
                     time.sleep(PAUSA_SEGUNDOS)
                     break
                 items = ((r.get("searchResult") or {}).get("items")) or []
@@ -159,9 +160,11 @@ def main():
         print("La API no devolvió productos; se deja el archivo como estaba.")
         return 1 if errores else 0
 
-    fecha = datetime.now(timezone.utc).strftime("%d/%m/%Y")
+    ahora = datetime.now(timezone.utc)
+    fecha = ahora.strftime("%d/%m/%Y")
     with open(SALIDA, "w", encoding="utf-8") as f:
         f.write("/* Generado automáticamente desde la Creators API de Amazon. No editar a mano. */\n")
+        f.write("window.API_UPDATED_AT = " + json.dumps(ahora.isoformat()) + ";\n")
         f.write("window.API_PRICE_DATE = " + json.dumps(fecha) + ";\n")
         f.write("window.API_PRODUCTS = " + json.dumps(productos, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"Listo: {len(productos)} productos guardados en productos-api.js ({fecha}).")
