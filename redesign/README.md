@@ -2,7 +2,7 @@
 
 Portada pública renovada y copia en /redesign/. Identificador de afiliado conservado: trendpulsesho-21. El dominio se mantiene.
 
-Funciones: búsqueda, 45 categorías de referencia, guardados locales, orden alfabético, paginación y modo oscuro. El catálogo de referencia es del 13/10/2026; no representa un ranking actual.
+Funciones: búsqueda, 45 categorías de referencia, guardados locales, orden alfabético, paginación y modo oscuro. El catálogo de referencia es del 15/11/2026 (los más vendidos de Amazon.es ese día); el ranking cambia a diario.
 
 ## Imágenes oficiales de Amazon
 
