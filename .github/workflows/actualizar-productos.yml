@@ -2,7 +2,7 @@ name: Actualizar productos desde Amazon
 
 on:
   schedule:
-    - cron: "17 5 * * 1"   # cada lunes, 05:17 UTC
+    - cron: "17 */6 * * *"  # refresca las URLs oficiales antes de 24 horas
   workflow_dispatch: {}      # botón "Run workflow" para lanzarlo a mano
 
 permissions:
