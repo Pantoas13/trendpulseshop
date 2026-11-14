@@ -1,6 +1,13 @@
 'use strict';
 const technology=['Informática','Electrónica','Dispositivos Amazon','Videojuegos','Móviles y accesorios','Auriculares y audio portátil','Audio y Hi-Fi','TV y home cinema','Fotografía y vídeo','Pilas y cargadores','Portátiles','Tablets','Monitores','Componentes de PC','Almacenamiento','Redes y wifi','Impresoras','Accesorios de informática','Ordenadores de sobremesa','Reacondicionados','Software'];
 const $=selector=>document.querySelector(selector);
+const scriptURL=new URL(document.currentScript?.src||'/redesign/app.js',location.href);
+const siteBase=new URL('../',scriptURL);
+// The same source runs at the Netlify domain root and GitHub Pages project path.
+for(const anchor of document.querySelectorAll('a[href]')){
+ const href=anchor.getAttribute('href');
+ if(['/guias','/buscador-regalos','/privacidad'].includes(href)) anchor.href=new URL(href.slice(1)+'.html',siteBase).href;
+}
 const normalize=text=>String(text).toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
 const state={products:[],category:'Todas',query:'',shown:24,sort:'recommended',savedOnly:false};
 let saved=new Set();
@@ -57,7 +64,7 @@ const started=Date.now();
 const officialDate=Date.parse(window.API_UPDATED_AT||'');
 const fresh=Number.isFinite(officialDate)&&started>=officialDate&&started-officialDate<24*60*60*1000;
 const official=Array.isArray(window.API_PRODUCTS)&&fresh?window.API_PRODUCTS.filter(p=>/^[A-Z0-9]{10}$/.test(p.asin)&&p.title&&imageURL(p.img)).map(p=>({...p,category:p.cat||p.category})):[];
-fetch('/redesign/catalog.json').then(response=>{if(!response.ok)throw Error('catalog');return response.json();}).then(data=>{
+fetch(new URL('catalog.json',scriptURL)).then(response=>{if(!response.ok)throw Error('catalog');return response.json();}).then(data=>{
  const byASIN=new Map();official.forEach(product=>byASIN.set(product.asin,product));
  data.products.forEach(product=>{if(!byASIN.has(product.asin))byASIN.set(product.asin,product);});
  state.products=[...byASIN.values()];$('#updated').textContent=data.updated;
