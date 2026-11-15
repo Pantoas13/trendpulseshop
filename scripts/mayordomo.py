@@ -506,7 +506,7 @@ def jornada(hoy, forzar=False):
 
     # 2) pin del dia: 3 rankings y 1 guia propia, en rueda
     previa = next((x for x in estado["entradas"] if x["fecha"] == fecha), None)
-    n = previa.get("n", estado["jornadas"]) if previa else estado["jornadas"]
+    n = previa.get("n", max(estado["jornadas"] - 1, 0)) if previa else estado["jornadas"]
     utm = f"utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content={fecha}"
     if guias and n % 4 == 3:
         g = guias[(n // 4) % len(guias)]
