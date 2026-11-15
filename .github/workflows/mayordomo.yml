@@ -1,0 +1,81 @@
+name: Mayordomo diario
+
+# El mayordomo de la tienda: cada día rehace los rankings, crea el pin del día,
+# actualiza el feed RSS y el sitemap, revisa los enlaces y deja un informe.
+# No necesita claves ni cuesta dinero. También se puede lanzar a mano (Run workflow).
+
+on:
+  schedule:
+    - cron: "23 5 * * *"   # 05:23 UTC = 06:23 en Polonia y España (invierno)
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: "Rehacer la jornada de hoy aunque ya esté hecha"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: mayordomo
+  cancel-in-progress: false
+
+jobs:
+  jornada:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Pillow (para dibujar los pines)
+        run: pip install -q pillow
+
+      - name: Jornada del mayordomo
+        id: jornada
+        run: python scripts/mayordomo.py ${{ inputs.forzar && '--forzar' || '' }}
+
+      - name: Guardar el trabajo en la web
+        id: guardar
+        if: steps.jornada.outputs.hecho == 'true'
+        run: |
+          git config user.name "mayordomo-bot"
+          git config user.email "mayordomo-bot@users.noreply.github.com"
+          git add top pins/auto mayordomo/estado.json mayordomo/diario.md feed.xml sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Nada nuevo que guardar."
+            echo "subido=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -q -m "Mayordomo: jornada del $(date -u +%Y-%m-%d)"
+            git pull -q --rebase origin "${GITHUB_REF_NAME}"
+            git push -q origin "HEAD:${GITHUB_REF_NAME}"
+            echo "subido=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publicar también en Netlify
+        if: steps.guardar.outputs.subido == 'true'
+        run: gh workflow run publicar-netlify.yml --ref "${GITHUB_REF_NAME}" || echo "No se pudo lanzar la publicación en Netlify."
+
+      - name: Comprobar la publicación y avisar a los buscadores
+        if: steps.guardar.outputs.subido == 'true'
+        run: |
+          sleep 150
+          python scripts/mayordomo.py --avisar || true
+
+      - name: Informe del día
+        if: always() && steps.jornada.outputs.hecho == 'true'
+        run: |
+          cat mayordomo/ultimo.md >> "$GITHUB_STEP_SUMMARY"
+          N=$(gh issue list --state open --search "Informe diario del Mayordomo in:title" --json number --jq '.[0].number' || true)
+          if [ -z "$N" ]; then
+            N=$(gh issue create --title "Informe diario del Mayordomo" --body "Aquí deja el mayordomo un comentario cada día con lo que hizo. Si tienes activados los avisos de GitHub, te llega por correo. Para dejar de recibirlos, pulsa «Unsubscribe» en esta página." | grep -o '[0-9]*$' || true)
+          fi
+          [ -n "$N" ] && gh issue comment "$N" --body-file mayordomo/ultimo.md || echo "No se pudo dejar el informe en un issue (el diario queda en mayordomo/diario.md)."

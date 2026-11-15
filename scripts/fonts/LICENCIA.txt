@@ -1,0 +1,4 @@
+Inter (https://github.com/rsms/inter)
+Copyright 2016-2023 The Inter Project Authors.
+Licencia: SIL Open Font License 1.1 (https://openfontlicense.org).
+Se usa solo para dibujar el texto de los pines que genera scripts/mayordomo.py.

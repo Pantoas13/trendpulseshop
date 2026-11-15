@@ -97,5 +97,6 @@ body{font-family:Inter,system-ui,sans-serif!important}.logo,.hero h1,.feat h2,h3
 var ch=document.getElementById("chips"),cards=[].slice.call(document.querySelectorAll("#grid .card"));
 ch.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var f=b.dataset.f;[].forEach.call(ch.children,function(x){x.setAttribute("aria-pressed",x===b)});cards.forEach(function(c){c.hidden=!(f==="Todas"||c.dataset.c===f)})});})();
 </script>
+<script>(function(){var g=new URLSearchParams(location.search).get("g");if(!g||!/^[a-z0-9-]+$/.test(g))return;var c=document.querySelector('a.card[href$="/'+g+'/"]');if(!c)return;c.style.outline="3px solid #FF9900";c.style.outlineOffset="3px";setTimeout(function(){c.scrollIntoView({behavior:"smooth",block:"center"})},300)})();</script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+:root{color-scheme:light;--bg:#fcfaf7;--surface:#fff;--ink:#101c3c;--muted:#586070;--line:#e4e4e7;--blue:#003cff;--soft:#f3f5fc}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#0d1326;--surface:#151d36;--ink:#eef1fa;--muted:#a3acc2;--line:#2a3554;--blue:#7d9bff;--soft:#1b2544}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif}
+a{color:inherit}a:focus-visible{outline:3px solid #ffb733;outline-offset:3px}
+.w{max-width:880px;margin:0 auto;padding:0 18px}
+.ribbon{background:#003cff;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:5px}
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;min-height:64px}
+.logo{font-size:22px;font-weight:800;letter-spacing:-.8px;text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+.logo span{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:#003cff;color:#fff;font-size:20px}
+header nav{display:flex;gap:16px;font-size:13.5px;font-weight:700;flex-wrap:wrap}header nav a{text-decoration:none}header nav a:hover{color:var(--blue);text-decoration:underline}
+.crumb{font-size:13px;color:var(--muted);margin:20px 0 6px}
+.eyebrow{color:var(--blue);font-size:12.5px;font-weight:800;letter-spacing:1.2px;margin:0 0 8px}
+h1{font:700 clamp(28px,5vw,42px)/1.1 Georgia,serif;letter-spacing:-1px;margin:0 0 12px}
+h2{font:700 24px/1.2 Georgia,serif;margin:34px 0 12px}
+.lead{font-size:18px;color:var(--muted);max-width:66ch;margin:0 0 8px}
+.meta{font-size:13px;color:var(--muted);margin:0 0 20px}
+.disc{font-size:13px;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 22px}
+ol.rank{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+ol.rank li{display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+ol.rank .n{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--soft);color:var(--blue);font:800 22px/1 Georgia,serif}
+ol.rank li:nth-child(-n+3) .n{background:#003cff;color:#fff}
+ol.rank h3{font-size:16.5px;line-height:1.35;margin:0 0 4px}
+ol.rank p{margin:0;font-size:13px;color:var(--muted)}
+.go{display:inline-block;margin-top:8px;background:#003cff;color:#fff;font-weight:700;font-size:14px;text-decoration:none;border-radius:8px;padding:9px 14px}
+.go:hover{background:#0030cc}
+ul.more{margin:0;padding:0;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+ul.more li{display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid var(--line);font-size:15px}
+ul.more li:last-child{border-bottom:0}ul.more b{color:var(--blue);min-width:28px}ul.more a{text-decoration:none}ul.more a:hover{text-decoration:underline}
+.tips{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px 20px 14px}
+.tips li{margin:8px 0}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:0;padding:0;list-style:none}
+.chips a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600;text-decoration:none}
+.chips a:hover{border-color:var(--blue);color:var(--blue)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.grid a{display:block;height:100%;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none}
+.grid a:hover{border-color:var(--blue)}.grid b{display:block;font:700 18px/1.25 Georgia,serif;margin-bottom:6px}.grid span{font-size:13px;color:var(--muted)}
+footer{margin-top:44px;border-top:1px solid var(--line);background:var(--surface);padding:22px 0 30px;font-size:13px;color:var(--muted)}
+footer a{color:var(--blue)}
+@media (max-width:520px){ol.rank li{grid-template-columns:44px 1fr;padding:12px}ol.rank .n{width:44px;height:44px;font-size:18px}}
