@@ -15,8 +15,8 @@ Cada jornada:
 Uso:
   python scripts/mayordomo.py                 -> jornada de hoy (si ya se hizo, no repite)
   python scripts/mayordomo.py --fecha 2026-11-20 --forzar
-  python scripts/mayordomo.py --avisar        -> comprueba que la web responde y avisa a los
-                                                 buscadores (IndexNow) de las paginas nuevas
+  python scripts/mayordomo.py --avisar        -> comprueba que la web publicada responde y avisa a
+                                                 los buscadores (IndexNow) de las paginas nuevas
 
 Reglas: solo decimos lo que figura en el catalogo (titulo y puesto en ventas). No se inventan
 precios, descuentos ni opiniones. No se usan fotos de Amazon ni de terceros.
@@ -450,7 +450,7 @@ def avisar():
     estado = leer_json(ESTADO, {})
     ultimo = (estado.get("entradas") or [{}])[-1]
     lineas = []
-    for nombre, raiz in (("GitHub Pages", BASE), ("Netlify", NETLIFY)):
+    for nombre, raiz in (("GitHub Pages", BASE),):
         cod, cuerpo = responde(raiz + "feed.xml")
         al_dia = ultimo.get("id", "¿?") in cuerpo
         if cod == 200 and al_dia:
@@ -458,7 +458,7 @@ def avisar():
         elif cod == 200:
             lineas.append(f"- ⏳ {nombre}: responde, pero aún no muestra el pin de hoy (puede tardar unos minutos)")
         else:
-            lineas.append(f"- ⚠️ {nombre}: no responde (código {cod}). Si es Netlify, puede estar en pausa.")
+            lineas.append(f"- ⚠️ {nombre}: no responde (código {cod}). Mira la pestaña Actions del repositorio.")
         if cod != 200:
             continue
         host = raiz.split("/")[2]
@@ -505,7 +505,8 @@ def jornada(hoy, forzar=False):
     pagina_indice(por_cat, orden, fecha_cat)
 
     # 2) pin del dia: 3 rankings y 1 guia propia, en rueda
-    n = estado["jornadas"]
+    previa = next((x for x in estado["entradas"] if x["fecha"] == fecha), None)
+    n = previa.get("n", estado["jornadas"]) if previa else estado["jornadas"]
     utm = f"utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content={fecha}"
     if guias and n % 4 == 3:
         g = guias[(n // 4) % len(guias)]
@@ -528,10 +529,10 @@ def jornada(hoy, forzar=False):
                             f"Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. "
                             f"#publicidad #amazonespaña #{slug(cat).replace('-', '')}"[:480],
                    "enlace": f"{paginas[cat]['url']}?{utm}", "pagina": paginas[cat]["url"]}
-    entrada.update({"fecha": fecha, "id": f"mayordomo-{fecha}-{slug(entrada['nombre'])}", "imagen": imagen})
+    entrada.update({"fecha": fecha, "n": n, "id": f"mayordomo-{fecha}-{slug(entrada['nombre'])}", "imagen": imagen})
     estado["entradas"] = [x for x in estado["entradas"] if x["fecha"] != fecha] + [entrada]
     estado["entradas"].sort(key=lambda x: x["fecha"])
-    estado["jornadas"] = n + 1
+    estado["jornadas"] = max(estado["jornadas"], n + 1)
 
     # 3) feed y 4) sitemap
     escribir_feed(estado["entradas"])
