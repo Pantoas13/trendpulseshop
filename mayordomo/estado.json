@@ -1,5 +1,5 @@
 {
- "jornadas": 1,
+ "jornadas": 2,
  "entradas": [
   {
    "tipo": "ranking",
@@ -12,6 +12,18 @@
    "n": 0,
    "id": "mayordomo-2026-11-15-juguetes",
    "imagen": "pins/auto/2026-11-15-top-juguetes.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Auriculares y audio portátil",
+   "titulo": "Los 10 más vendidos en Auriculares y audio portátil · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Auriculares y audio portátil en Amazon España: Xiaomi REDMI Buds 8 Active, Soundcore P31i de Anker…, Apple EarPods (USB-C) y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #auricularesyaudioportatil",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/auriculares-y-audio-portatil.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-16",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/auriculares-y-audio-portatil.html",
+   "fecha": "2026-11-16",
+   "n": 1,
+   "id": "mayordomo-2026-11-16-auriculares-y-audio-portatil",
+   "imagen": "pins/auto/2026-11-16-top-auriculares-y-audio-portatil.png"
   }
  ]
 }
