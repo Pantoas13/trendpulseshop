@@ -1,5 +1,5 @@
 {
- "jornadas": 2,
+ "jornadas": 3,
  "entradas": [
   {
    "tipo": "ranking",
@@ -24,6 +24,18 @@
    "n": 1,
    "id": "mayordomo-2026-11-16-auriculares-y-audio-portatil",
    "imagen": "pins/auto/2026-11-16-top-auriculares-y-audio-portatil.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Videojuegos",
+   "titulo": "Los 10 más vendidos en Videojuegos · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Videojuegos en Amazon España: Nintendo Switch 2 Pro Controller…, 10€ PlayStation Store Tarjeta…, EA SPORTS FC 27 - Edición Estándar… y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #videojuegos",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/videojuegos.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-17",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/videojuegos.html",
+   "fecha": "2026-11-17",
+   "n": 2,
+   "id": "mayordomo-2026-11-17-videojuegos",
+   "imagen": "pins/auto/2026-11-17-top-videojuegos.png"
   }
  ]
 }
