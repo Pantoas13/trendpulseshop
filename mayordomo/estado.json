@@ -1,5 +1,5 @@
 {
- "jornadas": 3,
+ "jornadas": 4,
  "entradas": [
   {
    "tipo": "ranking",
@@ -36,6 +36,18 @@
    "n": 2,
    "id": "mayordomo-2026-11-17-videojuegos",
    "imagen": "pins/auto/2026-11-17-top-videojuegos.png"
+  },
+  {
+   "tipo": "guia",
+   "nombre": "Soldadura desde Cero",
+   "titulo": "Soldadura desde Cero · Guía digital en español",
+   "texto": "MIG/MAG, TIG y electrodo explicados por un soldador industrial en Europa. Guía digital en PDF de la colección CompraFaro: oficios y trabajo. Material educativo, sin promesas de resultados. #guiadigital #aprender",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/guias.html?g=soldadura-desde-cero&utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-18",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/guias.html",
+   "fecha": "2026-11-18",
+   "n": 3,
+   "id": "mayordomo-2026-11-18-soldadura-desde-cero",
+   "imagen": "pins/auto/2026-11-18-guia-soldadura-desde-cero.png"
   }
  ]
 }
