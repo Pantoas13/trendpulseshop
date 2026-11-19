@@ -1,5 +1,5 @@
 {
- "jornadas": 4,
+ "jornadas": 5,
  "entradas": [
   {
    "tipo": "ranking",
@@ -48,6 +48,18 @@
    "n": 3,
    "id": "mayordomo-2026-11-18-soldadura-desde-cero",
    "imagen": "pins/auto/2026-11-18-guia-soldadura-desde-cero.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Belleza",
+   "titulo": "Los 10 más vendidos en Belleza · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Belleza en Amazon España: Medicube Capsule Cream with Deep…, D'alba Piedmont Trufa Blanca…, Maybelline New York Lash… y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #belleza",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/belleza.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-19",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/belleza.html",
+   "fecha": "2026-11-19",
+   "n": 4,
+   "id": "mayordomo-2026-11-19-belleza",
+   "imagen": "pins/auto/2026-11-19-top-belleza.png"
   }
  ]
 }
