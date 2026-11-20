@@ -2,6 +2,18 @@
 
 Lo que hizo cada día, lo más reciente arriba.
 
+## 20 de noviembre de 2026 · Jornada n.º 6
+
+- 📌 **Pin del día** (ranking): Los 10 más vendidos en Dispositivos Amazon · Amazon España (noviembre 2026)
+  - Imagen: https://pantoas13.github.io/trendpulseshop/pins/auto/2026-11-20-top-dispositivos-amazon.png
+  - Lleva a: https://pantoas13.github.io/trendpulseshop/top/dispositivos-amazon.html
+- 📄 Rankings al día: 45 categorías (catálogo del 15/11/2026)
+- 📰 Feed RSS: 6 pines publicados en https://pantoas13.github.io/trendpulseshop/feed.xml
+- 🔎 Revisión: 64 páginas y 1051 enlaces a Amazon comprobados
+- ✅ Todos los enlaces a Amazon llevan tu código de afiliado
+- ✅ Sin enlaces internos rotos
+- ⏭️ Mañana: ranking de Hogar y cocina
+
 ## 19 de noviembre de 2026 · Jornada n.º 5
 
 - 📌 **Pin del día** (ranking): Los 10 más vendidos en Belleza · Amazon España (noviembre 2026)

@@ -1,5 +1,5 @@
 {
- "jornadas": 5,
+ "jornadas": 6,
  "entradas": [
   {
    "tipo": "ranking",
@@ -60,6 +60,18 @@
    "n": 4,
    "id": "mayordomo-2026-11-19-belleza",
    "imagen": "pins/auto/2026-11-19-top-belleza.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Dispositivos Amazon",
+   "titulo": "Los 10 más vendidos en Dispositivos Amazon · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Dispositivos Amazon en Amazon España: Blink Outdoor 4 Cámara con…, Amazon Fire TV Stick HD, Amazon Kindle (última generación)… y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #dispositivosamazon",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/dispositivos-amazon.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-20",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/dispositivos-amazon.html",
+   "fecha": "2026-11-20",
+   "n": 5,
+   "id": "mayordomo-2026-11-20-dispositivos-amazon",
+   "imagen": "pins/auto/2026-11-20-top-dispositivos-amazon.png"
   }
  ]
 }
