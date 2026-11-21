@@ -1,5 +1,5 @@
 {
- "jornadas": 6,
+ "jornadas": 7,
  "entradas": [
   {
    "tipo": "ranking",
@@ -72,6 +72,18 @@
    "n": 5,
    "id": "mayordomo-2026-11-20-dispositivos-amazon",
    "imagen": "pins/auto/2026-11-20-top-dispositivos-amazon.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Hogar y cocina",
+   "titulo": "Los 10 más vendidos en Hogar y cocina · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Hogar y cocina en Amazon España: Arcos Juego de Cuchillos…, BRITA Cartucho Filtrante de Agua…, Protector de Colchón Impermeable… y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #hogarycocina",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/hogar-y-cocina.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-21",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/hogar-y-cocina.html",
+   "fecha": "2026-11-21",
+   "n": 6,
+   "id": "mayordomo-2026-11-21-hogar-y-cocina",
+   "imagen": "pins/auto/2026-11-21-top-hogar-y-cocina.png"
   }
  ]
 }
