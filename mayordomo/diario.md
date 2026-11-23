@@ -2,6 +2,18 @@
 
 Lo que hizo cada día, lo más reciente arriba.
 
+## 23 de noviembre de 2026 · Jornada n.º 9
+
+- 📌 **Pin del día** (ranking): Los 10 más vendidos en Móviles y accesorios · Amazon España (noviembre 2026)
+  - Imagen: https://pantoas13.github.io/trendpulseshop/pins/auto/2026-11-23-top-moviles-y-accesorios.png
+  - Lleva a: https://pantoas13.github.io/trendpulseshop/top/moviles-y-accesorios.html
+- 📄 Rankings al día: 45 categorías (catálogo del 15/11/2026)
+- 📰 Feed RSS: 9 pines publicados en https://pantoas13.github.io/trendpulseshop/feed.xml
+- 🔎 Revisión: 64 páginas y 1051 enlaces a Amazon comprobados
+- ✅ Todos los enlaces a Amazon llevan tu código de afiliado
+- ✅ Sin enlaces internos rotos
+- ⏭️ Mañana: ranking de Electrónica
+
 ## 22 de noviembre de 2026 · Jornada n.º 8
 
 - 📌 **Pin del día** (guia): Trabajar en Polonia: guía para latinos · Guía digital en español

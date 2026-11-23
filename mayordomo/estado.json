@@ -1,5 +1,5 @@
 {
- "jornadas": 8,
+ "jornadas": 9,
  "entradas": [
   {
    "tipo": "ranking",
@@ -96,6 +96,18 @@
    "n": 7,
    "id": "mayordomo-2026-11-22-trabajar-en-polonia-guia-para-latinos",
    "imagen": "pins/auto/2026-11-22-guia-trabajar-en-polonia.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Móviles y accesorios",
+   "titulo": "Los 10 más vendidos en Móviles y accesorios · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Móviles y accesorios en Amazon España: NEW'C Protector Pantalla para…, TOCOL Funda para iPhone 18 Pro, SanDisk 128GB Ultra Go Tarjeta… y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #movilesyaccesorios",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/moviles-y-accesorios.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-23",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/moviles-y-accesorios.html",
+   "fecha": "2026-11-23",
+   "n": 8,
+   "id": "mayordomo-2026-11-23-moviles-y-accesorios",
+   "imagen": "pins/auto/2026-11-23-top-moviles-y-accesorios.png"
   }
  ]
 }
