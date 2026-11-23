@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TrendPulse Mayoristas · Proveedores al por mayor de todo el mundo</title>
+<meta name="description" content="Directorio en español de proveedores mayoristas, fabricantes y plataformas de dropshipping de Asia, Europa y Latinoamérica, con consejos para comprar sin estafas.">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="./">TrendPulse <span>Mayoristas</span></a>
+  <nav class="menu">
+    <a href="./" aria-current="page">Proveedores</a>
+    <a href="calculadora.html">Calculadora de importación</a>
+    <a href="guias/">Guías</a>
+    <a href="destacar.html">Para empresas</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Compra al por mayor directo a empresas de todo el mundo</h1>
+    <p>Proveedores mayoristas, fabricantes y plataformas de dropshipping de Asia, Europa y Latinoamérica, revisados uno a uno y explicados en español. Tú tratas directamente con la empresa.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+
+  <form class="filtros" onsubmit="return false">
+    <div class="q"><label class="sr" for="q">Buscar</label><input id="q" type="search" placeholder="Busca: ropa, cosmética, electrónica, China, España…"></div>
+    <div><label class="sr" for="region">Región</label><select id="region"><option value="">Todas las regiones</option></select></div>
+    <div><label class="sr" for="cat">Categoría</label><select id="cat"><option value="">Todas las categorías</option></select></div>
+    <div><label class="sr" for="tipo">Tipo</label><select id="tipo"><option value="">Todos los tipos</option></select></div>
+    <label class="check"><input type="checkbox" id="es"> Solo webs con versión en español</label>
+  </form>
+
+  <p class="resumen" id="resumen" aria-live="polite"></p>
+  <div class="grid" id="lista"></div>
+
+  <section class="bloque">
+    <h2>Antes de comprar al por mayor</h2>
+    <div class="tres">
+      <div><b>1. Paga dentro de la plataforma.</b> Si un proveedor te pide pagar por fuera (WhatsApp, cuenta personal, cripto) para darte "descuento", pierdes la protección al comprador.</div>
+      <div><b>2. Pide muestras.</b> Un pedido pequeño de prueba te ahorra problemas de calidad, tallas o plazos.</div>
+      <div><b>3. Calcula el coste final.</b> Al precio súmale envío, aranceles, IVA y gastos de gestión. <a href="calculadora.html">Usa la calculadora</a>.</div>
+    </div>
+  </section>
+
+  <p class="aviso">Información revisada el 23 de noviembre de 2026 a partir de las webs de cada empresa. Las condiciones (pedido mínimo, precios, envíos) pueden cambiar: confírmalas siempre en la web oficial. TrendPulse Mayoristas no vende productos ni interviene en los pagos; cada compra se hace directamente con el proveedor. Algunos enlaces pueden ser de afiliado: si compras, podemos recibir una comisión sin coste extra para ti.</p>
+</main>
+
+<footer><div class="wrap">TrendPulse Mayoristas · parte de <a href="../">TrendPulseShop</a> · <a href="../privacidad.html">Privacidad</a></div></footer>
+
+<script src="proveedores.js"></script>
+<script>
+(function(){
+  const P = window.PROVEEDORES || [];
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const uniq = a => [...new Set(a)].sort((x,y)=>x.localeCompare(y,'es'));
+  const fill = (sel, vals) => vals.forEach(v => { const o=document.createElement('option'); o.value=o.textContent=v; sel.appendChild(o); });
+  fill($('region'), uniq(P.map(p=>p.region)));
+  fill($('cat'), uniq(P.flatMap(p=>p.categorias)));
+  fill($('tipo'), uniq(P.map(p=>p.tipo)));
+  $('stats').innerHTML = `<span class="chip">${P.length} proveedores</span><span class="chip">${uniq(P.map(p=>p.pais)).length} países</span><span class="chip">${P.filter(p=>p.es).length} con web en español</span>`;
+
+  // Lee filtros de la URL (?cat=Belleza&region=Europa) para poder enlazar categorías desde guías y pines
+  const u = new URLSearchParams(location.search);
+  ['q','region','cat','tipo'].forEach(k => { if (u.get(k)) $(k).value = u.get(k); });
+
+  function pintar(){
+    const q = $('q').value.trim().toLowerCase(), r=$('region').value, c=$('cat').value, t=$('tipo').value, es=$('es').checked;
+    const res = P.filter(p => (!r||p.region===r) && (!c||p.categorias.includes(c)) && (!t||p.tipo===t) && (!es||p.es) &&
+      (!q || [p.nombre,p.pais,p.desc,p.tipo,p.region,...p.categorias].join(' ').toLowerCase().includes(q)));
+    $('resumen').textContent = res.length === P.length ? `Mostrando los ${res.length} proveedores` : `${res.length} de ${P.length} proveedores`;
+    $('lista').innerHTML = res.map(p => `
+      <article class="card">
+        <h3>${esc(p.nombre)}</h3>
+        <div class="meta"><span class="tag tipo">${esc(p.tipo)}</span><span class="tag">${esc(p.pais)}</span>${p.es?'<span class="tag">Web en español</span>':''}</div>
+        <p>${esc(p.desc)}</p>
+        <div class="dl">
+          <div><b>Pedido mínimo:</b> ${esc(p.minimo)}</div>
+          <div><b>Envía a:</b> ${esc(p.envia)}</div>
+          <div><b>Categorías:</b> ${esc(p.categorias.join(', '))}</div>
+        </div>
+        <div class="tip">💡 ${esc(p.consejo)}</div>
+        ${p.verificar?'<div class="aviso">Condiciones pendientes de confirmar en su web.</div>':''}
+        <a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener sponsored">Ir a ${esc(p.nombre)} →</a>
+      </article>`).join('') || '<p>No hay resultados con esos filtros.</p>';
+  }
+  ['q','region','cat','tipo','es'].forEach(id => $(id).addEventListener('input', pintar));
+  pintar();
+})();
+</script>
+</body>
+</html>

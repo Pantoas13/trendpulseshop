@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de importación · TrendPulse Mayoristas</title>
+<meta name="description" content="Calcula cuánto te cuesta de verdad un producto importado: precio, envío, aranceles, IVA y gastos de gestión, y si te deja margen al revenderlo.">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="./">TrendPulse <span>Mayoristas</span></a>
+  <nav class="menu">
+    <a href="./">Proveedores</a>
+    <a href="calculadora.html" aria-current="page">Calculadora de importación</a>
+    <a href="guias/">Guías</a>
+    <a href="destacar.html">Para empresas</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Calculadora de importación</h1>
+    <p>¿Cuánto te cuesta de verdad cada unidad cuando llega a tu casa? Mete los datos de tu pedido y mira si te queda margen al revenderlo.</p>
+  </div>
+
+  <section class="bloque">
+    <form class="calc" id="f" onsubmit="return false">
+      <label>País de destino
+        <select id="pais">
+          <option value="ES|21|ue">España (IVA 21 %)</option>
+          <option value="PL|23|ue">Polonia (IVA 23 %)</option>
+          <option value="DE|19|ue">Alemania (IVA 19 %)</option>
+          <option value="FR|20|ue">Francia (IVA 20 %)</option>
+          <option value="IT|22|ue">Italia (IVA 22 %)</option>
+          <option value="MX|16|la">México (IVA 16 %)</option>
+          <option value="CO|19|la">Colombia (IVA 19 %)</option>
+          <option value="CL|19|la">Chile (IVA 19 %)</option>
+          <option value="AR|21|la">Argentina (IVA 21 %)</option>
+          <option value="PE|18|la">Perú (IGV 18 %)</option>
+          <option value="OT|0|ot">Otro país</option>
+        </select>
+      </label>
+      <label>IVA de importación (%) <small>Se rellena solo; cámbialo si tu producto tiene un tipo reducido.</small>
+        <input id="iva" type="number" min="0" step="0.1" value="21"></label>
+      <label>Precio por unidad <small>En la moneda que uses en toda la calculadora.</small>
+        <input id="precio" type="number" min="0" step="0.01" value="4"></label>
+      <label>Unidades
+        <input id="uds" type="number" min="1" step="1" value="50"></label>
+      <label>Envío total del pedido
+        <input id="envio" type="number" min="0" step="0.01" value="40"></label>
+      <label>Arancel (%) <small>Depende del código del producto. En la UE se consulta en TARIC.</small>
+        <input id="arancel" type="number" min="0" step="0.1" value="0"></label>
+      <label>Gastos de gestión del transportista <small>Lo que cobre la empresa de envío por hacer la aduana (pregúntaselo).</small>
+        <input id="gestion" type="number" min="0" step="0.01" value="0"></label>
+      <label>Tu precio de venta por unidad <small>Opcional, para calcular el margen.</small>
+        <input id="venta" type="number" min="0" step="0.01" value="12"></label>
+
+      <div id="ue" style="grid-column:1/-1;display:grid;gap:8px">
+        <label class="check" style="font-weight:400"><input type="checkbox" id="fijo"> Envío de hasta 150 € de fuera de la UE: aplicar el arancel fijo de 3 € por categoría de producto (desde el 1-7-2026) en lugar del arancel en %</label>
+        <label class="check" style="font-weight:400"><input type="checkbox" id="tasa"> Venta a distancia desde fuera de la UE: sumar la tasa de gestión de la UE de 2 € por categoría (desde el 1-11-2026)</label>
+        <label>Número de categorías distintas de producto en el paquete <small>Ejemplo: 5 camisetas iguales = 1 categoría; camisetas y relojes = 2.</small>
+          <input id="lineas" type="number" min="1" step="1" value="1"></label>
+      </div>
+      <p id="la" class="aviso" style="grid-column:1/-1;display:none">En Latinoamérica las reglas cambian a menudo: en Chile las compras de hasta 500 USD pagan IVA en la plataforma; en México los envíos por mensajería pueden pagar una tasa global (del 33,5 % en el caso general, menor desde EE. UU. y Canadá); en Colombia los envíos postales de hasta 200 USD no pagan arancel. Pon el arancel o la tasa que te indique tu aduana o tu transportista.</p>
+    </form>
+
+    <div class="res" id="res"></div>
+  </section>
+
+  <section class="bloque art">
+    <h2>Cómo se calcula</h2>
+    <ul>
+      <li><b>Valor en aduana</b> = precio × unidades + envío.</li>
+      <li><b>Arancel</b> = valor en aduana × % de arancel (o 3 € por categoría si marcas la casilla de envíos de hasta 150 € a la UE).</li>
+      <li><b>IVA de importación</b> = (valor en aduana + arancel) × % de IVA. Desde 2021, en la UE todas las importaciones pagan IVA.</li>
+      <li><b>Coste final</b> = valor en aduana + arancel + IVA + tasas + gastos de gestión.</li>
+    </ul>
+    <p class="aviso">Es una estimación orientativa, no asesoramiento fiscal ni aduanero. Si compras como empresa o autónomo, normalmente puedes recuperar el IVA; en ese caso tu coste real es el que aparece "sin IVA". Fuentes: Consejo de la UE y Comisión Europea (arancel de 3 €), Correos y Revenue Irlanda (tasa de gestión de 2 €), Agencia Tributaria (IVA de importación), aduanas de Chile, DIAN (Colombia). Revisado el 23-11-2026.</p>
+  </section>
+</main>
+
+<footer><div class="wrap">TrendPulse Mayoristas · parte de <a href="../">TrendPulseShop</a> · <a href="guias/">Guías de importación</a></div></footer>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const n = id => Math.max(0, parseFloat($(id).value) || 0);
+  const f = v => v.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2});
+  function zona(){
+    const [, iva, z] = $('pais').value.split('|');
+    $('iva').value = iva;
+    $('ue').style.display = z === 'ue' ? 'grid' : 'none';
+    $('la').style.display = z === 'la' ? 'block' : 'none';
+    if (z !== 'ue') { $('fijo').checked = false; $('tasa').checked = false; }
+    calc();
+  }
+  function calc(){
+    const uds = Math.max(1, Math.round(n('uds')));
+    const valor = n('precio') * uds + n('envio');
+    const lineas = Math.max(1, Math.round(n('lineas')));
+    const usaFijo = $('fijo').checked && valor <= 150;
+    const arancel = usaFijo ? 3 * lineas : valor * n('arancel') / 100;
+    const iva = (valor + arancel) * n('iva') / 100;
+    const tasa = $('tasa').checked ? 2 * lineas : 0;
+    const gestion = n('gestion');
+    const total = valor + arancel + iva + tasa + gestion;
+    const sinIva = total - iva;
+    const unidad = total / uds, unidadSin = sinIva / uds;
+    const venta = n('venta');
+    const filas = [
+      ['Valor en aduana (productos + envío)', valor],
+      [usaFijo ? `Arancel fijo (3 € × ${lineas})` : `Arancel (${n('arancel')} %)`, arancel],
+      [`IVA de importación (${n('iva')} %)`, iva],
+      ...(tasa ? [[`Tasa de gestión UE (2 € × ${lineas})`, tasa]] : []),
+      ...(gestion ? [['Gastos de gestión del transportista', gestion]] : []),
+    ];
+    let html = filas.map(([t,v]) => `<div class="fila"><span>${t}</span><span>${f(v)}</span></div>`).join('');
+    html += `<div class="fila total"><span>Coste total del pedido</span><span>${f(total)}</span></div>`;
+    html += `<div class="fila"><span>Coste por unidad (con IVA)</span><b>${f(unidad)}</b></div>`;
+    html += `<div class="fila"><span>Coste por unidad sin IVA (si lo recuperas como empresa)</span><span>${f(unidadSin)}</span></div>`;
+    if (venta > 0) {
+      const margen = venta - unidad, pct = margen / venta * 100;
+      const cls = pct >= 40 ? 'ok' : (pct >= 15 ? '' : 'mal');
+      const nota = pct >= 40 ? 'Buen margen' : (pct >= 15 ? 'Margen justo: cuidado con comisiones y anuncios' : 'No sale a cuenta con este precio');
+      html += `<div class="fila"><span>Ganancia por unidad vendida a ${f(venta)}</span><span class="${cls}">${f(margen)} (${pct.toFixed(0)} %)</span></div>`;
+      html += `<div class="fila"><span>Valoración</span><span class="${cls}">${nota}</span></div>`;
+    }
+    if ($('fijo').checked && !usaFijo) html = '<p class="tip">El arancel fijo de 3 € solo vale para envíos de hasta 150 €. Tu pedido vale más, así que se usa el arancel en %.</p>' + html;
+    $('res').innerHTML = html;
+  }
+  $('pais').addEventListener('change', zona);
+  document.querySelectorAll('#f input').forEach(el => el.addEventListener('input', calc));
+  zona();
+})();
+</script>
+</body>
+</html>
