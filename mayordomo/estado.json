@@ -1,5 +1,5 @@
 {
- "jornadas": 9,
+ "jornadas": 10,
  "entradas": [
   {
    "tipo": "ranking",
@@ -108,6 +108,18 @@
    "n": 8,
    "id": "mayordomo-2026-11-23-moviles-y-accesorios",
    "imagen": "pins/auto/2026-11-23-top-moviles-y-accesorios.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Electrónica",
+   "titulo": "Los 10 más vendidos en Electrónica · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Electrónica en Amazon España: Amazon Basics - Paquete de 20…, Amazon Basics - Paquete de 40…, DURACELL 2032 Pilas de Botón de… y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #electronica",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/electronica.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-24",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/electronica.html",
+   "fecha": "2026-11-24",
+   "n": 9,
+   "id": "mayordomo-2026-11-24-electronica",
+   "imagen": "pins/auto/2026-11-24-top-electronica.png"
   }
  ]
 }
