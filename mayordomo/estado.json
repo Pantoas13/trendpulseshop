@@ -1,5 +1,5 @@
 {
- "jornadas": 10,
+ "jornadas": 11,
  "entradas": [
   {
    "tipo": "ranking",
@@ -120,6 +120,18 @@
    "n": 9,
    "id": "mayordomo-2026-11-24-electronica",
    "imagen": "pins/auto/2026-11-24-top-electronica.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Deporte",
+   "titulo": "Los 10 más vendidos en Deporte · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Deporte en Amazon España: Camping Gas Portatil con adaptador…, Amazon Basics Par de mancuernas de…, Campingaz Camp Bistro 3 Grill… y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #deporte",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/deporte.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-25",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/deporte.html",
+   "fecha": "2026-11-25",
+   "n": 10,
+   "id": "mayordomo-2026-11-25-deporte",
+   "imagen": "pins/auto/2026-11-25-top-deporte.png"
   }
  ]
 }

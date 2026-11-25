@@ -2,6 +2,18 @@
 
 Lo que hizo cada día, lo más reciente arriba.
 
+## 25 de noviembre de 2026 · Jornada n.º 11
+
+- 📌 **Pin del día** (ranking): Los 10 más vendidos en Deporte · Amazon España (noviembre 2026)
+  - Imagen: https://pantoas13.github.io/trendpulseshop/pins/auto/2026-11-25-top-deporte.png
+  - Lleva a: https://pantoas13.github.io/trendpulseshop/top/deporte.html
+- 📄 Rankings al día: 45 categorías (catálogo del 15/11/2026)
+- 📰 Feed RSS: 11 pines publicados en https://pantoas13.github.io/trendpulseshop/feed.xml
+- 🔎 Revisión: 65 páginas y 1063 enlaces a Amazon comprobados
+- ✅ Todos los enlaces a Amazon llevan tu código de afiliado
+- ✅ Sin enlaces internos rotos
+- ⏭️ Mañana: guía «Finanzas Personales Sin Humo»
+
 ## 24 de noviembre de 2026 · Jornada n.º 10
 
 - 📌 **Pin del día** (ranking): Los 10 más vendidos en Electrónica · Amazon España (noviembre 2026)
