@@ -38,7 +38,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 TAG = "trendpulsesho-21"
 BASE = "https://pantoas13.github.io/trendpulseshop/"
 NETLIFY = "https://trendpulseshop-es.netlify.app/"
-MARCA = "CompraFaro"
+MARCA = "TrendPulseShop"
 CLAVE_INDEXNOW = "1ffa39a9d60bb4af3ddbba97ff9d9ecf"
 
 CATALOGO = ROOT / "redesign" / "catalog.json"
@@ -436,7 +436,7 @@ def revisar_web():
 
 def responde(url):
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "MayordomoCompraFaro/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": "MayordomoTrendPulseShop/1.0"})
         with urllib.request.urlopen(req, timeout=25) as r:
             return r.status, r.read(400000).decode("utf-8", "ignore")
     except urllib.error.HTTPError as err:

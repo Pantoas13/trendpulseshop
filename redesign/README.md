@@ -1,4 +1,4 @@
-# CompraFaro
+# TrendPulseShop
 
 Portada pública renovada y copia en /redesign/. Identificador de afiliado conservado: trendpulsesho-21. El dominio se mantiene.
 

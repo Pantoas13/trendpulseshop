@@ -11,8 +11,8 @@ for(const anchor of document.querySelectorAll('a[href]')){
 const normalize=text=>String(text).toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
 const state={products:[],category:'Todas',query:'',shown:24,sort:'recommended',savedOnly:false};
 let saved=new Set();
-try { const stored=JSON.parse(localStorage.getItem('comprafaro-saved')||'[]'); if(Array.isArray(stored)) saved=new Set(stored.filter(x=>typeof x==='string')); } catch {}
-function updateSaved(){ $('#saved-count').textContent=saved.size; try{localStorage.setItem('comprafaro-saved',JSON.stringify([...saved]));}catch{} }
+try { const stored=JSON.parse(localStorage.getItem('trendpulseshop-saved')||'[]'); if(Array.isArray(stored)) saved=new Set(stored.filter(x=>typeof x==='string')); } catch {}
+function updateSaved(){ $('#saved-count').textContent=saved.size; try{localStorage.setItem('trendpulseshop-saved',JSON.stringify([...saved]));}catch{} }
 function imageURL(value){
   try { const url=new URL(value); return url.protocol==='https:'&&(['m.media-amazon.com','images-eu.ssl-images-amazon.com','images-na.ssl-images-amazon.com'].includes(url.hostname))?url.href:null; }catch{return null;}
 }
