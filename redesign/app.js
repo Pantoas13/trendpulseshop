@@ -23,12 +23,40 @@ function matching(){
  if(state.sort==='title') products.sort((a,b)=>a.title.localeCompare(b.title,'es'));
  return products;
 }
+
+/* Ilustraciones propias por categoría (sin fotos de Amazon ni de terceros) */
+const ART_ICONS={
+ audio:'<path d="M14 34v-6a18 18 0 0 1 36 0v6" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><rect x="10" y="32" width="10" height="18" rx="5" fill="#fff"/><rect x="44" y="32" width="10" height="18" rx="5" fill="#fff"/>',
+ pc:'<rect x="12" y="14" width="40" height="27" rx="3" fill="none" stroke="#fff" stroke-width="4"/><path d="M6 48h52l-5 5H11z" fill="#fff"/>',
+ phone:'<rect x="21" y="8" width="22" height="48" rx="5" fill="none" stroke="#fff" stroke-width="4"/><circle cx="32" cy="48" r="2.5" fill="#fff"/>',
+ tv:'<rect x="8" y="14" width="48" height="31" rx="3" fill="none" stroke="#fff" stroke-width="4"/><path d="M22 54h20M32 45v9" stroke="#fff" stroke-width="4" stroke-linecap="round"/>',
+ home:'<path d="M8 30 32 10l24 20" fill="none" stroke="#fff" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M15 28v26h34V28" fill="none" stroke="#fff" stroke-width="4.5" stroke-linejoin="round"/><rect x="27" y="38" width="10" height="16" fill="#fff"/>',
+ bulb:'<path d="M32 8a16 16 0 0 0-9 29c2 2 3 4 3 7h12c0-3 1-5 3-7A16 16 0 0 0 32 8z" fill="none" stroke="#fff" stroke-width="4"/><path d="M26 50h12M28 56h8" stroke="#fff" stroke-width="4" stroke-linecap="round"/>',
+ game:'<rect x="6" y="20" width="52" height="26" rx="13" fill="none" stroke="#fff" stroke-width="4"/><path d="M19 28v10M14 33h10" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="43" cy="30" r="3" fill="#fff"/><circle cx="49" cy="36" r="3" fill="#fff"/>',
+ car:'<path d="M8 38l5-14h38l5 14v10H8z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><circle cx="19" cy="48" r="5" fill="#fff"/><circle cx="45" cy="48" r="5" fill="#fff"/>',
+ ball:'<circle cx="32" cy="32" r="22" fill="none" stroke="#fff" stroke-width="4"/><path d="M32 10v44M10 32h44M16 16c8 8 8 24 0 32M48 16c-8 8-8 24 0 32" fill="none" stroke="#fff" stroke-width="3"/>',
+ book:'<path d="M8 14h20a4 4 0 0 1 4 4v34a4 4 0 0 0-4-4H8zM56 14H36a4 4 0 0 0-4 4v34a4 4 0 0 1 4-4h20z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>',
+ heart:'<path d="M32 54C10 38 8 24 16 17c6-5 13-3 16 3 3-6 10-8 16-3 8 7 6 21-16 37z" fill="none" stroke="#fff" stroke-width="4.5" stroke-linejoin="round"/>',
+ paw:'<ellipse cx="32" cy="42" rx="12" ry="10" fill="#fff"/><circle cx="16" cy="28" r="5" fill="#fff"/><circle cx="26" cy="19" r="5" fill="#fff"/><circle cx="38" cy="19" r="5" fill="#fff"/><circle cx="48" cy="28" r="5" fill="#fff"/>',
+ tool:'<path d="M14 50 40 24" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M38 10a12 12 0 0 0-8 15l9 9a12 12 0 0 0 15-8l-8 3-6-6 3-8z" fill="#fff"/>',
+ bag:'<path d="M12 22h40l-3 32H15z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M22 22v-4a10 10 0 0 1 20 0v4" fill="none" stroke="#fff" stroke-width="4"/>',
+ note:'<path d="M24 46V14l26-6v32" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><circle cx="18" cy="46" r="7" fill="#fff"/><circle cx="44" cy="40" r="7" fill="#fff"/>',
+ leaf:'<path d="M12 52C10 28 24 10 54 10c0 28-14 42-34 42" fill="none" stroke="#fff" stroke-width="4.5" stroke-linejoin="round"/><path d="M12 52 36 28" stroke="#fff" stroke-width="4" stroke-linecap="round"/>',
+ cam:'<path d="M8 22h12l4-6h16l4 6h12v32H8z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><circle cx="32" cy="37" r="9" fill="none" stroke="#fff" stroke-width="4"/>',
+ box:'<path d="M8 20 32 8l24 12v26L32 58 8 46z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M8 20l24 12 24-12M32 32v26" fill="none" stroke="#fff" stroke-width="4"/>'
+};
+const ART_MAP={'Alimentación':['leaf','#1f8a4c'],'Bebé':['heart','#e0709a'],'Belleza':['heart','#b94fa0'],'Bricolaje':['tool','#c2661a'],'Coche y moto':['car','#2d4a7a'],'Deporte':['ball','#d4552b'],'Dispositivos Amazon':['box','#1f6fb5'],'Electrónica':['phone','#003cff'],'Electrodomésticos':['home','#2f7d86'],'Hogar y cocina':['home','#a86a3a'],'Iluminación':['bulb','#d49a1a'],'Informática':['pc','#4a4fd4'],'Instrumentos musicales':['note','#7a3fb5'],'Jardín':['leaf','#3f8f2f'],'Juguetes':['game','#e0562b'],'Moda':['bag','#c23a6a'],'Oficina':['pc','#4f6b8a'],'Mascotas':['paw','#a5682d'],'Salud':['heart','#1f9a8a'],'Videojuegos':['game','#5b3fd4'],'Libros':['book','#8a4f2f'],'Móviles y accesorios':['phone','#1f5fd4'],'Auriculares y audio portátil':['audio','#003cff'],'Audio y Hi-Fi':['audio','#5a3fb5'],'TV y home cinema':['tv','#1f3a8a'],'Fotografía y vídeo':['cam','#3a3f4a'],'Electrónica para coche':['car','#3a5a7a'],'Pilas y cargadores':['bulb','#c27a1a'],'Portátiles':['pc','#003cff'],'Tablets':['phone','#2f6fd4'],'Monitores':['tv','#2a4fb5'],'Componentes de PC':['pc','#5a5fd4'],'Almacenamiento':['box','#4a6a8a'],'Redes y wifi':['bulb','#1f7ab5'],'Impresoras':['box','#6a6f7a'],'Accesorios de informática':['pc','#3f6fa5'],'Ordenadores de sobremesa':['pc','#3a3fb5'],'Reacondicionados':['box','#2f8a5a'],'Software':['pc','#5a4fd4'],'Grandes electrodomésticos':['home','#2a7a8a'],'Industria y ciencia':['tool','#5a6a7a'],'Películas y series':['tv','#8a2f4a'],'CD y vinilos':['note','#4a3f6a'],'Handmade':['heart','#b5683a'],'eBooks Kindle':['book','#1f6fb5']};
+function categoryArt(category){
+ const m=ART_MAP[category]||['box','#003cff'];
+ const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true"><rect width="64" height="64" rx="12" fill="'+m[1]+'"/>'+ART_ICONS[m[0]]+'</svg>';
+ return 'data:image/svg+xml;utf8,'+encodeURIComponent(svg);
+}
 function makeCard(product){
  const card=document.createElement('article');card.className='card';
  const href='https://www.amazon.es/dp/'+encodeURIComponent(product.asin)+'?tag=trendpulsesho-21';
  const picture=document.createElement('a');picture.className='picture';picture.href=href;picture.target='_blank';picture.rel='sponsored noopener';picture.setAttribute('aria-label','Ver fotos de '+product.title+' en Amazon');
  const fallback=document.createElement('span');fallback.className='photo-placeholder';
- const icon=document.createElement('span');icon.textContent='▧';icon.setAttribute('aria-hidden','true');const note=document.createElement('span');note.textContent='Ver foto en Amazon →';fallback.append(icon,note);picture.append(fallback);
+ const icon=document.createElement('img');icon.src=categoryArt(product.category);icon.alt='';icon.width=96;icon.height=96;icon.className='cat-art';icon.setAttribute('aria-hidden','true');const note=document.createElement('span');note.textContent='Ver foto real en Amazon →';fallback.append(icon,note);picture.append(fallback);
  const src=imageURL(product.img);
  if(src){ const img=document.createElement('img');img.src=src;img.alt=product.title;img.loading='lazy';img.width=400;img.height=300;img.addEventListener('load',()=>{fallback.hidden=true;});img.addEventListener('error',()=>{img.remove();fallback.hidden=false;});picture.append(img); }
  const favorite=document.createElement('button');favorite.className='favorite';favorite.textContent=saved.has(product.asin)?'♥':'♡';favorite.setAttribute('aria-pressed',String(saved.has(product.asin)));favorite.setAttribute('aria-label','Guardar '+product.title);favorite.addEventListener('click',()=>{saved.has(product.asin)?saved.delete(product.asin):saved.add(product.asin);updateSaved();render();});
