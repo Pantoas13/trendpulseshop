@@ -1,5 +1,5 @@
 {
- "jornadas": 11,
+ "jornadas": 12,
  "entradas": [
   {
    "tipo": "ranking",
@@ -132,6 +132,18 @@
    "n": 10,
    "id": "mayordomo-2026-11-25-deporte",
    "imagen": "pins/auto/2026-11-25-top-deporte.png"
+  },
+  {
+   "tipo": "guia",
+   "nombre": "Finanzas Personales Sin Humo",
+   "titulo": "Finanzas Personales Sin Humo · Guía digital en español",
+   "texto": "Ordena tu dinero en 90 días: presupuesto, deudas y ahorro. Guía digital en PDF de la colección CompraFaro: dinero. Material educativo, sin promesas de resultados. #guiadigital #aprender",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/guias.html?g=finanzas-sin-humo&utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-26",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/guias.html",
+   "fecha": "2026-11-26",
+   "n": 11,
+   "id": "mayordomo-2026-11-26-finanzas-personales-sin-humo",
+   "imagen": "pins/auto/2026-11-26-guia-finanzas-sin-humo.png"
   }
  ]
 }

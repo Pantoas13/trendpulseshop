@@ -2,6 +2,18 @@
 
 Lo que hizo cada día, lo más reciente arriba.
 
+## 26 de noviembre de 2026 · Jornada n.º 12
+
+- 📌 **Pin del día** (guia): Finanzas Personales Sin Humo · Guía digital en español
+  - Imagen: https://pantoas13.github.io/trendpulseshop/pins/auto/2026-11-26-guia-finanzas-sin-humo.png
+  - Lleva a: https://pantoas13.github.io/trendpulseshop/guias.html
+- 📄 Rankings al día: 45 categorías (catálogo del 15/11/2026)
+- 📰 Feed RSS: 12 pines publicados en https://pantoas13.github.io/trendpulseshop/feed.xml
+- 🔎 Revisión: 65 páginas y 1063 enlaces a Amazon comprobados
+- ✅ Todos los enlaces a Amazon llevan tu código de afiliado
+- ✅ Sin enlaces internos rotos
+- ⏭️ Mañana: ranking de Tablets
+
 ## 25 de noviembre de 2026 · Jornada n.º 11
 
 - 📌 **Pin del día** (ranking): Los 10 más vendidos en Deporte · Amazon España (noviembre 2026)
