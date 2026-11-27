@@ -1,5 +1,5 @@
 {
- "jornadas": 12,
+ "jornadas": 13,
  "entradas": [
   {
    "tipo": "ranking",
@@ -144,6 +144,18 @@
    "n": 11,
    "id": "mayordomo-2026-11-26-finanzas-personales-sin-humo",
    "imagen": "pins/auto/2026-11-26-guia-finanzas-sin-humo.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Tablets",
+   "titulo": "Los 10 más vendidos en Tablets · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Tablets en Amazon España: XIAOMI REDMI Pad 2 Tablet de 9,7”…, Apple iPad de 11 Pulgadas: Chip…, Lenovo Idea Tab y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #tablets",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/tablets.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-27",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/tablets.html",
+   "fecha": "2026-11-27",
+   "n": 12,
+   "id": "mayordomo-2026-11-27-tablets",
+   "imagen": "pins/auto/2026-11-27-top-tablets.png"
   }
  ]
 }
