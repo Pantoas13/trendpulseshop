@@ -1,0 +1,425 @@
+{
+ "auriculares": {
+  "nombre": "unos auriculares",
+  "titulo": "Wireless Headphones",
+  "autor": "Burst",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/wireless-headphones-EXCBJA3FFQ",
+  "openverse_id": "cc164a64-1297-4814-b148-7f6ad9e2dd94"
+ },
+ "smartwatch": {
+  "nombre": "un reloj inteligente",
+  "titulo": "Suunto 9 Peak on the wrist",
+  "autor": "ozfir",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/194647935@N05/51771797681",
+  "openverse_id": "b8e7d1fe-5ef7-44e8-b513-eaefce74d0f2"
+ },
+ "altavoz": {
+  "nombre": "un altavoz",
+  "titulo": "Free mini bluetooth speaker image",
+  "autor": null,
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.rawpixel.com/image/5919265/photo-image-white-background-phone-public-domain",
+  "openverse_id": "98592689-5cf3-4c6f-987e-0dbac740b340"
+ },
+ "powerbank": {
+  "nombre": "una batería externa",
+  "titulo": "Free phone charging power bank",
+  "autor": null,
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.rawpixel.com/image/5910321/image-background-phone-public-domain",
+  "openverse_id": "6db2b163-e7d2-4cf0-b02a-128bd49161a6"
+ },
+ "cargador": {
+  "nombre": "un cargador",
+  "titulo": "What's in My Bag 2025-06-13",
+  "autor": "Kainoki Kaede",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/54246145@N05/54586624723",
+  "openverse_id": "2fdc2d87-eb5d-4775-b884-25765402eec9"
+ },
+ "pilas": {
+  "nombre": "unas pilas",
+  "titulo": "SC 364505 - AA battery sets on shore near [illegible], Luzon, P.I., as destroyer off shore fires on Jap targets in the rear. 12 January, 1945.",
+  "autor": "Signal Corps Archive",
+  "licencia": "PDM 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "fuente": "https://www.flickr.com/photos/186360156@N02/52117814247",
+  "openverse_id": "50f47636-1edc-4bde-b37f-02b7a5331874"
+ },
+ "movil": {
+  "nombre": "un teléfono móvil",
+  "titulo": "Métro, masques et smartphones",
+  "autor": "besopha",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/26700188@N05/52069894981",
+  "openverse_id": "3fb7823a-0e3d-48fb-abec-286f50c6e21a"
+ },
+ "tablet": {
+  "nombre": "una tablet",
+  "titulo": "Tablet Computer",
+  "autor": "Birch Landing Home",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/tablet-computer-KCEVT4PCQ1",
+  "openverse_id": "4b8051ed-6ac7-46d2-b544-22093d836f5b"
+ },
+ "portatil": {
+  "nombre": "un portátil",
+  "titulo": "Mouse and Laptop on Desk",
+  "autor": null,
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.rawpixel.com/image/5967565/mouse-and-laptop-desk",
+  "openverse_id": "aa9587f7-c6c2-4846-83ca-868ee605b5da"
+ },
+ "pc": {
+  "nombre": "un ordenador de sobremesa",
+  "titulo": "Desktop Computer",
+  "autor": "Dave Meier",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/desktop-computer-B4145FFE64",
+  "openverse_id": "03a7ce75-6ff5-43b1-a384-540196465e3d"
+ },
+ "monitor": {
+  "nombre": "un monitor",
+  "titulo": "Coding Programming",
+  "autor": "Startup Stock Photos",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/coding-programming-SCC00WCQ3I",
+  "openverse_id": "bf214759-31c1-4b83-9f3d-e7a96c738931"
+ },
+ "raton": {
+  "nombre": "un ratón",
+  "titulo": "2024 (365 challenge No. 2) - Week 15 (mostly white) Day 1 - computer mouse",
+  "autor": "ambabheg",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/31518985@N04/53639425778",
+  "openverse_id": "5e2e3191-2c6b-44f8-98e2-284a25fc32e1"
+ },
+ "teclado": {
+  "nombre": "un teclado",
+  "titulo": "Mechanical keyboard",
+  "autor": "phithanhviet",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/99146016@N07/52309916271",
+  "openverse_id": "4c549a6a-695c-4ba7-b11a-1fec9952a9d3"
+ },
+ "almacenamiento": {
+  "nombre": "un disco de almacenamiento",
+  "titulo": "LG 그램 15Z980-003",
+  "autor": "LGEPR",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/32985045@N08/39006547362",
+  "openverse_id": "3d66a49a-5234-4534-8fb6-30c3c9fd4b46"
+ },
+ "router": {
+  "nombre": "un router",
+  "titulo": "broadcom-fxo-wifi-router-8_24956224150_o",
+  "autor": "M.Cristian - Ioan",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/92052795@N04/51318218849",
+  "openverse_id": "acce31d0-71fa-4295-ae0f-555c90f08d1d"
+ },
+ "tv": {
+  "nombre": "un televisor",
+  "titulo": "Interior Living",
+  "autor": "Jaros%u0142aw%20Ceborski",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/interior-living-6SMA09U7Y8",
+  "openverse_id": "39f62bc8-ff8a-4564-ab88-626269d0ff40"
+ },
+ "camara": {
+  "nombre": "una cámara",
+  "titulo": "Day trip with a camera club - probably in south-east Queensland - circa 1960s",
+  "autor": "Aussie~mobs",
+  "licencia": "PDM 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "fuente": "https://www.flickr.com/photos/70994841@N07/52379537653",
+  "openverse_id": "ac08e49e-5647-4e8f-a7d3-898787a1fe82"
+ },
+ "mando": {
+  "nombre": "un mando de videojuegos",
+  "titulo": "Game Controller",
+  "autor": "50Fish",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/game-controller-B3FJDNOAMI",
+  "openverse_id": "6277f67a-b258-4397-b617-36e88ebf7f87"
+ },
+ "consola": {
+  "nombre": "una consola",
+  "titulo": "square vector",
+  "autor": "eXploration Etoile",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/156182786@N06/51747653269",
+  "openverse_id": "14c9b9b1-44f5-416a-b5ae-86b6399d3e1d"
+ },
+ "cafetera": {
+  "nombre": "una cafetera",
+  "titulo": "Coffee Machine",
+  "autor": "nick.amoscato",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/91374488@N07/51896257433",
+  "openverse_id": "4bd17c2d-c5c3-497b-81b2-7ab885ddcdc6"
+ },
+ "cafe": {
+  "nombre": "café",
+  "titulo": "Coffee bean cup",
+  "autor": "jamesvincentjack",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.flickr.com/photos/192536886@N08/51142609494",
+  "openverse_id": "a0b1b2c8-7176-4835-84ae-6c7a8872998f"
+ },
+ "freidora": {
+  "nombre": "una freidora de aire",
+  "titulo": "Air fryer Panizzera Meat Co. pork apple breakfast sausage (after)",
+  "autor": "sarahstierch",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/7633518@N08/53004812098",
+  "openverse_id": "73dac7f9-9c97-405f-abee-ae9018f31566"
+ },
+ "aspirador": {
+  "nombre": "un aspirador",
+  "titulo": "Heard a vacuum cleaner",
+  "autor": "lumiegor",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/194545230@N04/52169635169",
+  "openverse_id": "b8d8c529-f6c5-493f-9de4-a81427059eb3"
+ },
+ "cocina": {
+  "nombre": "utensilios de cocina",
+  "titulo": "Display of crockery and kitchen utensils, [n.d.]",
+  "autor": "Coalfields Local History Association Inc.",
+  "licencia": "PDM 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "fuente": "https://www.flickr.com/photos/97885561@N07/51651673529",
+  "openverse_id": "5aba0619-0fa4-453d-8174-dffae6ffd2b3"
+ },
+ "iluminacion": {
+  "nombre": "una bombilla",
+  "titulo": "LED Light Bulb",
+  "autor": "Clint__Budd",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/58827557@N06/53745417116",
+  "openverse_id": "e8200bbc-79f0-40cb-9513-2dae5f3017c4"
+ },
+ "juguete": {
+  "nombre": "juguetes",
+  "titulo": "Colorful toys - claw machine",
+  "autor": "GeorgeTan#5",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.flickr.com/photos/198109102@N06/53455260353",
+  "openverse_id": "8ba95a6b-c359-4073-baec-359b4dbf732a"
+ },
+ "libro": {
+  "nombre": "libros",
+  "titulo": "Books Stacked",
+  "autor": "Candace McDaniel",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/books-stacked-W5VAXXV2RP",
+  "openverse_id": "fc0ed9f5-6feb-4226-9f80-2e907cd8748a"
+ },
+ "belleza": {
+  "nombre": "productos de belleza",
+  "titulo": "Bach skincare products, location unknown",
+  "autor": null,
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.rawpixel.com/image/6113768/photo-image-background-public-domain-doctor",
+  "openverse_id": "86108163-79b1-44ca-a759-0702e78d42ff"
+ },
+ "afeitado": {
+  "nombre": "una afeitadora",
+  "titulo": "Vintage Norelco Sportsman Battery Electric Shaver, Model SC7750, Made In Holland, Circa 1956",
+  "autor": "France1978",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/51764518@N02/54311524463",
+  "openverse_id": "4db067c4-48ba-4150-aced-75033982653b"
+ },
+ "deporte": {
+  "nombre": "material de deporte",
+  "titulo": "Fitness Equipment of Eugene",
+  "autor": "Rick Obst",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/46052415@N08/53448194307",
+  "openverse_id": "db4bb0f2-8a8c-4aea-854b-57757fcee164"
+ },
+ "mascotas": {
+  "nombre": "mascotas",
+  "titulo": "Dogs and cats livin' together.",
+  "autor": "young shanahan",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/14759783@N04/51815538480",
+  "openverse_id": "8fab19d1-7fd1-4986-ac41-8e265fbc041b"
+ },
+ "bebe": {
+  "nombre": "productos para bebé",
+  "titulo": "Wrinkled Soles & Feet In Baby Blue Polish",
+  "autor": "wrinkledgal",
+  "licencia": "PDM 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "fuente": "https://www.flickr.com/photos/184513163@N07/51834099145",
+  "openverse_id": "82b0e467-5ff8-4a8f-800c-ef4dc105d1ec"
+ },
+ "herramientas": {
+  "nombre": "herramientas",
+  "titulo": "No Power Tool Battery Standardization",
+  "autor": "cogdogblog",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.flickr.com/photos/37996646802@N01/51605280603",
+  "openverse_id": "3d8351a7-bf1d-451d-88f2-bf5e3ee22d11"
+ },
+ "coche": {
+  "nombre": "accesorios de coche",
+  "titulo": null,
+  "autor": null,
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.rawpixel.com/image/6051245/free-public-domain-cc0-photo",
+  "openverse_id": "57a8434d-8135-46f8-bb43-8f6724915098"
+ },
+ "leche": {
+  "nombre": "leche",
+  "titulo": "Two Glasses of Milk",
+  "autor": "Alabama Extension",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.flickr.com/photos/184594136@N08/52633675811",
+  "openverse_id": "6006c64f-6766-48ae-93b3-4181c2319ef6"
+ },
+ "cerveza": {
+  "nombre": "cerveza",
+  "titulo": "Beer Glass",
+  "autor": "Tim Savage",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/beer-glass-EWO2FJILM1",
+  "openverse_id": "0abb8944-f89c-466b-9fc1-b7bb9c07ea91"
+ },
+ "refresco": {
+  "nombre": "refrescos",
+  "titulo": "Alcohol & soft drink cans",
+  "autor": null,
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.rawpixel.com/image/6111981/photo-image-public-domain-leaf-snow",
+  "openverse_id": "de08f8c2-e6db-45f8-962d-4aafa00930d7"
+ },
+ "alimentacion": {
+  "nombre": "alimentos",
+  "titulo": "Presidente Supermarket Little Havana",
+  "autor": "Phillip Pessar",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/25955895@N03/54189368968",
+  "openverse_id": "b0587c43-32c8-439a-b054-484e5dad6420"
+ },
+ "oficina": {
+  "nombre": "material de oficina",
+  "titulo": "Man Guy",
+  "autor": "Filipp Kozachuk",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/man-guy-A7725B3C2F",
+  "openverse_id": "d83a3d8e-5d60-48c0-beea-8ad591024fe3"
+ },
+ "salud": {
+  "nombre": "productos de salud",
+  "titulo": "Health Care Heroes Poster Judging",
+  "autor": "MDGovpics",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/64018555@N03/51985645477",
+  "openverse_id": "bb1c6a0e-442e-413a-b4f0-ccd6ff2c0da3"
+ },
+ "moda": {
+  "nombre": "moda",
+  "titulo": "Fashion Accessories",
+  "autor": "Ylanite Koppens",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/fashion-accessories-JFR5ISZCFB",
+  "openverse_id": "8ba9b650-7da6-4e64-ad83-a45a5eb5fcba"
+ },
+ "jardin": {
+  "nombre": "jardín",
+  "titulo": "Gardening tools in use during spring maintenance with a focus on lawn care",
+  "autor": "nenadstojkovicart",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/202846129@N03/54597569374",
+  "openverse_id": "8111f571-b149-44a4-a943-755b7074ceca"
+ },
+ "vinilo": {
+  "nombre": "discos de música",
+  "titulo": "Vinyl Record",
+  "autor": "Skitter Photo",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/vinyl-record-0NOS06CDVI",
+  "openverse_id": "38818db6-0a34-4383-8cb5-493fc3a2f77e"
+ },
+ "pelicula": {
+  "nombre": "una película",
+  "titulo": "Minolta 16 II",
+  "autor": "Bernt Sønvisen",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/38144390@N04/52502592899",
+  "openverse_id": "f6e677c2-cd22-440f-a4af-14b1d56d83d5"
+ },
+ "software": {
+  "nombre": "programas de ordenador",
+  "titulo": "Computer Code",
+  "autor": "One Idea LLC",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/computer-code-AWXC4NOFZN",
+  "openverse_id": "3c928305-ee63-40a3-9ed9-7e54ce4bed62"
+ },
+ "regalo": {
+  "nombre": "un regalo",
+  "titulo": "Origami Boxes",
+  "autor": "~Bani~",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/14607766@N00/16973431495",
+  "openverse_id": "0dee8f4a-f000-46c5-aeeb-f2704067bf31"
+ },
+ "musica": {
+  "nombre": "instrumentos musicales",
+  "titulo": "Musical Instrument Museum",
+  "autor": "Roller Coaster Philosophy",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/32916425@N04/51766419978",
+  "openverse_id": "cfbffe6b-7b07-4d1c-9b0c-3ff096b97cf7"
+ }
+}
