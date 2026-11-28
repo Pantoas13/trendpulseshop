@@ -1,0 +1,176 @@
+/* TrendPulseShop · Sistema de diseño (28-11-2026)
+   Una sola capa común para todas las páginas: se carga la última, después de los estilos propios
+   de cada página, y unifica fuentes, colores, botones y tarjetas. Las reglas están en marca/DISENO.md.
+   Fuentes propias (SIL OFL): Bricolage Grotesque para titulares e Inter para texto. */
+
+@font-face{font-family:"Bricolage Grotesque";font-weight:700;font-display:swap;src:url(fuentes/bricolage-grotesque-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Bricolage Grotesque";font-weight:800;font-display:swap;src:url(fuentes/bricolage-grotesque-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:400;font-display:swap;src:url(fuentes/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;font-display:swap;src:url(fuentes/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;font-display:swap;src:url(fuentes/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:700;font-display:swap;src:url(fuentes/inter-latin-700-normal.woff2) format("woff2")}
+
+/* 1. Tokens: papel cálido, tinta casi negra, azul de marca para enlaces y naranja solo para "oferta". */
+:root,:root[data-theme="light"]{
+  --tp-bg:#F6F3EE;--tp-surface:#FFFFFF;--tp-ink:#15171C;--tp-muted:#5B6170;--tp-line:#E4DED3;--tp-soft:#EEE9E1;
+  --tp-brand:#0A3DFF;--tp-brand-ink:#FFFFFF;--tp-accent:#E8501E;--tp-accent-soft:#FDE8DF;
+  --tp-radius:16px;--tp-radius-sm:10px;
+  --tp-shadow:0 1px 2px rgba(21,23,28,.05),0 6px 20px rgba(21,23,28,.06);
+  --tp-shadow-hover:0 2px 4px rgba(21,23,28,.06),0 14px 32px rgba(21,23,28,.10);
+  --tp-head:"Bricolage Grotesque","Inter",system-ui,sans-serif;--tp-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  /* nombres antiguos de cada página, apuntando al sistema nuevo */
+  --bg:var(--tp-bg);--surface:var(--tp-surface);--ink:var(--tp-ink);--muted:var(--tp-muted);--line:var(--tp-line);--soft:var(--tp-soft);
+  --blue:var(--tp-brand);--cobalt:var(--tp-brand);--link:var(--tp-brand);--nav:var(--tp-ink);--accent:var(--tp-accent);
+  --btn:var(--tp-ink);--btn-b:var(--tp-ink);--btn-h:var(--tp-brand);--best:var(--tp-accent);--pick:var(--tp-accent-soft);--sel:var(--tp-accent-soft);
+  color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --tp-bg:#111215;--tp-surface:#1A1C21;--tp-ink:#F2EFE9;--tp-muted:#A6AAB4;--tp-line:#2C2F36;--tp-soft:#22252B;
+  --tp-brand:#7E9BFF;--tp-brand-ink:#0B0C0F;--tp-accent:#FF7A4D;--tp-accent-soft:#3A2219;
+  --tp-shadow:0 1px 2px rgba(0,0,0,.3);--tp-shadow-hover:0 10px 28px rgba(0,0,0,.45);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --tp-bg:#111215;--tp-surface:#1A1C21;--tp-ink:#F2EFE9;--tp-muted:#A6AAB4;--tp-line:#2C2F36;--tp-soft:#22252B;
+  --tp-brand:#7E9BFF;--tp-brand-ink:#0B0C0F;--tp-accent:#FF7A4D;--tp-accent-soft:#3A2219;
+  --tp-shadow:0 1px 2px rgba(0,0,0,.3);--tp-shadow-hover:0 10px 28px rgba(0,0,0,.45);color-scheme:dark}
+
+/* 2. Base */
+html body{background:var(--tp-bg);color:var(--tp-ink);font-family:var(--tp-body);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html body h1,html body h2,html body h3,html body .logo{font-family:var(--tp-head);color:var(--tp-ink)}
+html body h1{font-weight:800;letter-spacing:-.025em;line-height:1.04;text-wrap:balance}
+html body h2{font-weight:800;letter-spacing:-.02em;line-height:1.12;text-wrap:balance}
+html body h3{font-weight:700;letter-spacing:-.01em;line-height:1.25}
+html body p{text-wrap:pretty}
+html body .eyebrow,html body .tag{color:var(--tp-accent);background:none;padding:0;font:700 12px/1.2 var(--tp-body);letter-spacing:.14em;text-transform:uppercase}
+html body .lead,html body .hero p{color:var(--tp-muted)}
+html body a:focus-visible,html body button:focus-visible,html body input:focus-visible,html body select:focus-visible{outline:3px solid var(--tp-brand);outline-offset:3px}
+.ribbon{display:none}
+
+/* 3. Cabecera clara en todas las páginas (antes había cabeceras negras tipo Amazon en unas y blancas en otras) */
+html body > header{background:color-mix(in srgb,var(--tp-bg) 90%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);
+  color:var(--tp-ink);border-bottom:1px solid var(--tp-line)}
+html body > header a,html body > header .logo,html body > header nav a{color:var(--tp-ink)}
+html body > header .logo b{color:var(--tp-accent)}
+html body > header nav a:hover{color:var(--tp-brand)}
+.logo{letter-spacing:-.03em}
+.pulse,.logo span{background:var(--tp-ink);color:var(--tp-bg);border-radius:10px}
+
+/* 4. Botones: uno principal (tinta, se vuelve azul al pasar) y uno de texto. */
+html body .primary,html body .btn,html body .go,html body .product-link,html body .gold,html body .prime .pb{
+  background:var(--tp-ink);color:var(--tp-bg);border:1px solid var(--tp-ink);border-radius:999px;font:600 15px/1 var(--tp-body);
+  padding:13px 20px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+  transition:background-color .18s ease,border-color .18s ease,transform .18s ease}
+html body .primary:hover,html body .btn:hover,html body .go:hover,html body .product-link:hover,html body .gold:hover{background:var(--tp-brand);border-color:var(--tp-brand);color:var(--tp-brand-ink)}
+html body .primary:active,html body .btn:active,html body .go:active,html body .product-link:active{transform:translateY(1px) scale(.99)}
+html body .text-link{color:var(--tp-ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--tp-line);text-underline-offset:5px;text-decoration-thickness:2px}
+html body .text-link:hover{text-decoration-color:var(--tp-brand)}
+/* banda "Prime/oferta": antes amarilla Amazon, ahora en el color de oferta */
+html body .prime{background:var(--tp-accent-soft);color:var(--tp-ink);border-radius:var(--tp-radius);border:1px solid color-mix(in srgb,var(--tp-accent) 30%,transparent)}
+
+/* 5. Tarjetas: una sola familia (borde fino, radio 16, sombra suave, sube 2px al pasar). */
+html body .card,html body .item,html body .box,html body .tips,html body .pickbox,html body ol.rank li,html body .grid > a,html body .grid > li > a,
+html body .tablewrap,html body ul.more,html body .quick li{
+  background:var(--tp-surface);border:1px solid var(--tp-line);border-radius:var(--tp-radius);box-shadow:var(--tp-shadow)}
+html body .card,html body ol.rank li,html body .grid > a,html body .grid > li > a,html body .item{transition:transform .2s ease,box-shadow .2s ease}
+html body .card:hover,html body ol.rank li:hover,html body .grid > a:hover,html body .grid > li > a:hover,html body .item:hover{transform:translateY(-2px);box-shadow:var(--tp-shadow-hover)}
+html body .pickbox{border:2px solid var(--tp-accent);background:var(--tp-surface)}
+html body .badge{background:var(--tp-accent);color:#fff;border-radius:999px;font:700 11.5px/1 var(--tp-body);letter-spacing:.04em;padding:6px 10px}
+html body .num,html body ol.rank .n{background:var(--tp-soft);color:var(--tp-ink);font-family:var(--tp-head);font-weight:800}
+html body ol.rank li:nth-child(-n+3) .n{background:var(--tp-ink);color:var(--tp-bg)}
+html body .chips a,html body .others a{background:var(--tp-surface);border:1px solid var(--tp-line);border-radius:999px;font-weight:600;min-height:40px;display:inline-flex;align-items:center}
+html body .chips a:hover,html body .others a:hover{border-color:var(--tp-ink);color:var(--tp-ink)}
+html body .disc,html body .disclosure,html body .note,html body .meta{color:var(--tp-muted)}
+html body .disc{background:transparent;border:0;border-left:3px solid var(--tp-line);border-radius:0;padding:4px 0 4px 14px}
+html body table{font-variant-numeric:tabular-nums}
+html body footer{background:transparent;border-top:1px solid var(--tp-line);color:var(--tp-muted)}
+html body footer a{color:var(--tp-ink)}
+
+/* 6. Movimiento suave y respetuoso */
+@media (prefers-reduced-motion:reduce){html body *{transition:none!important;animation:none!important}}
+
+/* 7. Móvil: botones a todo el ancho dentro de las tarjetas, zonas de toque de 44px */
+@media (max-width:560px){
+  html body .item .btn,html body ol.rank .go,html body .card .product-link{width:100%}
+  html body h1{font-size:clamp(30px,8.4vw,40px)}
+}
+
+/* 8. Portada */
+html body .hero{background:var(--tp-bg)}
+html body .hero-grid{min-height:min(560px,calc(100svh - 150px));gap:48px}
+html body .hero h1{font-size:clamp(40px,5.4vw,76px);margin:0 0 20px}
+html body .hero .lead{font-size:clamp(17px,1.4vw,20px);max-width:34ch}
+html body figure img{mix-blend-mode:normal;border-radius:24px;box-shadow:var(--tp-shadow)}
+html body figcaption{background:color-mix(in srgb,var(--tp-surface) 85%,transparent);border-radius:999px;padding:3px 9px;right:12px;bottom:12px;color:var(--tp-muted)}
+html body .disclosure{font-size:12px}
+html body .section-head{margin:0 0 20px}
+html body .section-head h2,html body .categories h2,html body #catalogo h2{font-size:clamp(28px,3vw,40px);font-family:var(--tp-head)}
+/* guías de regalo: tarjetas tipográficas, sin fotos ni degradados */
+.guides{margin:24px 0 56px}
+.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.guide-card{position:relative;display:flex;flex-direction:column;gap:8px;min-height:190px;padding:24px 24px 56px;background:var(--tp-surface);
+  border:1px solid var(--tp-line);border-radius:var(--tp-radius);box-shadow:var(--tp-shadow);text-decoration:none;color:var(--tp-ink);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.guide-card:hover{transform:translateY(-2px);box-shadow:var(--tp-shadow-hover);border-color:var(--tp-ink)}
+.guide-card:first-child{background:var(--tp-ink);color:var(--tp-bg);border-color:var(--tp-ink)}
+.guide-card:first-child h3,.guide-card:first-child p{color:var(--tp-bg)}
+.guide-card h3{font-size:24px;margin:0}
+.guide-card p{margin:0;color:var(--tp-muted);font-size:15px;line-height:1.5}
+.guide-count{font:700 12px/1 var(--tp-body);letter-spacing:.12em;text-transform:uppercase;color:var(--tp-accent)}
+.guide-go{position:absolute;left:24px;bottom:20px;font-size:22px;transition:transform .2s ease}
+.guide-card:hover .guide-go{transform:translateX(4px)}
+/* campaña: banda de color de oferta, no azul marino con dorado */
+html body .campaign{background:var(--tp-accent-soft);color:var(--tp-ink);border:1px solid color-mix(in srgb,var(--tp-accent) 25%,transparent);border-radius:var(--tp-radius);padding:28px 32px}
+html body .campaign h2{font-family:var(--tp-head);font-size:clamp(22px,2.2vw,28px);color:var(--tp-ink)}
+html body .campaign p{color:var(--tp-muted)}
+html body .campaign .badge{font-size:12px}
+/* categorías con iconos de trazo (antes eran símbolos de teclado) */
+html body .category-grid a{flex-direction:column;gap:10px;padding:20px 8px;border-radius:var(--tp-radius);font-weight:600;color:var(--tp-ink);box-shadow:var(--tp-shadow);transition:transform .2s ease,border-color .2s ease}
+html body .category-grid a:hover{border-color:var(--tp-ink)}
+html body .category-grid svg{color:var(--tp-ink)}
+/* filtros */
+html body .filters button{min-height:40px;font-size:13px;font-weight:600;color:var(--tp-ink)}
+html body .filters button[aria-pressed=true]{background:var(--tp-ink);border-color:var(--tp-ink);color:var(--tp-bg)}
+html body select{border-radius:var(--tp-radius-sm);font-size:14px;min-height:40px}
+/* tarjeta de producto: sin foto, un bloque de color de su categoría con icono y marca */
+html body .card{border-radius:var(--tp-radius);overflow:hidden}
+html body .card .picture{background:var(--tp-surface);padding:0;aspect-ratio:4/3}
+html body .photo-placeholder{position:absolute;inset:10px;border-radius:12px;justify-content:center;gap:10px;
+  background:color-mix(in srgb,var(--tint,#0A3DFF) 11%,var(--tp-surface));color:color-mix(in srgb,var(--tint,#0A3DFF) 75%,var(--tp-ink))}
+html body .photo-placeholder .cat-art{width:56px!important;height:56px!important;border-radius:14px;box-shadow:none}
+html body .ph-brand{font:800 clamp(16px,1.6vw,20px)/1.1 var(--tp-head);letter-spacing:-.01em;max-width:90%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html body .card-body{padding:16px 18px 18px}
+html body .cat{color:var(--tp-muted);font-size:11px;letter-spacing:.1em}
+html body .card h3{font:600 15px/1.45 var(--tp-body);color:var(--tp-ink)}
+html body .card .product-link{border-radius:999px;font-size:14px;padding:11px;color:var(--tp-bg)}
+html body .card .product-link:hover{color:var(--tp-brand-ink)}
+html body .favorite{border-color:var(--tp-line);color:var(--tp-ink);background:color-mix(in srgb,var(--tp-surface) 92%,transparent);width:40px;height:40px}
+html body .how h2{font-family:var(--tp-head);font-size:clamp(28px,3vw,40px)}
+html body .how li::marker{color:var(--tp-accent)}
+@media (max-width:1050px){.guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:650px){
+  html body .hero-grid{min-height:0;gap:20px}
+  html body .hero h1{font-size:clamp(36px,10vw,46px)}
+  .guide-grid{grid-template-columns:1fr;gap:12px}
+  .guide-card{min-height:0;padding:20px 20px 52px}
+  html body .card .picture{aspect-ratio:1}
+  html body .photo-placeholder .cat-art{width:44px!important;height:44px!important}
+  html body .card-body{padding:12px}
+  html body .card h3{font-size:13px}
+  html body .card .product-link{font-size:13px;padding:10px 8px}
+}
+
+/* 9. Aviso de país (geo-amazon.js): franja fina en el color del sistema */
+html body #tp-geo{background:var(--tp-soft);color:var(--tp-ink);font:13px/1.45 var(--tp-body);padding:8px 16px;border-bottom:1px solid var(--tp-line)}
+html body #tp-geo b{color:var(--tp-ink)}
+html body #tp-geo select{border:1px solid var(--tp-line);background:var(--tp-surface);color:var(--tp-ink);min-height:32px;border-radius:8px}
+html body #tp-geo button{color:var(--tp-muted);min-width:32px;min-height:32px}
+
+/* 10. Guías de regalo antiguas (amigo invisible, menos de 30 €): tarjetas .g */
+html body .g{background:var(--tp-surface);border:1px solid var(--tp-line);border-radius:var(--tp-radius);box-shadow:var(--tp-shadow);color:var(--tp-ink);transition:transform .2s ease,box-shadow .2s ease}
+html body .g:hover{transform:translateY(-2px);box-shadow:var(--tp-shadow-hover)}
+html body .g .ph{background:var(--tp-soft);border-radius:calc(var(--tp-radius) - 1px) calc(var(--tp-radius) - 1px) 0 0}
+html body .g b{color:var(--tp-ink);font:700 17px/1.3 var(--tp-head)}
+html body .g .tg{color:var(--tp-accent);letter-spacing:.1em;font-size:11.5px}
+html body .g .d{color:var(--tp-muted)}
+html body .g .p{font-family:var(--tp-head);font-variant-numeric:tabular-nums}
+html body .g .btn{color:var(--tp-bg);background:var(--tp-ink);border-color:var(--tp-ink)}
+html body .g:hover .btn{background:var(--tp-brand);border-color:var(--tp-brand);color:var(--tp-brand-ink)}
+html body .tablewrap a,html body .crumb a{color:var(--tp-ink);text-underline-offset:3px}
