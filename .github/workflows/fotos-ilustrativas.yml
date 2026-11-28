@@ -1,0 +1,52 @@
+name: Fotos ilustrativas
+
+# Busca en Openverse una foto con licencia libre (CC0, dominio público o CC BY) por cada tipo de producto
+# y la guarda en img/tipos/. Solo descarga los tipos que aún no tienen foto. No usa fotos de Amazon.
+# Al terminar, "Publicar en Netlify" se lanza solo.
+
+on:
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: "Tipos que hay que volver a buscar, separados por espacios (ej.: cafe tv)"
+        type: string
+        default: ""
+      saltar:
+        description: "Con 'forzar': saltar los N primeros resultados para coger otra foto"
+        type: string
+        default: "1"
+  schedule:
+    - cron: "41 4 * * 1"   # cada lunes, por si se añaden tipos nuevos
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fotos-ilustrativas
+  cancel-in-progress: false
+
+jobs:
+  fotos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q pillow
+      - name: Buscar y guardar fotos
+        env:
+          FORZAR: ${{ inputs.forzar }}
+          SALTAR: ${{ inputs.saltar }}
+        run: |
+          if [ -n "$FORZAR" ]; then python scripts/fotos_ilustrativas.py --forzar $FORZAR --saltar "${SALTAR:-1}"; else python scripts/fotos_ilustrativas.py; fi
+      - name: Guardar en la web
+        run: |
+          git config user.name "fotos-bot"
+          git config user.email "fotos-bot@users.noreply.github.com"
+          git add img/tipos redesign/tipos.json creditos-imagenes.html
+          if git diff --cached --quiet; then echo "Nada nuevo."; exit 0; fi
+          git commit -q -m "Fotos ilustrativas: $(ls img/tipos/*.webp | wc -l) tipos con foto"
+          git pull -q --rebase origin "${GITHUB_REF_NAME}"
+          git push -q origin "HEAD:${GITHUB_REF_NAME}"
