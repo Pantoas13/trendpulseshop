@@ -55,12 +55,12 @@
  },
  "movil": {
   "nombre": "un teléfono móvil",
-  "titulo": "Métro, masques et smartphones",
-  "autor": "besopha",
+  "titulo": "Smartphone in Hand",
+  "autor": "ccnull.de Bilddatenbank",
   "licencia": "BY 2.0",
   "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/26700188@N05/52069894981",
-  "openverse_id": "3fb7823a-0e3d-48fb-abec-286f50c6e21a"
+  "fuente": "https://www.flickr.com/photos/115225894@N07/54366512372",
+  "openverse_id": "58c87b22-bd6f-4ad0-a6e7-afaa9294a8f6"
  },
  "tablet": {
   "nombre": "una tablet",
@@ -145,30 +145,30 @@
  },
  "camara": {
   "nombre": "una cámara",
-  "titulo": "Day trip with a camera club - probably in south-east Queensland - circa 1960s",
-  "autor": "Aussie~mobs",
-  "licencia": "PDM 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/mark/1.0/",
-  "fuente": "https://www.flickr.com/photos/70994841@N07/52379537653",
-  "openverse_id": "ac08e49e-5647-4e8f-a7d3-898787a1fe82"
+  "titulo": "Digital camera lens",
+  "autor": null,
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://www.rawpixel.com/image/6022172/photo-image-public-domain-camera-free",
+  "openverse_id": "25199a6c-e425-4231-a4b4-230f91b5d8e4"
  },
  "mando": {
   "nombre": "un mando de videojuegos",
-  "titulo": "Game Controller",
-  "autor": "50Fish",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/game-controller-B3FJDNOAMI",
-  "openverse_id": "6277f67a-b258-4397-b617-36e88ebf7f87"
+  "titulo": "Robotic Arm Hand Controller",
+  "autor": "a.ridley-smith",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/194131518@N04/51563612925",
+  "openverse_id": "09844046-3408-41b0-9c2c-be8434e37e4c"
  },
  "consola": {
   "nombre": "una consola",
-  "titulo": "square vector",
-  "autor": "eXploration Etoile",
+  "titulo": "Please take a seat!",
+  "autor": "Welcome to Switzerland backstage!",
   "licencia": "BY 2.0",
   "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/156182786@N06/51747653269",
-  "openverse_id": "14c9b9b1-44f5-416a-b5ae-86b6399d3e1d"
+  "fuente": "https://www.flickr.com/photos/70981241@N00/51799693351",
+  "openverse_id": "825eb5f7-e01f-4f4f-89d3-e0c147fde68c"
  },
  "cafetera": {
   "nombre": "una cafetera",
@@ -208,12 +208,12 @@
  },
  "cocina": {
   "nombre": "utensilios de cocina",
-  "titulo": "Display of crockery and kitchen utensils, [n.d.]",
-  "autor": "Coalfields Local History Association Inc.",
-  "licencia": "PDM 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/mark/1.0/",
-  "fuente": "https://www.flickr.com/photos/97885561@N07/51651673529",
-  "openverse_id": "5aba0619-0fa4-453d-8174-dffae6ffd2b3"
+  "titulo": "Wooden Bowl",
+  "autor": "The World is a Stage",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/wooden-bowl-AMW6XPP8AT",
+  "openverse_id": "ad60eeb8-7f1b-4e03-8045-22e79c7611a1"
  },
  "iluminacion": {
   "nombre": "una bombilla",
@@ -253,21 +253,21 @@
  },
  "afeitado": {
   "nombre": "una afeitadora",
-  "titulo": "Vintage Norelco Sportsman Battery Electric Shaver, Model SC7750, Made In Holland, Circa 1956",
-  "autor": "France1978",
+  "titulo": "Electric Razors (Credit dofollow link to https://rasoio-elettrico.net)",
+  "autor": "albertogiovannini87",
   "licencia": "BY 2.0",
   "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/51764518@N02/54311524463",
-  "openverse_id": "4db067c4-48ba-4150-aced-75033982653b"
+  "fuente": "https://www.flickr.com/photos/198804696@N08/53081216141",
+  "openverse_id": "06ba7d13-7493-44cc-b308-4a4f1e7b09a9"
  },
  "deporte": {
   "nombre": "material de deporte",
-  "titulo": "Fitness Equipment of Eugene",
-  "autor": "Rick Obst",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/46052415@N08/53448194307",
-  "openverse_id": "db4bb0f2-8a8c-4aea-854b-57757fcee164"
+  "titulo": "Weights Fitness",
+  "autor": "%u0141ukasz%20Popardowski",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/weights-fitness-3H89EH3WIJ",
+  "openverse_id": "4ddd51bf-cb08-40dc-8a5b-85bcfb371fb9"
  },
  "mascotas": {
   "nombre": "mascotas",
@@ -325,39 +325,39 @@
  },
  "refresco": {
   "nombre": "refrescos",
-  "titulo": "Alcohol & soft drink cans",
-  "autor": null,
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.rawpixel.com/image/6111981/photo-image-public-domain-leaf-snow",
-  "openverse_id": "de08f8c2-e6db-45f8-962d-4aafa00930d7"
+  "titulo": "soda can 4k",
+  "autor": "NenGen",
+  "licencia": "BY 2.0",
+  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+  "fuente": "https://www.flickr.com/photos/191256479@N02/51893716397",
+  "openverse_id": "173391fa-54d0-409e-ae15-c30de6b3650c"
  },
  "alimentacion": {
   "nombre": "alimentos",
-  "titulo": "Presidente Supermarket Little Havana",
-  "autor": "Phillip Pessar",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/25955895@N03/54189368968",
-  "openverse_id": "b0587c43-32c8-439a-b054-484e5dad6420"
+  "titulo": "Market Fruits",
+  "autor": "Agnieszka%20Wal%u0119dziak",
+  "licencia": "CC0 1.0",
+  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "fuente": "https://stocksnap.io/photo/market-fruits-VBQSBXBAO8",
+  "openverse_id": "7b37f6ce-7d0f-4ab9-9e95-5519e117adda"
  },
  "oficina": {
   "nombre": "material de oficina",
-  "titulo": "Man Guy",
-  "autor": "Filipp Kozachuk",
+  "titulo": "Notebook Desk",
+  "autor": "Artsy Crafty",
   "licencia": "CC0 1.0",
   "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/man-guy-A7725B3C2F",
-  "openverse_id": "d83a3d8e-5d60-48c0-beea-8ad591024fe3"
+  "fuente": "https://stocksnap.io/photo/notebook-desk-GRGCZJ7CNE",
+  "openverse_id": "abf75a0f-2c3e-4b32-b03d-55a2597658af"
  },
  "salud": {
   "nombre": "productos de salud",
-  "titulo": "Health Care Heroes Poster Judging",
-  "autor": "MDGovpics",
+  "titulo": "First Aid Kit at Riverside Park in Harrisburg, Pennsylvania",
+  "autor": "strangebiology",
   "licencia": "BY 2.0",
   "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/64018555@N03/51985645477",
-  "openverse_id": "bb1c6a0e-442e-413a-b4f0-ccd6ff2c0da3"
+  "fuente": "https://www.flickr.com/photos/138318928@N02/52299892452",
+  "openverse_id": "fb773bdd-8031-49d8-8faf-6f76299ef832"
  },
  "moda": {
   "nombre": "moda",
@@ -370,12 +370,12 @@
  },
  "jardin": {
   "nombre": "jardín",
-  "titulo": "Gardening tools in use during spring maintenance with a focus on lawn care",
-  "autor": "nenadstojkovicart",
+  "titulo": "Garden or Gardening",
+  "autor": "Rosmarie Voegtli",
   "licencia": "BY 2.0",
   "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/202846129@N03/54597569374",
-  "openverse_id": "8111f571-b149-44a4-a943-755b7074ceca"
+  "fuente": "https://www.flickr.com/photos/94212497@N00/53707847260",
+  "openverse_id": "0cd5c7d0-2f91-42a8-a8c7-f40bcf18e3b9"
  },
  "vinilo": {
   "nombre": "discos de música",
@@ -415,11 +415,11 @@
  },
  "musica": {
   "nombre": "instrumentos musicales",
-  "titulo": "Musical Instrument Museum",
-  "autor": "Roller Coaster Philosophy",
+  "titulo": "Gypsy Jazz Acoustic Guitar",
+  "autor": "dejankrsmanovic",
   "licencia": "BY 2.0",
   "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/32916425@N04/51766419978",
-  "openverse_id": "cfbffe6b-7b07-4d1c-9b0c-3ff096b97cf7"
+  "fuente": "https://www.flickr.com/photos/155403590@N07/51884554285",
+  "openverse_id": "b8dc2614-b1cc-4e89-9fe4-3ae556516593"
  }
 }
