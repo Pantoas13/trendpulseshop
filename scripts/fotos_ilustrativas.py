@@ -40,13 +40,15 @@ LICENCIAS = "cc0,pdm,by"
 
 # (tipo, palabras del título en español (regex), búsqueda en inglés, nombre para el texto alternativo)
 TIPOS = [
+    ("mando", r"mando|gamepad|controller", "gamepad controller", "un mando de videojuegos"),
+    ("consola", r"nintendo|switch|playstation|ps5|ps4|xbox|consola", "playstation console", "una consola"),
     ("auriculares", r"auricular|cascos|headphone|earbuds|airpods|buds", "wireless headphones", "unos auriculares"),
     ("smartwatch", r"smartwatch|reloj inteligente|pulsera de actividad|smartband|watch", "smartwatch wrist", "un reloj inteligente"),
     ("altavoz", r"altavoz|speaker|barra de sonido|echo dot|echo pop", "bluetooth speaker", "un altavoz"),
     ("powerbank", r"power ?bank|bater[ií]a externa", "power bank charging phone", "una batería externa"),
     ("cargador", r"cargador|cable usb|cable lightning|adaptador de corriente", "usb charger cable", "un cargador"),
     ("pilas", r"\bpilas?\b|bater[ií]as? (aa|aaa|alcalin)|cr2032", "aa batteries", "unas pilas"),
-    ("movil", r"smartphone|m[oó]vil|iphone|galaxy|redmi|poco|xiaomi.*gb", "smartphone", "un teléfono móvil"),
+    ("movil", r"smartphone|m[oó]vil|iphone|galaxy|redmi|poco|xiaomi.*gb", "smartphone in hand", "un teléfono móvil"),
     ("tablet", r"tablet|ipad|fire hd|kindle", "tablet computer", "una tablet"),
     ("portatil", r"ordenador port[aá]til|laptop|notebook|chromebook|macbook|port[aá]til.*(intel|amd|ryzen|core i|\bram\b|ssd)", "laptop on desk", "un portátil"),
     ("pc", r"ordenador de sobremesa|mini pc|\bnuc\b|torre gaming|pc gaming", "desktop computer", "un ordenador de sobremesa"),
@@ -56,37 +58,35 @@ TIPOS = [
     ("almacenamiento", r"\bssd\b|disco duro|pendrive|memoria usb|tarjeta (micro ?)?sd", "ssd drive", "un disco de almacenamiento"),
     ("router", r"router|wifi mesh|repetidor|extensor wifi", "wifi router", "un router"),
     ("tv", r"\btv\b|televisor|smart tv|fire tv|chromecast|google tv", "television living room", "un televisor"),
-    ("camara", r"c[aá]mara|webcam|gopro|dashcam", "camera", "una cámara"),
-    ("mando", r"mando|gamepad|controller", "game controller", "un mando de videojuegos"),
-    ("consola", r"nintendo|switch|playstation|ps5|ps4|xbox|consola", "video game console", "una consola"),
+    ("camara", r"c[aá]mara|webcam|gopro|dashcam", "digital camera lens", "una cámara"),
     ("cafetera", r"cafetera", "coffee machine", "una cafetera"),
     ("cafe", r"caf[eé]|c[aá]psulas|nespresso|dolce gusto|espresso", "coffee beans cup", "café"),
-    ("freidora", r"freidora", "air fryer", "una freidora de aire"),
-    ("aspirador", r"aspirador|robot aspirador|roomba", "vacuum cleaner", "un aspirador"),
-    ("cocina", r"sart[eé]n|olla|cuchill|batidora|robot de cocina|tostadora|microondas|hervidor", "kitchen utensils", "utensilios de cocina"),
+    ("freidora", r"freidora", "air fryer appliance", "una freidora de aire"),
+    ("aspirador", r"aspirador|robot aspirador|roomba", "vacuum cleaner appliance", "un aspirador"),
+    ("cocina", r"sart[eé]n|olla|cuchill|batidora|robot de cocina|tostadora|microondas|hervidor", "kitchen utensils wooden", "utensilios de cocina"),
     ("iluminacion", r"bombilla|linterna|l[aá]mpara|tira led|luz led|foco", "led light bulb", "una bombilla"),
     ("juguete", r"lego|juguete|mu[nñ]eca|peluche|playmobil|puzzle|juego de mesa", "colorful toys", "juguetes"),
     ("libro", r"libro|novela|tapa blanda|tapa dura", "books stack", "libros"),
     ("belleza", r"crema|s[eé]rum|s[eé]rum|maquillaje|rimel|m[aá]scara de pesta|labial|perfume|colonia|champ[uú]|cosm", "skincare products", "productos de belleza"),
-    ("afeitado", r"afeitad|depiladora|recortadora|oneblade", "electric shaver", "una afeitadora"),
-    ("deporte", r"mancuerna|esterilla|yoga|bicicleta est|cinta de correr|balón|pelota|fitness|gimnasio", "fitness equipment", "material de deporte"),
+    ("afeitado", r"afeitad|depiladora|recortadora|oneblade", "electric razor", "una afeitadora"),
+    ("deporte", r"mancuerna|esterilla|yoga|bicicleta est|cinta de correr|balón|pelota|fitness|gimnasio", "dumbbells gym", "material de deporte"),
     ("mascotas", r"perro|gato|mascota|pienso|arena para", "dog and cat", "mascotas"),
-    ("bebe", r"pa[nñ]al|beb[eé]|toallitas", "baby care", "productos para bebé"),
+    ("bebe", r"pa[nñ]al|beb[eé]|toallitas", "baby bottle pacifier", "productos para bebé"),
     ("herramientas", r"taladro|destornillador|llave|herramienta|bricolaje|sierra", "power tools", "herramientas"),
     ("coche", r"coche|moto|neum[aá]tico|aceite motor|limpiaparabrisas", "car interior accessories", "accesorios de coche"),
     ("leche", r"leche|bebida (vegetal|de avena|de almendra)", "glass of milk", "leche"),
     ("cerveza", r"cerveza|lager", "beer glass", "cerveza"),
-    ("refresco", r"refresco|\bcola\b|zumo|agua mineral|t[oó]nica", "soft drink cans", "refrescos"),
-    ("alimentacion", r"chocolate|turr[oó]n|galleta|aceite de oliva|pasta|arroz|conserva", "pantry food groceries", "alimentos"),
-    ("oficina", r"impresora|cartucho|t[oó]ner|papel a4|bol[ií]grafo|cuaderno|agenda", "office desk supplies", "material de oficina"),
-    ("salud", r"tensi[oó]metro|term[oó]metro|vitamina|suplemento|mascarilla", "health care", "productos de salud"),
+    ("refresco", r"refresco|\bcola\b|zumo|agua mineral|t[oó]nica", "soda cans", "refrescos"),
+    ("alimentacion", r"chocolate|turr[oó]n|galleta|aceite de oliva|pasta|arroz|conserva", "grocery basket vegetables", "alimentos"),
+    ("oficina", r"impresora|cartucho|t[oó]ner|papel a4|bol[ií]grafo|cuaderno|agenda", "office supplies pens notebook", "material de oficina"),
+    ("salud", r"tensi[oó]metro|term[oó]metro|vitamina|suplemento|mascarilla", "first aid kit", "productos de salud"),
     ("moda", r"zapatilla|camiseta|sudadera|mochila|bolso|cartera|gafas de sol", "fashion accessories", "moda"),
-    ("jardin", r"jard[ií]n|manguera|cortac[eé]sped|planta|maceta", "garden tools", "jardín"),
+    ("jardin", r"jard[ií]n|manguera|cortac[eé]sped|planta|maceta", "garden tools shovel", "jardín"),
     ("vinilo", r"vinilo|\bcd\b|[aá]lbum", "vinyl records", "discos de música"),
     ("pelicula", r"blu-?ray|dvd|pel[ií]cula|temporada", "movie film reel", "una película"),
     ("software", r"antivirus|software|licencia|office 20|windows 1", "software on computer screen", "programas de ordenador"),
     ("regalo", r"personalizad|regalo|handmade|hecho a mano", "gift box wrapped", "un regalo"),
-    ("musica", r"guitarra|piano|teclado musical|ukelele|micr[oó]fono", "musical instruments", "instrumentos musicales"),
+    ("musica", r"guitarra|piano|teclado musical|ukelele|micr[oó]fono", "acoustic guitar", "instrumentos musicales"),
 ]
 
 # Si ninguna palabra del título encaja, foto por categoría de la tienda
@@ -139,6 +139,8 @@ def guardar_foto(resultado, destino):
 def pagina_creditos(creditos):
     filas = []
     for tipo, c in sorted(creditos.items()):
+        if c.get("vetado"):
+            continue
         autor = html.escape(c.get("autor") or "autor desconocido")
         lic = html.escape(c["licencia"])
         filas.append(f'<li><img src="img/tipos/{tipo}.webp" alt="" width="120" height="90" loading="lazy">'
@@ -164,12 +166,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--forzar", nargs="*", default=[], help="tipos que hay que volver a buscar")
     ap.add_argument("--saltar", type=int, default=0, help="saltar los N primeros resultados (con --forzar)")
+    ap.add_argument("--quitar", nargs="*", default=[], help="tipos cuya foto no sirve: se borra y no se vuelve a buscar sola")
     a = ap.parse_args()
     CARPETA.mkdir(parents=True, exist_ok=True)
     creditos = json.loads(CREDITOS.read_text(encoding="utf-8")) if CREDITOS.exists() else {}
     nuevos, fallos = 0, []
+    for tipo in a.quitar:  # revisión de Claude: foto que no representa el producto o no es apropiada
+        (CARPETA / f"{tipo}.webp").unlink(missing_ok=True)
+        creditos[tipo] = {"vetado": True}
     for tipo, _, consulta, nombre in TIPOS:
         destino = CARPETA / f"{tipo}.webp"
+        if creditos.get(tipo, {}).get("vetado") and tipo not in a.forzar:
+            continue
         if destino.exists() and tipo in creditos and tipo not in a.forzar:
             continue
         print(f"🔎 {tipo}: «{consulta}»")
@@ -197,11 +205,13 @@ def main():
             fallos.append(f"{tipo}: sin foto válida")
         time.sleep(1.5)  # Openverse sin clave: pocas peticiones por minuto
     CREDITOS.write_text(json.dumps(creditos, ensure_ascii=False, indent=1), encoding="utf-8")
-    reglas = {"tipos": [{"tipo": t, "re": r, "nombre": n} for t, r, _, n in TIPOS if t in creditos],
-              "categorias": {c: t for c, t in CATEGORIA.items() if t in creditos}}
+    con_foto = {t for t, c in creditos.items() if not c.get("vetado") and (CARPETA / f"{t}.webp").exists()}
+    # todos los tipos van en las reglas (para que un mando no acabe con la foto de otro tipo); "foto" dice si hay
+    reglas = {"tipos": [{"tipo": t, "re": r, "nombre": n, "foto": t in con_foto} for t, r, _, n in TIPOS],
+              "categorias": {c: t for c, t in CATEGORIA.items() if t in con_foto}}
     REGLAS.write_text(json.dumps(reglas, ensure_ascii=False, indent=1), encoding="utf-8")
     PAGINA.write_text(pagina_creditos(creditos), encoding="utf-8")
-    print(f"\nFotos nuevas: {nuevos} · con foto: {len(creditos)}/{len(TIPOS)}")
+    print(f"\nFotos nuevas: {nuevos} · con foto: {len(con_foto)}/{len(TIPOS)}")
     for f in fallos:
         print("⚠️", f)
     return 0 if creditos else 1

@@ -1,239 +1,286 @@
 {
  "tipos": [
   {
-   "tipo": "auriculares",
-   "re": "auricular|cascos|headphone|earbuds|airpods|buds",
-   "nombre": "unos auriculares"
-  },
-  {
-   "tipo": "smartwatch",
-   "re": "smartwatch|reloj inteligente|pulsera de actividad|smartband|watch",
-   "nombre": "un reloj inteligente"
-  },
-  {
-   "tipo": "altavoz",
-   "re": "altavoz|speaker|barra de sonido|echo dot|echo pop",
-   "nombre": "un altavoz"
-  },
-  {
-   "tipo": "powerbank",
-   "re": "power ?bank|bater[ií]a externa",
-   "nombre": "una batería externa"
-  },
-  {
-   "tipo": "cargador",
-   "re": "cargador|cable usb|cable lightning|adaptador de corriente",
-   "nombre": "un cargador"
-  },
-  {
-   "tipo": "pilas",
-   "re": "\\bpilas?\\b|bater[ií]as? (aa|aaa|alcalin)|cr2032",
-   "nombre": "unas pilas"
-  },
-  {
-   "tipo": "movil",
-   "re": "smartphone|m[oó]vil|iphone|galaxy|redmi|poco|xiaomi.*gb",
-   "nombre": "un teléfono móvil"
-  },
-  {
-   "tipo": "tablet",
-   "re": "tablet|ipad|fire hd|kindle",
-   "nombre": "una tablet"
-  },
-  {
-   "tipo": "portatil",
-   "re": "ordenador port[aá]til|laptop|notebook|chromebook|macbook|port[aá]til.*(intel|amd|ryzen|core i|\\bram\\b|ssd)",
-   "nombre": "un portátil"
-  },
-  {
-   "tipo": "pc",
-   "re": "ordenador de sobremesa|mini pc|\\bnuc\\b|torre gaming|pc gaming",
-   "nombre": "un ordenador de sobremesa"
-  },
-  {
-   "tipo": "monitor",
-   "re": "monitor",
-   "nombre": "un monitor"
-  },
-  {
-   "tipo": "raton",
-   "re": "rat[oó]n|mouse",
-   "nombre": "un ratón"
-  },
-  {
-   "tipo": "teclado",
-   "re": "teclado|keyboard",
-   "nombre": "un teclado"
-  },
-  {
-   "tipo": "almacenamiento",
-   "re": "\\bssd\\b|disco duro|pendrive|memoria usb|tarjeta (micro ?)?sd",
-   "nombre": "un disco de almacenamiento"
-  },
-  {
-   "tipo": "router",
-   "re": "router|wifi mesh|repetidor|extensor wifi",
-   "nombre": "un router"
-  },
-  {
-   "tipo": "tv",
-   "re": "\\btv\\b|televisor|smart tv|fire tv|chromecast|google tv",
-   "nombre": "un televisor"
-  },
-  {
-   "tipo": "camara",
-   "re": "c[aá]mara|webcam|gopro|dashcam",
-   "nombre": "una cámara"
-  },
-  {
    "tipo": "mando",
    "re": "mando|gamepad|controller",
-   "nombre": "un mando de videojuegos"
+   "nombre": "un mando de videojuegos",
+   "foto": false
   },
   {
    "tipo": "consola",
    "re": "nintendo|switch|playstation|ps5|ps4|xbox|consola",
-   "nombre": "una consola"
+   "nombre": "una consola",
+   "foto": false
+  },
+  {
+   "tipo": "auriculares",
+   "re": "auricular|cascos|headphone|earbuds|airpods|buds",
+   "nombre": "unos auriculares",
+   "foto": true
+  },
+  {
+   "tipo": "smartwatch",
+   "re": "smartwatch|reloj inteligente|pulsera de actividad|smartband|watch",
+   "nombre": "un reloj inteligente",
+   "foto": true
+  },
+  {
+   "tipo": "altavoz",
+   "re": "altavoz|speaker|barra de sonido|echo dot|echo pop",
+   "nombre": "un altavoz",
+   "foto": true
+  },
+  {
+   "tipo": "powerbank",
+   "re": "power ?bank|bater[ií]a externa",
+   "nombre": "una batería externa",
+   "foto": true
+  },
+  {
+   "tipo": "cargador",
+   "re": "cargador|cable usb|cable lightning|adaptador de corriente",
+   "nombre": "un cargador",
+   "foto": true
+  },
+  {
+   "tipo": "pilas",
+   "re": "\\bpilas?\\b|bater[ií]as? (aa|aaa|alcalin)|cr2032",
+   "nombre": "unas pilas",
+   "foto": false
+  },
+  {
+   "tipo": "movil",
+   "re": "smartphone|m[oó]vil|iphone|galaxy|redmi|poco|xiaomi.*gb",
+   "nombre": "un teléfono móvil",
+   "foto": true
+  },
+  {
+   "tipo": "tablet",
+   "re": "tablet|ipad|fire hd|kindle",
+   "nombre": "una tablet",
+   "foto": true
+  },
+  {
+   "tipo": "portatil",
+   "re": "ordenador port[aá]til|laptop|notebook|chromebook|macbook|port[aá]til.*(intel|amd|ryzen|core i|\\bram\\b|ssd)",
+   "nombre": "un portátil",
+   "foto": true
+  },
+  {
+   "tipo": "pc",
+   "re": "ordenador de sobremesa|mini pc|\\bnuc\\b|torre gaming|pc gaming",
+   "nombre": "un ordenador de sobremesa",
+   "foto": true
+  },
+  {
+   "tipo": "monitor",
+   "re": "monitor",
+   "nombre": "un monitor",
+   "foto": true
+  },
+  {
+   "tipo": "raton",
+   "re": "rat[oó]n|mouse",
+   "nombre": "un ratón",
+   "foto": true
+  },
+  {
+   "tipo": "teclado",
+   "re": "teclado|keyboard",
+   "nombre": "un teclado",
+   "foto": true
+  },
+  {
+   "tipo": "almacenamiento",
+   "re": "\\bssd\\b|disco duro|pendrive|memoria usb|tarjeta (micro ?)?sd",
+   "nombre": "un disco de almacenamiento",
+   "foto": true
+  },
+  {
+   "tipo": "router",
+   "re": "router|wifi mesh|repetidor|extensor wifi",
+   "nombre": "un router",
+   "foto": false
+  },
+  {
+   "tipo": "tv",
+   "re": "\\btv\\b|televisor|smart tv|fire tv|chromecast|google tv",
+   "nombre": "un televisor",
+   "foto": true
+  },
+  {
+   "tipo": "camara",
+   "re": "c[aá]mara|webcam|gopro|dashcam",
+   "nombre": "una cámara",
+   "foto": true
   },
   {
    "tipo": "cafetera",
    "re": "cafetera",
-   "nombre": "una cafetera"
+   "nombre": "una cafetera",
+   "foto": true
   },
   {
    "tipo": "cafe",
    "re": "caf[eé]|c[aá]psulas|nespresso|dolce gusto|espresso",
-   "nombre": "café"
+   "nombre": "café",
+   "foto": true
   },
   {
    "tipo": "freidora",
    "re": "freidora",
-   "nombre": "una freidora de aire"
+   "nombre": "una freidora de aire",
+   "foto": false
   },
   {
    "tipo": "aspirador",
    "re": "aspirador|robot aspirador|roomba",
-   "nombre": "un aspirador"
+   "nombre": "un aspirador",
+   "foto": false
   },
   {
    "tipo": "cocina",
    "re": "sart[eé]n|olla|cuchill|batidora|robot de cocina|tostadora|microondas|hervidor",
-   "nombre": "utensilios de cocina"
+   "nombre": "utensilios de cocina",
+   "foto": true
   },
   {
    "tipo": "iluminacion",
    "re": "bombilla|linterna|l[aá]mpara|tira led|luz led|foco",
-   "nombre": "una bombilla"
+   "nombre": "una bombilla",
+   "foto": true
   },
   {
    "tipo": "juguete",
    "re": "lego|juguete|mu[nñ]eca|peluche|playmobil|puzzle|juego de mesa",
-   "nombre": "juguetes"
+   "nombre": "juguetes",
+   "foto": true
   },
   {
    "tipo": "libro",
    "re": "libro|novela|tapa blanda|tapa dura",
-   "nombre": "libros"
+   "nombre": "libros",
+   "foto": true
   },
   {
    "tipo": "belleza",
    "re": "crema|s[eé]rum|s[eé]rum|maquillaje|rimel|m[aá]scara de pesta|labial|perfume|colonia|champ[uú]|cosm",
-   "nombre": "productos de belleza"
+   "nombre": "productos de belleza",
+   "foto": true
   },
   {
    "tipo": "afeitado",
    "re": "afeitad|depiladora|recortadora|oneblade",
-   "nombre": "una afeitadora"
+   "nombre": "una afeitadora",
+   "foto": true
   },
   {
    "tipo": "deporte",
    "re": "mancuerna|esterilla|yoga|bicicleta est|cinta de correr|balón|pelota|fitness|gimnasio",
-   "nombre": "material de deporte"
+   "nombre": "material de deporte",
+   "foto": true
   },
   {
    "tipo": "mascotas",
    "re": "perro|gato|mascota|pienso|arena para",
-   "nombre": "mascotas"
+   "nombre": "mascotas",
+   "foto": true
   },
   {
    "tipo": "bebe",
    "re": "pa[nñ]al|beb[eé]|toallitas",
-   "nombre": "productos para bebé"
+   "nombre": "productos para bebé",
+   "foto": false
   },
   {
    "tipo": "herramientas",
    "re": "taladro|destornillador|llave|herramienta|bricolaje|sierra",
-   "nombre": "herramientas"
+   "nombre": "herramientas",
+   "foto": true
   },
   {
    "tipo": "coche",
    "re": "coche|moto|neum[aá]tico|aceite motor|limpiaparabrisas",
-   "nombre": "accesorios de coche"
+   "nombre": "accesorios de coche",
+   "foto": true
   },
   {
    "tipo": "leche",
    "re": "leche|bebida (vegetal|de avena|de almendra)",
-   "nombre": "leche"
+   "nombre": "leche",
+   "foto": true
   },
   {
    "tipo": "cerveza",
    "re": "cerveza|lager",
-   "nombre": "cerveza"
+   "nombre": "cerveza",
+   "foto": true
   },
   {
    "tipo": "refresco",
    "re": "refresco|\\bcola\\b|zumo|agua mineral|t[oó]nica",
-   "nombre": "refrescos"
+   "nombre": "refrescos",
+   "foto": true
   },
   {
    "tipo": "alimentacion",
    "re": "chocolate|turr[oó]n|galleta|aceite de oliva|pasta|arroz|conserva",
-   "nombre": "alimentos"
+   "nombre": "alimentos",
+   "foto": true
   },
   {
    "tipo": "oficina",
    "re": "impresora|cartucho|t[oó]ner|papel a4|bol[ií]grafo|cuaderno|agenda",
-   "nombre": "material de oficina"
+   "nombre": "material de oficina",
+   "foto": true
   },
   {
    "tipo": "salud",
    "re": "tensi[oó]metro|term[oó]metro|vitamina|suplemento|mascarilla",
-   "nombre": "productos de salud"
+   "nombre": "productos de salud",
+   "foto": false
   },
   {
    "tipo": "moda",
    "re": "zapatilla|camiseta|sudadera|mochila|bolso|cartera|gafas de sol",
-   "nombre": "moda"
+   "nombre": "moda",
+   "foto": true
   },
   {
    "tipo": "jardin",
    "re": "jard[ií]n|manguera|cortac[eé]sped|planta|maceta",
-   "nombre": "jardín"
+   "nombre": "jardín",
+   "foto": false
   },
   {
    "tipo": "vinilo",
    "re": "vinilo|\\bcd\\b|[aá]lbum",
-   "nombre": "discos de música"
+   "nombre": "discos de música",
+   "foto": true
   },
   {
    "tipo": "pelicula",
    "re": "blu-?ray|dvd|pel[ií]cula|temporada",
-   "nombre": "una película"
+   "nombre": "una película",
+   "foto": true
   },
   {
    "tipo": "software",
    "re": "antivirus|software|licencia|office 20|windows 1",
-   "nombre": "programas de ordenador"
+   "nombre": "programas de ordenador",
+   "foto": true
   },
   {
    "tipo": "regalo",
    "re": "personalizad|regalo|handmade|hecho a mano",
-   "nombre": "un regalo"
+   "nombre": "un regalo",
+   "foto": true
   },
   {
    "tipo": "musica",
    "re": "guitarra|piano|teclado musical|ukelele|micr[oó]fono",
-   "nombre": "instrumentos musicales"
+   "nombre": "instrumentos musicales",
+   "foto": true
   }
  ],
  "categorias": {
@@ -247,14 +294,12 @@
   "Componentes de PC": "almacenamiento",
   "Almacenamiento": "almacenamiento",
   "Accesorios de informática": "raton",
-  "Redes y wifi": "router",
   "Impresoras": "oficina",
   "Oficina": "oficina",
   "Tablets": "tablet",
   "Móviles y accesorios": "movil",
   "TV y home cinema": "tv",
   "Fotografía y vídeo": "camara",
-  "Videojuegos": "mando",
   "Juguetes": "juguete",
   "Libros": "libro",
   "eBooks Kindle": "libro",
@@ -263,19 +308,15 @@
   "Grandes electrodomésticos": "cocina",
   "Iluminación": "iluminacion",
   "Belleza": "belleza",
-  "Salud": "salud",
   "Deporte": "deporte",
   "Mascotas": "mascotas",
-  "Bebé": "bebe",
   "Bricolaje": "herramientas",
   "Industria y ciencia": "herramientas",
   "Coche y moto": "coche",
   "Electrónica para coche": "coche",
   "Alimentación": "alimentacion",
   "Moda": "moda",
-  "Jardín": "jardin",
   "Instrumentos musicales": "musica",
-  "Pilas y cargadores": "pilas",
   "CD y vinilos": "vinilo",
   "Películas y series": "pelicula",
   "Software": "software",
