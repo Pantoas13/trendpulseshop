@@ -60,10 +60,13 @@ function categoryArt(category){
 let TIPOS=null;
 function tipoDe(product){
  if(!TIPOS)return null;
- const t=TIPOS.tipos.find(x=>x.rx.test(product.title));
- if(t)return t.foto===false?null:t;
- const c=TIPOS.categorias[product.category];
- return c?TIPOS.tipos.find(x=>x.tipo===c)||null:null;
+ const buscar=n=>TIPOS.tipos.find(x=>x.tipo===n);
+ let t=TIPOS.tipos.find(x=>x.rx.test(product.title));
+ if(!t||!t.fotos||!t.fotos.length){const c=TIPOS.categorias[product.category];t=c?buscar(c):null;}
+ if((!t||!t.fotos||!t.fotos.length)&&TIPOS.respaldo)t=buscar(TIPOS.respaldo);
+ if(!t||!t.fotos||!t.fotos.length)return null;
+ let h=0;for(const ch of String(product.asin))h=(h*31+ch.charCodeAt(0))>>>0;
+ return {tipo:t.tipo,nombre:t.nombre,archivo:t.fotos[h%t.fotos.length]};
 }
 function makeCard(product){
  const card=document.createElement('article');card.className='card';
@@ -73,7 +76,7 @@ function makeCard(product){
  const icon=document.createElement('img');icon.src=categoryArt(product.category);icon.alt='';icon.width=96;icon.height=96;icon.className='cat-art';icon.setAttribute('aria-hidden','true');const brand=document.createElement('span');brand.className='ph-brand';brand.textContent=(product.title.split(/[\s,–-]+/)[0]||'').slice(0,18);fallback.style.setProperty('--tint',(ART_MAP[product.category]||['','#0A3DFF'])[1]);fallback.append(icon,brand);picture.append(fallback);
  const src=imageURL(product.img);
  if(src){ const img=document.createElement('img');img.src=src;img.alt=product.title;img.loading='lazy';img.width=400;img.height=300;img.addEventListener('load',()=>{fallback.hidden=true;});img.addEventListener('error',()=>{img.remove();fallback.hidden=false;});picture.append(img); }
- else { const tipo=tipoDe(product); if(tipo){ const img=document.createElement('img');img.className='ilustrativa';img.src=new URL('../img/tipos/'+tipo.tipo+'.webp',scriptURL).href;img.alt='Imagen ilustrativa de '+tipo.nombre;img.loading='lazy';img.width=640;img.height=480;img.addEventListener('load',()=>{fallback.hidden=true;});img.addEventListener('error',()=>{img.remove();fallback.hidden=false;badge.remove();});const badge=document.createElement('span');badge.className='badge-ilustrativa';badge.textContent='Imagen ilustrativa';picture.append(img,badge);} }
+ else { const tipo=tipoDe(product); if(tipo){ const img=document.createElement('img');img.className='ilustrativa';img.src=new URL('../img/tipos/'+tipo.archivo,scriptURL).href;img.alt='Imagen ilustrativa de '+tipo.nombre;img.loading='lazy';img.width=640;img.height=480;img.addEventListener('load',()=>{fallback.hidden=true;});img.addEventListener('error',()=>{img.remove();fallback.hidden=false;badge.remove();});const badge=document.createElement('span');badge.className='badge-ilustrativa';badge.textContent='Imagen ilustrativa';picture.append(img,badge);} }
  const favorite=document.createElement('button');favorite.className='favorite';favorite.textContent=saved.has(product.asin)?'♥':'♡';favorite.setAttribute('aria-pressed',String(saved.has(product.asin)));favorite.setAttribute('aria-label','Guardar '+product.title);favorite.addEventListener('click',()=>{saved.has(product.asin)?saved.delete(product.asin):saved.add(product.asin);updateSaved();render();});
  const visual=document.createElement('div');visual.className='visual';visual.append(picture,favorite);
  const body=document.createElement('div');body.className='card-body';const category=document.createElement('span');category.className='cat';category.textContent=product.category;
