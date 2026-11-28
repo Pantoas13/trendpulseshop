@@ -158,7 +158,7 @@ CABECERA = """<!doctype html>
 <meta name="theme-color" content="#003cff"><link rel="icon" href="../redesign/assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" type="application/rss+xml" title="{marca} · Novedades" href="../feed.xml">
 {jsonld}<link rel="stylesheet" href="top.css">
-</head><body>
+<link rel="stylesheet" href="../marca/diseno.css"></head><body>
 <div class="ribbon">{marca} · Descubre buenas compras · Compra en Amazon.es</div>
 <header><div class="w"><a class="logo" href="../"><span aria-hidden="true">↗</span>{marca}</a><nav aria-label="Secciones"><a href="../">Catálogo</a><a href="./">Rankings</a><a href="../buscador-regalos.html">Ideas de regalo</a><a href="../guias.html">Guías</a></nav></div></header>
 <main class="w">

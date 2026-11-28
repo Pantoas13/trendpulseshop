@@ -10,6 +10,7 @@ Web: https://pantoas13.github.io/trendpulseshop/
 | `index.html`, `redesign/` | Portada y catálogo |
 | `regalos-*.html`, `mejores-*.html`, `guias.html` | Guías de compra y de regalos |
 | `top/` | Rankings por categoría (se rehacen cada día) |
+| `marca/` | Sistema de diseño común a todas las páginas (letras, colores, botones, tarjetas): ver `marca/DISENO.md` |
 | `geo-amazon.js` | Lleva a cada visitante a la Amazon de su país |
 | `pins/`, `promo/`, `reels/`, `img/` | Imágenes y vídeos de promoción |
 | `scripts/` | Programas que generan páginas y pines |

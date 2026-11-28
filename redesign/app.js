@@ -17,10 +17,15 @@ function imageURL(value){
   try { const url=new URL(value); return url.protocol==='https:'&&(['m.media-amazon.com','images-eu.ssl-images-amazon.com','images-na.ssl-images-amazon.com'].includes(url.hostname))?url.href:null; }catch{return null;}
 }
 function selectCategory(category){state.category=category;state.shown=24;$('#category').value=category;render();}
+/* En "Selección" salen primero las categorías que más se regalan; la compra del súper va al final. */
+const GIFT_FIRST=['Videojuegos','Dispositivos Amazon','Auriculares y audio portátil','Juguetes','Electrónica','Informática','Belleza','Deporte','Hogar y cocina','Libros','Moda','Móviles y accesorios','Fotografía y vídeo','Instrumentos musicales'];
+const GIFT_LAST=['Alimentación','Bebé','Bricolaje','Coche y moto','Industria y ciencia','Pilas y cargadores','Oficina','Salud','Grandes electrodomésticos','Reacondicionados','Software'];
+function giftRank(p){const i=GIFT_FIRST.indexOf(p.category);if(i>=0)return i;return GIFT_LAST.includes(p.category)?200:100;}
 function matching(){
  const query=normalize(state.query);
  const products=state.products.filter(p=>(!state.savedOnly||saved.has(p.asin))&&(state.category==='Todas'||(state.category==='Tecnología'?technology.includes(p.category):p.category===state.category))&&(!query||normalize(p.title+' '+p.category).includes(query)));
  if(state.sort==='title') products.sort((a,b)=>a.title.localeCompare(b.title,'es'));
+ else if(state.category==='Todas'&&!query) products.sort((a,b)=>giftRank(a)-giftRank(b)||(a.rank||99)-(b.rank||99));
  return products;
 }
 
@@ -56,7 +61,7 @@ function makeCard(product){
  const href='https://www.amazon.es/dp/'+encodeURIComponent(product.asin)+'?tag=trendpulsesho-21';
  const picture=document.createElement('a');picture.className='picture';picture.href=href;picture.target='_blank';picture.rel='sponsored noopener';picture.setAttribute('aria-label','Ver fotos de '+product.title+' en Amazon');
  const fallback=document.createElement('span');fallback.className='photo-placeholder';
- const icon=document.createElement('img');icon.src=categoryArt(product.category);icon.alt='';icon.width=96;icon.height=96;icon.className='cat-art';icon.setAttribute('aria-hidden','true');const note=document.createElement('span');note.textContent='Ver foto real en Amazon →';fallback.append(icon,note);picture.append(fallback);
+ const icon=document.createElement('img');icon.src=categoryArt(product.category);icon.alt='';icon.width=96;icon.height=96;icon.className='cat-art';icon.setAttribute('aria-hidden','true');const brand=document.createElement('span');brand.className='ph-brand';brand.textContent=(product.title.split(/[\s,–-]+/)[0]||'').slice(0,18);fallback.style.setProperty('--tint',(ART_MAP[product.category]||['','#0A3DFF'])[1]);fallback.append(icon,brand);picture.append(fallback);
  const src=imageURL(product.img);
  if(src){ const img=document.createElement('img');img.src=src;img.alt=product.title;img.loading='lazy';img.width=400;img.height=300;img.addEventListener('load',()=>{fallback.hidden=true;});img.addEventListener('error',()=>{img.remove();fallback.hidden=false;});picture.append(img); }
  const favorite=document.createElement('button');favorite.className='favorite';favorite.textContent=saved.has(product.asin)?'♥':'♡';favorite.setAttribute('aria-pressed',String(saved.has(product.asin)));favorite.setAttribute('aria-label','Guardar '+product.title);favorite.addEventListener('click',()=>{saved.has(product.asin)?saved.delete(product.asin):saved.add(product.asin);updateSaved();render();});

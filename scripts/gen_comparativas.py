@@ -245,7 +245,7 @@ def page(cfg):
 <meta property="og:image" content="{BASE}og.png"><meta property="og:url" content="{url}"><meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <link rel="stylesheet" href="comparativa.css">
-</head><body>
+<link rel="stylesheet" href="marca/diseno.css"></head><body>
 <header><a class="logo" href="./">Trend<b>Pulse</b>Shop</a><nav><a href="./">Lo más vendido</a><a href="buscador-regalos.html">Buscador de regalos</a><a href="regalos-black-friday.html">Regalos &lt;30 €</a></nav></header>
 <main class="w">
 <p class="crumb"><a href="./">Inicio</a> › Comparativas › {esc(cfg["short"][0].upper() + cfg["short"][1:])}</p>
