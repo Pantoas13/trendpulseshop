@@ -56,6 +56,15 @@ function categoryArt(category){
  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true"><rect width="64" height="64" rx="12" fill="'+m[1]+'"/>'+ART_ICONS[m[0]]+'</svg>';
  return 'data:image/svg+xml;utf8,'+encodeURIComponent(svg);
 }
+/* Fotos ilustrativas por tipo de producto (scripts/fotos_ilustrativas.py): solo cuando no hay foto oficial de Amazon. */
+let TIPOS=null;
+function tipoDe(product){
+ if(!TIPOS)return null;
+ const t=TIPOS.tipos.find(x=>x.rx.test(product.title));
+ if(t)return t;
+ const c=TIPOS.categorias[product.category];
+ return c?TIPOS.tipos.find(x=>x.tipo===c)||null:null;
+}
 function makeCard(product){
  const card=document.createElement('article');card.className='card';
  const href='https://www.amazon.es/dp/'+encodeURIComponent(product.asin)+'?tag=trendpulsesho-21';
@@ -64,6 +73,7 @@ function makeCard(product){
  const icon=document.createElement('img');icon.src=categoryArt(product.category);icon.alt='';icon.width=96;icon.height=96;icon.className='cat-art';icon.setAttribute('aria-hidden','true');const brand=document.createElement('span');brand.className='ph-brand';brand.textContent=(product.title.split(/[\s,–-]+/)[0]||'').slice(0,18);fallback.style.setProperty('--tint',(ART_MAP[product.category]||['','#0A3DFF'])[1]);fallback.append(icon,brand);picture.append(fallback);
  const src=imageURL(product.img);
  if(src){ const img=document.createElement('img');img.src=src;img.alt=product.title;img.loading='lazy';img.width=400;img.height=300;img.addEventListener('load',()=>{fallback.hidden=true;});img.addEventListener('error',()=>{img.remove();fallback.hidden=false;});picture.append(img); }
+ else { const tipo=tipoDe(product); if(tipo){ const img=document.createElement('img');img.className='ilustrativa';img.src=new URL('../img/tipos/'+tipo.tipo+'.webp',scriptURL).href;img.alt='Imagen ilustrativa de '+tipo.nombre;img.loading='lazy';img.width=640;img.height=480;img.addEventListener('load',()=>{fallback.hidden=true;});img.addEventListener('error',()=>{img.remove();fallback.hidden=false;badge.remove();});const badge=document.createElement('span');badge.className='badge-ilustrativa';badge.textContent='Imagen ilustrativa';picture.append(img,badge);} }
  const favorite=document.createElement('button');favorite.className='favorite';favorite.textContent=saved.has(product.asin)?'♥':'♡';favorite.setAttribute('aria-pressed',String(saved.has(product.asin)));favorite.setAttribute('aria-label','Guardar '+product.title);favorite.addEventListener('click',()=>{saved.has(product.asin)?saved.delete(product.asin):saved.add(product.asin);updateSaved();render();});
  const visual=document.createElement('div');visual.className='visual';visual.append(picture,favorite);
  const body=document.createElement('div');body.className='card-body';const category=document.createElement('span');category.className='cat';category.textContent=product.category;
@@ -97,7 +107,7 @@ const started=Date.now();
 const officialDate=Date.parse(window.API_UPDATED_AT||'');
 const fresh=Number.isFinite(officialDate)&&started>=officialDate&&started-officialDate<24*60*60*1000;
 const official=Array.isArray(window.API_PRODUCTS)&&fresh?window.API_PRODUCTS.filter(p=>/^[A-Z0-9]{10}$/.test(p.asin)&&p.title&&imageURL(p.img)).map(p=>({...p,category:p.cat||p.category})):[];
-fetch(new URL('catalog.json',scriptURL)).then(response=>{if(!response.ok)throw Error('catalog');return response.json();}).then(data=>{
+fetch(new URL('tipos.json',scriptURL)).then(r=>r.ok?r.json():null).catch(()=>null).then(t=>{if(t&&Array.isArray(t.tipos)){t.tipos.forEach(x=>{try{x.rx=new RegExp(x.re,'i');}catch{x.rx=/$^/;}});TIPOS=t;}}).then(()=>fetch(new URL('catalog.json',scriptURL))).then(response=>{if(!response.ok)throw Error('catalog');return response.json();}).then(data=>{
  const byASIN=new Map();official.forEach(product=>byASIN.set(product.asin,product));
  data.products.forEach(product=>{if(!byASIN.has(product.asin))byASIN.set(product.asin,product);});
  state.products=[...byASIN.values()];$('#updated').textContent=data.updated;

@@ -183,3 +183,9 @@ html body form[role=search] button,html body .footer-links a,html body footer a{
 html body .favorite{width:44px;height:44px}
 html body .crumb a{display:inline-block;padding:12px 0;margin:-12px 0}
 @media (max-width:1050px){html body .header-link{display:none}}
+
+/* 12. Fotos ilustrativas (Openverse, licencia libre) mientras no haya fotos oficiales de Amazon */
+html body .card .picture img.ilustrativa{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:cover;padding:0;border-radius:12px;background:var(--tp-soft)}
+html body .card:hover .picture img.ilustrativa{transform:scale(1.02);transition:transform .3s ease}
+html body .badge-ilustrativa{position:absolute;left:18px;bottom:18px;z-index:2;background:color-mix(in srgb,var(--tp-surface) 88%,transparent);color:var(--tp-muted);
+  font:600 10.5px/1 var(--tp-body);letter-spacing:.02em;padding:5px 8px;border-radius:999px}
