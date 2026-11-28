@@ -4,283 +4,452 @@
    "tipo": "mando",
    "re": "mando|gamepad|controller",
    "nombre": "un mando de videojuegos",
-   "foto": false
+   "fotos": [
+    "mando-1.webp",
+    "mando-2.webp",
+    "mando-3.webp"
+   ]
   },
   {
    "tipo": "consola",
    "re": "nintendo|switch|playstation|ps5|ps4|xbox|consola",
    "nombre": "una consola",
-   "foto": false
+   "fotos": [
+    "consola-1.webp",
+    "consola-2.webp"
+   ]
   },
   {
    "tipo": "auriculares",
    "re": "auricular|cascos|headphone|earbuds|airpods|buds",
    "nombre": "unos auriculares",
-   "foto": true
+   "fotos": [
+    "auriculares-1.webp",
+    "auriculares-2.webp",
+    "auriculares-3.webp"
+   ]
   },
   {
    "tipo": "smartwatch",
    "re": "smartwatch|reloj inteligente|pulsera de actividad|smartband|watch",
    "nombre": "un reloj inteligente",
-   "foto": true
+   "fotos": [
+    "smartwatch-1.webp",
+    "smartwatch-2.webp",
+    "smartwatch-3.webp"
+   ]
   },
   {
    "tipo": "altavoz",
    "re": "altavoz|speaker|barra de sonido|echo dot|echo pop",
    "nombre": "un altavoz",
-   "foto": true
+   "fotos": [
+    "altavoz-1.webp",
+    "altavoz-2.webp",
+    "altavoz-3.webp"
+   ]
   },
   {
    "tipo": "powerbank",
    "re": "power ?bank|bater[ií]a externa",
    "nombre": "una batería externa",
-   "foto": true
+   "fotos": [
+    "powerbank-1.webp"
+   ]
   },
   {
    "tipo": "cargador",
    "re": "cargador|cable usb|cable lightning|adaptador de corriente",
    "nombre": "un cargador",
-   "foto": true
+   "fotos": [
+    "cargador-1.webp",
+    "cargador-2.webp",
+    "cargador-3.webp"
+   ]
   },
   {
    "tipo": "pilas",
    "re": "\\bpilas?\\b|bater[ií]as? (aa|aaa|alcalin)|cr2032",
    "nombre": "unas pilas",
-   "foto": false
+   "fotos": [
+    "pilas-1.webp",
+    "pilas-2.webp",
+    "pilas-3.webp"
+   ]
   },
   {
    "tipo": "movil",
    "re": "smartphone|m[oó]vil|iphone|galaxy|redmi|poco|xiaomi.*gb",
    "nombre": "un teléfono móvil",
-   "foto": true
+   "fotos": [
+    "movil-1.webp",
+    "movil-2.webp",
+    "movil-3.webp"
+   ]
   },
   {
    "tipo": "tablet",
    "re": "tablet|ipad|fire hd|kindle",
    "nombre": "una tablet",
-   "foto": true
+   "fotos": [
+    "tablet-1.webp",
+    "tablet-2.webp"
+   ]
   },
   {
    "tipo": "portatil",
    "re": "ordenador port[aá]til|laptop|notebook|chromebook|macbook|port[aá]til.*(intel|amd|ryzen|core i|\\bram\\b|ssd)",
    "nombre": "un portátil",
-   "foto": true
+   "fotos": [
+    "portatil-1.webp",
+    "portatil-2.webp",
+    "portatil-3.webp"
+   ]
   },
   {
    "tipo": "pc",
    "re": "ordenador de sobremesa|mini pc|\\bnuc\\b|torre gaming|pc gaming",
    "nombre": "un ordenador de sobremesa",
-   "foto": true
+   "fotos": [
+    "pc-1.webp",
+    "pc-2.webp"
+   ]
   },
   {
    "tipo": "monitor",
    "re": "monitor",
    "nombre": "un monitor",
-   "foto": true
+   "fotos": [
+    "monitor-1.webp",
+    "monitor-2.webp"
+   ]
   },
   {
    "tipo": "raton",
    "re": "rat[oó]n|mouse",
    "nombre": "un ratón",
-   "foto": true
+   "fotos": [
+    "raton-1.webp",
+    "raton-2.webp",
+    "raton-3.webp"
+   ]
   },
   {
    "tipo": "teclado",
    "re": "teclado|keyboard",
    "nombre": "un teclado",
-   "foto": true
+   "fotos": [
+    "teclado-1.webp",
+    "teclado-2.webp",
+    "teclado-3.webp"
+   ]
   },
   {
    "tipo": "almacenamiento",
    "re": "\\bssd\\b|disco duro|pendrive|memoria usb|tarjeta (micro ?)?sd",
    "nombre": "un disco de almacenamiento",
-   "foto": true
+   "fotos": [
+    "almacenamiento-1.webp"
+   ]
   },
   {
    "tipo": "router",
    "re": "router|wifi mesh|repetidor|extensor wifi",
    "nombre": "un router",
-   "foto": false
+   "fotos": [
+    "router-1.webp",
+    "router-2.webp",
+    "router-3.webp"
+   ]
   },
   {
    "tipo": "tv",
    "re": "\\btv\\b|televisor|smart tv|fire tv|chromecast|google tv",
    "nombre": "un televisor",
-   "foto": true
+   "fotos": [
+    "tv-1.webp",
+    "tv-2.webp"
+   ]
   },
   {
    "tipo": "camara",
    "re": "c[aá]mara|webcam|gopro|dashcam",
    "nombre": "una cámara",
-   "foto": true
+   "fotos": [
+    "camara-1.webp",
+    "camara-2.webp",
+    "camara-3.webp"
+   ]
   },
   {
    "tipo": "cafetera",
    "re": "cafetera",
    "nombre": "una cafetera",
-   "foto": true
+   "fotos": [
+    "cafetera-1.webp",
+    "cafetera-2.webp",
+    "cafetera-3.webp"
+   ]
   },
   {
    "tipo": "cafe",
    "re": "caf[eé]|c[aá]psulas|nespresso|dolce gusto|espresso",
    "nombre": "café",
-   "foto": true
+   "fotos": [
+    "cafe-1.webp",
+    "cafe-2.webp",
+    "cafe-3.webp"
+   ]
   },
   {
    "tipo": "freidora",
    "re": "freidora",
    "nombre": "una freidora de aire",
-   "foto": false
+   "fotos": []
   },
   {
    "tipo": "aspirador",
    "re": "aspirador|robot aspirador|roomba",
    "nombre": "un aspirador",
-   "foto": false
+   "fotos": [
+    "aspirador-1.webp",
+    "aspirador-2.webp",
+    "aspirador-3.webp"
+   ]
   },
   {
    "tipo": "cocina",
    "re": "sart[eé]n|olla|cuchill|batidora|robot de cocina|tostadora|microondas|hervidor",
    "nombre": "utensilios de cocina",
-   "foto": true
+   "fotos": [
+    "cocina-1.webp",
+    "cocina-2.webp",
+    "cocina-3.webp"
+   ]
   },
   {
    "tipo": "iluminacion",
    "re": "bombilla|linterna|l[aá]mpara|tira led|luz led|foco",
    "nombre": "una bombilla",
-   "foto": true
+   "fotos": [
+    "iluminacion-1.webp",
+    "iluminacion-2.webp",
+    "iluminacion-3.webp"
+   ]
   },
   {
    "tipo": "juguete",
    "re": "lego|juguete|mu[nñ]eca|peluche|playmobil|puzzle|juego de mesa",
    "nombre": "juguetes",
-   "foto": true
+   "fotos": [
+    "juguete-1.webp",
+    "juguete-2.webp",
+    "juguete-3.webp"
+   ]
   },
   {
    "tipo": "libro",
    "re": "libro|novela|tapa blanda|tapa dura",
    "nombre": "libros",
-   "foto": true
+   "fotos": [
+    "libro-1.webp",
+    "libro-2.webp",
+    "libro-3.webp"
+   ]
   },
   {
    "tipo": "belleza",
    "re": "crema|s[eé]rum|s[eé]rum|maquillaje|rimel|m[aá]scara de pesta|labial|perfume|colonia|champ[uú]|cosm",
    "nombre": "productos de belleza",
-   "foto": true
+   "fotos": [
+    "belleza-1.webp",
+    "belleza-2.webp",
+    "belleza-3.webp"
+   ]
   },
   {
    "tipo": "afeitado",
    "re": "afeitad|depiladora|recortadora|oneblade",
    "nombre": "una afeitadora",
-   "foto": true
+   "fotos": [
+    "afeitado-1.webp",
+    "afeitado-2.webp",
+    "afeitado-3.webp"
+   ]
   },
   {
    "tipo": "deporte",
    "re": "mancuerna|esterilla|yoga|bicicleta est|cinta de correr|balón|pelota|fitness|gimnasio",
    "nombre": "material de deporte",
-   "foto": true
+   "fotos": [
+    "deporte-1.webp",
+    "deporte-2.webp",
+    "deporte-3.webp"
+   ]
   },
   {
    "tipo": "mascotas",
    "re": "perro|gato|mascota|pienso|arena para",
    "nombre": "mascotas",
-   "foto": true
+   "fotos": [
+    "mascotas-1.webp"
+   ]
   },
   {
    "tipo": "bebe",
    "re": "pa[nñ]al|beb[eé]|toallitas",
    "nombre": "productos para bebé",
-   "foto": false
+   "fotos": [
+    "bebe-1.webp",
+    "bebe-2.webp",
+    "bebe-3.webp"
+   ]
   },
   {
    "tipo": "herramientas",
    "re": "taladro|destornillador|llave|herramienta|bricolaje|sierra",
    "nombre": "herramientas",
-   "foto": true
+   "fotos": [
+    "herramientas-1.webp"
+   ]
   },
   {
    "tipo": "coche",
    "re": "coche|moto|neum[aá]tico|aceite motor|limpiaparabrisas",
    "nombre": "accesorios de coche",
-   "foto": true
+   "fotos": [
+    "coche-1.webp"
+   ]
   },
   {
    "tipo": "leche",
    "re": "leche|bebida (vegetal|de avena|de almendra)",
    "nombre": "leche",
-   "foto": true
+   "fotos": [
+    "leche-1.webp",
+    "leche-2.webp"
+   ]
   },
   {
    "tipo": "cerveza",
    "re": "cerveza|lager",
    "nombre": "cerveza",
-   "foto": true
+   "fotos": [
+    "cerveza-1.webp",
+    "cerveza-2.webp",
+    "cerveza-3.webp"
+   ]
   },
   {
    "tipo": "refresco",
    "re": "refresco|\\bcola\\b|zumo|agua mineral|t[oó]nica",
    "nombre": "refrescos",
-   "foto": true
+   "fotos": [
+    "refresco-1.webp"
+   ]
   },
   {
    "tipo": "alimentacion",
    "re": "chocolate|turr[oó]n|galleta|aceite de oliva|pasta|arroz|conserva",
    "nombre": "alimentos",
-   "foto": true
+   "fotos": [
+    "alimentacion-1.webp",
+    "alimentacion-2.webp",
+    "alimentacion-3.webp"
+   ]
   },
   {
    "tipo": "oficina",
    "re": "impresora|cartucho|t[oó]ner|papel a4|bol[ií]grafo|cuaderno|agenda",
    "nombre": "material de oficina",
-   "foto": true
+   "fotos": [
+    "oficina-1.webp",
+    "oficina-2.webp",
+    "oficina-3.webp"
+   ]
   },
   {
    "tipo": "salud",
    "re": "tensi[oó]metro|term[oó]metro|vitamina|suplemento|mascarilla",
    "nombre": "productos de salud",
-   "foto": false
+   "fotos": []
   },
   {
    "tipo": "moda",
    "re": "zapatilla|camiseta|sudadera|mochila|bolso|cartera|gafas de sol",
    "nombre": "moda",
-   "foto": true
+   "fotos": [
+    "moda-1.webp",
+    "moda-2.webp"
+   ]
   },
   {
    "tipo": "jardin",
    "re": "jard[ií]n|manguera|cortac[eé]sped|planta|maceta",
    "nombre": "jardín",
-   "foto": false
+   "fotos": [
+    "jardin-1.webp",
+    "jardin-2.webp",
+    "jardin-3.webp"
+   ]
   },
   {
    "tipo": "vinilo",
    "re": "vinilo|\\bcd\\b|[aá]lbum",
    "nombre": "discos de música",
-   "foto": true
+   "fotos": [
+    "vinilo-1.webp",
+    "vinilo-2.webp",
+    "vinilo-3.webp"
+   ]
   },
   {
    "tipo": "pelicula",
    "re": "blu-?ray|dvd|pel[ií]cula|temporada",
    "nombre": "una película",
-   "foto": true
+   "fotos": [
+    "pelicula-1.webp",
+    "pelicula-2.webp"
+   ]
   },
   {
    "tipo": "software",
    "re": "antivirus|software|licencia|office 20|windows 1",
    "nombre": "programas de ordenador",
-   "foto": true
+   "fotos": [
+    "software-1.webp",
+    "software-2.webp",
+    "software-3.webp"
+   ]
   },
   {
    "tipo": "regalo",
    "re": "personalizad|regalo|handmade|hecho a mano",
    "nombre": "un regalo",
-   "foto": true
+   "fotos": [
+    "regalo-1.webp",
+    "regalo-2.webp",
+    "regalo-3.webp"
+   ]
   },
   {
    "tipo": "musica",
    "re": "guitarra|piano|teclado musical|ukelele|micr[oó]fono",
    "nombre": "instrumentos musicales",
-   "foto": true
+   "fotos": [
+    "musica-1.webp",
+    "musica-2.webp",
+    "musica-3.webp"
+   ]
+  },
+  {
+   "tipo": "compras",
+   "re": "$^",
+   "nombre": "productos variados",
+   "fotos": [
+    "compras-1.webp",
+    "compras-2.webp"
+   ]
   }
  ],
  "categorias": {
@@ -294,12 +463,14 @@
   "Componentes de PC": "almacenamiento",
   "Almacenamiento": "almacenamiento",
   "Accesorios de informática": "raton",
+  "Redes y wifi": "router",
   "Impresoras": "oficina",
   "Oficina": "oficina",
   "Tablets": "tablet",
   "Móviles y accesorios": "movil",
   "TV y home cinema": "tv",
   "Fotografía y vídeo": "camara",
+  "Videojuegos": "mando",
   "Juguetes": "juguete",
   "Libros": "libro",
   "eBooks Kindle": "libro",
@@ -310,18 +481,22 @@
   "Belleza": "belleza",
   "Deporte": "deporte",
   "Mascotas": "mascotas",
+  "Bebé": "bebe",
   "Bricolaje": "herramientas",
   "Industria y ciencia": "herramientas",
   "Coche y moto": "coche",
   "Electrónica para coche": "coche",
   "Alimentación": "alimentacion",
   "Moda": "moda",
+  "Jardín": "jardin",
   "Instrumentos musicales": "musica",
+  "Pilas y cargadores": "pilas",
   "CD y vinilos": "vinilo",
   "Películas y series": "pelicula",
   "Software": "software",
   "Handmade": "regalo",
   "Ordenadores de sobremesa": "pc",
   "Reacondicionados": "portatil"
- }
+ },
+ "respaldo": "compras"
 }

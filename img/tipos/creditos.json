@@ -1,371 +1,1293 @@
 {
  "auriculares": {
   "nombre": "unos auriculares",
-  "titulo": "Wireless Headphones",
-  "autor": "Burst",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/wireless-headphones-EXCBJA3FFQ",
-  "openverse_id": "cc164a64-1297-4814-b148-7f6ad9e2dd94"
+  "fotos": [
+   {
+    "titulo": "Wireless Headphones",
+    "autor": "Burst",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/wireless-headphones-EXCBJA3FFQ",
+    "openverse_id": "cc164a64-1297-4814-b148-7f6ad9e2dd94",
+    "archivo": "auriculares-1.webp"
+   },
+   {
+    "titulo": "Headphones Desk",
+    "autor": "FOCA Stock",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/headphones-desk-IJNKVI0ELP",
+    "openverse_id": "21693607-8b05-4a79-837f-459b7ceb27b7",
+    "archivo": "auriculares-2.webp"
+   },
+   {
+    "titulo": "Iphone Device",
+    "autor": "FOCA Stock",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/iphone-device-KRMOSAYCZ4",
+    "openverse_id": "6ff81875-71c8-41cb-b0ab-0c45ede3bac7",
+    "archivo": "auriculares-3.webp"
+   }
+  ]
  },
  "smartwatch": {
   "nombre": "un reloj inteligente",
-  "titulo": "Suunto 9 Peak on the wrist",
-  "autor": "ozfir",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/194647935@N05/51771797681",
-  "openverse_id": "b8e7d1fe-5ef7-44e8-b513-eaefce74d0f2"
+  "fotos": [
+   {
+    "titulo": "Suunto 9 Peak Sako 100",
+    "autor": "ozfir",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/194647935@N05/51771122575",
+    "openverse_id": "38a2238f-3165-455e-9b6d-8472eb0cba08",
+    "archivo": "smartwatch-1.webp"
+   },
+   {
+    "titulo": "Free close GPS Smartwatch image",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5926461/photo-image-background-public-domain-black",
+    "openverse_id": "d2ae0063-0c95-4597-87a5-00a770d979c4",
+    "archivo": "smartwatch-2.webp"
+   },
+   {
+    "titulo": "Suunto 9 Peak on the wrist",
+    "autor": "ozfir",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/194647935@N05/51771797681",
+    "openverse_id": "b8e7d1fe-5ef7-44e8-b513-eaefce74d0f2",
+    "archivo": "smartwatch-3.webp"
+   }
+  ]
  },
  "altavoz": {
   "nombre": "un altavoz",
-  "titulo": "Free mini bluetooth speaker image",
-  "autor": null,
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.rawpixel.com/image/5919265/photo-image-white-background-phone-public-domain",
-  "openverse_id": "98592689-5cf3-4c6f-987e-0dbac740b340"
+  "fotos": [
+   {
+    "titulo": "Small bluetooth speaker",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/11524277/small-bluetooth-speaker",
+    "openverse_id": "b4d594cf-c672-4e56-ae15-1ba68d5d2fbd",
+    "archivo": "altavoz-1.webp"
+   },
+   {
+    "titulo": "Closeup of black bluetooth speaker",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5975218/closeup-black-bluetooth-speaker",
+    "openverse_id": "ed143d96-9000-43be-ba1b-4eff1e975a2c",
+    "archivo": "altavoz-2.webp"
+   },
+   {
+    "titulo": "Black trendy bluetooth speaker drop",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5975232/photo-image-public-domain-technology-bird",
+    "openverse_id": "b16fb9ed-1e90-4abd-a7e8-bd1eb5d71311",
+    "archivo": "altavoz-3.webp"
+   }
+  ]
  },
  "powerbank": {
   "nombre": "una batería externa",
-  "titulo": "Free phone charging power bank",
-  "autor": null,
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.rawpixel.com/image/5910321/image-background-phone-public-domain",
-  "openverse_id": "6db2b163-e7d2-4cf0-b02a-128bd49161a6"
+  "fotos": [
+   {
+    "titulo": "Free phone charging power bank",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5910321/image-background-phone-public-domain",
+    "openverse_id": "6db2b163-e7d2-4cf0-b02a-128bd49161a6",
+    "archivo": "powerbank-1.webp"
+   }
+  ]
  },
  "cargador": {
   "nombre": "un cargador",
-  "titulo": "What's in My Bag 2025-06-13",
-  "autor": "Kainoki Kaede",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/54246145@N05/54586624723",
-  "openverse_id": "2fdc2d87-eb5d-4775-b884-25765402eec9"
+  "fotos": [
+   {
+    "titulo": "USB cable wire close up",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6040523/photo-image-white-background-public-domain-technology",
+    "openverse_id": "45f897e6-a46e-498c-b671-bf2e8808a7ec",
+    "archivo": "cargador-1.webp"
+   },
+   {
+    "titulo": "USB cable wire close up",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6040367/photo-image-white-background-public-domain-technology",
+    "openverse_id": "931e5914-c430-4035-a4da-4760f83dd3d7",
+    "archivo": "cargador-2.webp"
+   },
+   {
+    "titulo": "Free phone charger image",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5923136/photo-image-phone-public-domain-white",
+    "openverse_id": "6d413876-3f01-4960-a419-b27d0cea00df",
+    "archivo": "cargador-3.webp"
+   }
+  ]
  },
  "pilas": {
-  "vetado": true
+  "nombre": "unas pilas",
+  "fotos": [
+   {
+    "titulo": "AA battery",
+    "autor": "joka2000",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/77585122@N00/55597777677",
+    "openverse_id": "8435a4f8-b7fb-48ef-9328-5d5506c7aa4b",
+    "archivo": "pilas-1.webp"
+   },
+   {
+    "titulo": "AA Batteries",
+    "autor": "ajay_suresh",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/83136374@N05/51825378856",
+    "openverse_id": "8bb22373-850f-4bff-a9ea-8f8c1c3b5554",
+    "archivo": "pilas-2.webp"
+   },
+   {
+    "titulo": "Portable radio - SONY ICF-P36 (Two AA batteries).",
+    "autor": "MIKI Yoshihito. (#mikiyoshihito)",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/7940758@N07/51633141669",
+    "openverse_id": "39fb8f27-b7d6-405f-9f3b-7c587654b7d6",
+    "archivo": "pilas-3.webp"
+   }
+  ]
  },
  "movil": {
   "nombre": "un teléfono móvil",
-  "titulo": "Smartphone in Hand",
-  "autor": "ccnull.de Bilddatenbank",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/115225894@N07/54366512372",
-  "openverse_id": "58c87b22-bd6f-4ad0-a6e7-afaa9294a8f6"
+  "fotos": [
+   {
+    "titulo": "Smartphone in Hand",
+    "autor": "ccnull.de Bilddatenbank",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/115225894@N07/54366512372",
+    "openverse_id": "58c87b22-bd6f-4ad0-a6e7-afaa9294a8f6",
+    "archivo": "movil-1.webp"
+   },
+   {
+    "titulo": "person holding smartphone their hand",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/3296741/free-photo-image-cc0-cell-phone-computer",
+    "openverse_id": "0a742736-3afd-4825-8876-f893cb802309",
+    "archivo": "movil-2.webp"
+   },
+   {
+    "titulo": "Samsung Galaxy",
+    "autor": "Wilfred Iven",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/samsung-galaxy-QVKE96OD36",
+    "openverse_id": "4c3060f8-2264-4647-b1bb-6fdaa0b13e76",
+    "archivo": "movil-3.webp"
+   }
+  ]
  },
  "tablet": {
   "nombre": "una tablet",
-  "titulo": "Tablet Computer",
-  "autor": "Birch Landing Home",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/tablet-computer-KCEVT4PCQ1",
-  "openverse_id": "4b8051ed-6ac7-46d2-b544-22093d836f5b"
+  "fotos": [
+   {
+    "titulo": "Tablet Computer",
+    "autor": "Birch Landing Home",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/tablet-computer-KCEVT4PCQ1",
+    "openverse_id": "4b8051ed-6ac7-46d2-b544-22093d836f5b",
+    "archivo": "tablet-1.webp"
+   },
+   {
+    "titulo": "Macbook Laptop",
+    "autor": "Wilfred Iven",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/macbook-laptop-RMATTE7HXJ",
+    "openverse_id": "b9004455-e195-494e-9e41-05e3dc8531d9",
+    "archivo": "tablet-2.webp"
+   }
+  ]
  },
  "portatil": {
   "nombre": "un portátil",
-  "titulo": "Mouse and Laptop on Desk",
-  "autor": null,
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.rawpixel.com/image/5967565/mouse-and-laptop-desk",
-  "openverse_id": "aa9587f7-c6c2-4846-83ca-868ee605b5da"
+  "fotos": [
+   {
+    "titulo": "Business Working",
+    "autor": "Marc Chouinard",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/business-working-PHE63L27S6",
+    "openverse_id": "edbc60b2-a14c-463b-9c20-3126e200e1ee",
+    "archivo": "portatil-1.webp"
+   },
+   {
+    "titulo": "Analytics Charts",
+    "autor": "Negative Space",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/analytics-charts-RCFX768X06",
+    "openverse_id": "2d3fb7e3-3321-4d08-86b3-d172ab987733",
+    "archivo": "portatil-2.webp"
+   },
+   {
+    "titulo": "Writing Papers",
+    "autor": "Helloquence",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/writing-papers-Y01VDYAX63",
+    "openverse_id": "b73d6a7e-37f4-4f5e-9468-5ac1d0ef30fe",
+    "archivo": "portatil-3.webp"
+   }
+  ]
  },
  "pc": {
   "nombre": "un ordenador de sobremesa",
-  "titulo": "Desktop Computer",
-  "autor": "Dave Meier",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/desktop-computer-B4145FFE64",
-  "openverse_id": "03a7ce75-6ff5-43b1-a384-540196465e3d"
+  "fotos": [
+   {
+    "titulo": "Desktop Computer",
+    "autor": "Dave Meier",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/desktop-computer-B4145FFE64",
+    "openverse_id": "03a7ce75-6ff5-43b1-a384-540196465e3d",
+    "archivo": "pc-1.webp"
+   },
+   {
+    "titulo": "Desktop Computer",
+    "autor": "Karol Dach",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/desktop-computer-25WP90QOLT",
+    "openverse_id": "8569b2e8-f154-4fb5-9fa4-e151ae06f89e",
+    "archivo": "pc-2.webp"
+   }
+  ]
  },
  "monitor": {
   "nombre": "un monitor",
-  "titulo": "Coding Programming",
-  "autor": "Startup Stock Photos",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/coding-programming-SCC00WCQ3I",
-  "openverse_id": "bf214759-31c1-4b83-9f3d-e7a96c738931"
+  "fotos": [
+   {
+    "titulo": "Seo Computer",
+    "autor": "Serpstat",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/seo-computer-959IURDRGJ",
+    "openverse_id": "80ca15c3-1efe-400d-8f19-2733f083cce5",
+    "archivo": "monitor-1.webp"
+   },
+   {
+    "titulo": "Coding Programming",
+    "autor": "Startup Stock Photos",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/coding-programming-SCC00WCQ3I",
+    "openverse_id": "bf214759-31c1-4b83-9f3d-e7a96c738931",
+    "archivo": "monitor-2.webp"
+   }
+  ]
  },
  "raton": {
   "nombre": "un ratón",
-  "titulo": "2024 (365 challenge No. 2) - Week 15 (mostly white) Day 1 - computer mouse",
-  "autor": "ambabheg",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/31518985@N04/53639425778",
-  "openverse_id": "5e2e3191-2c6b-44f8-98e2-284a25fc32e1"
+  "fotos": [
+   {
+    "titulo": "2024 (365 challenge No. 2) - Week 15 (mostly white) Day 1 - computer mouse",
+    "autor": "ambabheg",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/31518985@N04/53639425778",
+    "openverse_id": "5e2e3191-2c6b-44f8-98e2-284a25fc32e1",
+    "archivo": "raton-1.webp"
+   },
+   {
+    "titulo": "A black computer mouse lies beside the laptop, suggesting a comfortable workspace",
+    "autor": "nenadstojkovicart",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/202846129@N03/54568796325",
+    "openverse_id": "9afcb488-3bc7-4a45-bf9f-9693a56c22c6",
+    "archivo": "raton-2.webp"
+   },
+   {
+    "titulo": "2023.128 computer mouse",
+    "autor": "DirkVanhalle",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/146852424@N02/53027079319",
+    "openverse_id": "315f7c9f-4c01-4302-b3ea-63fc3daed9ff",
+    "archivo": "raton-3.webp"
+   }
+  ]
  },
  "teclado": {
   "nombre": "un teclado",
-  "titulo": "Mechanical keyboard",
-  "autor": "phithanhviet",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/99146016@N07/52309916271",
-  "openverse_id": "4c549a6a-695c-4ba7-b11a-1fec9952a9d3"
+  "fotos": [
+   {
+    "titulo": "Keychron K8 Non-Backlight Wireless Mechanical Keyboard mit Cherry Profile Double - Shot PBT Full Set Keycaps - Camel",
+    "autor": "Triple-green",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/66451944@N03/52793706760",
+    "openverse_id": "e0b82198-2ad5-4264-b455-6cfb841644b3",
+    "archivo": "teclado-1.webp"
+   },
+   {
+    "titulo": "Mechanical Keyboard",
+    "autor": "phithanhviet",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/99146016@N07/52309562776",
+    "openverse_id": "2f78705d-d6ef-4adc-b613-0fe958b3afc6",
+    "archivo": "teclado-2.webp"
+   },
+   {
+    "titulo": "Keychron K8 Non-Backlight Wireless Mechanical Keyboard",
+    "autor": "Triple-green",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/66451944@N03/52766711146",
+    "openverse_id": "ed214593-25e3-4f30-abc0-993562b3ef49",
+    "archivo": "teclado-3.webp"
+   }
+  ]
  },
  "almacenamiento": {
   "nombre": "un disco de almacenamiento",
-  "titulo": "LG 그램 15Z980-003",
-  "autor": "LGEPR",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/32985045@N08/39006547362",
-  "openverse_id": "3d66a49a-5234-4534-8fb6-30c3c9fd4b46"
+  "fotos": [
+   {
+    "titulo": "Compatible 960GB SSD",
+    "autor": "Psychlist1972",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/34452246@N02/51627249730",
+    "openverse_id": "78a3807b-ac62-4b30-b2d2-e4d083062292",
+    "archivo": "almacenamiento-1.webp"
+   }
+  ]
  },
  "router": {
-  "vetado": true
+  "nombre": "un router",
+  "fotos": [
+   {
+    "titulo": "WLAN-Router auf einem Tisch",
+    "autor": "ccnull.de Bilddatenbank",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/115225894@N07/54394316571",
+    "openverse_id": "89da2373-42c4-4e79-8193-d6565098b674",
+    "archivo": "router-1.webp"
+   },
+   {
+    "titulo": "Router. Free public domain CC0",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5917436/router-free-public-domain-cc0-photo",
+    "openverse_id": "44bbec5b-7562-4a7a-acc2-2b334b7aa32a",
+    "archivo": "router-2.webp"
+   },
+   {
+    "titulo": "Router",
+    "autor": "ccnull.de Bilddatenbank",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/115225894@N07/53645586987",
+    "openverse_id": "9e43fa4b-4ff9-489a-8117-67d5e81e31ff",
+    "archivo": "router-3.webp"
+   }
+  ]
  },
  "tv": {
   "nombre": "un televisor",
-  "titulo": "Interior Living",
-  "autor": "Jaros%u0142aw%20Ceborski",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/interior-living-6SMA09U7Y8",
-  "openverse_id": "39f62bc8-ff8a-4564-ab88-626269d0ff40"
+  "fotos": [
+   {
+    "titulo": "Interior Living",
+    "autor": "Jaros%u0142aw%20Ceborski",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/interior-living-6SMA09U7Y8",
+    "openverse_id": "39f62bc8-ff8a-4564-ab88-626269d0ff40",
+    "archivo": "tv-1.webp"
+   },
+   {
+    "titulo": "Two leather armchairs two tables",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/3283151/free-photo-image-room-living-space-coworking",
+    "openverse_id": "81ea8545-124a-47e7-97bc-c76425b61df7",
+    "archivo": "tv-2.webp"
+   }
+  ]
  },
  "camara": {
   "nombre": "una cámara",
-  "titulo": "Digital camera lens",
-  "autor": null,
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.rawpixel.com/image/6022172/photo-image-public-domain-camera-free",
-  "openverse_id": "25199a6c-e425-4231-a4b4-230f91b5d8e4"
+  "fotos": [
+   {
+    "titulo": "Samsung S730",
+    "autor": "CapCase",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/7467877@N07/13624909823",
+    "openverse_id": "43bb6a5e-388e-492f-87bd-914cd4bb1d03",
+    "archivo": "camara-1.webp"
+   },
+   {
+    "titulo": "Digital camera lens",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6028742/photo-image-public-domain-technology-camera",
+    "openverse_id": "ccc6ecd8-ae0d-41b9-9948-fdc90fb8d85a",
+    "archivo": "camara-2.webp"
+   },
+   {
+    "titulo": "Digital camera lens",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6022172/photo-image-public-domain-camera-free",
+    "openverse_id": "25199a6c-e425-4231-a4b4-230f91b5d8e4",
+    "archivo": "camara-3.webp"
+   }
+  ]
  },
  "mando": {
-  "vetado": true
+  "nombre": "un mando de videojuegos",
+  "fotos": [
+   {
+    "titulo": "Game pad, remote control",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6037718/photo-image-public-domain-children-black",
+    "openverse_id": "a014e9b4-659c-46fd-9a03-bf0f4e66053b",
+    "archivo": "mando-1.webp"
+   },
+   {
+    "titulo": "New video game controller exposed",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/3298255/free-photo-image-playstation-game-controller-gaming-control",
+    "openverse_id": "6fe14654-389b-44bf-b26f-40c159c8ca86",
+    "archivo": "mando-2.webp"
+   },
+   {
+    "titulo": "Game joystick, location unknown, 02/10/2017",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6113673/game-joystick-location-unknown-02102017",
+    "openverse_id": "326caf88-0076-4259-98f3-b850da3daa1e",
+    "archivo": "mando-3.webp"
+   }
+  ]
  },
  "consola": {
-  "vetado": true
+  "nombre": "una consola",
+  "fotos": [
+   {
+    "titulo": "Sony's PSP console, location unknown",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6113148/photo-image-public-domain-technology-free",
+    "openverse_id": "e86e8d0f-7b11-415f-a242-bb564334229f",
+    "archivo": "consola-1.webp"
+   },
+   {
+    "titulo": "Hanimex TVG-070C 'Programmable TV Game' console",
+    "autor": "friedorange79",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/145201475@N08/28872179858",
+    "openverse_id": "f5cec461-a21c-4467-a29e-2564ed3133b0",
+    "archivo": "consola-2.webp"
+   }
+  ]
  },
  "cafetera": {
   "nombre": "una cafetera",
-  "titulo": "Coffee Machine",
-  "autor": "nick.amoscato",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/91374488@N07/51896257433",
-  "openverse_id": "4bd17c2d-c5c3-497b-81b2-7ab885ddcdc6"
+  "fotos": [
+   {
+    "titulo": "Coffee Machine",
+    "autor": "nick.amoscato",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/91374488@N07/51896257433",
+    "openverse_id": "4bd17c2d-c5c3-497b-81b2-7ab885ddcdc6",
+    "archivo": "cafetera-1.webp"
+   },
+   {
+    "titulo": "Free espresso coffee machine image",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5904154/photo-image-public-domain-coffee-free",
+    "openverse_id": "1b3400d7-0b02-4685-8b65-eb42523e5145",
+    "archivo": "cafetera-2.webp"
+   },
+   {
+    "titulo": "Free coffee machine espresso cups",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5926293/photo-image-public-domain-free-drink",
+    "openverse_id": "d1c0ca8e-84b3-4248-a6df-59a602954dfe",
+    "archivo": "cafetera-3.webp"
+   }
+  ]
  },
  "cafe": {
   "nombre": "café",
-  "titulo": "Coffee bean cup",
-  "autor": "jamesvincentjack",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.flickr.com/photos/192536886@N08/51142609494",
-  "openverse_id": "a0b1b2c8-7176-4835-84ae-6c7a8872998f"
+  "fotos": [
+   {
+    "titulo": "Coffee bean cup",
+    "autor": "jamesvincentjack",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/192536886@N08/51142609494",
+    "openverse_id": "a0b1b2c8-7176-4835-84ae-6c7a8872998f",
+    "archivo": "cafe-1.webp"
+   },
+   {
+    "titulo": "Roasted coffee beans cup",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6039159/photo-image-background-public-domain-coffee",
+    "openverse_id": "becc3ee2-f7d5-4d97-b9c6-fc6fc26bc0b9",
+    "archivo": "cafe-2.webp"
+   },
+   {
+    "titulo": "Latte ClubMed Bahamas",
+    "autor": "JavaJoba",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/63315170@N00/493549254",
+    "openverse_id": "97cb7138-8809-4c78-9d2f-fe95c48bd49b",
+    "archivo": "cafe-3.webp"
+   }
+  ]
  },
  "freidora": {
-  "vetado": true
+  "nombre": "una freidora de aire",
+  "fotos": []
  },
  "aspirador": {
-  "vetado": true
+  "nombre": "un aspirador",
+  "fotos": [
+   {
+    "titulo": "Vintage Electrolux Vacuum Cleaner Plastic Advertising Saving Bank, Measures 5.5 Inches",
+    "autor": "France1978",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/51764518@N02/25937386151",
+    "openverse_id": "58d36fab-4c89-4c9a-9d27-012c8f935ee0",
+    "archivo": "aspirador-1.webp"
+   },
+   {
+    "titulo": "Free vacuum cleaner image",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5903507/photo-image-public-domain-room-free",
+    "openverse_id": "184fcfbd-a9bc-432f-8e15-226cb12da675",
+    "archivo": "aspirador-2.webp"
+   },
+   {
+    "titulo": "Free vacuum cleaner wood floor",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5920309/photo-image-public-domain-house-home",
+    "openverse_id": "422d7eb4-3e0f-4c8d-9072-0bb2a83cd8bd",
+    "archivo": "aspirador-3.webp"
+   }
+  ]
  },
  "cocina": {
   "nombre": "utensilios de cocina",
-  "titulo": "Wooden Bowl",
-  "autor": "The World is a Stage",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/wooden-bowl-AMW6XPP8AT",
-  "openverse_id": "ad60eeb8-7f1b-4e03-8045-22e79c7611a1"
+  "fotos": [
+   {
+    "titulo": "Wooden Bowl",
+    "autor": "The World is a Stage",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/wooden-bowl-AMW6XPP8AT",
+    "openverse_id": "ad60eeb8-7f1b-4e03-8045-22e79c7611a1",
+    "archivo": "cocina-1.webp"
+   },
+   {
+    "titulo": "Top-View Wooden Spoon Isolated On White Background",
+    "autor": "personalgraphic.official",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/198895458@N04/53097229196",
+    "openverse_id": "b22b4816-7f3a-49c2-9c6c-0617bd655f18",
+    "archivo": "cocina-2.webp"
+   },
+   {
+    "titulo": "View wooden utensil drawer wooden",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/3286550/free-photo-image-kitchen-drawer-furniture-silver-spoons",
+    "openverse_id": "365b13c6-fcd8-4a64-928d-ecf39f4b8730",
+    "archivo": "cocina-3.webp"
+   }
+  ]
  },
  "iluminacion": {
   "nombre": "una bombilla",
-  "titulo": "LED Light Bulb",
-  "autor": "Clint__Budd",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/58827557@N06/53745417116",
-  "openverse_id": "e8200bbc-79f0-40cb-9513-2dae5f3017c4"
+  "fotos": [
+   {
+    "titulo": "LED Light Bulb",
+    "autor": "Clint__Budd",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/58827557@N06/53745417116",
+    "openverse_id": "e8200bbc-79f0-40cb-9513-2dae5f3017c4",
+    "archivo": "iluminacion-1.webp"
+   },
+   {
+    "titulo": "LED light bulb",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6021731/led-light-bulb-free-public-domain-cc0-photo",
+    "openverse_id": "b7e20369-9486-41ce-9611-8ee08e67a438",
+    "archivo": "iluminacion-2.webp"
+   },
+   {
+    "titulo": "Project 365 #38: 070222 Paradise By The Dashboard Light",
+    "autor": "comedy_nose",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/23408922@N07/51868657576",
+    "openverse_id": "9033e7a5-da4e-4e74-ba74-62c7b88d769b",
+    "archivo": "iluminacion-3.webp"
+   }
+  ]
  },
  "juguete": {
   "nombre": "juguetes",
-  "titulo": "Colorful toys - claw machine",
-  "autor": "GeorgeTan#5",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.flickr.com/photos/198109102@N06/53455260353",
-  "openverse_id": "8ba95a6b-c359-4073-baec-359b4dbf732a"
+  "fotos": [
+   {
+    "titulo": "Colorful toys - claw machine",
+    "autor": "GeorgeTan#5",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/198109102@N06/53455260353",
+    "openverse_id": "8ba95a6b-c359-4073-baec-359b4dbf732a",
+    "archivo": "juguete-1.webp"
+   },
+   {
+    "titulo": "Colorful toys",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6041585/colorful-toys-free-public-domain-cc0-photo",
+    "openverse_id": "c93599a9-4029-4867-be63-1a96915bdaba",
+    "archivo": "juguete-2.webp"
+   },
+   {
+    "titulo": "Little girl have fun with plasticine and colorful toys.",
+    "autor": "nenadstojkovicart",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/202846129@N03/54539490658",
+    "openverse_id": "4f6dee1b-4d9c-4298-b76a-c005a19246ac",
+    "archivo": "juguete-3.webp"
+   }
+  ]
  },
  "libro": {
   "nombre": "libros",
-  "titulo": "Books Stacked",
-  "autor": "Candace McDaniel",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/books-stacked-W5VAXXV2RP",
-  "openverse_id": "fc0ed9f5-6feb-4226-9f80-2e907cd8748a"
+  "fotos": [
+   {
+    "titulo": "Books Stacked",
+    "autor": "Candace McDaniel",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/books-stacked-W5VAXXV2RP",
+    "openverse_id": "fc0ed9f5-6feb-4226-9f80-2e907cd8748a",
+    "archivo": "libro-1.webp"
+   },
+   {
+    "titulo": "Books stacked in sunlight",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5969156/books",
+    "openverse_id": "7f633c5f-17cd-49fd-9cad-d6d45ef7ab06",
+    "archivo": "libro-2.webp"
+   },
+   {
+    "titulo": "Books stacked shelf",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/3298137/free-photo-image-book-bookcase-cc0",
+    "openverse_id": "2aa9e991-7558-48c5-8fa6-4b47a8f555f5",
+    "archivo": "libro-3.webp"
+   }
+  ]
  },
  "belleza": {
   "nombre": "productos de belleza",
-  "titulo": "Bach skincare products, location unknown",
-  "autor": null,
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.rawpixel.com/image/6113768/photo-image-background-public-domain-doctor",
-  "openverse_id": "86108163-79b1-44ca-a759-0702e78d42ff"
+  "fotos": [
+   {
+    "titulo": "Woman Skin",
+    "autor": "Authentic Stock",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/woman-skin-VEP8AYJMNI",
+    "openverse_id": "7e40b13a-384d-4d54-a890-15a5bc7a984d",
+    "archivo": "belleza-1.webp"
+   },
+   {
+    "titulo": "Woman Skin",
+    "autor": "Authentic Stock",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/woman-skin-ZD257KAS8U",
+    "openverse_id": "edda94c6-2cb5-4f7b-a42a-fc28cac16531",
+    "archivo": "belleza-2.webp"
+   },
+   {
+    "titulo": "Beauty Skincare",
+    "autor": "Authentic Stock",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/beauty-skincare-0Q23V7QFR8",
+    "openverse_id": "3fdd8a7e-8641-44cb-b44f-2578e9d99b92",
+    "archivo": "belleza-3.webp"
+   }
+  ]
  },
  "afeitado": {
   "nombre": "una afeitadora",
-  "titulo": "Electric Razors (Credit dofollow link to https://rasoio-elettrico.net)",
-  "autor": "albertogiovannini87",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/198804696@N08/53081216141",
-  "openverse_id": "06ba7d13-7493-44cc-b308-4a4f1e7b09a9"
+  "fotos": [
+   {
+    "titulo": "Electric Razors (Credit dofollow link to https://rasoio-elettrico.net)",
+    "autor": "albertogiovannini87",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/198804696@N08/53081627515",
+    "openverse_id": "d3b3dbf0-425a-4ca2-b61b-aec89aea9cf4",
+    "archivo": "afeitado-1.webp"
+   },
+   {
+    "titulo": "Electric Razors (Credit dofollow link to https://rasoio-elettrico.net)",
+    "autor": "albertogiovannini87",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/198804696@N08/53080657657",
+    "openverse_id": "d96566af-69b0-4802-8d0e-d7e0794e5a06",
+    "archivo": "afeitado-2.webp"
+   },
+   {
+    "titulo": "Electric Razors (Credit dofollow link to https://rasoio-elettrico.net)",
+    "autor": "albertogiovannini87",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/198804696@N08/53081216141",
+    "openverse_id": "06ba7d13-7493-44cc-b308-4a4f1e7b09a9",
+    "archivo": "afeitado-3.webp"
+   }
+  ]
  },
  "deporte": {
   "nombre": "material de deporte",
-  "titulo": "Weights Fitness",
-  "autor": "%u0141ukasz%20Popardowski",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/weights-fitness-3H89EH3WIJ",
-  "openverse_id": "4ddd51bf-cb08-40dc-8a5b-85bcfb371fb9"
+  "fotos": [
+   {
+    "titulo": "Weights Fitness",
+    "autor": "%u0141ukasz%20Popardowski",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/weights-fitness-3H89EH3WIJ",
+    "openverse_id": "4ddd51bf-cb08-40dc-8a5b-85bcfb371fb9",
+    "archivo": "deporte-1.webp"
+   },
+   {
+    "titulo": "Two Dumbbells - Credit to http://homedust.com/",
+    "autor": "Homedust",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/159630537@N08/41851191125",
+    "openverse_id": "a2cae5fc-68ef-43a8-a3e5-2c3ca801c74d",
+    "archivo": "deporte-2.webp"
+   },
+   {
+    "titulo": "Man Carrying Barbel - Credit to http://homedust.com/",
+    "autor": "Homedust",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/159630537@N08/41851164705",
+    "openverse_id": "6f0f1174-3420-4862-99b5-baba163f308b",
+    "archivo": "deporte-3.webp"
+   }
+  ]
  },
  "mascotas": {
   "nombre": "mascotas",
-  "titulo": "Dogs and cats livin' together.",
-  "autor": "young shanahan",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/14759783@N04/51815538480",
-  "openverse_id": "8fab19d1-7fd1-4986-ac41-8e265fbc041b"
+  "fotos": [
+   {
+    "titulo": "Dog Ignores Cat Act 4",
+    "autor": "cogdogblog",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/37996646802@N01/52005682183",
+    "openverse_id": "ea84eb0b-82f5-4c52-94d1-201bbc3311c6",
+    "archivo": "mascotas-1.webp"
+   }
+  ]
  },
  "bebe": {
-  "vetado": true
+  "nombre": "productos para bebé",
+  "fotos": [
+   {
+    "titulo": "Baby Bottle",
+    "autor": "Burst",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/baby-bottle-G9JKX5JNKH",
+    "openverse_id": "c2b82e54-5c53-4876-91d3-0ad58ef12430",
+    "archivo": "bebe-1.webp"
+   },
+   {
+    "titulo": "A baby bottle sits on a soft surface next to a sleeping infant",
+    "autor": "nenadstojkovicart",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/202846129@N03/54568468506",
+    "openverse_id": "8abfa4dd-0333-456b-8764-71d1a4e250f8",
+    "archivo": "bebe-2.webp"
+   },
+   {
+    "titulo": "Pumped breastmilk and baby bottle",
+    "autor": "Alabama Extension",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/184594136@N08/51330400188",
+    "openverse_id": "d22abfed-3d54-4b61-b7b5-fa674a550068",
+    "archivo": "bebe-3.webp"
+   }
+  ]
  },
  "herramientas": {
   "nombre": "herramientas",
-  "titulo": "No Power Tool Battery Standardization",
-  "autor": "cogdogblog",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.flickr.com/photos/37996646802@N01/51605280603",
-  "openverse_id": "3d8351a7-bf1d-451d-88f2-bf5e3ee22d11"
+  "fotos": [
+   {
+    "titulo": "No Power Tool Battery Standardization",
+    "autor": "cogdogblog",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/37996646802@N01/51605280603",
+    "openverse_id": "3d8351a7-bf1d-451d-88f2-bf5e3ee22d11",
+    "archivo": "herramientas-1.webp"
+   }
+  ]
  },
  "coche": {
   "nombre": "accesorios de coche",
-  "titulo": null,
-  "autor": null,
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.rawpixel.com/image/6051245/free-public-domain-cc0-photo",
-  "openverse_id": "57a8434d-8135-46f8-bb43-8f6724915098"
+  "fotos": [
+   {
+    "titulo": null,
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6051245/free-public-domain-cc0-photo",
+    "openverse_id": "57a8434d-8135-46f8-bb43-8f6724915098",
+    "archivo": "coche-1.webp"
+   }
+  ]
  },
  "leche": {
   "nombre": "leche",
-  "titulo": "Two Glasses of Milk",
-  "autor": "Alabama Extension",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://www.flickr.com/photos/184594136@N08/52633675811",
-  "openverse_id": "6006c64f-6766-48ae-93b3-4181c2319ef6"
+  "fotos": [
+   {
+    "titulo": "Two Glasses of Milk",
+    "autor": "Alabama Extension",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.flickr.com/photos/184594136@N08/52633675811",
+    "openverse_id": "6006c64f-6766-48ae-93b3-4181c2319ef6",
+    "archivo": "leche-1.webp"
+   },
+   {
+    "titulo": "Glass Milk",
+    "autor": "Krzysztof%20Puszczy%u0144ski",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/glass-milk-P2QSUXKCN5",
+    "openverse_id": "35e968c1-06c3-439d-819c-6eb28c339317",
+    "archivo": "leche-2.webp"
+   }
+  ]
  },
  "cerveza": {
   "nombre": "cerveza",
-  "titulo": "Beer Glass",
-  "autor": "Tim Savage",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/beer-glass-EWO2FJILM1",
-  "openverse_id": "0abb8944-f89c-466b-9fc1-b7bb9c07ea91"
+  "fotos": [
+   {
+    "titulo": "Beer Glass",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5970212/beer-glass",
+    "openverse_id": "a5ff8b0a-1fe9-4da9-9c1e-39ac5e24a23b",
+    "archivo": "cerveza-1.webp"
+   },
+   {
+    "titulo": "Free wine, beer glasses image",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5925051/photo-image-background-christmas-public-domain",
+    "openverse_id": "b4d3f9fb-3956-42dd-8498-5aa60da636d5",
+    "archivo": "cerveza-2.webp"
+   },
+   {
+    "titulo": "Free hand holding beer glass",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5926631/photo-image-public-domain-hand-wooden",
+    "openverse_id": "c69d931d-5f80-4cf9-a749-370c3ef11f17",
+    "archivo": "cerveza-3.webp"
+   }
+  ]
  },
  "refresco": {
   "nombre": "refrescos",
-  "titulo": "soda can 4k",
-  "autor": "NenGen",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/191256479@N02/51893716397",
-  "openverse_id": "173391fa-54d0-409e-ae15-c30de6b3650c"
+  "fotos": [
+   {
+    "titulo": "soda can 4k",
+    "autor": "NenGen",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/191256479@N02/51893716397",
+    "openverse_id": "173391fa-54d0-409e-ae15-c30de6b3650c",
+    "archivo": "refresco-1.webp"
+   }
+  ]
  },
  "alimentacion": {
   "nombre": "alimentos",
-  "titulo": "Market Fruits",
-  "autor": "Agnieszka%20Wal%u0119dziak",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/market-fruits-VBQSBXBAO8",
-  "openverse_id": "7b37f6ce-7d0f-4ab9-9e95-5519e117adda"
+  "fotos": [
+   {
+    "titulo": "Basket Groceries",
+    "autor": "leonie wise",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/basket-groceries-CUPJ7AU7JD",
+    "openverse_id": "3d22f6b6-3ebd-40a6-b524-c76d40c480ad",
+    "archivo": "alimentacion-1.webp"
+   },
+   {
+    "titulo": "Colorful selection of fresh peppers and cucumbers at a local market",
+    "autor": "nenad53",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/202780880@N02/54590951580",
+    "openverse_id": "a3b3c68f-a0a8-4d95-a15b-cc9c2f85860a",
+    "archivo": "alimentacion-2.webp"
+   },
+   {
+    "titulo": "Fruits & vegetables",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6037432/fruits-vegetables-free-public-domain-cc0-photo",
+    "openverse_id": "179d8a6c-e6e4-494b-b2d2-4deb902186b3",
+    "archivo": "alimentacion-3.webp"
+   }
+  ]
  },
  "oficina": {
   "nombre": "material de oficina",
-  "titulo": "Notebook Desk",
-  "autor": "Artsy Crafty",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/notebook-desk-GRGCZJ7CNE",
-  "openverse_id": "abf75a0f-2c3e-4b32-b03d-55a2597658af"
+  "fotos": [
+   {
+    "titulo": "Notebook Desk",
+    "autor": "Artsy Crafty",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/notebook-desk-GRGCZJ7CNE",
+    "openverse_id": "abf75a0f-2c3e-4b32-b03d-55a2597658af",
+    "archivo": "oficina-1.webp"
+   },
+   {
+    "titulo": "Pink Blue",
+    "autor": "Miesha Moriniere",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/pink-blue-7TFWK154VM",
+    "openverse_id": "3939ff70-4fa5-4830-ab5f-01aa32821803",
+    "archivo": "oficina-2.webp"
+   },
+   {
+    "titulo": "Pink Notebook",
+    "autor": "Chimene Gaspar",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/pink-notebook-19ZTZTD5WK",
+    "openverse_id": "5cbc7a52-7d47-4787-9231-701e51c3ba77",
+    "archivo": "oficina-3.webp"
+   }
+  ]
  },
  "salud": {
-  "vetado": true
+  "nombre": "productos de salud",
+  "fotos": []
  },
  "moda": {
   "nombre": "moda",
-  "titulo": "Fashion Accessories",
-  "autor": "Ylanite Koppens",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/fashion-accessories-JFR5ISZCFB",
-  "openverse_id": "8ba9b650-7da6-4e64-ad83-a45a5eb5fcba"
+  "fotos": [
+   {
+    "titulo": "Fashion Accessories",
+    "autor": "Ylanite Koppens",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/fashion-accessories-JFR5ISZCFB",
+    "openverse_id": "8ba9b650-7da6-4e64-ad83-a45a5eb5fcba",
+    "archivo": "moda-1.webp"
+   },
+   {
+    "titulo": "Gold bangle bracelets, fashion accessory",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/11515808/gold-bangle-bracelets-fashion-accessory",
+    "openverse_id": "ea23b154-506d-4675-9de8-9e0fd2338c50",
+    "archivo": "moda-2.webp"
+   }
+  ]
  },
  "jardin": {
-  "vetado": true
+  "nombre": "jardín",
+  "fotos": [
+   {
+    "titulo": "Shovel, gardening tool",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/9647186/shovel-gardening-tool",
+    "openverse_id": "6e6c0e28-89d6-4f95-97ac-e0af39a2b055",
+    "archivo": "jardin-1.webp"
+   },
+   {
+    "titulo": "Digging a Hole",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6074397/digging-hole",
+    "openverse_id": "98761788-2fe9-4d20-87db-8e4f043f4d33",
+    "archivo": "jardin-2.webp"
+   },
+   {
+    "titulo": "Free gardening equipment image",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5918107/image-public-domain-leaves-free",
+    "openverse_id": "5db0a380-4071-4bcb-b255-3612dee1417f",
+    "archivo": "jardin-3.webp"
+   }
+  ]
  },
  "vinilo": {
   "nombre": "discos de música",
-  "titulo": "Vinyl Record",
-  "autor": "Skitter Photo",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/vinyl-record-0NOS06CDVI",
-  "openverse_id": "38818db6-0a34-4383-8cb5-493fc3a2f77e"
+  "fotos": [
+   {
+    "titulo": "Vinyl Record",
+    "autor": "Studio 7042",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/vinyl-record-OTOSZLA6WF",
+    "openverse_id": "29c793fc-2b22-4830-9e81-3531f9356960",
+    "archivo": "vinilo-1.webp"
+   },
+   {
+    "titulo": "Vinyl Record",
+    "autor": "Travis Soule",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/vinyl-record-55UE1YGUPU",
+    "openverse_id": "ac752022-4a7f-4c6d-92a1-5dfe1a559cb2",
+    "archivo": "vinilo-2.webp"
+   },
+   {
+    "titulo": "Vinyl Record",
+    "autor": "Skitter Photo",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/vinyl-record-0NOS06CDVI",
+    "openverse_id": "38818db6-0a34-4383-8cb5-493fc3a2f77e",
+    "archivo": "vinilo-3.webp"
+   }
+  ]
  },
  "pelicula": {
   "nombre": "una película",
-  "titulo": "Minolta 16 II",
-  "autor": "Bernt Sønvisen",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/38144390@N04/52502592899",
-  "openverse_id": "f6e677c2-cd22-440f-a4af-14b1d56d83d5"
+  "fotos": [
+   {
+    "titulo": "Vintage projector reel",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/3297074/free-photo-image-cinema-movie-projector",
+    "openverse_id": "9f0cb32e-adbb-49e4-af1e-3c8816b758bb",
+    "archivo": "pelicula-1.webp"
+   },
+   {
+    "titulo": null,
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/6046388/free-public-domain-cc0-photo",
+    "openverse_id": "0e6ac370-f38f-488d-99b4-f7b778bba734",
+    "archivo": "pelicula-2.webp"
+   }
+  ]
  },
  "software": {
   "nombre": "programas de ordenador",
-  "titulo": "Computer Code",
-  "autor": "One Idea LLC",
-  "licencia": "CC0 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "fuente": "https://stocksnap.io/photo/computer-code-AWXC4NOFZN",
-  "openverse_id": "3c928305-ee63-40a3-9ed9-7e54ce4bed62"
+  "fotos": [
+   {
+    "titulo": "Computer Code",
+    "autor": "One Idea LLC",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/computer-code-AWXC4NOFZN",
+    "openverse_id": "3c928305-ee63-40a3-9ed9-7e54ce4bed62",
+    "archivo": "software-1.webp"
+   },
+   {
+    "titulo": "Free code computer screen image",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5924954/photo-image-background-public-domain-technology",
+    "openverse_id": "5e3be13b-b225-4d55-971d-6630106b5108",
+    "archivo": "software-2.webp"
+   },
+   {
+    "titulo": "Free code computer screen image",
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5906903/photo-image-background-public-domain-technology",
+    "openverse_id": "899d9d73-9831-4e38-898f-b8726bd70132",
+    "archivo": "software-3.webp"
+   }
+  ]
  },
  "regalo": {
   "nombre": "un regalo",
-  "titulo": "Origami Boxes",
-  "autor": "~Bani~",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/14607766@N00/16973431495",
-  "openverse_id": "0dee8f4a-f000-46c5-aeeb-f2704067bf31"
+  "fotos": [
+   {
+    "titulo": "Origami Boxes",
+    "autor": "~Bani~",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/14607766@N00/16973431495",
+    "openverse_id": "0dee8f4a-f000-46c5-aeeb-f2704067bf31",
+    "archivo": "regalo-1.webp"
+   },
+   {
+    "titulo": "Gift Box",
+    "autor": "George Dolgikh",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/gift-box-KBGJKIUPDH",
+    "openverse_id": "d1b74b97-ac85-48c9-b5a2-85228b0ab291",
+    "archivo": "regalo-2.webp"
+   },
+   {
+    "titulo": "Gift Box",
+    "autor": "George Dolgikh",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/gift-box-GYTXUYX26M",
+    "openverse_id": "07a5447b-1451-4075-b1de-b8dbcf87f3f0",
+    "archivo": "regalo-3.webp"
+   }
+  ]
  },
  "musica": {
   "nombre": "instrumentos musicales",
-  "titulo": "Gypsy Jazz Acoustic Guitar",
-  "autor": "dejankrsmanovic",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/155403590@N07/51884554285",
-  "openverse_id": "b8dc2614-b1cc-4e89-9fe4-3ae556516593"
+  "fotos": [
+   {
+    "titulo": "Gypsy Jazz Acoustic Guitar",
+    "autor": "dejankrsmanovic",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/155403590@N07/51884554285",
+    "openverse_id": "b8dc2614-b1cc-4e89-9fe4-3ae556516593",
+    "archivo": "musica-1.webp"
+   },
+   {
+    "titulo": "Acoustic Guitar",
+    "autor": "Negative Space",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/acoustic-guitar-HP2GGWWPIN",
+    "openverse_id": "a00d7b22-f5eb-4fcb-9da4-8333753c7852",
+    "archivo": "musica-2.webp"
+   },
+   {
+    "titulo": "Acoustic Guitar",
+    "autor": "Pawel Kadysz",
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://stocksnap.io/photo/acoustic-guitar-LBCPMZCQPT",
+    "openverse_id": "51e6f347-b0be-4019-bad8-95545fe8a19c",
+    "archivo": "musica-3.webp"
+   }
+  ]
+ },
+ "compras": {
+  "nombre": "productos variados",
+  "fotos": [
+   {
+    "titulo": null,
+    "autor": null,
+    "licencia": "CC0 1.0",
+    "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fuente": "https://www.rawpixel.com/image/5937461/free-public-domain-cc0-photo",
+    "openverse_id": "1c5dc778-6979-414f-9b7c-473f7bbacce3",
+    "archivo": "compras-1.webp"
+   },
+   {
+    "titulo": "Macy's Shopping Bag Black Friday 2021",
+    "autor": "Anthony Quintano",
+    "licencia": "BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
+    "fuente": "https://www.flickr.com/photos/22882274@N04/51707550378",
+    "openverse_id": "fbec9605-8265-4bc5-b205-4e5db555d30c",
+    "archivo": "compras-2.webp"
+   }
+  ]
  }
 }

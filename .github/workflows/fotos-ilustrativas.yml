@@ -1,22 +1,18 @@
 name: Fotos ilustrativas
 
-# Busca en Openverse una foto con licencia libre (CC0, dominio público o CC BY) por cada tipo de producto
-# y la guarda en img/tipos/. Solo descarga los tipos que aún no tienen foto. No usa fotos de Amazon.
-# Al terminar, "Publicar en Netlify" se lanza solo.
+# Fotos con licencia libre (Openverse: CC0, dominio público o CC BY) por tipo de producto. No usa fotos de Amazon.
+# Se eligen a ojo en dos pasos (ver scripts/fotos_ilustrativas.py):
+#   1. argumentos: --candidatos todos         -> baja opciones a img/candidatos/ (en una rama, sin publicar)
+#   2. argumentos: --elegir cafe=1,3 tv=2 --limpiar
+# Al terminar en main, "Publicar en Netlify" se lanza solo.
 
 on:
   workflow_dispatch:
     inputs:
-      forzar:
-        description: "Tipos que hay que volver a buscar, separados por espacios (ej.: cafe tv)"
+      argumentos:
+        description: "Argumentos para scripts/fotos_ilustrativas.py (ej.: --candidatos todos)"
         type: string
         default: ""
-      saltar:
-        description: "Con 'forzar': saltar los N primeros resultados para coger otra foto"
-        type: string
-        default: "1"
-  schedule:
-    - cron: "41 4 * * 1"   # cada lunes, por si se añaden tipos nuevos
 
 permissions:
   contents: write
@@ -28,25 +24,26 @@ concurrency:
 jobs:
   fotos:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -q pillow
-      - name: Buscar y guardar fotos
+      - name: Fotos
         env:
-          FORZAR: ${{ inputs.forzar }}
-          SALTAR: ${{ inputs.saltar }}
+          ARGS: ${{ inputs.argumentos }}
         run: |
-          if [ -n "$FORZAR" ]; then python scripts/fotos_ilustrativas.py --forzar $FORZAR --saltar "${SALTAR:-1}"; else python scripts/fotos_ilustrativas.py; fi
-      - name: Guardar en la web
+          # solo letras, números, espacios, = , y guiones: nada que el shell pueda interpretar
+          if ! printf '%s' "$ARGS" | grep -Eq '^[A-Za-z0-9 =,_-]*$'; then echo "Argumentos no válidos"; exit 1; fi
+          python scripts/fotos_ilustrativas.py $ARGS
+      - name: Guardar
         run: |
           git config user.name "fotos-bot"
           git config user.email "fotos-bot@users.noreply.github.com"
-          git add img/tipos redesign/tipos.json creditos-imagenes.html
+          git add -A img/tipos img/candidatos redesign/tipos.json creditos-imagenes.html 2>/dev/null || true
           if git diff --cached --quiet; then echo "Nada nuevo."; exit 0; fi
-          git commit -q -m "Fotos ilustrativas: $(ls img/tipos/*.webp | wc -l) tipos con foto"
+          git commit -q -m "Fotos ilustrativas: $(ls img/tipos/*.webp | wc -l) fotos"
           git pull -q --rebase origin "${GITHUB_REF_NAME}"
           git push -q origin "HEAD:${GITHUB_REF_NAME}"

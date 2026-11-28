@@ -8,8 +8,13 @@ No usa fotos de Amazon ni de tiendas: las normas de afiliados lo prohíben.
 En la web se muestran con la etiqueta "Imagen ilustrativa": enseñan el tipo de producto, no el modelo exacto.
 Los autores y licencias quedan en creditos-imagenes.html (CC BY obliga a citar al autor).
 
-Lo ejecuta GitHub (.github/workflows/fotos-ilustrativas.yml). Solo descarga los tipos que aún no tienen foto;
-con --forzar TIPO vuelve a buscar ese tipo (por si la foto elegida no gusta) y con --saltar N toma otro resultado.
+Las fotos se eligen a ojo, nunca solas (las automáticas salían mal: pilas en una foto de guerra...):
+  1. --candidatos auriculares cafe ...   (o "todos")  descarga hasta 8 opciones por tipo en img/candidatos/
+  2. Claude (o Iván) mira las opciones y elige:  --elegir auriculares=1,4,6 cafe=2
+     Cada tipo puede tener varias fotos; cada producto usa siempre la misma (según su ASIN), así las tarjetas varían.
+  3. Sin argumentos: solo rehace tipos.json y la página de créditos.
+Todo producto tiene foto: si su tipo no tiene, usa la de su categoría y, si tampoco, la de "compras".
+Lo ejecuta GitHub (.github/workflows/fotos-ilustrativas.yml) porque desde la nube de Claude no se llega a Openverse.
 
 Escribe:
   img/tipos/<tipo>.webp          la foto, 640x480
@@ -33,6 +38,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 CARPETA = RAIZ / "img" / "tipos"
 REGLAS = RAIZ / "redesign" / "tipos.json"
 CREDITOS = CARPETA / "creditos.json"
+CANDIDATOS = RAIZ / "img" / "candidatos"
 PAGINA = RAIZ / "creditos-imagenes.html"
 API = "https://api.openverse.org/v1/images/"
 UA = "TrendPulseShop/1.0 (fotos ilustrativas; https://trendpulseshop-es.netlify.app)"
@@ -87,7 +93,17 @@ TIPOS = [
     ("software", r"antivirus|software|licencia|office 20|windows 1", "software on computer screen", "programas de ordenador"),
     ("regalo", r"personalizad|regalo|handmade|hecho a mano", "gift box wrapped", "un regalo"),
     ("musica", r"guitarra|piano|teclado musical|ukelele|micr[oó]fono", "acoustic guitar", "instrumentos musicales"),
+    ("compras", r"$^", "shopping bags gifts", "productos variados"),
 ]
+
+# Búsquedas de más para tener opciones al elegir
+EXTRA = {
+    "aspirador": ["vacuum cleaner", "robot vacuum"], "bebe": ["baby bottle", "baby toys rattle"],
+    "pilas": ["batteries closeup", "rechargeable batteries"], "freidora": ["air fryer", "deep fryer kitchen"],
+    "router": ["wireless router antennas", "internet router"], "consola": ["game console", "nintendo switch"],
+    "mando": ["video game controller", "xbox controller"], "salud": ["thermometer", "vitamins pills bottle"],
+    "jardin": ["gardening tools", "watering can garden"], "compras": ["shopping bags", "gift boxes"],
+}
 
 # Si ninguna palabra del título encaja, foto por categoría de la tienda
 CATEGORIA = {
@@ -139,14 +155,12 @@ def guardar_foto(resultado, destino):
 def pagina_creditos(creditos):
     filas = []
     for tipo, c in sorted(creditos.items()):
-        if c.get("vetado"):
-            continue
-        autor = html.escape(c.get("autor") or "autor desconocido")
-        lic = html.escape(c["licencia"])
-        filas.append(f'<li><img src="img/tipos/{tipo}.webp" alt="" width="120" height="90" loading="lazy">'
-                     f'<div><b>{html.escape(c["nombre"].capitalize())}</b><br>«{html.escape(c.get("titulo") or "sin título")}», de {autor}. '
-                     f'Licencia <a href="{html.escape(c["licencia_url"])}" rel="nofollow">{lic}</a>. '
-                     f'<a href="{html.escape(c["fuente"])}" rel="nofollow">Ver original</a>. Recortada y reducida.</div></li>')
+        for f in c.get("fotos", []):
+            autor = html.escape(f.get("autor") or "autor desconocido")
+            filas.append(f'<li><img src="img/tipos/{f["archivo"]}" alt="" width="120" height="90" loading="lazy">'
+                         f'<div><b>{html.escape(c["nombre"].capitalize())}</b><br>«{html.escape(f.get("titulo") or "sin título")}», de {autor}. '
+                         f'Licencia <a href="{html.escape(f.get("licencia_url") or "")}" rel="nofollow">{html.escape(f.get("licencia") or "")}</a>. '
+                         f'<a href="{html.escape(f.get("fuente") or "")}" rel="nofollow">Ver original</a>. Recortada y reducida.</div></li>')
     return f"""<!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Créditos de las imágenes · TrendPulseShop</title><meta name="robots" content="noindex">
@@ -162,59 +176,113 @@ Son fotos con licencia libre (CC0, dominio público o CC BY) encontradas en Open
 """
 
 
+def info_de(r):
+    return {"titulo": r.get("title"), "autor": r.get("creator"),
+            "licencia": f"{(r.get('license') or '').upper()} {r.get('license_version') or ''}".strip(),
+            "licencia_url": r.get("license_url") or "https://creativecommons.org/",
+            "fuente": r.get("foreign_landing_url") or r.get("url"), "openverse_id": r.get("id")}
+
+
+def migrar(creditos):
+    """Formato antiguo (una foto por tipo) -> {"nombre", "fotos": [...]}."""
+    nombres = {t: n for t, _, _, n in TIPOS}
+    for tipo, c in list(creditos.items()):
+        if "fotos" in c:
+            continue
+        if c.get("vetado"):
+            creditos[tipo] = {"nombre": nombres.get(tipo, tipo), "fotos": []}
+            continue
+        viejo = CARPETA / f"{tipo}.webp"
+        nuevo = CARPETA / f"{tipo}-1.webp"
+        if viejo.exists():
+            viejo.rename(nuevo)
+        foto = {k: c.get(k) for k in ("titulo", "autor", "licencia", "licencia_url", "fuente", "openverse_id")}
+        foto["archivo"] = nuevo.name
+        creditos[tipo] = {"nombre": c.get("nombre", nombres.get(tipo, tipo)), "fotos": [foto] if nuevo.exists() else []}
+    return creditos
+
+
+def candidatos(tipos, n):
+    consultas = {t: q for t, _, q, _ in TIPOS}
+    for tipo in tipos:
+        carpeta = CANDIDATOS / tipo
+        carpeta.mkdir(parents=True, exist_ok=True)
+        vistos, opciones = set(), []
+        for consulta in [consultas[tipo]] + EXTRA.get(tipo, []):
+            try:
+                resultados = buscar(consulta)
+            except Exception as e:
+                print(f"⚠️ {tipo}: búsqueda «{consulta}» falló ({e})")
+                continue
+            for r in resultados:
+                if len(opciones) >= n:
+                    break
+                if r.get("id") in vistos:
+                    continue
+                vistos.add(r.get("id"))
+                k = len(opciones) + 1
+                try:
+                    guardar_foto(r, carpeta / f"{k}.webp")
+                except Exception as e:
+                    print(f"   descarga fallida: {e}")
+                    continue
+                opciones.append(info_de(r) | {"archivo": f"{k}.webp", "consulta": consulta})
+            time.sleep(1.2)
+            if len(opciones) >= n:
+                break
+        (carpeta / "info.json").write_text(json.dumps(opciones, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"🔎 {tipo}: {len(opciones)} opciones")
+
+
+def elegir(creditos, elecciones):
+    nombres = {t: n for t, _, _, n in TIPOS}
+    for e in elecciones:
+        tipo, _, nums = e.partition("=")
+        info = json.loads((CANDIDATOS / tipo / "info.json").read_text(encoding="utf-8"))
+        for viejo in CARPETA.glob(f"{tipo}-*.webp"):
+            viejo.unlink()
+        fotos = []
+        for i, k in enumerate([int(x) for x in nums.split(",") if x.strip()], 1):
+            op = info[k - 1]
+            destino = CARPETA / f"{tipo}-{i}.webp"
+            destino.write_bytes((CANDIDATOS / tipo / op["archivo"]).read_bytes())
+            fotos.append({x: op.get(x) for x in ("titulo", "autor", "licencia", "licencia_url", "fuente", "openverse_id")} | {"archivo": destino.name})
+        creditos[tipo] = {"nombre": nombres.get(tipo, tipo), "fotos": fotos}
+        print(f"✅ {tipo}: {len(fotos)} fotos elegidas")
+    return creditos
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--forzar", nargs="*", default=[], help="tipos que hay que volver a buscar")
-    ap.add_argument("--saltar", type=int, default=0, help="saltar los N primeros resultados (con --forzar)")
-    ap.add_argument("--quitar", nargs="*", default=[], help="tipos cuya foto no sirve: se borra y no se vuelve a buscar sola")
+    ap.add_argument("--candidatos", nargs="*", help="tipos (o 'todos') de los que bajar opciones a img/candidatos/")
+    ap.add_argument("--n", type=int, default=8, help="opciones por tipo")
+    ap.add_argument("--elegir", nargs="*", default=[], help="tipo=1,4,6 ... (números de img/candidatos/<tipo>/)")
+    ap.add_argument("--quitar", nargs="*", default=[], help="tipos que se quedan sin foto propia")
+    ap.add_argument("--limpiar", action="store_true", help="borrar img/candidatos/ al terminar")
     a = ap.parse_args()
     CARPETA.mkdir(parents=True, exist_ok=True)
-    creditos = json.loads(CREDITOS.read_text(encoding="utf-8")) if CREDITOS.exists() else {}
-    nuevos, fallos = 0, []
-    for tipo in a.quitar:  # revisión de Claude: foto que no representa el producto o no es apropiada
-        (CARPETA / f"{tipo}.webp").unlink(missing_ok=True)
-        creditos[tipo] = {"vetado": True}
-    for tipo, _, consulta, nombre in TIPOS:
-        destino = CARPETA / f"{tipo}.webp"
-        if creditos.get(tipo, {}).get("vetado") and tipo not in a.forzar:
-            continue
-        if destino.exists() and tipo in creditos and tipo not in a.forzar:
-            continue
-        print(f"🔎 {tipo}: «{consulta}»")
-        try:
-            resultados = buscar(consulta, a.saltar if tipo in a.forzar else 0)
-        except Exception as e:
-            fallos.append(f"{tipo}: búsqueda falló ({e})")
-            continue
-        hecho = False
-        for r in resultados[:5]:
-            try:
-                guardar_foto(r, destino)
-            except Exception as e:
-                print(f"   descarga fallida: {e}")
-                continue
-            creditos[tipo] = {"nombre": nombre, "titulo": r.get("title"), "autor": r.get("creator"),
-                              "licencia": f"{r.get('license', '').upper()} {r.get('license_version') or ''}".strip(),
-                              "licencia_url": r.get("license_url") or "https://creativecommons.org/",
-                              "fuente": r.get("foreign_landing_url") or r.get("url"), "openverse_id": r.get("id")}
-            nuevos += 1
-            hecho = True
-            print(f"   ✅ {r.get('title')!r} de {r.get('creator')} ({creditos[tipo]['licencia']})")
-            break
-        if not hecho:
-            fallos.append(f"{tipo}: sin foto válida")
-        time.sleep(1.5)  # Openverse sin clave: pocas peticiones por minuto
+    creditos = migrar(json.loads(CREDITOS.read_text(encoding="utf-8")) if CREDITOS.exists() else {})
+    if a.candidatos:
+        tipos = [t for t, _, _, _ in TIPOS] if a.candidatos == ["todos"] else a.candidatos
+        candidatos(tipos, a.n)
+    if a.elegir:
+        creditos = elegir(creditos, a.elegir)
+    for tipo in a.quitar:
+        for viejo in CARPETA.glob(f"{tipo}-*.webp"):
+            viejo.unlink()
+        creditos[tipo] = {"nombre": creditos.get(tipo, {}).get("nombre", tipo), "fotos": []}
+    if a.limpiar and CANDIDATOS.exists():
+        import shutil
+        shutil.rmtree(CANDIDATOS)
     CREDITOS.write_text(json.dumps(creditos, ensure_ascii=False, indent=1), encoding="utf-8")
-    con_foto = {t for t, c in creditos.items() if not c.get("vetado") and (CARPETA / f"{t}.webp").exists()}
-    # todos los tipos van en las reglas (para que un mando no acabe con la foto de otro tipo); "foto" dice si hay
-    reglas = {"tipos": [{"tipo": t, "re": r, "nombre": n, "foto": t in con_foto} for t, r, _, n in TIPOS],
-              "categorias": {c: t for c, t in CATEGORIA.items() if t in con_foto}}
+    fotos = {t: [f["archivo"] for f in c.get("fotos", []) if (CARPETA / f["archivo"]).exists()] for t, c in creditos.items()}
+    reglas = {"tipos": [{"tipo": t, "re": r, "nombre": n, "fotos": fotos.get(t, [])} for t, r, _, n in TIPOS],
+              "categorias": {c: t for c, t in CATEGORIA.items() if fotos.get(t)},
+              "respaldo": "compras" if fotos.get("compras") else None}
     REGLAS.write_text(json.dumps(reglas, ensure_ascii=False, indent=1), encoding="utf-8")
     PAGINA.write_text(pagina_creditos(creditos), encoding="utf-8")
-    print(f"\nFotos nuevas: {nuevos} · con foto: {len(con_foto)}/{len(TIPOS)}")
-    for f in fallos:
-        print("⚠️", f)
-    return 0 if creditos else 1
+    print(f"Tipos con foto: {sum(1 for v in fotos.values() if v)}/{len(TIPOS)} · fotos: {sum(len(v) for v in fotos.values())}")
+    return 0
 
 
 if __name__ == "__main__":
