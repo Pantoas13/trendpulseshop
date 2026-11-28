@@ -128,7 +128,7 @@ html body .category-grid svg{color:var(--tp-ink)}
 /* filtros */
 html body .filters button{min-height:40px;font-size:13px;font-weight:600;color:var(--tp-ink)}
 html body .filters button[aria-pressed=true]{background:var(--tp-ink);border-color:var(--tp-ink);color:var(--tp-bg)}
-html body select{border-radius:var(--tp-radius-sm);font-size:14px;min-height:40px}
+html body select{border-radius:var(--tp-radius-sm);font-size:14px;min-height:44px}
 /* tarjeta de producto: sin foto, un bloque de color de su categoría con icono y marca */
 html body .card{border-radius:var(--tp-radius);overflow:hidden}
 html body .card .picture{background:var(--tp-surface);padding:0;aspect-ratio:4/3}
@@ -160,8 +160,8 @@ html body .how li::marker{color:var(--tp-accent)}
 /* 9. Aviso de país (geo-amazon.js): franja fina en el color del sistema */
 html body #tp-geo{background:var(--tp-soft);color:var(--tp-ink);font:13px/1.45 var(--tp-body);padding:8px 16px;border-bottom:1px solid var(--tp-line)}
 html body #tp-geo b{color:var(--tp-ink)}
-html body #tp-geo select{border:1px solid var(--tp-line);background:var(--tp-surface);color:var(--tp-ink);min-height:32px;border-radius:8px}
-html body #tp-geo button{color:var(--tp-muted);min-width:32px;min-height:32px}
+html body #tp-geo select{border:1px solid var(--tp-line);background:var(--tp-surface);color:var(--tp-ink);min-height:44px;border-radius:8px}
+html body #tp-geo button{color:var(--tp-muted);min-width:44px;min-height:44px}
 
 /* 10. Guías de regalo antiguas (amigo invisible, menos de 30 €): tarjetas .g */
 html body .g{background:var(--tp-surface);border:1px solid var(--tp-line);border-radius:var(--tp-radius);box-shadow:var(--tp-shadow);color:var(--tp-ink);transition:transform .2s ease,box-shadow .2s ease}
@@ -174,3 +174,12 @@ html body .g .p{font-family:var(--tp-head);font-variant-numeric:tabular-nums}
 html body .g .btn{color:var(--tp-bg);background:var(--tp-ink);border-color:var(--tp-ink)}
 html body .g:hover .btn{background:var(--tp-brand);border-color:var(--tp-brand);color:var(--tp-brand-ink)}
 html body .tablewrap a,html body .crumb a{color:var(--tp-ink);text-underline-offset:3px}
+
+/* 11. Zonas de toque de 44 px (auditoría del 28-11: había 39 controles más pequeños en la portada) */
+html body button,html body input,html body select,html body textarea{font-family:inherit}
+html body .logo,html body .header-link,html body .saved-toggle,html body .theme,html body .text-link,
+html body > header nav a,html body .nav a,html body .filters button,html body .chips a,html body .others a,
+html body form[role=search] button,html body .footer-links a,html body footer a{min-height:44px;display:inline-flex;align-items:center}
+html body .favorite{width:44px;height:44px}
+html body .crumb a{display:inline-block;padding:12px 0;margin:-12px 0}
+@media (max-width:1050px){html body .header-link{display:none}}
