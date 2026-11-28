@@ -40,6 +40,8 @@ LICENCIAS = "cc0,pdm,by"
 
 # (tipo, palabras del título en español (regex), búsqueda en inglés, nombre para el texto alternativo)
 TIPOS = [
+    ("mando", r"mando|gamepad|controller", "gamepad controller", "un mando de videojuegos"),
+    ("consola", r"nintendo|switch|playstation|ps5|ps4|xbox|consola", "playstation console", "una consola"),
     ("auriculares", r"auricular|cascos|headphone|earbuds|airpods|buds", "wireless headphones", "unos auriculares"),
     ("smartwatch", r"smartwatch|reloj inteligente|pulsera de actividad|smartband|watch", "smartwatch wrist", "un reloj inteligente"),
     ("altavoz", r"altavoz|speaker|barra de sonido|echo dot|echo pop", "bluetooth speaker", "un altavoz"),
@@ -57,8 +59,6 @@ TIPOS = [
     ("router", r"router|wifi mesh|repetidor|extensor wifi", "wifi router", "un router"),
     ("tv", r"\btv\b|televisor|smart tv|fire tv|chromecast|google tv", "television living room", "un televisor"),
     ("camara", r"c[aá]mara|webcam|gopro|dashcam", "digital camera lens", "una cámara"),
-    ("mando", r"mando|gamepad|controller", "gamepad controller", "un mando de videojuegos"),
-    ("consola", r"nintendo|switch|playstation|ps5|ps4|xbox|consola", "playstation console", "una consola"),
     ("cafetera", r"cafetera", "coffee machine", "una cafetera"),
     ("cafe", r"caf[eé]|c[aá]psulas|nespresso|dolce gusto|espresso", "coffee beans cup", "café"),
     ("freidora", r"freidora", "air fryer appliance", "una freidora de aire"),
@@ -139,6 +139,8 @@ def guardar_foto(resultado, destino):
 def pagina_creditos(creditos):
     filas = []
     for tipo, c in sorted(creditos.items()):
+        if c.get("vetado"):
+            continue
         autor = html.escape(c.get("autor") or "autor desconocido")
         lic = html.escape(c["licencia"])
         filas.append(f'<li><img src="img/tipos/{tipo}.webp" alt="" width="120" height="90" loading="lazy">'
@@ -164,12 +166,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--forzar", nargs="*", default=[], help="tipos que hay que volver a buscar")
     ap.add_argument("--saltar", type=int, default=0, help="saltar los N primeros resultados (con --forzar)")
+    ap.add_argument("--quitar", nargs="*", default=[], help="tipos cuya foto no sirve: se borra y no se vuelve a buscar sola")
     a = ap.parse_args()
     CARPETA.mkdir(parents=True, exist_ok=True)
     creditos = json.loads(CREDITOS.read_text(encoding="utf-8")) if CREDITOS.exists() else {}
     nuevos, fallos = 0, []
+    for tipo in a.quitar:  # revisión de Claude: foto que no representa el producto o no es apropiada
+        (CARPETA / f"{tipo}.webp").unlink(missing_ok=True)
+        creditos[tipo] = {"vetado": True}
     for tipo, _, consulta, nombre in TIPOS:
         destino = CARPETA / f"{tipo}.webp"
+        if creditos.get(tipo, {}).get("vetado") and tipo not in a.forzar:
+            continue
         if destino.exists() and tipo in creditos and tipo not in a.forzar:
             continue
         print(f"🔎 {tipo}: «{consulta}»")
@@ -197,11 +205,13 @@ def main():
             fallos.append(f"{tipo}: sin foto válida")
         time.sleep(1.5)  # Openverse sin clave: pocas peticiones por minuto
     CREDITOS.write_text(json.dumps(creditos, ensure_ascii=False, indent=1), encoding="utf-8")
-    reglas = {"tipos": [{"tipo": t, "re": r, "nombre": n} for t, r, _, n in TIPOS if t in creditos],
-              "categorias": {c: t for c, t in CATEGORIA.items() if t in creditos}}
+    con_foto = {t for t, c in creditos.items() if not c.get("vetado") and (CARPETA / f"{t}.webp").exists()}
+    # todos los tipos van en las reglas (para que un mando no acabe con la foto de otro tipo); "foto" dice si hay
+    reglas = {"tipos": [{"tipo": t, "re": r, "nombre": n, "foto": t in con_foto} for t, r, _, n in TIPOS],
+              "categorias": {c: t for c, t in CATEGORIA.items() if t in con_foto}}
     REGLAS.write_text(json.dumps(reglas, ensure_ascii=False, indent=1), encoding="utf-8")
     PAGINA.write_text(pagina_creditos(creditos), encoding="utf-8")
-    print(f"\nFotos nuevas: {nuevos} · con foto: {len(creditos)}/{len(TIPOS)}")
+    print(f"\nFotos nuevas: {nuevos} · con foto: {len(con_foto)}/{len(TIPOS)}")
     for f in fallos:
         print("⚠️", f)
     return 0 if creditos else 1

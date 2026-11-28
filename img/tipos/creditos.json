@@ -45,13 +45,7 @@
   "openverse_id": "2fdc2d87-eb5d-4775-b884-25765402eec9"
  },
  "pilas": {
-  "nombre": "unas pilas",
-  "titulo": "SC 364505 - AA battery sets on shore near [illegible], Luzon, P.I., as destroyer off shore fires on Jap targets in the rear. 12 January, 1945.",
-  "autor": "Signal Corps Archive",
-  "licencia": "PDM 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/mark/1.0/",
-  "fuente": "https://www.flickr.com/photos/186360156@N02/52117814247",
-  "openverse_id": "50f47636-1edc-4bde-b37f-02b7a5331874"
+  "vetado": true
  },
  "movil": {
   "nombre": "un teléfono móvil",
@@ -126,13 +120,7 @@
   "openverse_id": "3d66a49a-5234-4534-8fb6-30c3c9fd4b46"
  },
  "router": {
-  "nombre": "un router",
-  "titulo": "broadcom-fxo-wifi-router-8_24956224150_o",
-  "autor": "M.Cristian - Ioan",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/92052795@N04/51318218849",
-  "openverse_id": "acce31d0-71fa-4295-ae0f-555c90f08d1d"
+  "vetado": true
  },
  "tv": {
   "nombre": "un televisor",
@@ -153,22 +141,10 @@
   "openverse_id": "25199a6c-e425-4231-a4b4-230f91b5d8e4"
  },
  "mando": {
-  "nombre": "un mando de videojuegos",
-  "titulo": "Robotic Arm Hand Controller",
-  "autor": "a.ridley-smith",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/194131518@N04/51563612925",
-  "openverse_id": "09844046-3408-41b0-9c2c-be8434e37e4c"
+  "vetado": true
  },
  "consola": {
-  "nombre": "una consola",
-  "titulo": "Please take a seat!",
-  "autor": "Welcome to Switzerland backstage!",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/70981241@N00/51799693351",
-  "openverse_id": "825eb5f7-e01f-4f4f-89d3-e0c147fde68c"
+  "vetado": true
  },
  "cafetera": {
   "nombre": "una cafetera",
@@ -189,22 +165,10 @@
   "openverse_id": "a0b1b2c8-7176-4835-84ae-6c7a8872998f"
  },
  "freidora": {
-  "nombre": "una freidora de aire",
-  "titulo": "Air fryer Panizzera Meat Co. pork apple breakfast sausage (after)",
-  "autor": "sarahstierch",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/7633518@N08/53004812098",
-  "openverse_id": "73dac7f9-9c97-405f-abee-ae9018f31566"
+  "vetado": true
  },
  "aspirador": {
-  "nombre": "un aspirador",
-  "titulo": "Heard a vacuum cleaner",
-  "autor": "lumiegor",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/194545230@N04/52169635169",
-  "openverse_id": "b8d8c529-f6c5-493f-9de4-a81427059eb3"
+  "vetado": true
  },
  "cocina": {
   "nombre": "utensilios de cocina",
@@ -279,13 +243,7 @@
   "openverse_id": "8fab19d1-7fd1-4986-ac41-8e265fbc041b"
  },
  "bebe": {
-  "nombre": "productos para bebé",
-  "titulo": "Wrinkled Soles & Feet In Baby Blue Polish",
-  "autor": "wrinkledgal",
-  "licencia": "PDM 1.0",
-  "licencia_url": "https://creativecommons.org/publicdomain/mark/1.0/",
-  "fuente": "https://www.flickr.com/photos/184513163@N07/51834099145",
-  "openverse_id": "82b0e467-5ff8-4a8f-800c-ef4dc105d1ec"
+  "vetado": true
  },
  "herramientas": {
   "nombre": "herramientas",
@@ -351,13 +309,7 @@
   "openverse_id": "abf75a0f-2c3e-4b32-b03d-55a2597658af"
  },
  "salud": {
-  "nombre": "productos de salud",
-  "titulo": "First Aid Kit at Riverside Park in Harrisburg, Pennsylvania",
-  "autor": "strangebiology",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/138318928@N02/52299892452",
-  "openverse_id": "fb773bdd-8031-49d8-8faf-6f76299ef832"
+  "vetado": true
  },
  "moda": {
   "nombre": "moda",
@@ -369,13 +321,7 @@
   "openverse_id": "8ba9b650-7da6-4e64-ad83-a45a5eb5fcba"
  },
  "jardin": {
-  "nombre": "jardín",
-  "titulo": "Garden or Gardening",
-  "autor": "Rosmarie Voegtli",
-  "licencia": "BY 2.0",
-  "licencia_url": "https://creativecommons.org/licenses/by/2.0/",
-  "fuente": "https://www.flickr.com/photos/94212497@N00/53707847260",
-  "openverse_id": "0cd5c7d0-2f91-42a8-a8c7-f40bcf18e3b9"
+  "vetado": true
  },
  "vinilo": {
   "nombre": "discos de música",

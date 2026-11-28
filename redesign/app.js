@@ -61,7 +61,7 @@ let TIPOS=null;
 function tipoDe(product){
  if(!TIPOS)return null;
  const t=TIPOS.tipos.find(x=>x.rx.test(product.title));
- if(t)return t;
+ if(t)return t.foto===false?null:t;
  const c=TIPOS.categorias[product.category];
  return c?TIPOS.tipos.find(x=>x.tipo===c)||null:null;
 }
