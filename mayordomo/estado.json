@@ -1,5 +1,5 @@
 {
- "jornadas": 13,
+ "jornadas": 14,
  "entradas": [
   {
    "tipo": "ranking",
@@ -156,6 +156,18 @@
    "n": 12,
    "id": "mayordomo-2026-11-27-tablets",
    "imagen": "pins/auto/2026-11-27-top-tablets.png"
+  },
+  {
+   "tipo": "ranking",
+   "nombre": "Electrodomésticos",
+   "titulo": "Los 10 más vendidos en Electrodomésticos · Amazon España (noviembre 2026)",
+   "texto": "Lo que más se compra ahora en Electrodomésticos en Amazon España: Cecotec Batidora de Mano PowerGear…, Edihome, Papel Freidora Aire, Air…, Cecotec Freidora de Aire 4 L… y 7 más. Ranking completo y precio de hoy en el enlace. Contiene enlaces de afiliado. #publicidad #amazonespaña #electrodomesticos",
+   "enlace": "https://pantoas13.github.io/trendpulseshop/top/electrodomesticos.html?utm_source=pinterest&utm_medium=social&utm_campaign=mayordomo&utm_content=2026-11-28",
+   "pagina": "https://pantoas13.github.io/trendpulseshop/top/electrodomesticos.html",
+   "fecha": "2026-11-28",
+   "n": 13,
+   "id": "mayordomo-2026-11-28-electrodomesticos",
+   "imagen": "pins/auto/2026-11-28-top-electrodomesticos.png"
   }
  ]
 }
